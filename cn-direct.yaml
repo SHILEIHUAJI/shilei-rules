@@ -1,5 +1,7 @@
 # shilei-rules / cn-direct.yaml
 # 包含：国内顶级域名、大厂系、开发者社区及 CDN 基础设施
+# 模式建议：在 Mihomo 配置中使用
+behavior: classical
 payload:
   # --- 中国国家顶级域名 ---
   - 'DOMAIN-SUFFIX,cn'
