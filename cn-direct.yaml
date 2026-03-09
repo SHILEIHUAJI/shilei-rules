@@ -179,8 +179,8 @@ payload:
   - 'DOMAIN-SUFFIX,yangkeduo.com'
   - 'DOMAIN-SUFFIX,meituan.com'
   - 'DOMAIN-SUFFIX,dianping.com'
-  - 'DOMAIN-SUFFIX,suzhou.gov.cn' # 苏州政务
-  - 'DOMAIN-SUFFIX,unionpay.com' # 银联
+  - 'DOMAIN-SUFFIX,suzhou.gov.cn'
+  - 'DOMAIN-SUFFIX,unionpay.com'
 
   # --- CDN 与基础设施 (核心稳定) ---
   - 'DOMAIN-SUFFIX,huaweicloud.com'
