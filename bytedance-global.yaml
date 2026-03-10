@@ -1,5 +1,6 @@
 # 字节跳动海外规则 (Bytedance Global)
-# 包含：TikTok, Lemon8 以及关联的拉流与登录逻辑
+# 包含：TikTok, Lemon8
+# 全平台通用规则
 behavior: classical
 payload:
   # 域名规则 (DOMAIN / DOMAIN-SUFFIX)
@@ -22,13 +23,3 @@ payload:
   - 'DOMAIN,sp.v2.udp-over-tcp.arpa'           # 专用 UDP 隧道
   - 'IP-ASN,396986'
   - 'IP-ASN,60068'
-
-  # 复杂逻辑规则 (AND)
-  # 解决 TikTok 关联 Google 框架登录时的分流一致性
-  - 'AND,((PROCESS-NAME,com.ss.android.ugc.trill),(DOMAIN-KEYWORD,google))'
-  - 'AND,((PROCESS-NAME,com.ss.android.ugc.trill),(DOMAIN-KEYWORD,googleapis))'
-
-  # 进程名 (PROCESS-NAME)
-  - 'PROCESS-NAME,com.ss.android.ugc.trill'     # TikTok
-  - 'PROCESS-NAME,com.zhiliaoapp.musically'    # TikTok (Musical.ly 版)
-  - 'PROCESS-NAME,com.bd.nproject'             # Lemon8
