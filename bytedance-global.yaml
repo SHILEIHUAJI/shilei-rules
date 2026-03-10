@@ -21,8 +21,6 @@ payload:
   - 'DOMAIN-KEYWORD,push-rtmp'
   - 'DOMAIN-KEYWORD,appsflyersdk'
 
-
-
   # 网络特征规则 (IP-ASN / UDP) 
   - 'DOMAIN,sp.v2.udp-over-tcp.arpa'           # 专用 UDP 隧道
   - 'IP-ASN,396986'
