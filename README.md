@@ -1,4 +1,4 @@
-# 🚀 Shilei Rules 定制规则库
+# 🐱 Shilei Rules 定制规则库
 简介: 个人维护的 Mihomo (Clash Meta) 专属规则集
 功能: 字节跳动海外规则 (TikTok, Lemon8, 关联拉流域名)
 更新日期: 不定时更新
