@@ -1,5 +1,6 @@
 # 字节跳动海外规则 (Bytedance Global)
 # 包含：TikTok, Lemon8 以及关联的拉流与登录逻辑
+behavior: classical
 payload:
   # 域名规则 (DOMAIN / DOMAIN-SUFFIX)
   - 'DOMAIN-SUFFIX,tiktokv.us'
