@@ -4,14 +4,14 @@
 # 更新日期: 不定时更新
 # 说明: 全平台通用，已移除安卓进程名，建议配合 no-resolve 使用
 
-rule-providers:
-  bytedance_global:
-    type: http
-    behavior: classical
-    url: "RAW链接"
-    path: ./ruleset/bytedance_global.yaml
-    interval: 86400
+# rule-providers:
+#   bytedance_global:
+#     type: http
+#     behavior: classical
+#     url: "RAW链接"
+#     path: ./ruleset/bytedance_global.yaml
+#     interval: 86400
 
-rules:
-  - RULE-SET,bytedance_global,Tiktok,no-resolve
+# rules:
+#   - RULE-SET,bytedance_global,Tiktok,no-resolve
 
