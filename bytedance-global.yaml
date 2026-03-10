@@ -21,6 +21,14 @@ payload:
   - 'DOMAIN-KEYWORD,push-rtmp'
   - 'DOMAIN-KEYWORD,appsflyersdk'
 
+    # --- 全球核心补充 ---
+  - 'DOMAIN-SUFFIX,tiktok.com'       # 主域名，覆盖所有子区
+  - 'DOMAIN-SUFFIX,tiktokv.com'      # 全球视频流核心
+  - 'DOMAIN-SUFFIX,musical.ly'       # 老域名兼容，部分地区仍在用
+  - 'DOMAIN-SUFFIX,byteoversea.com'  # 字节海外核心业务
+  - 'DOMAIN-KEYWORD,tiktok'          # 终极兜底：只要带这个词的统统抓走
+
+
   # 网络特征规则 (IP-ASN / UDP) 
   - 'DOMAIN,sp.v2.udp-over-tcp.arpa'           # 专用 UDP 隧道
   - 'IP-ASN,396986'
