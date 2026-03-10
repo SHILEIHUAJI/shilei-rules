@@ -1,0 +1,33 @@
+# 字节跳动海外规则 (Bytedance Global)
+# 包含：TikTok, Lemon8 以及关联的拉流与登录逻辑
+payload:
+  # 域名规则 (DOMAIN / DOMAIN-SUFFIX)
+  - 'DOMAIN-SUFFIX,tiktokv.us'
+  - 'DOMAIN-SUFFIX,tiktokcdn-us.com'
+  - 'DOMAIN-SUFFIX,ttcdn-us.com'
+  - 'DOMAIN-SUFFIX,ibyteimg.com'
+  - 'DOMAIN-SUFFIX,byteoversea.com'
+  - 'DOMAIN-SUFFIX,tik-tokapi.com'
+  - 'DOMAIN-SUFFIX,lemon8-app.com'
+
+  # 域名关键字 (DOMAIN-KEYWORD)
+  - 'DOMAIN-KEYWORD,tiktokcdn'
+  - 'DOMAIN-KEYWORD,tiktokv'
+  - 'DOMAIN-KEYWORD,common-sign'
+  - 'DOMAIN-KEYWORD,pull-w5'
+  - 'DOMAIN-KEYWORD,push-rtmp'
+
+  # 网络特征规则 (IP-ASN / UDP) 
+  - 'DOMAIN,sp.v2.udp-over-tcp.arpa'           # 专用 UDP 隧道
+  - 'IP-ASN,396986'
+  - 'IP-ASN,60068'
+
+  # 复杂逻辑规则 (AND)
+  # 解决 TikTok 关联 Google 框架登录时的分流一致性
+  - 'AND,((PROCESS-NAME,com.ss.android.ugc.trill),(DOMAIN-KEYWORD,google))'
+  - 'AND,((PROCESS-NAME,com.ss.android.ugc.trill),(DOMAIN-KEYWORD,googleapis))'
+
+  # 进程名 (PROCESS-NAME)
+  - 'PROCESS-NAME,com.ss.android.ugc.trill'     # TikTok
+  - 'PROCESS-NAME,com.zhiliaoapp.musically'    # TikTok (Musical.ly 版)
+  - 'PROCESS-NAME,com.bd.nproject'             # Lemon8
