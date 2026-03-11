@@ -16,6 +16,8 @@ payload:
   # --- 腾讯 (Tencent) 系 ---
   - 'DOMAIN-SUFFIX,qq.com'
   - 'DOMAIN-SUFFIX,tencent.com'
+  - 'DOMAIN-SUFFIX,gladns.net'
+  - 'DOMAIN-SUFFIX,servicewechat.com'
   - 'DOMAIN-SUFFIX,weixin.com'
   - 'DOMAIN-SUFFIX,wechat.com'
   - 'DOMAIN-SUFFIX,wx.qq.com'
