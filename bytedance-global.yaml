@@ -12,6 +12,7 @@ payload:
   - 'DOMAIN-SUFFIX,tik-tokapi.com'
   - 'DOMAIN-SUFFIX,lemon8-app.com'
   - 'DOMAIN-SUFFIX,akamaized.net'
+  - 'DOMAIN-SUFFIX,appsflyersdk.com'
 
   # 域名关键字 (DOMAIN-KEYWORD)
   - 'DOMAIN-KEYWORD,tiktokcdn'
