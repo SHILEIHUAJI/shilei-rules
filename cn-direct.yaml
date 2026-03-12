@@ -77,6 +77,13 @@ payload:
   - 'DOMAIN-SUFFIX,nuomi.com'
   - 'DOMAIN-SUFFIX,tieba.com'
   - 'DOMAIN-SUFFIX,pan.baidu.com'
+  
+  # --- 寻梦 (pinduoduo) 系 ---
+  - 'DOMAIN-SUFFIX,duoduo.com'
+  - 'DOMAIN-SUFFIX,pinduoduo.net'
+  - 'DOMAIN-SUFFIX,pinduoduo.com'
+  - 'DOMAIN-SUFFIX,ddxq.mobi'
+  - 'DOMAIN-SUFFIX,pddpic.com'
 
   # --- 字节跳动 (ByteDance) 系 ---
   - 'DOMAIN-SUFFIX,bytedance.com'
@@ -177,6 +184,7 @@ payload:
   - 'DOMAIN-SUFFIX,vmall.com'
   - 'DOMAIN-SUFFIX,oppo.com'
   - 'DOMAIN-SUFFIX,vivo.com'
+  - 'DOMAIN-SUFFIX,iqoo.com'
   - 'DOMAIN-SUFFIX,meizu.com'
   - 'DOMAIN-SUFFIX,flyme.cn'
   - 'DOMAIN-SUFFIX,lenovo.com'
