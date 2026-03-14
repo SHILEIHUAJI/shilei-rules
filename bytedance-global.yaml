@@ -33,9 +33,9 @@ payload:
   # 网络特征规则 (IP-ASN / UDP) 
   - 'DOMAIN,sp.v2.udp-over-tcp.arpa'           # 专用 UDP 隧道
   - 'IP-ASN,16509' # 签名/信令
-  - 'IP-ASN,20940'
+  - 'IP-ASN,20940' # Akamai
   - 'IP-ASN,396986'
-  - 'IP-ASN,54113' # 视频流/CDN
+  - 'IP-ASN,54113' # 视频流/CDN Fastly
   - 'IP-ASN,60068'
 
   # Linux USER ID (唯一身份标识)
