@@ -3,14 +3,6 @@
 # 支持linux Android macOS ios Windows 
 behavior: classical
 payload:
-  - 'DOMAIN,sp.v2.udp-over-tcp.arpa'
-  - 'DOMAIN-KEYWORD,appsflyersdk'
-  - 'DOMAIN-KEYWORD,common-sign'
-  - 'DOMAIN-KEYWORD,pull-w5'
-  - 'DOMAIN-KEYWORD,push-rtmp'
-  - 'DOMAIN-KEYWORD,tiktok'          
-  - 'DOMAIN-KEYWORD,tiktokcdn'
-  - 'DOMAIN-KEYWORD,tiktokv'
   - 'DOMAIN-SUFFIX,appsflyersdk.com'
   - 'DOMAIN-SUFFIX,byteoversea.com'
   - 'DOMAIN-SUFFIX,ibyteimg.com'
@@ -22,6 +14,15 @@ payload:
   - 'DOMAIN-SUFFIX,tiktokv.us'
   - 'DOMAIN-SUFFIX,ttcdn-us.com'
   - 'DOMAIN-SUFFIX,lemon8-app.com'
+ 
+  - 'DOMAIN,sp.v2.udp-over-tcp.arpa'
+  
+  - 'DOMAIN-KEYWORD,common-sign'
+  - 'DOMAIN-KEYWORD,pull-w5'
+  - 'DOMAIN-KEYWORD,push-rtmp'
+  - 'DOMAIN-KEYWORD,tiktok'          
+  - 'DOMAIN-KEYWORD,tiktokcdn'
+  - 'DOMAIN-KEYWORD,tiktokv'
 
   - 'PROCESS-NAME,com.ss.android.ugc.trill'
   - 'PROCESS-NAME,com.zhiliaoapp.musically'
