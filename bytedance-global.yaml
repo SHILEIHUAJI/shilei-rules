@@ -36,7 +36,4 @@ payload:
   - 'IP-ASN,396986'
   - 'IP-ASN,54113' # 视频流/CDN Fastly
   - 'IP-ASN,60068'
-
-  # Linux USER ID (唯一身份标识)
-  - 'UID,10374'
   
