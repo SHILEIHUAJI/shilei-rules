@@ -25,4 +25,5 @@ payload:
 
   - 'PROCESS-NAME,com.ss.android.ugc.trill'
   - 'PROCESS-NAME,com.zhiliaoapp.musically'
+  - 'PROCESS-NAME,com.bd.nproject'
   
