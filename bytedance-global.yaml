@@ -11,10 +11,8 @@ payload:
   - 'DOMAIN-KEYWORD,tiktok'          
   - 'DOMAIN-KEYWORD,tiktokcdn'
   - 'DOMAIN-KEYWORD,tiktokv'
-  - 'DOMAIN-SUFFIX,akamaized.net'
   - 'DOMAIN-SUFFIX,appsflyersdk.com'
   - 'DOMAIN-SUFFIX,byteoversea.com'
-  - 'DOMAIN-SUFFIX,byteoversea.com' 
   - 'DOMAIN-SUFFIX,ibyteimg.com'
   - 'DOMAIN-SUFFIX,musical.ly' 
   - 'DOMAIN-SUFFIX,tik-tokapi.com'
@@ -24,4 +22,7 @@ payload:
   - 'DOMAIN-SUFFIX,tiktokv.us'
   - 'DOMAIN-SUFFIX,ttcdn-us.com'
   - 'DOMAIN-SUFFIX,lemon8-app.com'
+
+  - 'PROCESS-NAME,com.ss.android.ugc.trill'
+  - 'PROCESS-NAME,com.zhiliaoapp.musically'
   
