@@ -3,35 +3,28 @@
 # 支持linux Android macOS ios Windows 
 behavior: classical
 payload:
-  # 域名规则 (DOMAIN / DOMAIN-SUFFIX)
-  - 'DOMAIN-SUFFIX,tiktokv.us'
-  - 'DOMAIN-SUFFIX,tiktokcdn-us.com'
-  - 'DOMAIN-SUFFIX,ttcdn-us.com'
-  - 'DOMAIN-SUFFIX,ibyteimg.com'
-  - 'DOMAIN-SUFFIX,byteoversea.com'
-  - 'DOMAIN-SUFFIX,tik-tokapi.com'
-  - 'DOMAIN-SUFFIX,lemon8-app.com'
-  - 'DOMAIN-SUFFIX,akamaized.net'
-  - 'DOMAIN-SUFFIX,appsflyersdk.com'
-
-  # 域名关键字 (DOMAIN-KEYWORD)
-  - 'DOMAIN-KEYWORD,tiktokcdn'
-  - 'DOMAIN-KEYWORD,tiktokv'
+  - 'DOMAIN,sp.v2.udp-over-tcp.arpa'
+  - 'DOMAIN-KEYWORD,appsflyersdk'
   - 'DOMAIN-KEYWORD,common-sign'
   - 'DOMAIN-KEYWORD,pull-w5'
   - 'DOMAIN-KEYWORD,push-rtmp'
-  - 'DOMAIN-KEYWORD,appsflyersdk'
-
-    # --- 全球核心补充 ---
-  - 'DOMAIN-SUFFIX,tiktok.com' 
-  - 'DOMAIN-SUFFIX,tiktokv.com' 
-  - 'DOMAIN-SUFFIX,musical.ly' 
-  - 'DOMAIN-SUFFIX,byteoversea.com' 
   - 'DOMAIN-KEYWORD,tiktok'          
+  - 'DOMAIN-KEYWORD,tiktokcdn'
+  - 'DOMAIN-KEYWORD,tiktokv'
+  - 'DOMAIN-SUFFIX,akamaized.net'
+  - 'DOMAIN-SUFFIX,appsflyersdk.com'
+  - 'DOMAIN-SUFFIX,byteoversea.com'
+  - 'DOMAIN-SUFFIX,byteoversea.com' 
+  - 'DOMAIN-SUFFIX,ibyteimg.com'
+  - 'DOMAIN-SUFFIX,musical.ly' 
+  - 'DOMAIN-SUFFIX,tik-tokapi.com'
+  - 'DOMAIN-SUFFIX,tiktok.com' 
+  - 'DOMAIN-SUFFIX,tiktokcdn-us.com'
+  - 'DOMAIN-SUFFIX,tiktokv.com' 
+  - 'DOMAIN-SUFFIX,tiktokv.us'
+  - 'DOMAIN-SUFFIX,ttcdn-us.com'
+  - 'DOMAIN-SUFFIX,lemon8-app.com'
 
-
-  # 网络特征规则 (IP-ASN / UDP) 
-  - 'DOMAIN,sp.v2.udp-over-tcp.arpa'           # 专用 UDP 隧道
   - 'IP-ASN,20940' # Akamai
   - 'IP-ASN,396986'
   - 'IP-ASN,54113' # 视频流/CDN Fastly
