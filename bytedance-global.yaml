@@ -24,9 +24,4 @@ payload:
   - 'DOMAIN-SUFFIX,tiktokv.us'
   - 'DOMAIN-SUFFIX,ttcdn-us.com'
   - 'DOMAIN-SUFFIX,lemon8-app.com'
-
-  - 'IP-ASN,20940' # Akamai
-  - 'IP-ASN,396986'
-  - 'IP-ASN,54113' # 视频流/CDN Fastly
-  - 'IP-ASN,60068'
   
