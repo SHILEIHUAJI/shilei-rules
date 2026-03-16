@@ -172,6 +172,12 @@ payload:
   - 'DOMAIN-SUFFIX,weibocdn.com'
   - 'DOMAIN-SUFFIX,miaopai.com'
 
+  # --- 微软国内 ---
+  - 'DOMAIN,cn.bing.com'
+  - 'DOMAIN,th.bing.com'
+  - 'DOMAIN,tse1-mm.cn.bing.net'
+  - 'DOMAIN,tse2-mm.cn.bing.net' 
+
   # --- 硬件与手机厂商 ---
   - 'DOMAIN-SUFFIX,xiaomi.com'
   - 'DOMAIN-SUFFIX,xiaomi.cn'
