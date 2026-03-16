@@ -2,6 +2,7 @@
 behavior: classical
 payload:
 # DOMAIN
+  - 'DOMAIN-SUFFIX,googleapis.cn'
   - 'DOMAIN-SUFFIX,googlevideo.com'
   - 'DOMAIN-SUFFIX,ytimg.com'
   - 'DOMAIN-SUFFIX,ggpht.com'
