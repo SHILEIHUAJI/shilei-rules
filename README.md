@@ -4,15 +4,15 @@
 国内直连,谷歌全家桶,字节跳动海外规则 (TikTok, Lemon8, 关联拉流域名，建议配合no-resolve使用
 # 使用方法
     rule-providers:
-      bytedance global:
-      type:http
-      behavior:classical
-      url："RAW链接”
-      path:./ruleset/bytedance_global.yaml
-      interval:86400
+      bytedance-global:
+        type:http
+        behavior:classical
+        url："RAW链接”
+        path:./ruleset/bytedance_global.yaml
+        interval:86400
 
     Rules
-      - RULE-SET, bytedance_global,Tiktok, no-resolve
+      - RULE-SET,bytedanc-eglobal,Tiktok,no-resolve
 
 # 状态
 规则集维护中
