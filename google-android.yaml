@@ -22,6 +22,8 @@ payload:
   - 'PROCESS-NAME,com.google.android.apps.translate'
   - 'PROCESS-NAME,com.google.android.calculator'
 
+  - 'IP-ASN,15169'
+
 
 
 
