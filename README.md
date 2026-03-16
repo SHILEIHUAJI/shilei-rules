@@ -1,7 +1,7 @@
 # 🐱 Shilei Rules 定制规则库
 简介：个人维护的 Mihomo (Clash Meta) 规则库
 # 专属规则集功能
-国内直连,谷歌全家桶,字节跳动海外规则 (TikTok, Lemon8, 关联拉流域名定时更新说明，建议配合no-resolve使用
+国内直连,谷歌全家桶,字节跳动海外规则 (TikTok, Lemon8, 关联拉流域名，建议配合no-resolve使用
 # 使用方法
     rule-providers:
       bytedance global:
@@ -13,6 +13,9 @@
 
     Rules
       - RULE-SET, bytedance_global,Tiktok, no-resolve
+
+# 状态
+规则集维护中
 
 ### 📊 规则统计详情
 
