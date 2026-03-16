@@ -26,6 +26,7 @@ payload:
   - 'PROCESS-NAME,com.google.android.apps.photos'
   - 'PROCESS-NAME,com.google.android.apps.translate'
   - 'PROCESS-NAME,com.google.android.calculator'
+  - 'PROCESS-NAME,com.google.android.apps.googleassistant'
 
   - 'IP-ASN,15169'
 
