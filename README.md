@@ -25,3 +25,11 @@
 | bytedance-global.yaml | 22 |
 | cn-direct.yaml | 187 |
 | **总计** | **232** |
+
+
+| 规则集名称 | 规则数量 |
+| :--- | :--- |
+| google-android.yaml | 23 |
+| bytedance-global.yaml | 22 |
+| cn-direct.yaml | 187 |
+| **总计** | **232** |
