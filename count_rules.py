@@ -1,32 +1,59 @@
 import os
 import re
 
+# 定义你要统计的三个文件
+RULE_FILES = [
+    'google-android.yaml',
+    'bytedance-global.yaml',
+    'cn-direct.yaml'
+]
+
 def count_rules_in_file(filepath):
+    if not os.path.exists(filepath):
+        return 0
     count = 0
     with open(filepath, 'r', encoding='utf-8') as f:
         for line in f:
             line = line.strip()
-            # 排除空行、注释行、以及 payload: 这种结构声明行
+            # 过滤掉空行、注释、yaml 结构头
             if line and not line.startswith('#') and not line.startswith('payload:'):
                 count += 1
     return count
 
-def update_readme(rule_count):
-    # 读取现有的 README.md
-    with open('README.md', 'r', encoding='utf-8') as f:
+def update_readme(stats):
+    readme_path = 'README.md'
+    # 如果文件不存在，先创建一个基础模板
+    if not os.path.exists(readme_path):
+        with open(readme_path, 'w', encoding='utf-8') as f:
+            f.write("# 我的 Mihomo 分流规则库\n\n## 规则统计\n")
+
+    with open(readme_path, 'r', encoding='utf-8') as f:
         content = f.read()
-    
-    # 用正则替换掉旧的统计数字 (假设你在 README 里预留了 "当前规则数: 1234" 这样的文本)
-    new_content = re.sub(r'当前规则数: \d+', f'当前规则数: {rule_count}', content)
-    
-    # 把新的数量写回 README.md
-    with open('README.md', 'w', encoding='utf-8') as f:
+
+    # 构建统计表格
+    table_content = "### 📊 规则统计详情\n\n| 规则集名称 | 规则数量 |\n| :--- | :--- |\n"
+    total = 0
+    for name, count in stats.items():
+        table_content += f"| {name} | {count} |\n"
+        total += count
+    table_content += f"| **总计** | **{total}** |\n"
+
+    # 使用正则定位并替换。如果 README 里还没这部分，就直接追加在最后
+    marker = "### 📊 规则统计详情"
+    if marker in content:
+        # 这种正则比较暴力，直接定位到表格末尾（假设表格后面没有重要内容）
+        new_content = re.sub(r'### 📊 规则统计详情.*?(?=\n\n|$)', table_content, content, flags=re.DOTALL)
+    else:
+        new_content = content + "\n\n" + table_content
+
+    with open(readme_path, 'w', encoding='utf-8') as f:
         f.write(new_content)
 
 if __name__ == '__main__':
-    # 假设我们要统计你那个核心的 Google 规则集
-    target_file = 'google-android.yaml'
-    if os.path.exists(target_file):
-        total_rules = count_rules_in_file(target_file)
-        print(f"统计完成，共 {total_rules} 条规则。")
-        update_readme(total_rules)
+    results = {}
+    for file in RULE_FILES:
+        count = count_rules_in_file(file)
+        results[file] = count
+        print(f"文件 {file}: 统计到 {count} 条规则")
+    
+    update_readme(results)
