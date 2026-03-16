@@ -17,10 +17,11 @@ def process_rules():
         header, raw_rules = [], []
         for line in content:
             clean = line.strip()
+            # 保持 payload: 声明和前面的注释不动
             if clean.startswith('payload:') or clean.startswith('#') or not clean:
                 if not raw_rules: header.append(line)
             else:
-                # 统一去掉开头的 - 和空格，方便排序去重
+                # 统一去掉开头的 - 和空格
                 raw_rules.append(re.sub(r'^-\s*', '', clean))
 
         unique_raw_rules = sorted(list(set(raw_rules)))
@@ -34,7 +35,7 @@ def process_rules():
 
 def update_readme(stats, total_unique):
     readme_path = os.path.join(BASE_DIR, 'README.md')
-    # 定义占位符标记
+    # 定义 HTML 占位符（在页面上不可见，但脚本能认出）
     start_marker = ""
     end_marker = ""
     
@@ -49,16 +50,14 @@ def update_readme(stats, total_unique):
         with open(readme_path, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        # 如果 README 里已经有占位符，就替换中间的内容
+        # 核心逻辑：精准替换两个标记之间的一切内容
         if start_marker in content and end_marker in content:
             pattern = f"{re.escape(start_marker)}.*?{re.escape(end_marker)}"
             new_content = re.sub(pattern, new_stats_block, content, flags=re.DOTALL)
         else:
-            # 如果没有占位符，直接把旧的“统计详情”连根拔起替换掉，或者追加
-            if "### 📊 规则统计详情" in content:
-                new_content = re.sub(r"### 📊 规则统计详情.*", new_stats_block, content, flags=re.DOTALL)
-            else:
-                new_content = content.strip() + "\n\n" + new_stats_block
+            # 如果没找到标记，就把之前的乱七八糟表格连根拔起，重新初始化
+            clean_content = re.sub(r"### 📊 规则统计详情.*", "", content, flags=re.DOTALL).strip()
+            new_content = clean_content + "\n\n" + new_stats_block
     else:
         new_content = "# 我的 Mihomo 分流规则库\n\n" + new_stats_block
 
