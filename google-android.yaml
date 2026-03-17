@@ -9,7 +9,7 @@ payload:
   - 'DOMAIN-SUFFIX,gstatic.com'
   - 'DOMAIN-SUFFIX,youtube.com'
   - 'DOMAIN-SUFFIX,ytimg.com'
-  - 'IP-ASN,15169'
+  
   - 'PROCESS-NAME,com.android.vending'
   - 'PROCESS-NAME,com.google.android.apps.bard'
   - 'PROCESS-NAME,com.google.android.apps.googleassistant'
@@ -22,4 +22,6 @@ payload:
   - 'PROCESS-NAME,com.google.android.googlequicksearchbox'
   - 'PROCESS-NAME,com.google.android.gsf'
   - 'PROCESS-NAME,com.google.android.youtube'
+ 
+  - 'IP-ASN,15169'
 
