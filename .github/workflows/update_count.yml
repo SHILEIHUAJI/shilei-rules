@@ -3,14 +3,17 @@ name: Auto Update Rule Count
 on:
   push:
     branches:
-      - main  # 确认你的主分支叫 main 还是 master
+      - main
 
 jobs:
   update-readme:
+    # 这一行是关键：明确赋予机器人写仓库的权限
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4  # 用最新的 v4 更稳
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -18,12 +21,12 @@ jobs:
           python-version: '3.9'
 
       - name: Run count script
-        # 显式使用 python 命令并在根目录运行
         run: python count_rules.py
 
       - name: Commit and Push changes
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
+          # 使用 git add . 确保规则文件的去重修改也能同步上去
+          git add .
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore: 自动更新规则统计" && git push)
