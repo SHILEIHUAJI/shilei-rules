@@ -1,12 +1,13 @@
 <!-- STATS_START -->
-### 📊 规则统计详情
+### 📊 规则库深度审计
 
-| 规则集名称 | 唯一规则数量 |
-| :--- | :--- |
-| google-android.yaml | 22 |
-| bytedance-global.yaml | 21 |
-| cn-direct.yaml | 185 |
-| **全库去重总计** | **228** |
+| 规则集文件 | 总计 | Suffix | Domain | IP/ASN | 其他 |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| google-android.yaml | **22** | 7 | 2 | 1 | 12 |
+| bytedance-global.yaml | **21** | 11 | 7 | 0 | 3 |
+| cn-direct.yaml | **185** | 181 | 4 | 0 | 0 |
+
+> **全库去重后的唯一规则总数：228**
 
 <!-- STATS_END -->
 
