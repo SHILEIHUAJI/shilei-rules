@@ -26,7 +26,8 @@
 
     rules
       - RULE-SET,bytedance-global,Tiktok,no-resolve
-## 关于规则集的详细配置，请参考 [Mihomo 官方文档](https://wiki.metacubex.one/config/rule-providers/)。
+
+## 关于规则集的详细配置，请参考 [Mihomo 官方文档](https://wiki.metacubex.one/config/rule-providers/)
 
 
 # 状态
