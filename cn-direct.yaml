@@ -6,6 +6,7 @@ payload:
   - 'DOMAIN,tse2-mm.cn.bing.net'
   - 'DOMAIN-SUFFIX,123684.com'
   - 'DOMAIN-SUFFIX,123pan.com'
+  - 'DOMAIN-SUFFIX,mt2.cn'
   - 'DOMAIN-SUFFIX,126.com'
   - 'DOMAIN-SUFFIX,163.com'
   - 'DOMAIN-SUFFIX,163yun.com'
