@@ -2,31 +2,33 @@ name: Auto Update Rule Count
 
 on:
   push:
+    paths:
+      - '**.yaml'                # 只有 YAML 文件变动时触发
+      - 'count_rules.py'         # 脚本本身变动时触发
     branches:
-      - main
+      - main                     # 或者是你的主分支名称
+  workflow_dispatch:             # 保留手动触发按钮，方便调试
 
 jobs:
   update-readme:
-    # 这一行是关键：明确赋予机器人写仓库的权限
-    permissions:
-      contents: write
     runs-on: ubuntu-latest
+    permissions:
+      contents: write            # 核心：必须赋予写权限
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.x'
 
       - name: Run count script
         run: python count_rules.py
 
       - name: Commit and Push changes
         run: |
-          git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          # 使用 git add . 确保规则文件的去重修改也能同步上去
-          git add .
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: 自动更新规则统计" && git push)
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "📊 自动更新规则统计报告" && git push)
