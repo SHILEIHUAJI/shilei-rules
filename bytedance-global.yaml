@@ -1,12 +1,6 @@
 behavior: classical
 payload:
   - 'DOMAIN,sp.v2.udp-over-tcp.arpa'
-  - 'DOMAIN-KEYWORD,common-sign'
-  - 'DOMAIN-KEYWORD,pull-w5'
-  - 'DOMAIN-KEYWORD,push-rtmp'
-  - 'DOMAIN-KEYWORD,tiktok'
-  - 'DOMAIN-KEYWORD,tiktokcdn'
-  - 'DOMAIN-KEYWORD,tiktokv'
   - 'DOMAIN-SUFFIX,appsflyersdk.com'
   - 'DOMAIN-SUFFIX,byteoversea.com'
   - 'DOMAIN-SUFFIX,ibyteimg.com'
@@ -18,6 +12,10 @@ payload:
   - 'DOMAIN-SUFFIX,tiktokv.com'
   - 'DOMAIN-SUFFIX,tiktokv.us'
   - 'DOMAIN-SUFFIX,ttcdn-us.com'
+  - 'DOMAIN-KEYWORD,common-sign'
+  - 'DOMAIN-KEYWORD,tiktok'
+  - 'DOMAIN-KEYWORD,pull-w5'
+  - 'DOMAIN-KEYWORD,push-rtmp'
   - 'PROCESS-NAME,com.bd.nproject'
   - 'PROCESS-NAME,com.ss.android.ugc.trill'
   - 'PROCESS-NAME,com.zhiliaoapp.musically'
