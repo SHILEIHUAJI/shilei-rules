@@ -1,3 +1,4 @@
+behavior: classical
 payload:
   - 'DOMAIN,cn.bing.com'
   - 'DOMAIN,th.bing.com'
@@ -184,4 +185,3 @@ payload:
   - 'DOMAIN-SUFFIX,zijieapi.com'
   - 'DOMAIN-SUFFIX,zjurl.cn'
   - 'DOMAIN-SUFFIX,zol.com.cn'
-  - behavior: classical
