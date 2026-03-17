@@ -15,6 +15,7 @@
 # 专属规则集功能
 国内直连,谷歌全家桶,字节跳动海外规则 (TikTok, Lemon8, 关联拉流域名，建议配合no-resolve使用
 # 使用方法
+
     rule-providers:
       bytedance-global:
         type:http
@@ -23,8 +24,10 @@
         path:./ruleset/bytedance_global.yaml
         interval:86400
 
-    Rules
+    rules
       - RULE-SET,bytedance-global,Tiktok,no-resolve
+## 关于规则集的详细配置，请参考 [Mihomo 官方文档](https://wiki.metacubex.one/config/rule-providers/)。
+
 
 # 状态
 规则集维护中
