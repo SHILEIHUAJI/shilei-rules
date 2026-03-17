@@ -3,10 +3,10 @@
 
 | 规则集名称 | 唯一规则数量 |
 | :--- | :--- |
-| bytedance-global.yaml | 21 |
+| bytedance-global.yaml | 19 |
 | cn-direct.yaml | 186 |
 | google-android.yaml | 22 |
-| **全库去重总计** | **229** |
+| **全库去重总计** | **227** |
 
 <!-- STATS_END -->
 
