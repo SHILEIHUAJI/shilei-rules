@@ -1,3 +1,4 @@
+behavior: classical
 payload:
   - 'DOMAIN,sp.v2.udp-over-tcp.arpa'
   - 'DOMAIN-KEYWORD,common-sign'
@@ -20,4 +21,4 @@ payload:
   - 'PROCESS-NAME,com.bd.nproject'
   - 'PROCESS-NAME,com.ss.android.ugc.trill'
   - 'PROCESS-NAME,com.zhiliaoapp.musically'
-  - behavior: classical
+  
