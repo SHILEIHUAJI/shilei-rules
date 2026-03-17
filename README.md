@@ -12,7 +12,7 @@
         interval:86400
 
     Rules
-      - RULE-SET,bytedanc-eglobal,Tiktok,no-resolve
+      - RULE-SET,bytedance-global,Tiktok,no-resolve
 
 # 状态
 规则集维护中
