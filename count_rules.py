@@ -1,18 +1,20 @@
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-# 你的规则文件列表
-RULE_FILES = ['google-android.yaml', 'bytedance-global.yaml', 'cn-direct.yaml']
+
+# 如果有不想统计的 YAML（如订阅配置），填在这里
+IGNORE_FILES = ['config.yaml', 'nodes.yaml']
 
 def update_readme(stats, total_unique):
     readme_path = os.path.join(BASE_DIR, 'README.md')
-    # 物理拼接标记，防止被屏蔽
+    # 物理拼接，确保暗号不被任何环境拦截
     s_m = "<" + "!-- STATS_START --" + ">"
     e_m = "<" + "!-- STATS_END --" + ">"
     
     table = f"\n### 📊 规则统计详情\n\n| 规则集名称 | 唯一规则数量 |\n| :--- | :--- |\n"
-    for name, count in stats.items():
-        table += f"| {name} | {count} |\n"
+    # 按文件名排序，让表格看起来更整齐
+    for name in sorted(stats.keys()):
+        table += f"| {name} | {stats[name]} |\n"
     table += f"| **全库去重总计** | **{total_unique}** |\n\n"
 
     new_block = s_m + table + e_m
@@ -21,9 +23,9 @@ def update_readme(stats, total_unique):
         with open(readme_path, 'r', encoding='utf-8') as f:
             content = f.read()
         if s_m in content and e_m in content:
-            pre = content.split(s_m)[0]
-            post = content.split(e_m)[1]
-            new_content = pre + new_block + post
+            parts_pre = content.split(s_m)[0]
+            parts_post = content.split(e_m)[1]
+            new_content = parts_pre + new_block + parts_post
         else:
             new_content = content.strip() + "\n\n" + new_block
     else:
@@ -35,21 +37,26 @@ def update_readme(stats, total_unique):
 if __name__ == '__main__':
     res, all_rules_set = {}, set()
     
-    for f_name in RULE_FILES:
+    # --- 自动化扫描：获取目录下所有 .yaml 文件 ---
+    yaml_files = [f for f in os.listdir(BASE_DIR) 
+                  if f.endswith('.yaml') and f not in IGNORE_FILES]
+    
+    for f_name in yaml_files:
         path = os.path.join(BASE_DIR, f_name)
         if os.path.exists(path):
             file_rules = set()
             with open(path, 'r', encoding='utf-8') as f:
                 for line in f:
                     clean = line.strip()
-                    # 仅仅统计以 "- " 开头的行，但不修改原文件
+                    # 核心逻辑：只读取以 "- " 开头的行，保留你的原汁原味
                     if clean.startswith('- '):
+                        # 剔除注释部分再进行统计计数
                         rule_content = clean.lstrip('- ').split(' #')[0].strip()
-                        if rule_content and rule_content != "payload:":
+                        if rule_content and rule_content.lower() != "payload:":
                             file_rules.add(rule_content)
             
             res[f_name] = len(file_rules)
             all_rules_set.update(file_rules)
     
-    # 这里只更新 README，不再 open(path, 'w') 你的 YAML 文件
+    # 仅更新 README，绝对不碰你的规则文件
     update_readme(res, len(all_rules_set))
