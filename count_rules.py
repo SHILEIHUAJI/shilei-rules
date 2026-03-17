@@ -1,34 +1,39 @@
 import os
 
+# 基础配置
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 RULE_FILES = ['google-android.yaml', 'bytedance-global.yaml', 'cn-direct.yaml']
 
 def update_readme(stats, total_unique):
     readme_path = os.path.join(BASE_DIR, 'README.md')
     
-    # 用拼接的方式，防止聊天软件把尖括号隐藏掉！
-    start_marker = "<" + "!-- STATS_START --" + ">"
-    end_marker = "<" + "!-- STATS_END --" + ">"
+    # 彻底拆分，确保不被任何编辑器或聊天软件拦截
+    s_m = "<" + "!-- STATS_START --" + ">"
+    e_m = "<" + "!-- STATS_END --" + ">"
     
-    table = f"\n### 📊 规则统计详情\n\n| 规则集名称 | 唯一规则数量 |\n| :--- | :--- |\n"
+    table_head = "\n### 📊 规则统计详情\n\n| 规则集名称 | 唯一规则数量 |\n| :--- | :--- |\n"
+    table_body = ""
     for name, count in stats.items():
-        table += f"| {name} | {count} |\n"
-    table += f"| **全库去重总计** | **{total_unique}** |\n\n"
+        table_body += f"| {name} | {count} |\n"
+    table_footer = f"| **全库去重总计** | **{total_unique}** |\n\n"
 
-    new_block = f"{start_marker}{table}{end_marker}"
+    new_block = s_m + table_head + table_body + table_footer + e_m
 
+    # 逻辑：读取、替换或创建
     if os.path.exists(readme_path):
         with open(readme_path, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        if start_marker in content and end_marker in content:
-            parts = content.split(start_marker)
-            post_parts = parts[1].split(end_marker)
-            new_content = parts[0] + new_block + post_parts[1]
+        if s_m in content and e_m in content:
+            # 精准切片替换
+            pre = content.split(s_m)[0]
+            post = content.split(e_m)[1]
+            new_content = pre + new_block + post
         else:
-            new_content = new_block + "\n\n" + content
+            # 没找到标记就追加
+            new_content = content.strip() + "\n\n" + new_block
     else:
-        new_content = "# 我的规则库\n\n" + new_block
+        new_content = "# Rules\n\n" + new_block
 
     with open(readme_path, 'w', encoding='utf-8') as f:
         f.write(new_content)
@@ -38,11 +43,15 @@ if __name__ == '__main__':
     for f_name in RULE_FILES:
         path = os.path.join(BASE_DIR, f_name)
         if os.path.exists(path):
+            current_rules = []
             with open(path, 'r', encoding='utf-8') as f:
-                rules = [l.strip().lstrip('- ') for l in f if l.strip() and not l.strip().startswith(('#', 'payload:'))]
+                for line in f:
+                    c = line.strip().lstrip('- ')
+                    if c and not c.startswith(('#', 'payload:')):
+                        current_rules.append(c)
             
-            unique_list = sorted(list(set(rules)))
-            
+            # 去重、排序并写回文件
+            unique_list = sorted(list(set(current_rules)))
             with open(path, 'w', encoding='utf-8') as f:
                 f.write("payload:\n")
                 for r in unique_list:
