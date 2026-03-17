@@ -210,6 +210,7 @@ payload:
   - 'DOMAIN-SUFFIX,zijieapi.com'
   - 'DOMAIN-SUFFIX,zjurl.cn'
   - 'DOMAIN-SUFFIX,zol.com.cn'
+  - 'IP-ASN,140292'
   - 'IP-ASN,4134'
   - 'IP-ASN,4811'
   - 'IP-ASN,137697'
