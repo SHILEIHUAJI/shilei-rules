@@ -4,9 +4,9 @@
 | 规则集名称 | 唯一规则数量 |
 | :--- | :--- |
 | bytedance-global.yaml | 19 |
-| cn-direct.yaml | 186 |
+| cn-direct.yaml | 210 |
 | google-android.yaml | 22 |
-| **全库去重总计** | **227** |
+| **全库去重总计** | **251** |
 
 <!-- STATS_END -->
 
