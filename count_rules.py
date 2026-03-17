@@ -12,7 +12,7 @@ def update_readme(stats, total_unique):
     e_m = "<" + "!-- STATS_END --" + ">"
     
     table = f"\n### 📊 规则统计详情\n\n| 规则集名称 | 唯一规则数量 |\n| :--- | :--- |\n"
-    # 按文件名排序，让表格看起来更整齐
+    # 按文件名排序
     for name in sorted(stats.keys()):
         table += f"| {name} | {stats[name]} |\n"
     table += f"| **全库去重总计** | **{total_unique}** |\n\n"
@@ -58,5 +58,5 @@ if __name__ == '__main__':
             res[f_name] = len(file_rules)
             all_rules_set.update(file_rules)
     
-    # 仅更新 README，绝对不碰你的规则文件
+    # 仅更新 README
     update_readme(res, len(all_rules_set))
