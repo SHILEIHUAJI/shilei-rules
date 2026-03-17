@@ -1,30 +1,23 @@
-# 字节跳动海外规则 (Bytedance Global)
-# 包含：TikTok, Lemon8
-# 支持linux Android macOS ios Windows 
-behavior: classical
 payload:
-  - 'DOMAIN-SUFFIX,appsflyersdk.com'
-  - 'DOMAIN-SUFFIX,byteoversea.com'
-  - 'DOMAIN-SUFFIX,ibyteimg.com'
-  - 'DOMAIN-SUFFIX,musical.ly' 
-  - 'DOMAIN-SUFFIX,tik-tokapi.com'
-  - 'DOMAIN-SUFFIX,tiktok.com' 
-  - 'DOMAIN-SUFFIX,tiktokcdn-us.com'
-  - 'DOMAIN-SUFFIX,tiktokv.com' 
-  - 'DOMAIN-SUFFIX,tiktokv.us'
-  - 'DOMAIN-SUFFIX,ttcdn-us.com'
-  - 'DOMAIN-SUFFIX,lemon8-app.com'
- 
   - 'DOMAIN,sp.v2.udp-over-tcp.arpa'
-  
   - 'DOMAIN-KEYWORD,common-sign'
   - 'DOMAIN-KEYWORD,pull-w5'
   - 'DOMAIN-KEYWORD,push-rtmp'
-  - 'DOMAIN-KEYWORD,tiktok'          
+  - 'DOMAIN-KEYWORD,tiktok'
   - 'DOMAIN-KEYWORD,tiktokcdn'
   - 'DOMAIN-KEYWORD,tiktokv'
-
+  - 'DOMAIN-SUFFIX,appsflyersdk.com'
+  - 'DOMAIN-SUFFIX,byteoversea.com'
+  - 'DOMAIN-SUFFIX,ibyteimg.com'
+  - 'DOMAIN-SUFFIX,lemon8-app.com'
+  - 'DOMAIN-SUFFIX,musical.ly'
+  - 'DOMAIN-SUFFIX,tik-tokapi.com'
+  - 'DOMAIN-SUFFIX,tiktok.com'
+  - 'DOMAIN-SUFFIX,tiktokcdn-us.com'
+  - 'DOMAIN-SUFFIX,tiktokv.com'
+  - 'DOMAIN-SUFFIX,tiktokv.us'
+  - 'DOMAIN-SUFFIX,ttcdn-us.com'
+  - 'PROCESS-NAME,com.bd.nproject'
   - 'PROCESS-NAME,com.ss.android.ugc.trill'
   - 'PROCESS-NAME,com.zhiliaoapp.musically'
-  - 'PROCESS-NAME,com.bd.nproject'
-  
+  - behavior: classical

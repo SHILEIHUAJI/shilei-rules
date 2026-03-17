@@ -1,40 +1,24 @@
-# Google rules
-behavior: classical
 payload:
-# DOMAIN
   - 'DOMAIN,mtalk.google.com'
+  - 'DOMAIN-KEYWORD,google'
+  - 'DOMAIN-SUFFIX,ggpht.com'
+  - 'DOMAIN-SUFFIX,google.com'
   - 'DOMAIN-SUFFIX,googleapis.cn'
   - 'DOMAIN-SUFFIX,googlevideo.com'
-  - 'DOMAIN-SUFFIX,ytimg.com'
-  - 'DOMAIN-SUFFIX,ggpht.com'
-  - 'DOMAIN-SUFFIX,youtube.com'
-  - 'DOMAIN-SUFFIX,google.com'
   - 'DOMAIN-SUFFIX,gstatic.com'
-  - 'DOMAIN-KEYWORD,google'
-
-# 谷歌商店、谷歌服务、谷歌框架
+  - 'DOMAIN-SUFFIX,youtube.com'
+  - 'DOMAIN-SUFFIX,ytimg.com'
+  - 'IP-ASN,15169'
   - 'PROCESS-NAME,com.android.vending'
-  - 'PROCESS-NAME,com.google.android.gms'
-  - 'PROCESS-NAME,com.google.android.gsf'
-
-# 主要业务
-  - 'PROCESS-NAME,com.google.android.youtube'
-  - 'PROCESS-NAME,com.google.android.gm'
   - 'PROCESS-NAME,com.google.android.apps.bard'
-  - 'PROCESS-NAME,com.google.android.googlequicksearchbox'
-  - 'PROCESS-NAME,com.google.android.youtube'
+  - 'PROCESS-NAME,com.google.android.apps.googleassistant'
   - 'PROCESS-NAME,com.google.android.apps.maps'
   - 'PROCESS-NAME,com.google.android.apps.photos'
   - 'PROCESS-NAME,com.google.android.apps.translate'
   - 'PROCESS-NAME,com.google.android.calculator'
-  - 'PROCESS-NAME,com.google.android.apps.googleassistant'
-
-  - 'IP-ASN,15169'
-
-
-
-
-
-
-  
-  
+  - 'PROCESS-NAME,com.google.android.gm'
+  - 'PROCESS-NAME,com.google.android.gms'
+  - 'PROCESS-NAME,com.google.android.googlequicksearchbox'
+  - 'PROCESS-NAME,com.google.android.gsf'
+  - 'PROCESS-NAME,com.google.android.youtube'
+  - behavior: classical
