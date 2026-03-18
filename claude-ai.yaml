@@ -1,0 +1,8 @@
+behavior: classical
+payload:
+  - 'DOMAIN-SUFFIX,us5-datadoghq.com'
+  - 'DOMAIN-SUFFIX,claudeusercontent.com'
+  - 'DOMAIN-SUFFIX,claude.ai'
+  - 'DOMAIN-SUFFIX,anthropic.com'
+  - 'DOMAIN-SUFFIX,datadoghq.com'
+  - 'PROCESS-NAME,com.anthropic.claude'
