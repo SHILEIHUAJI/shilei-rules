@@ -18,8 +18,6 @@
 建议配合no-resolv
 
 ## 配置示例 
-## 内核检验会遇到如下错误,请忽略。如果在意,请放弃使用此规则。
-## provider is Classical, only matching it contain domain rule
     rule-providers:
       bytedance-global:
         type:http
@@ -30,6 +28,9 @@
 
     rules
       - RULE-SET,bytedance-global,Tiktok,no-resolve
+
+## 内核检验会遇到如下错误,请忽略。如果在意,请放弃使用此规则。
+    provider is Classical, only matching it contain domain rule
 
 ### 关于规则集的详细配置，请参考 [Mihomo 官方文档](https://wiki.metacubex.one/config/rule-providers/)
 
