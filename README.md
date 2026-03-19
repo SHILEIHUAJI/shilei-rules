@@ -11,24 +11,27 @@
 
 <!-- STATS_END -->
 
-# 🐱 Shilei Rules 定制规则库
+# 🐱 Shilei Rules 极致分流
 简介：个人维护的 Mihomo (Clash Meta) 规则库
-# 专属规则集功能
-国内直连,谷歌全家桶,字节跳动海外规则 (TikTok, Lemon8, 关联拉流域名，建议配合no-resolve使用
-# 使用方法
 
+# 专属规则集功能
+建议配合no-resolv
+
+## 配置示例 
+## 内核检验会遇到如下错误,请忽略。如果在意,请放弃使用此规则。
+## provider is Classical, only matching it contain domain rule
     rule-providers:
       bytedance-global:
         type:http
         behavior:classical
-        url："RAW链接”
+        url："”
         path:./ruleset/bytedance_global.yaml
         interval:86400
 
     rules
       - RULE-SET,bytedance-global,Tiktok,no-resolve
 
-## 关于规则集的详细配置，请参考 [Mihomo 官方文档](https://wiki.metacubex.one/config/rule-providers/)
+### 关于规则集的详细配置，请参考 [Mihomo 官方文档](https://wiki.metacubex.one/config/rule-providers/)
 
 
 # 状态
