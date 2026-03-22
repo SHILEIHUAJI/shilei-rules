@@ -5,9 +5,10 @@
 | :--- | :--- |
 | bytedance-global.yaml | 19 |
 | claude-ai.yaml | 6 |
+| cn-direct-pro.yaml | 8 |
 | cn-direct.yaml | 214 |
 | google-android.yaml | 22 |
-| **全库去重总计** | **261** |
+| **全库去重总计** | **269** |
 
 <!-- STATS_END -->
 
