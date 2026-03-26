@@ -7,8 +7,8 @@
 | claude-ai.yaml | 6 |
 | cn-direct-pro.yaml | 17 |
 | cn-direct.yaml | 215 |
-| google-android.yaml | 22 |
-| **全库去重总计** | **279** |
+| google-android.yaml | 23 |
+| **全库去重总计** | **280** |
 
 <!-- STATS_END -->
 
