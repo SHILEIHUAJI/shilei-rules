@@ -1,4 +1,4 @@
-behavior: classical
+behavior: ipcidr
 payload:
   - 'IP-CIDR,101.226.0.0/16'
   - 'IP-ASN,4134'
