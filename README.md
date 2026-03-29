@@ -8,7 +8,8 @@
 | cn-direct-pro.yaml | 17 |
 | cn-direct.yaml | 215 |
 | google-android.yaml | 26 |
-| **全库去重总计** | **283** |
+| telegram-ip-pro.yaml | 16 |
+| **全库去重总计** | **299** |
 
 <!-- STATS_END -->
 
