@@ -24,5 +24,6 @@ payload:
   - 'PROCESS-NAME,com.google.android.googlequicksearchbox'
   - 'PROCESS-NAME,com.google.android.gsf'
   - 'PROCESS-NAME,com.google.android.youtube'
+  - 'PROCESS-NAME,com.google.android.apps.youtube.music'
   - 'IP-ASN,15169'
 
