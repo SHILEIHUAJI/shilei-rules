@@ -14,4 +14,4 @@
     curl -H "Authorization: Bearer 你的密钥" http://127.0.0.1:9090/configs
 
 # 保存日志命令
-    curl -H "Authorization: Bearer 你的密钥" "http://127.0.0.1:9090/logs?level=info" > clash_log.txt
+    curl -H "Authorization: Bearer 你的密钥" "http://127.0.0.1:9090/logs?level=info" > /本地路径/clash_log.txt
