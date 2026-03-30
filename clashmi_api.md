@@ -13,3 +13,5 @@
 # ​查看当前的配置信息
     curl -H "Authorization: Bearer 你的密钥" http://127.0.0.1:9090/configs
 
+# 保存日志命令
+    curl -H "Authorization: Bearer 你的密钥" "http://127.0.0.1:9090/logs?level=info" > clash_log.txt
