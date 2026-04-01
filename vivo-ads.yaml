@@ -1,6 +1,6 @@
 behavior: classical
 payload:
-  # 1. 组合规则：精准拦截APP+特定域名/协议
+  # 组合精准规则（你的核心，保留不动）
   - AND,((PROCESS-NAME,com.vivo.browser),(NETWORK,UDP))
   - AND,((DOMAIN-SUFFIX,baidu.com),(PROCESS-NAME,com.baidu.input_vivo))
   - AND,((DOMAIN-KEYWORD,vivo),(DOMAIN-KEYWORD,stsdk))
@@ -9,14 +9,16 @@ payload:
   - AND,((DOMAIN-KEYWORD,vivo),(DOMAIN-SUFFIX,baidu.com))
   - AND,((PROCESS-NAME,com.vivo.safecenter),(DOMAIN-KEYWORD,jd))
 
-  # 2. 通用统计关键词拦截
+  # 通用统计/广告关键词
   - DOMAIN-KEYWORD,statis
   - DOMAIN-KEYWORD,adxlog
   - DOMAIN-KEYWORD,dsplog
   - DOMAIN-KEYWORD,vivoad
 
-  # 3. VIVO 广告相关域名（精准+通配）
+  # ========== VIVO 广告域名（原+精简）==========
   - DOMAIN-WILDCARD,*.ad.vivo.com.cn
+  - DOMAIN-WILDCARD,*.update.vivo.com.cn
+  - DOMAIN-WILDCARD,*.track.vivo.com.cn
   - DOMAIN,adreq.vivo.com.cn
   - DOMAIN,adh5.vivo.com.cn
   - DOMAIN,tracking-adnet.vivo.com.cn
@@ -28,38 +30,55 @@ payload:
   - DOMAIN,open-ad.vivo.com.cn
   - DOMAIN,ad-market.vivo.com.cn
   - DOMAIN,marketing-api.vivo.com.cn
+  - DOMAIN,adsdk.vivo.com.cn
+  - DOMAIN,push-ad.vivo.com.cn
+  - DOMAIN,ad-service.vivo.com.cn
 
-  # 4. VIVO 统计&日志&数据上报
+  # ========== VIVO 统计/日志/上报（原+精简）==========
   - DOMAIN-WILDCARD,*.log.vivo.com.cn
   - DOMAIN-WILDCARD,*.stat.vivo.com.cn
   - DOMAIN-WILDCARD,*.stsdk.vivo.com.cn
   - DOMAIN,bi-mobile.vivo.com.cn
   - DOMAIN,bi-wcs-loan-prd.vivo.com.cn
   - DOMAIN,st-cpdmonitor.vivo.com.cn
+  - DOMAIN,staticsdk.vivo.com.cn
+  - DOMAIN,data-collect.vivo.com.cn
+  - DOMAIN,logcollect.vivo.com.cn
+  - DOMAIN,wallet-stat.vivo.com.cn
+  - DOMAIN,marketing-stat.vivo.com.cn
 
-  # 5. VIVO 系统升级&验证
+  # ========== VIVO 系统/升级域名 ==========
   - DOMAIN,stappupgrade.vivo.com.cn
   - DOMAIN,appupgrade.vivo.com.cn
   - DOMAIN,isecure.vivo.com.cn
   - DOMAIN,vcode-api.vivo.com.cn
 
-  # 6. 第三方广告&追踪域名
+  # ========== 第三方广告&追踪（原+补充）==========
   - DOMAIN,map.baidu.com
   - DOMAIN,lookup.api.bsb.baidu.com
+  - DOMAIN,bdstat.baidu.com
   - DOMAIN,ad.hunyuan.tencent.com
   - DOMAIN,tdid.m.qq.com
+  - DOMAIN,btrace.qq.com
   - DOMAIN,api.adprod.cn
   - DOMAIN,usergrowth.ecombdapi.com
   - DOMAIN,alsc-ug-monitor-callback.alibaba.com
+  - DOMAIN,track.taobao.com
+  - DOMAIN,stat.aliyun.com
+  - DOMAIN,track.aliyun.com
   - DOMAIN,msch.f.360.cn
   - DOMAIN,pull-tsl-spe-l3.douyinliving.com
+  - DOMAIN,log.snssdk.com
+  - DOMAIN,analytics.snssdk.com
   - DOMAIN,rtb-adtrack-yun.quark.cn
   - DOMAIN,vhs.wwstat.com
   - DOMAIN,csybyyh.com
   - DOMAIN-SUFFIX,kaixinkan.com.cn
   - DOMAIN-SUFFIX,news.vivo.com.cn
+  - DOMAIN,monitor.youku.com
+  - DOMAIN,log.uc.cn
 
-  # 7. 拦截进程：自带APP后台联网/上报
+  # ========== 拦截进程（原+去重+补充）==========
   - PROCESS-NAME,com.vivo.browser
   - PROCESS-NAME,com.android.browser
   - PROCESS-NAME,com.vivo.safecenter
@@ -67,8 +86,14 @@ payload:
   - PROCESS-NAME,com.vivo.pushservice
   - PROCESS-NAME,com.vivo.space
   - PROCESS-NAME,com.bbk.cloud
+  - PROCESS-NAME,com.bbk.account
   - PROCESS-NAME,com.vivo.gamecube
   - PROCESS-NAME,com.vivo.gallery
-  - PROCESS-NAME,com.vivo.widget.gallery
   - PROCESS-NAME,com.android.filemanager
   - PROCESS-NAME,com.android.camera
+  - PROCESS-NAME,com.vivo.marketing
+  - PROCESS-NAME,com.vivo.adservice
+  - PROCESS-NAME,com.vivo.statistics
+  - PROCESS-NAME,com.vivo.partner
+  - PROCESS-NAME,com.vivo.promotion
+  - PROCESS-NAME,com.vivo.assistant
