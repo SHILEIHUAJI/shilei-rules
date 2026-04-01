@@ -80,20 +80,10 @@ payload:
 
   # ========== 拦截进程（原+去重+补充）==========
   - PROCESS-NAME,com.vivo.browser
-  - PROCESS-NAME,com.android.browser
-  - PROCESS-NAME,com.vivo.safecenter
   - PROCESS-NAME,com.iqoo.secure
   - PROCESS-NAME,com.vivo.pushservice
-  - PROCESS-NAME,com.vivo.space
   - PROCESS-NAME,com.bbk.cloud
   - PROCESS-NAME,com.bbk.account
-  - PROCESS-NAME,com.vivo.gamecube
   - PROCESS-NAME,com.vivo.gallery
   - PROCESS-NAME,com.android.filemanager
-  - PROCESS-NAME,com.android.camera
-  - PROCESS-NAME,com.vivo.marketing
-  - PROCESS-NAME,com.vivo.adservice
-  - PROCESS-NAME,com.vivo.statistics
   - PROCESS-NAME,com.vivo.partner
-  - PROCESS-NAME,com.vivo.promotion
-  - PROCESS-NAME,com.vivo.assistant
