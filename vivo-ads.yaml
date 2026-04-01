@@ -1,5 +1,6 @@
 behavior: classical
 payload:
+  # 1. 组合规则：精准拦截APP+特定域名/协议
   - AND,((PROCESS-NAME,com.vivo.browser),(NETWORK,UDP))
   - AND,((DOMAIN-SUFFIX,baidu.com),(PROCESS-NAME,com.baidu.input_vivo))
   - AND,((DOMAIN-KEYWORD,vivo),(DOMAIN-KEYWORD,stsdk))
@@ -8,64 +9,66 @@ payload:
   - AND,((DOMAIN-KEYWORD,vivo),(DOMAIN-SUFFIX,baidu.com))
   - AND,((PROCESS-NAME,com.vivo.safecenter),(DOMAIN-KEYWORD,jd))
 
-  - DOMAIN-KEYWORD,statis     # 拦截所有统计插件
-  - DOMAIN,stappupgrade.vivo.com.cn
-  - DOMAIN,appupgrade.vivo.com.cn
-  - DOMAIN,isecure.vivo.com.cn
-  - DOMAIN,vcode-api.vivo.com.cn
-  - DOMAIN,map.baidu.com
-  - DOMAIN,adxlog.vivo.com.cn
-  - DOMAIN,adreq.vivo.com.cn
-  - DOMAIN,adlog.vivo.com.cn
-  - DOMAIN,dsplog.vivo.com.cn
-  - DOMAIN,vhs.wwstat.com
-  - DOMAIN,rtb-adtrack-yun.quark.cn
-  - DOMAIN,ad.hunyuan.tencent.com
-  - DOMAIN,api.adprod.cn
-  - DOMAIN,usergrowth.ecombdapi.com
-  - DOMAIN,alsc-ug-monitor-callback.alibaba.com
-  - DOMAIN,tdid.m.qq.com
-  - DOMAIN,msch.f.360.cn
-  - DOMAIN,lookup.api.bsb.baidu.com
-  - DOMAIN,pull-tsl-spe-l3.douyinliving.com
-  - DOMAIN,csybyyh.com
+  # 2. 通用统计关键词拦截
+  - DOMAIN-KEYWORD,statis
+  - DOMAIN-KEYWORD,adxlog
+  - DOMAIN-KEYWORD,dsplog
   - DOMAIN-KEYWORD,vivoad
-  - DOMAIN-SUFFIX,kaixinkan.com.cn
-  - DOMAIN-SUFFIX,ad.vivo.com.cn
-  - DOMAIN-SUFFIX,stat.vivo.com.cn
-  - DOMAIN-SUFFIX,log.vivo.com.cn
-  - DOMAIN-SUFFIX,news.vivo.com.cn
-  - DOMAIN,ad-market.vivo.com.cn
-  - DOMAIN,marketing-api.vivo.com.cn
-  - DOMAIN,open-ad.vivo.com.cn
+
+  # 3. VIVO 广告相关域名（精准+通配）
+  - DOMAIN-WILDCARD,*.ad.vivo.com.cn
+  - DOMAIN,adreq.vivo.com.cn
+  - DOMAIN,adh5.vivo.com.cn
+  - DOMAIN,tracking-adnet.vivo.com.cn
+  - DOMAIN,sctrack.email.vivo.com.cn
   - DOMAIN,detail-adsapi.vivo.com.cn
   - DOMAIN,uapi-ads.vivo.com.cn
   - DOMAIN,st-ads-jssdk.vivo.com.cn
   - DOMAIN,st-adsgame.vivo.com.cn
-  - DOMAIN,adh5.vivo.com.cn
-  - DOMAIN-KEYWORD,adxlog  # 匹配 adxlog-test, adxlog-adnet
-  - DOMAIN-KEYWORD,dsplog  # 匹配 dsplog-test, dsplog-adnet
-  - DOMAIN,tracking-adnet.vivo.com.cn
-  - DOMAIN,sctrack.email.vivo.com.cn
-  # 数据收集与监控 (BI/Monitor)
-  # 注意：monitor-stsdk 可能是系统稳定性监控，如果发现系统报错可放行
+  - DOMAIN,open-ad.vivo.com.cn
+  - DOMAIN,ad-market.vivo.com.cn
+  - DOMAIN,marketing-api.vivo.com.cn
+
+  # 4. VIVO 统计&日志&数据上报
+  - DOMAIN-WILDCARD,*.log.vivo.com.cn
+  - DOMAIN-WILDCARD,*.stat.vivo.com.cn
+  - DOMAIN-WILDCARD,*.stsdk.vivo.com.cn
   - DOMAIN,bi-mobile.vivo.com.cn
   - DOMAIN,bi-wcs-loan-prd.vivo.com.cn
   - DOMAIN,st-cpdmonitor.vivo.com.cn
-  - DOMAIN-SUFFIX,stsdk.vivo.com.cn
 
-  - PROCESS-NAME,com.android.filemanager
-  - PROCESS-NAME,com.android.camera
-  - PROCESS-NAME,com.vivo.widget.gallery
-  - PROCESS-NAME,com.android.filemanager
-  - PROCESS-NAME,com.vivo.gamecube  # 游戏魔盒
+  # 5. VIVO 系统升级&验证
+  - DOMAIN,stappupgrade.vivo.com.cn
+  - DOMAIN,appupgrade.vivo.com.cn
+  - DOMAIN,isecure.vivo.com.cn
+  - DOMAIN,vcode-api.vivo.com.cn
+
+  # 6. 第三方广告&追踪域名
+  - DOMAIN,map.baidu.com
+  - DOMAIN,lookup.api.bsb.baidu.com
+  - DOMAIN,ad.hunyuan.tencent.com
+  - DOMAIN,tdid.m.qq.com
+  - DOMAIN,api.adprod.cn
+  - DOMAIN,usergrowth.ecombdapi.com
+  - DOMAIN,alsc-ug-monitor-callback.alibaba.com
+  - DOMAIN,msch.f.360.cn
+  - DOMAIN,pull-tsl-spe-l3.douyinliving.com
+  - DOMAIN,rtb-adtrack-yun.quark.cn
+  - DOMAIN,vhs.wwstat.com
+  - DOMAIN,csybyyh.com
+  - DOMAIN-SUFFIX,kaixinkan.com.cn
+  - DOMAIN-SUFFIX,news.vivo.com.cn
+
+  # 7. 拦截进程：自带APP后台联网/上报
   - PROCESS-NAME,com.vivo.browser
   - PROCESS-NAME,com.android.browser
-  - PROCESS-NAME,com.vivo.pushservice  # 推送服务
-  - PROCESS-NAME,com.vivo.safecenter   # 安全中心(往往伴随上传)
-  - PROCESS-NAME,com.vivo.space        # 乐园/空间
-  - PROCESS-NAME,com.bbk.cloud         # 云服务(如不需要备份可拦截)
-  # 🛑 Vivo 广告与追踪拦截 (黑名单)
-  # 营销与广告 API
+  - PROCESS-NAME,com.vivo.safecenter
+  - PROCESS-NAME,com.iqoo.secure
+  - PROCESS-NAME,com.vivo.pushservice
+  - PROCESS-NAME,com.vivo.space
+  - PROCESS-NAME,com.bbk.cloud
+  - PROCESS-NAME,com.vivo.gamecube
   - PROCESS-NAME,com.vivo.gallery
+  - PROCESS-NAME,com.vivo.widget.gallery
   - PROCESS-NAME,com.android.filemanager
+  - PROCESS-NAME,com.android.camera
