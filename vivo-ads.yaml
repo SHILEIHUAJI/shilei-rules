@@ -35,7 +35,7 @@ payload:
   - DOMAIN,ad-service.vivo.com.cn
   - DOMAIN,vcode-od.vivo.com.cn
   - DOMAIN,connection-center.vivo.com.cn
-
+  - DOMAIN,browserplat.vivo.com.cn
   # ========== VIVO 统计/日志/上报（原+精简）==========
   - DOMAIN-WILDCARD,*.log.vivo.com.cn
   - DOMAIN-WILDCARD,*.stat.vivo.com.cn
