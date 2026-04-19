@@ -1,4 +1,5 @@
 payload:
+  - '+.gh-proxy.org'
   - 'DOMAIN-SUFFIX,github.com'
   - '+.github.io'
   - 'DOMAIN-SUFFIX,pornhub.com'
