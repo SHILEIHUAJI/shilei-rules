@@ -9,4 +9,6 @@ payload:
   - 'DOMAIN-SUFFIX,dmm.sh'
   - 'DOMAIN-SUFFIX,sydney.bing.com'
   - 'DOMAIN-SUFFIX,jsdelivr.net'
-  
+  - 'DOMAIN-SUFFIX,missav.ws'
+  - 'DOMAIN-SUFFIX,missav.ai'
+  - 'DOMAIN-KEYWORD,missav'
