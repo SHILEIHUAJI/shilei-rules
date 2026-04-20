@@ -8,6 +8,7 @@ payload:
   - AND,((PROCESS-NAME,com.iqoo.secure),(DOMAIN-KEYWORD,baidu))
   - AND,((DOMAIN-KEYWORD,vivo),(DOMAIN-SUFFIX,baidu.com))
   - AND,((PROCESS-NAME,com.vivo.safecenter),(DOMAIN-KEYWORD,jd))
+  - AND,((DOMAIN-KEYWORD,vivo),(DOMAIN-KEYWORD,ad))
 
   # 通用统计/广告关键词
   - DOMAIN-KEYWORD,statis
