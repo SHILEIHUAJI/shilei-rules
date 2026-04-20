@@ -50,6 +50,7 @@ payload:
   - DOMAIN,marketing-stat.vivo.com.cn
 
   # ========== VIVO 系统/升级域名 ==========
+  - DOMAIN,st-sysupgrade.vivo.com.cn
   - DOMAIN,stappupgrade.vivo.com.cn
   - DOMAIN,appupgrade.vivo.com.cn
   - DOMAIN,isecure.vivo.com.cn
@@ -81,6 +82,7 @@ payload:
   - DOMAIN,log.uc.cn
 
   # ========== 拦截进程（原+去重+补充）==========
+  - PROCESS-NAME,com.bbk.updater
   - PROCESS-NAME,com.vivo.browser
   - PROCESS-NAME,com.iqoo.secure
   - PROCESS-NAME,com.vivo.pushservice
