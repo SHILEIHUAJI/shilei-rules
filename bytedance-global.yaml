@@ -1,4 +1,3 @@
-behavior: classical
 payload:
   - 'DOMAIN-SUFFIX,tiktokcdn-us.com'
   - 'DOMAIN-SUFFIX,tiktokv.us'
