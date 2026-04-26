@@ -1,5 +1,9 @@
 behavior: classical
 payload:
+  - 'DOMAIN-SUFFIX,tiktokcdn-us.com'
+  - 'DOMAIN-SUFFIX,tiktokv.us'
+  - 'DOMAIN-SUFFIX,ttcdn-us.com'
+  - 'DOMAIN-SUFFIX,tiktokv.com'
   - 'DOMAIN,sp.v2.udp-over-tcp.arpa'
   - 'DOMAIN-SUFFIX,appsflyersdk.com'
   - 'DOMAIN-SUFFIX,byteoversea.com'
@@ -8,10 +12,6 @@ payload:
   - 'DOMAIN-SUFFIX,musical.ly'
   - 'DOMAIN-SUFFIX,tik-tokapi.com'
   - 'DOMAIN-SUFFIX,tiktok.com'
-  - 'DOMAIN-SUFFIX,tiktokcdn-us.com'
-  - 'DOMAIN-SUFFIX,tiktokv.com'
-  - 'DOMAIN-SUFFIX,tiktokv.us'
-  - 'DOMAIN-SUFFIX,ttcdn-us.com'
   - 'DOMAIN-KEYWORD,common-sign'
   - 'DOMAIN-KEYWORD,tiktok'
   - 'DOMAIN-KEYWORD,pull-w5'
