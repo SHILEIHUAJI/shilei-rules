@@ -30,3 +30,5 @@ payload:
   - 'PROCESS-NAME,com.google.android.apps.messaging'
   - 'PROCESS-NAME,com.google.android.contacts'
   - 'PROCESS-NAME,com.google.android.calendar'
+  - 'PROCESS-NAME,com.google.android.deskclock
+  - 'PROCESS-NAME,com.google.android.inputmethod.latin
