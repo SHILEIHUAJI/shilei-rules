@@ -7,12 +7,12 @@
 | claude-ai.yaml | 6 |
 | cn-direct-pro.yaml | 17 |
 | cn-direct.yaml | 215 |
-| google-android.yaml | 27 |
+| google-android.yaml | 25 |
 | international-website.yaml | 19 |
 | telegram-ip-pro.yaml | 17 |
 | tv-player.yaml | 11 |
 | vivo-ads.yaml | 80 |
-| **全库去重总计** | **411** |
+| **全库去重总计** | **409** |
 
 <!-- STATS_END -->
 
