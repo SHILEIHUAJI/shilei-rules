@@ -25,4 +25,5 @@ payload:
   - 'PROCESS-NAME,com.google.android.youtube'
   - 'PROCESS-NAME,com.google.android.apps.youtube.music'
   - 'PROCESS-NAME,com.google.android.apps.labs.language.tailwind'
+  - 'PROCESS-NAME,com.google.ai.edge.gallery'
 
