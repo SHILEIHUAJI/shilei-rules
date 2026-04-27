@@ -26,4 +26,7 @@ payload:
   - 'PROCESS-NAME,com.google.android.apps.youtube.music'
   - 'PROCESS-NAME,com.google.android.apps.labs.language.tailwind'
   - 'PROCESS-NAME,com.google.ai.edge.gallery'
-
+  - 'PROCESS-NAME,com.google.android.dialer'
+  - 'PROCESS-NAME,com.google.android.apps.messaging'
+  - 'PROCESS-NAME,com.google.android.contacts'
+  - 'PROCESS-NAME,com.google.android.calendar'
