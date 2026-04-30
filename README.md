@@ -3,7 +3,7 @@
 
 | 规则集名称 | 唯一规则数量 |
 | :--- | :--- |
-| bytedance-global.yaml | 19 |
+| bytedance-global.yaml | 17 |
 | claude-ai.yaml | 6 |
 | cn-direct-pro.yaml | 17 |
 | cn-direct.yaml | 215 |
@@ -12,7 +12,7 @@
 | telegram-ip-pro.yaml | 17 |
 | tv-player.yaml | 11 |
 | vivo-ads.yaml | 80 |
-| **全库去重总计** | **417** |
+| **全库去重总计** | **415** |
 
 <!-- STATS_END -->
 
