@@ -10,9 +10,9 @@
 | google-android.yaml | 33 |
 | international-website.yaml | 19 |
 | telegram-ip-pro.yaml | 17 |
-| tv-player.yaml | 11 |
+| tv-player.yaml | 5 |
 | vivo-ads.yaml | 80 |
-| **全库去重总计** | **415** |
+| **全库去重总计** | **409** |
 
 <!-- STATS_END -->
 
