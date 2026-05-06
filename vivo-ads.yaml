@@ -1,5 +1,8 @@
 behavior: classical
 payload:
+  # 新增
+  - DOMAIN,az.appstore.vivo.com
+  
   # 组合精准规则（你的核心，保留不动）
   - AND,((PROCESS-NAME,com.vivo.browser),(NETWORK,UDP))
   - AND,((DOMAIN-SUFFIX,baidu.com),(PROCESS-NAME,com.baidu.input_vivo))
