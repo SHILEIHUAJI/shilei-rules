@@ -1,5 +1,9 @@
 behavior: classical
 payload:
+  - 'IP-CIDR6,::1/128'
+  - 'IP-CIDR6,fc00::/7'
+  - 'IP-CIDR6,fe80::/10'
+  - 'IP-CIDR6,fd00::/8'
   - 'IP-CIDR,101.226.0.0/16'
   - 'IP-ASN,4134'
   - 'IP-ASN,4811'
