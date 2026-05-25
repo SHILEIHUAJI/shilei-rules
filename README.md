@@ -11,8 +11,8 @@
 | international-website.yaml | 20 |
 | telegram-ip-pro.yaml | 17 |
 | tv-player.yaml | 5 |
-| vivo-ads.yaml | 81 |
-| **全库去重总计** | **413** |
+| vivo-ads.yaml | 84 |
+| **全库去重总计** | **416** |
 
 <!-- STATS_END -->
 
