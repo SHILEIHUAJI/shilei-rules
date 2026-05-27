@@ -2,7 +2,6 @@ behavior: classical
 payload:
   # 新增
   - DOMAIN,az.appstore.vivo.com
-  - DOMAIN,main.appstore.vivo.com.cn
   - DOMAIN,flutter.vivo.com.cn
   - DOMAIN,onrt-stsdk.vivo.com.cn
   # 组合精准规则（你的核心，保留不动）
