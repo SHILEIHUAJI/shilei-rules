@@ -216,5 +216,7 @@ payload:
   - 'DOMAIN-SUFFIX,qishui.com'
   - 'DOMAIN-SUFFIX,liquidlink.cn'
   - 'DOMAIN-SUFFIX,spthgb.com'
-
+  - 'DOMAIN-SUFFIX,missav.ws'
+  - 'DOMAIN-SUFFIX,missav.ai'
+  - 'DOMAIN-KEYWORD,missav'
   
