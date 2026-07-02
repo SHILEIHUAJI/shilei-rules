@@ -8,11 +8,11 @@
 | cn-direct-pro.yaml | 21 |
 | cn-direct.yaml | 217 |
 | google-android.yaml | 33 |
-| international-website.yaml | 21 |
+| international-website.yaml | 18 |
 | telegram-ip-pro.yaml | 17 |
 | tv-player.yaml | 5 |
 | vivo-ads.yaml | 83 |
-| **全库去重总计** | **418** |
+| **全库去重总计** | **415** |
 
 <!-- STATS_END -->
 
