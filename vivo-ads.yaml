@@ -26,6 +26,9 @@ payload:
   - DOMAIN-WILDCARD,*.track.vivo.com.cn
   - DOMAIN,adreq.vivo.com.cn
   - DOMAIN,adh5.vivo.com.cn
+  - DOMAIN,adlog.vivo.com.cn
+  - DOMAIN,adxlog-adnet.vivo.com.cn
+  - DOMAIN,dsplog-adnet.vivo.com.cn
   - DOMAIN,tracking-adnet.vivo.com.cn
   - DOMAIN,sctrack.email.vivo.com.cn
   - DOMAIN,detail-adsapi.vivo.com.cn
