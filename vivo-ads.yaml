@@ -1,11 +1,14 @@
 behavior: classical
 payload:
-  # 新增
-  - DOMAIN,az.appstore.vivo.com
-  - DOMAIN,flutter.vivo.com.cn
-  - DOMAIN,onrt-stsdk.vivo.com.cn
-  - DOMAIN,ads-in.vivo.com
-    # 组合精准规则（你的核心，保留不动）
+  # ==============================================
+  # 🔒 核心保护：放行关键服务（防误拦）
+  # ==============================================
+  - DOMAIN,vcode-od.vivo.com.cn,DIRECT
+  - DOMAIN,vcode-api.vivo.com.cn,DIRECT
+
+  # ==============================================
+  # 🎯 组合精准规则（保留原有核心逻辑）
+  # ==============================================
   - AND,((PROCESS-NAME,com.vivo.browser),(NETWORK,UDP))
   - AND,((DOMAIN-SUFFIX,baidu.com),(PROCESS-NAME,com.baidu.input_vivo))
   - AND,((DOMAIN-KEYWORD,vivo),(DOMAIN-KEYWORD,stsdk))
@@ -15,16 +18,14 @@ payload:
   - AND,((PROCESS-NAME,com.vivo.safecenter),(DOMAIN-KEYWORD,jd))
   - AND,((DOMAIN-KEYWORD,vivo),(DOMAIN-KEYWORD,ad))
 
-  # 通用统计/广告关键词
-  - DOMAIN-KEYWORD,statis
-  - DOMAIN-KEYWORD,adxlog
-  - DOMAIN-KEYWORD,dsplog
-  - DOMAIN-KEYWORD,vivoad
-
-  # ========== VIVO 广告域名（原+精简）==========
+  # ==============================================
+  # 📱 VIVO 广告域名（原有+新增+精简）
+  # ==============================================
   - DOMAIN-WILDCARD,*.ad.vivo.com.cn
-  - DOMAIN-WILDCARD,*.update.vivo.com.cn
   - DOMAIN-WILDCARD,*.track.vivo.com.cn
+  - DOMAIN,az.appstore.vivo.com
+  - DOMAIN,flutter.vivo.com.cn
+  - DOMAIN,ads-in.vivo.com
   - DOMAIN,adreq.vivo.com.cn
   - DOMAIN,adh5.vivo.com.cn
   - DOMAIN,adlog.vivo.com.cn
@@ -44,10 +45,15 @@ payload:
   - DOMAIN,ad-service.vivo.com.cn
   - DOMAIN,connection-center.vivo.com.cn
   - DOMAIN,browserplat.vivo.com.cn
-  # ========== VIVO 统计/日志/上报（原+精简）==========
+  - DOMAIN-SUFFIX,vivoad.com.cn
+
+  # ==============================================
+  # 📊 VIVO 统计/日志/上报（原有+新增+精简）
+  # ==============================================
   - DOMAIN-WILDCARD,*.log.vivo.com.cn
   - DOMAIN-WILDCARD,*.stat.vivo.com.cn
   - DOMAIN-WILDCARD,*.stsdk.vivo.com.cn
+  - DOMAIN,onrt-stsdk.vivo.com.cn
   - DOMAIN,bi-mobile.vivo.com.cn
   - DOMAIN,bi-wcs-loan-prd.vivo.com.cn
   - DOMAIN,st-cpdmonitor.vivo.com.cn
@@ -57,14 +63,26 @@ payload:
   - DOMAIN,wallet-stat.vivo.com.cn
   - DOMAIN,marketing-stat.vivo.com.cn
 
-  # ========== VIVO 系统/升级域名 ==========
+  # ==============================================
+  # ⚙️ VIVO 系统/升级（仅非关键更新类）
+  # ==============================================
+  - DOMAIN-WILDCARD,*.update.vivo.com.cn
   - DOMAIN,st-sysupgrade.vivo.com.cn
   - DOMAIN,stappupgrade.vivo.com.cn
   - DOMAIN,appupgrade.vivo.com.cn
   - DOMAIN,isecure.vivo.com.cn
-  - DOMAIN,vcode-api.vivo.com.cn
 
-  # ========== 第三方广告&追踪（原+补充）==========
+  # ==============================================
+  # 🔑 通用关键词匹配（高效精简）
+  # ==============================================
+  - DOMAIN-KEYWORD,statis
+  - DOMAIN-KEYWORD,adxlog
+  - DOMAIN-KEYWORD,dsplog
+  - DOMAIN-KEYWORD,vivoad
+
+  # ==============================================
+  # 🧩 第三方广告&追踪（原有+补充+去重）
+  # ==============================================
   - DOMAIN,map.baidu.com
   - DOMAIN,lookup.api.bsb.baidu.com
   - DOMAIN,bdstat.baidu.com
@@ -89,7 +107,9 @@ payload:
   - DOMAIN,monitor.youku.com
   - DOMAIN,log.uc.cn
 
-  # ========== 拦截进程（原+去重+补充）==========
+  # ==============================================
+  # 🚫 进程级拦截（原有+补充+去重）
+  # ==============================================
   - PROCESS-NAME,com.bbk.updater
   - PROCESS-NAME,com.vivo.browser
   - PROCESS-NAME,com.iqoo.secure
