@@ -38,7 +38,6 @@ payload:
   - DOMAIN,adsdk.vivo.com.cn
   - DOMAIN,push-ad.vivo.com.cn
   - DOMAIN,ad-service.vivo.com.cn
-  - DOMAIN,vcode-od.vivo.com.cn
   - DOMAIN,connection-center.vivo.com.cn
   - DOMAIN,browserplat.vivo.com.cn
   # ========== VIVO 统计/日志/上报（原+精简）==========
