@@ -217,4 +217,16 @@ payload:
   - 'DOMAIN-SUFFIX,liquidlink.cn'
   - 'DOMAIN-SUFFIX,spthgb.com'
   - 'DOMAIN-SUFFIX,immersivetranslate.com'
+  - 'DOMAIN-SUFFIX,jd.hk'
+  - 'DOMAIN-SUFFIX,gov.cn'
+  - 'DOMAIN-SUFFIX,mi.com'
+  - 'DOMAIN-SUFFIX,10jqka.com.cn'
+  - 'DOMAIN-SUFFIX,eastmoney.com'
+  - 'DOMAIN-SUFFIX,smzdm.com'
+  - 'DOMAIN-SUFFIX,douban.com'
+  - 'DOMAIN-SUFFIX,ctrip.com'
+  - 'DOMAIN-SUFFIX,fliggy.com'
+  - 'DOMAIN-SUFFIX,zuoyebang.com'
+  - 'DOMAIN-SUFFIX,yuanfudao.com'
+
 
