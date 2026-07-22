@@ -394,3 +394,4 @@ payload:
 
  # 其他
   - 'DOMAIN-SUFFIX,heweather.com'
+  - 'DOMAIN-SUFFIX,chinaz.com'
