@@ -20,3 +20,4 @@ payload:
   - 'DOMAIN-SUFFIX_,apkpure.com'
   - 'DOMAIN-SUFFIX,weather.com'
   - DOMAIN-SUFFIX,mapbox.com
+  - DOMAIN-SUFFIX,weatherfx.com
