@@ -111,6 +111,7 @@ payload:
   # 🚫 进程级拦截（原有+补充+去重）
   # ==============================================
   - PROCESS-NAME,com.bbk.updater
+  - PROCESS-NAME,com.vivo.globalsearch
   - PROCESS-NAME,com.vivo.browser
   - PROCESS-NAME,com.iqoo.secure
   - PROCESS-NAME,com.vivo.pushservice
