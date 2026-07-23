@@ -18,4 +18,4 @@ payload:
   - 'PROCESS-NAME,com.mxtech.videoplayer.ad'
   - 'DOMAIN-SUFFIX,ingest.sentry.io'
   - 'DOMAIN-SUFFIX_,apkpure.com'
-  - DOMAIN-SUFFIX,weather.com
+  - 'DOMAIN-SUFFIX,weather.com'
