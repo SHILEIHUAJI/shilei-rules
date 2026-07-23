@@ -19,3 +19,4 @@ payload:
   - 'DOMAIN-SUFFIX,ingest.sentry.io'
   - 'DOMAIN-SUFFIX_,apkpure.com'
   - 'DOMAIN-SUFFIX,weather.com'
+  - DOMAIN-SUFFIX,mapbox.com
