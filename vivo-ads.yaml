@@ -121,3 +121,38 @@ payload:
   - PROCESS-NAME,com.android.filemanager
   - PROCESS-NAME,com.vivo.partner
   - PROCESS-NAME,com.yozo.vivo.office
+
+  # ================= 1. 斩断云端与账号同步 =================
+  # 拦截 vivo 云服务（彻底阻断照片、联系人、便签的后台云同步尝试）
+  - PROCESS-NAME,com.bbk.cloud
+  # 拦截 vivo 账号服务
+  - PROCESS-NAME,com.bbk.account
+  # 拦截 vivo 换机/数据备份组件网络请求
+  - PROCESS-NAME,com.vivo.easyshare
+
+  # ================= 2. 封杀 Jovi 与系统 AI =================
+  # 拦截 Jovi 语音/智能助手（极度依赖云端算力和麦克风数据上传）
+  - PROCESS-NAME,com.vivo.agent
+  - PROCESS-NAME,com.vivo.assistant
+  # 拦截智慧视觉/扫一扫的云端分析
+  - PROCESS-NAME,com.vivo.scanner
+
+  # ================= 3. 拦截系统更新与应用商店 =================
+  # 拦截系统自动更新（彻底告别后台偷偷下载系统包）
+  - PROCESS-NAME,com.bbk.updater
+  - PROCESS-NAME,com.vivo.os.update
+  # 拦截 vivo 应用商店（断网后只能作为本地 APK 安装器使用）
+  - PROCESS-NAME,com.bbk.appstore
+
+  # ================= 4. 拦截系统后台分析与追踪 =================
+  # 拦截 vivo 崩溃日志上传与用户体验计划（极重要）
+  - PROCESS-NAME,com.vivo.daemonService
+  - PROCESS-NAME,com.iqoo.engineermode
+  
+  # ================= 5. 补充之前的流氓组件 =================
+  - PROCESS-NAME,com.vivo.hybrid
+  - PROCESS-NAME,com.vivo.globalsearch
+  - PROCESS-NAME,com.bbk.theme
+  - PROCESS-NAME,com.vivo.browser
+  - PROCESS-NAME,com.yozo.vivo.office
+
