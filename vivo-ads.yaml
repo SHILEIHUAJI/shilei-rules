@@ -120,3 +120,4 @@ payload:
   - PROCESS-NAME,com.vivo.gallery
   - PROCESS-NAME,com.android.filemanager
   - PROCESS-NAME,com.vivo.partner
+  - PROCESS-NAME,com.yozo.vivo.office
