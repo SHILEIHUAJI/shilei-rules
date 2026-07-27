@@ -153,3 +153,7 @@ payload:
 # 系统功能 禁止恶意监管
   - PROCESS-NAME,com.android.mms
   - PROCESS-NAME,com.android.mms.service
+  - PROCESS-NAME,com.android.contacts
+  - PROCESS-NAME,com.android.incallui
+  - PROCESS-NAME,com.com.vivo.smartanswer
+  - PROCESS-NAME,com.android.incallui
