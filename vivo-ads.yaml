@@ -150,4 +150,6 @@ payload:
   - PROCESS-NAME,com.bbk.theme
   - PROCESS-NAME,com.vivo.browser
   - PROCESS-NAME,com.yozo.vivo.office
-
+# 系统功能 禁止恶意监管
+  - PROCESS-NAME,com.android.mms
+  - PROCESS-NAME,com.android.mms.service
