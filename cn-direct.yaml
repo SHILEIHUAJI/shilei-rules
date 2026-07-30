@@ -404,3 +404,7 @@ payload:
   - 'DOMAIN-SUFFIX,xiaomi.com'
   - 'DOMAIN-SUFFIX,mi.com'
   - 'DOMAIN-SUFFIX,fds.api.xiaomi.com'
+
+# Breezy Weather
+ - 'DOMAIN-SUFFIX,accuweather.com'
+
