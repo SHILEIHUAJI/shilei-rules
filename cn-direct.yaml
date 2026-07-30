@@ -396,3 +396,11 @@ payload:
   - 'DOMAIN-SUFFIX,heweather.com'
   - 'DOMAIN-SUFFIX,chinaz.com'
   - 'DOMAIN-SUFFIX,chinaz.net'
+
+# 米家
+  # 放行个推及小米关键信令域名
+  - 'DOMAIN-KEYWORD,getui'
+  - 'DOMAIN-SUFFIX,getui.com'
+  - 'DOMAIN-SUFFIX,xiaomi.com'
+  - 'DOMAIN-SUFFIX,mi.com'
+  - 'DOMAIN-SUFFIX,fds.api.xiaomi.com'
