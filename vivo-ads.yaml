@@ -4,7 +4,7 @@ payload:
   # ==============================================
   # 🎯 组合精准规则（保留原有核心逻辑）
   # ==============================================
-  - AND,((PROCESS-NAME,com.luna.music),(DOMAIN-REGEX,pinduoduo|tencent|baidu|xiaohongshu|aiqiyi|snssdk|taobao|toutiao))
+  - AND,((PROCESS-NAME,com.luna.music),(DOMAIN-REGEX,pinduoduo|tencent|baidu|xiaohongshu|aiqiyi|snssdk|taobao|toutiao|ad|ads))
   - AND,((PROCESS-NAME,com.vivo.browser),(NETWORK,UDP))
   - AND,((DOMAIN-SUFFIX,baidu.com),(PROCESS-NAME,com.baidu.input_vivo))
   - AND,((DOMAIN-KEYWORD,vivo),(DOMAIN-KEYWORD,stsdk))
