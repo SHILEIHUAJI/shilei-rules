@@ -1,6 +1,9 @@
 behavior: classical
 payload:
-
+# 新增广告域名
+  - DOMAIN,adxlog.vivo.com.cn
+  - DOMAIN,toblog.ctobsnssdk.com
+  - DOMAIN,adreq.vivo.com.cn
   # ==============================================
   # 🎯 组合精准规则（保留原有核心逻辑）
   # ==============================================
