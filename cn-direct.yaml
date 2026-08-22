@@ -141,8 +141,12 @@ payload:
   - 'DOMAIN-SUFFIX,org.cn'
   - 'DOMAIN-SUFFIX,pddpic.com'
   - 'DOMAIN-SUFFIX,people.com.cn'
+# 拼多多
   - 'DOMAIN-SUFFIX,pinduoduo.com'
   - 'DOMAIN-SUFFIX,pinduoduo.net'
+  - 'DOMAIN-SUFFIX,yangkeduo.com'
+
+  
   - 'DOMAIN-SUFFIX,pps.tv'
   - 'DOMAIN-SUFFIX,ppstream.com'
   - 'DOMAIN-SUFFIX,pstatp.com'
@@ -166,7 +170,24 @@ payload:
   - 'DOMAIN-SUFFIX,so.com'
   - 'DOMAIN-SUFFIX,suning.com'
   - 'DOMAIN-SUFFIX,suzhou.gov.cn'
+# 淘宝
   - 'DOMAIN-SUFFIX,taobao.com'
+  - 'DOMAIN-SUFFIX,taobao.cn'
+  - 'DOMAIN-SUFFIX,taobao.com.cn'
+  - 'DOMAIN-SUFFIX,taobao.wang'
+  - 'DOMAIN-SUFFIX,tmall.com'
+  - 'DOMAIN-SUFFIX,1688.com'
+  - 'DOMAIN-SUFFIX,etao.com'
+  - 'DOMAIN-SUFFIX,tb.cn'
+  - 'DOMAIN-SUFFIX,alimama.com'
+  - 'DOMAIN-SUFFIX,tianmao.com'
+  - 'DOMAIN-SUFFIX,aliyun.com'
+  - 'DOMAIN-SUFFIX,aliyuncs.com'
+  - 'DOMAIN-SUFFIX,alibabacloud.com'
+  - 'DOMAIN-SUFFIX,cainiao.com'
+  - 'DOMAIN-SUFFIX,cainiaoyizhan.com'
+  - 'DOMAIN-SUFFIX,alipay.com'
+  
   - 'DOMAIN-SUFFIX,taobaocdn.com'
   - 'DOMAIN-SUFFIX,tbcdn.cn'
   - 'DOMAIN-SUFFIX,tencent.com'
