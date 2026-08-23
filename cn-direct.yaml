@@ -1,6 +1,10 @@
 payload:
   - 'DOMAIN,cn.bing.com'
   - 'DOMAIN,th.bing.com'
+  - 'DOMAIN,microsoft.cn'
+  - 'DOMAIN,microsoft.com.cn'
+  - 'DOMAIN-SUFFIX,live.com.cn'
+  - 'DOMAIN-SUFFIX,live.cn'
   - 'DOMAIN,tse1-mm.cn.bing.net'
   - 'DOMAIN,tse2-mm.cn.bing.net'
   - 'DOMAIN-SUFFIX,123684.com'
