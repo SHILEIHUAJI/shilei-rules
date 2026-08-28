@@ -1,5 +1,10 @@
 behavior: classical
 payload:
+  # 优先拦截打点与统计 SDK（防止被后方的 vivo.com.cn 直连规则覆盖）
+  - DOMAIN-KEYWORD,stsdk
+  - DOMAIN,vhs.vivo.com.cn
+  - DOMAIN,vcode-od.vivo.com.cn
+
 # 新增广告域名
   - DOMAIN,adxlog.vivo.com.cn
   - DOMAIN,toblog.ctobsnssdk.com
@@ -166,5 +171,4 @@ payload:
   - PROCESS-NAME,com.android.incallui
   - PROCESS-NAME,com.android.camera
   - PROCESS-NAME,com.android.bbkmusic
-  - DOMAIN-KEYWORD,stsdk
 
