@@ -4,6 +4,9 @@ payload:
   - DOMAIN,adxlog.vivo.com.cn
   - DOMAIN,toblog.ctobsnssdk.com
   - DOMAIN,adreq.vivo.com.cn
+  - DOMAIN-SUFFIX,wwstat.com
+  - DOMAIN,vcode-od.vivo.com.cn
+  - DOMAIN,qappengine.vivo.com.cn
   # ==============================================
   # 🎯 组合精准规则（保留原有核心逻辑）
   # ==============================================
@@ -164,3 +167,4 @@ payload:
   - PROCESS-NAME,com.android.camera
   - PROCESS-NAME,com.android.bbkmusic
   - DOMAIN-KEYWORD,stsdk
+
