@@ -148,8 +148,6 @@ payload:
   # 拦截系统自动更新（彻底告别后台偷偷下载系统包）
   - PROCESS-NAME,com.bbk.updater
   - PROCESS-NAME,com.vivo.os.update
-  # 拦截 vivo 应用商店（断网后只能作为本地 APK 安装器使用）
-  - PROCESS-NAME,com.bbk.appstore
 
   # ================= 4. 拦截系统后台分析与追踪 =================
   # 拦截 vivo 崩溃日志上传与用户体验计划（极重要）
