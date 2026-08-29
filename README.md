@@ -3,7 +3,7 @@
 
 | 规则集名称 | 唯一规则数量 |
 | :--- | :--- |
-| Reject_Manually.yaml | 1 |
+| Reject-Manually.yaml | 1 |
 | bytedance-global.yaml | 15 |
 | claude-ai.yaml | 6 |
 | cn-direct-pro.yaml | 21 |
