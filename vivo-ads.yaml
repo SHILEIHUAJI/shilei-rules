@@ -12,18 +12,7 @@ payload:
   - DOMAIN-SUFFIX,wwstat.com
   - DOMAIN,vcode-od.vivo.com.cn
   - DOMAIN,qappengine.vivo.com.cn
-  # ==============================================
-  # 🎯 组合精准规则（保留原有核心逻辑）
-  # ==============================================
-  - AND,((PROCESS-NAME,com.luna.music),(DOMAIN-REGEX,pinduoduo|tencent|baidu|xiaohongshu|aiqiyi|snssdk|taobao|toutiao|ad|ads))
-  - AND,((PROCESS-NAME,com.vivo.browser),(NETWORK,UDP))
-  - AND,((DOMAIN-SUFFIX,baidu.com),(PROCESS-NAME,com.baidu.input_vivo))
-  - AND,((DOMAIN-KEYWORD,vivo),(DOMAIN-KEYWORD,stsdk))
-  - AND,((PROCESS-NAME,com.vivo.browser),(DOMAIN-KEYWORD,stsdk))
-  - AND,((PROCESS-NAME,com.iqoo.secure),(DOMAIN-KEYWORD,baidu))
-  - AND,((DOMAIN-KEYWORD,vivo),(DOMAIN-SUFFIX,baidu.com))
-  - AND,((PROCESS-NAME,com.vivo.safecenter),(DOMAIN-KEYWORD,jd))
-  - AND,((DOMAIN-KEYWORD,vivo),(DOMAIN-KEYWORD,ad))
+  
 
   # ==============================================
   # 📱 VIVO 广告域名（原有+新增+精简）
