@@ -2,5 +2,4 @@ behavior: classical
 payload:
   - DOMAIN-SUFFIX,sentry.io
   - DOMAIN-SUFFIX,stun
-  - 'AND,((NETWORK,UDP),(DST-PORT,3478))'
   
