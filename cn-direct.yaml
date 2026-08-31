@@ -77,6 +77,7 @@ payload:
   - 'DOMAIN-SUFFIX,douyinpic.com'
   - 'DOMAIN-SUFFIX,douyinstatic.com'
   - 'DOMAIN-SUFFIX,douyinvod.com'
+  - 'DOMAIN-SUFFIX,zijieapi.com'
   - 'DOMAIN-SUFFIX,duoduo.com'
   - 'DOMAIN-SUFFIX,duokan.com'
   - 'DOMAIN-SUFFIX,eastmoney.com'
