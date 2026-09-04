@@ -2,4 +2,6 @@ behavior: classical
 payload:
   - DOMAIN-SUFFIX,sentry.io
   - DOMAIN-SUFFIX,stun
+  - DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net
+  - DOMAIN,apd-pcdnwxstat.teg.tencent-cloud.net
   
