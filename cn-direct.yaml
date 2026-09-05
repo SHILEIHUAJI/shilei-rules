@@ -1,5 +1,4 @@
 payload:
-  - 'DOMAIN-SUFFIX,com.cn'
   - 'DOMAIN,cn.bing.com'
   - 'DOMAIN,th.bing.com'
   - 'DOMAIN,microsoft.cn'
@@ -338,9 +337,8 @@ payload:
   - 'DOMAIN-SUFFIX,yongyao.com'
   - 'DOMAIN-SUFFIX,chsi.com.cn'
   # 系统与公共服务
-  - 'DOMAIN-SUFFIX,gov.cn'
+
   - 'DOMAIN-SUFFIX,org.cn'
-  - 'DOMAIN-SUFFIX,net.cn'
   - 'DOMAIN-SUFFIX,com.cn'
   - 'DOMAIN-SUFFIX,edu.cn'
   - 'DOMAIN-SUFFIX,miit.gov.cn'
@@ -415,6 +413,10 @@ payload:
   - 'DOMAIN-SUFFIX,fds.api.xiaomi.com'
 # Breezy Weather
   - 'DOMAIN-SUFFIX,accuweather.com'
- # 乐心健康
+# 乐心健康
   - 'DOMAIN-SUFFIX,umeng.com'
   - 'DOMAIN-KEYWORD,cmliussss'
+ # 兜底
+  - 'DOMAIN-SUFFIX,com.cn'
+  - 'DOMAIN-SUFFIX,gov.cn'
+  - 'DOMAIN-SUFFIX,net.cn'
