@@ -337,10 +337,6 @@ payload:
   - 'DOMAIN-SUFFIX,yongyao.com'
   - 'DOMAIN-SUFFIX,chsi.com.cn'
   # 系统与公共服务
-
-  - 'DOMAIN-SUFFIX,org.cn'
-  - 'DOMAIN-SUFFIX,com.cn'
-  - 'DOMAIN-SUFFIX,edu.cn'
   - 'DOMAIN-SUFFIX,miit.gov.cn'
   - 'DOMAIN-SUFFIX,beian.miit.gov.cn'
   # 即时通讯与社交
