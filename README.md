@@ -7,14 +7,14 @@
 | bytedance-global.yaml | 15 |
 | claude-ai.yaml | 6 |
 | cn-direct-pro.yaml | 21 |
-| cn-direct.yaml | 334 |
+| cn-direct.yaml | 333 |
 | google-android.yaml | 33 |
 | international-website.yaml | 23 |
 | telegram-ip-pro.yaml | 17 |
 | tv-player.yaml | 5 |
 | usa.yaml | 1 |
 | vivo-ads.yaml | 103 |
-| **全库去重总计** | **562** |
+| **全库去重总计** | **561** |
 
 <!-- STATS_END -->
 
