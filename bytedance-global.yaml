@@ -11,7 +11,4 @@ payload:
   - 'DOMAIN-SUFFIX,musical.ly'
   - 'DOMAIN-SUFFIX,tik-tokapi.com'
   - 'DOMAIN-SUFFIX,tiktok.com'
-  - 'PROCESS-NAME,com.bd.nproject'
-  - 'PROCESS-NAME,com.ss.android.ugc.trill'
-  - 'PROCESS-NAME,com.zhiliaoapp.musically'
   
