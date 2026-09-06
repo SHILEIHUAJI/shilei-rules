@@ -1,7 +1,6 @@
 behavior: classical
 payload:
   # 优先拦截打点与统计 SDK（防止被后方的 vivo.com.cn 直连规则覆盖）
-  - DOMAIN-KEYWORD,stsdk
   - DOMAIN,vhs.vivo.com.cn
   - DOMAIN,vcode-od.vivo.com.cn
 
