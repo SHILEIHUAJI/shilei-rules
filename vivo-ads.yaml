@@ -110,7 +110,6 @@ payload:
   - PROCESS-NAME,com.vivo.globalsearch
   - PROCESS-NAME,com.vivo.browser
   - PROCESS-NAME,com.iqoo.secure
-  - PROCESS-NAME,com.vivo.pushservice
   - PROCESS-NAME,com.bbk.cloud
   - PROCESS-NAME,com.bbk.account
   - PROCESS-NAME,com.vivo.gallery
