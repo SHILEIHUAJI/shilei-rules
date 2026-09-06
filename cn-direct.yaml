@@ -1,4 +1,3 @@
-behavior: classical
 payload:
   - 'DOMAIN,cn.bing.com'
   - 'DOMAIN,th.bing.com'
