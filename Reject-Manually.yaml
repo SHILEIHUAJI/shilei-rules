@@ -4,4 +4,5 @@ payload:
   - DOMAIN-SUFFIX,stun
   - DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net
   - DOMAIN,apd-pcdnwxstat.teg.tencent-cloud.net
-  
+  - DOMAIN,adcs-ap.myappsget.com
+  - DOMAIN,pro.bugly.qq.com
