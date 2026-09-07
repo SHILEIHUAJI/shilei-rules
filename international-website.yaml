@@ -1,3 +1,4 @@
+behavior: classical
 payload:
   - 'DOMAIN-SUFFIX,ghcr.io'
   - 'DOMAIN-SUFFIX,githubassets.com'
@@ -22,3 +23,4 @@ payload:
   - 'DOMAIN-SUFFIX,mapbox.com'
   - 'DOMAIN-SUFFIX,weatherfx.com'
   - 'DOMAIN-SUFFIX,pureapk.com'
+  - DOMAIN-KEYWORD,apkpure
