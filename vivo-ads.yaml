@@ -156,4 +156,4 @@ payload:
   - PROCESS-NAME,com.android.incallui
   - PROCESS-NAME,com.android.camera
   - PROCESS-NAME,com.android.bbkmusic
-
+  - PROCESS-NAME,com.bbk.appstore
