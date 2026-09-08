@@ -1,7 +1,13 @@
 behavior: classical
 payload:
+  - DST-PORT,3478
+  - DST-PORT,3479
+  - DST-PORT,3480
+  - DST-PORT,3481
+  - DOMAIN-SUFFIX,stun.services.mozilla.com
   - DOMAIN-SUFFIX,sentry.io
-  - DOMAIN-SUFFIX,stun
+  - DOMAIN-KEYWORD,stun
+  - DOMAIN-KEYWORD,turn
   - DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net
   - DOMAIN,apd-pcdnwxstat.teg.tencent-cloud.net
   - DOMAIN-SUFFIX,myappsget.com
