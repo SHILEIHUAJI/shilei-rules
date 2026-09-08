@@ -3,7 +3,7 @@
 
 | 规则集名称 | 唯一规则数量 |
 | :--- | :--- |
-| Reject-Manually.yaml | 6 |
+| Reject-Manually.yaml | 12 |
 | bytedance-global.yaml | 12 |
 | claude-ai.yaml | 6 |
 | cn-direct-pro.yaml | 21 |
@@ -14,7 +14,7 @@
 | tv-player.yaml | 5 |
 | usa.yaml | 1 |
 | vivo-ads.yaml | 102 |
-| **全库去重总计** | **559** |
+| **全库去重总计** | **565** |
 
 <!-- STATS_END -->
 
