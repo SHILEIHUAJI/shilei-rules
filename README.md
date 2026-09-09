@@ -6,7 +6,7 @@
 | Reject-Manually.yaml | 12 |
 | bytedance-global.yaml | 12 |
 | claude-ai.yaml | 6 |
-| cn-direct-pro.yaml | 21 |
+| cn-direct-pro.yaml | 35 |
 | cn-direct.yaml | 332 |
 | google-android.yaml | 33 |
 | international-website.yaml | 24 |
@@ -14,7 +14,7 @@
 | tv-player.yaml | 5 |
 | usa.yaml | 1 |
 | vivo-ads.yaml | 102 |
-| **全库去重总计** | **565** |
+| **全库去重总计** | **579** |
 
 <!-- STATS_END -->
 
