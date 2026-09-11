@@ -1,5 +1,6 @@
 behavior: classical
 payload:
+  - DOMAIN,self.events.data.microsoft.com
   - 'DOMAIN-SUFFIX,ghcr.io'
   - 'DOMAIN-SUFFIX,githubassets.com'
   - 'DOMAIN-SUFFIX,githubusercontent.com'
