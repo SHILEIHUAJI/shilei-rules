@@ -1,27 +1,17 @@
 behavior: classical
 payload:
-  # 优先拦截打点与统计 SDK（防止被后方的 vivo.com.cn 直连规则覆盖）
-  - DOMAIN,vhs.vivo.com.cn
-  - DOMAIN,vcode-od.vivo.com.cn
-
-# 新增广告域名
-  - DOMAIN,adxlog.vivo.com.cn
-  - DOMAIN,toblog.ctobsnssdk.com
-  - DOMAIN,adreq.vivo.com.cn
-  - DOMAIN-SUFFIX,wwstat.com
-  - DOMAIN,vcode-od.vivo.com.cn
-  - DOMAIN,qappengine.vivo.com.cn
-  
-
   # ==============================================
-  # 📱 VIVO 广告域名（原有+新增+精简）
+  # 📱 VIVO 广告与营销接口
   # ==============================================
   - DOMAIN-WILDCARD,*.ad.vivo.com.cn
   - DOMAIN-WILDCARD,*.track.vivo.com.cn
+  - DOMAIN,vhs.vivo.com.cn
+  - DOMAIN,vcode-od.vivo.com.cn
+  - DOMAIN,adxlog.vivo.com.cn
+  - DOMAIN,adreq.vivo.com.cn
   - DOMAIN,az.appstore.vivo.com
   - DOMAIN,flutter.vivo.com.cn
   - DOMAIN,ads-in.vivo.com
-  - DOMAIN,adreq.vivo.com.cn
   - DOMAIN,adh5.vivo.com.cn
   - DOMAIN,adlog.vivo.com.cn
   - DOMAIN,adxlog-adnet.vivo.com.cn
@@ -40,10 +30,12 @@ payload:
   - DOMAIN,ad-service.vivo.com.cn
   - DOMAIN,connection-center.vivo.com.cn
   - DOMAIN,browserplat.vivo.com.cn
+  - DOMAIN,qappengine.vivo.com.cn
+  - DOMAIN,vcode-or.vivo.com.-
   - DOMAIN-SUFFIX,vivoad.com.cn
 
   # ==============================================
-  # 📊 VIVO 统计/日志/上报（原有+新增+精简）
+  # 📊 VIVO 统计/日志/行为上报
   # ==============================================
   - DOMAIN-WILDCARD,*.log.vivo.com.cn
   - DOMAIN-WILDCARD,*.stat.vivo.com.cn
@@ -57,9 +49,11 @@ payload:
   - DOMAIN,logcollect.vivo.com.cn
   - DOMAIN,wallet-stat.vivo.com.cn
   - DOMAIN,marketing-stat.vivo.com.cn
+  - DOMAIN-SUFFIX,wwstat.com
+  - DOMAIN-SUFFIX,news.vivo.com.cn
 
   # ==============================================
-  # ⚙️ VIVO 系统/升级（仅非关键更新类）
+  # ⚙️ VIVO 系统/更新/安全服务（非核心）
   # ==============================================
   - DOMAIN-WILDCARD,*.update.vivo.com.cn
   - DOMAIN,st-sysupgrade.vivo.com.cn
@@ -68,7 +62,7 @@ payload:
   - DOMAIN,isecure.vivo.com.cn
 
   # ==============================================
-  # 🔑 通用关键词匹配（高效精简）
+  # 🔑 通用关键字匹配
   # ==============================================
   - DOMAIN-KEYWORD,statis
   - DOMAIN-KEYWORD,adxlog
@@ -76,8 +70,9 @@ payload:
   - DOMAIN-KEYWORD,vivoad
 
   # ==============================================
-  # 🧩 第三方广告&追踪（原有+补充+去重）
+  # 🧩 第三方 SDK / 广告 / 追踪
   # ==============================================
+  - DOMAIN,toblog.ctobsnssdk.com
   - DOMAIN,map.baidu.com
   - DOMAIN,lookup.api.bsb.baidu.com
   - DOMAIN,bdstat.baidu.com
@@ -97,63 +92,37 @@ payload:
   - DOMAIN,rtb-adtrack-yun.quark.cn
   - DOMAIN,vhs.wwstat.com
   - DOMAIN,csybyyh.com
-  - DOMAIN-SUFFIX,kaixinkan.com.cn
-  - DOMAIN-SUFFIX,news.vivo.com.cn
   - DOMAIN,monitor.youku.com
   - DOMAIN,log.uc.cn
+  - DOMAIN-SUFFIX,kaixinkan.com.cn
 
   # ==============================================
-  # 🚫 进程级拦截（原有+补充+去重）
+  # 🚫 进程级拦截（已完美去重并修正拼写）
   # ==============================================
-  - PROCESS-NAME,com.bbk.updater
-  - PROCESS-NAME,com.vivo.globalsearch
-  - PROCESS-NAME,com.vivo.browser
-  - PROCESS-NAME,com.iqoo.secure
-  - PROCESS-NAME,com.bbk.cloud
-  - PROCESS-NAME,com.bbk.account
-  - PROCESS-NAME,com.vivo.gallery
+  - PROCESS-NAME,com.android.bbkmusic
+  - PROCESS-NAME,com.android.camera
+  - PROCESS-NAME,com.android.contacts
   - PROCESS-NAME,com.android.filemanager
-  - PROCESS-NAME,com.vivo.partner
-  - PROCESS-NAME,com.yozo.vivo.office
-
-  # ================= 1. 斩断云端与账号同步 =================
-  # 拦截 vivo 云服务（彻底阻断照片、联系人、便签的后台云同步尝试）
-  - PROCESS-NAME,com.bbk.cloud
-  # 拦截 vivo 账号服务
-  - PROCESS-NAME,com.bbk.account
-  # 拦截 vivo 换机/数据备份组件网络请求
-  - PROCESS-NAME,com.vivo.easyshare
-
-  # ================= 2. 封杀 Jovi 与系统 AI =================
-  # 拦截 Jovi 语音/智能助手（极度依赖云端算力和麦克风数据上传）
-  - PROCESS-NAME,com.vivo.agent
-  - PROCESS-NAME,com.vivo.assistant
-  # 拦截智慧视觉/扫一扫的云端分析
-  - PROCESS-NAME,com.vivo.scanner
-
-  # ================= 3. 拦截系统更新与应用商店 =================
-  # 拦截系统自动更新（彻底告别后台偷偷下载系统包）
-  - PROCESS-NAME,com.bbk.updater
-  - PROCESS-NAME,com.vivo.os.update
-
-  # ================= 4. 拦截系统后台分析与追踪 =================
-  # 拦截 vivo 崩溃日志上传与用户体验计划（极重要）
-  - PROCESS-NAME,com.vivo.daemonService
-  - PROCESS-NAME,com.iqoo.engineermode
-  
-  # ================= 5. 补充之前的流氓组件 =================
-  - PROCESS-NAME,com.vivo.hybrid
-  - PROCESS-NAME,com.vivo.globalsearch
-  - PROCESS-NAME,com.bbk.theme
-  - PROCESS-NAME,com.vivo.browser
-  - PROCESS-NAME,com.yozo.vivo.office
-# 系统功能 禁止恶意监管
+  - PROCESS-NAME,com.android.incallui
   - PROCESS-NAME,com.android.mms
   - PROCESS-NAME,com.android.mms.service
-  - PROCESS-NAME,com.android.contacts
-  - PROCESS-NAME,com.android.incallui
-  - PROCESS-NAME,com.com.vivo.smartanswer
-  - PROCESS-NAME,com.android.incallui
-  - PROCESS-NAME,com.android.camera
-  - PROCESS-NAME,com.android.bbkmusic
+  - PROCESS-NAME,com.bbk.account
   - PROCESS-NAME,com.bbk.appstore
+  - PROCESS-NAME,com.bbk.cloud
+  - PROCESS-NAME,com.bbk.theme
+  - PROCESS-NAME,com.bbk.updater
+  - PROCESS-NAME,com.iqoo.engineermode
+  - PROCESS-NAME,com.iqoo.secure
+  - PROCESS-NAME,com.vivo.agent
+  - PROCESS-NAME,com.vivo.assistant
+  - PROCESS-NAME,com.vivo.browser
+  - PROCESS-NAME,com.vivo.daemonService
+  - PROCESS-NAME,com.vivo.easyshare
+  - PROCESS-NAME,com.vivo.gallery
+  - PROCESS-NAME,com.vivo.globalsearch
+  - PROCESS-NAME,com.vivo.hybrid
+  - PROCESS-NAME,com.vivo.os.update
+  - PROCESS-NAME,com.vivo.partner
+  - PROCESS-NAME,com.vivo.scanner
+  - PROCESS-NAME,com.vivo.smartanswer
+  - PROCESS-NAME,com.yozo.vivo.office
