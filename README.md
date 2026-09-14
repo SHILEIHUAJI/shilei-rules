@@ -3,7 +3,7 @@
 
 | 规则集名称 | 唯一规则数量 |
 | :--- | :--- |
-| Reject-Manually.yaml | 85 |
+| Reject-Manually.yaml | 80 |
 | bytedance-global.yaml | 12 |
 | claude-ai.yaml | 6 |
 | cn-direct-pro.yaml | 32 |
@@ -20,8 +20,8 @@
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX | 416 |
-| DOMAIN | 117 |
+| DOMAIN-SUFFIX | 413 |
+| DOMAIN | 115 |
 | PROCESS-NAME | 52 |
 | IP-CIDR | 20 |
 | IP-ASN | 18 |
@@ -30,15 +30,10 @@
 | DOMAIN-WILDCARD | 6 |
 | DST-PORT | 4 |
 
-### ⚠️ 跨文件重复规则（共 8 条）
+### ⚠️ 跨文件重复规则（共 3 条）
 
 | 规则内容 | 出现在 |
 | :--- | :--- |
-| `DOMAIN,lookup.api.bsb.baidu.com` | Reject-Manually.yaml, vivo-ads.yaml |
-| `DOMAIN,vcode-or.vivo.com.-` | Reject-Manually.yaml, vivo-ads.yaml |
-| `DOMAIN-SUFFIX,ip.cn` | Reject-Manually.yaml, cn-direct.yaml |
-| `DOMAIN-SUFFIX,liquidlink.cn` | Reject-Manually.yaml, cn-direct.yaml |
-| `DOMAIN-SUFFIX,nekogram.app` | Reject-Manually.yaml, telegram-ip-pro.yaml |
 | `DOMAIN-SUFFIX,t.me` | international-website.yaml, telegram-ip-pro.yaml |
 | `DOMAIN-SUFFIX,telegram.org` | international-website.yaml, telegram-ip-pro.yaml |
 | `PROCESS-NAME,com.android.mms.service` | Reject-Manually.yaml, vivo-ads.yaml |
