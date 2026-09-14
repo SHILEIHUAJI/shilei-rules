@@ -22,7 +22,6 @@ payload:
   - DOMAIN,app.ipdatacloud.com
   - DOMAIN,www.ipdatacloud.com
   - DOMAIN,udpolimenew.baidu.com
-  - DOMAIN-SUFFIX,ip.cn
   - DOMAIN-SUFFIX,iP138.com
   - DOMAIN-SUFFIX,ip-api.com
   - DOMAIN-SUFFIX,pull.yximgs.com
@@ -33,11 +32,7 @@ payload:
   - DOMAIN,appmetrica.yandex.ru
   - DOMAIN-SUFFIX,textads
   - DOMAIN,d3ward.github.io
-  - DOMAIN,lookup.api.bsb.baidu.com
-  - DOMAIN,vcode-or.vivo.com.-
   - DOMAIN,ime-igw.doubao.com
-
-  - DOMAIN-SUFFIX,nekogram.app
   - DOMAIN-SUFFIX,googletagmanager.com
   - DOMAIN-SUFFIX,google-analytics.com
   - DOMAIN-SUFFIX,flurry.com
@@ -50,7 +45,6 @@ payload:
   - DOMAIN-SUFFIX,googleadservices.com
   - DOMAIN-SUFFIX,googleadsserving.cn
   - DOMAIN,permanently-removed.invalid
-  - DOMAIN-SUFFIX,liquidlink.cn
   - DOMAIN,myip.ipip.net
   - IP-CIDR,120.238.90.212/32,no-resolve
   - PROCESS-NAME,com.android.mms.service
