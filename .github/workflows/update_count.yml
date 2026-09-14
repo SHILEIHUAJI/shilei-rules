@@ -3,17 +3,20 @@ name: Auto Update Rule Count
 on:
   push:
     paths:
-      - '**.yaml'                # 只有 YAML 文件变动时触发
-      - 'count_rules.py'         # 脚本本身变动时触发
+      - '**.yaml'
+      - '**.yml'
+      - '**.txt'
+      - '**.list'
+      - 'count_rules.py'
     branches:
-      - main                     # 或者是你的主分支名称
-  workflow_dispatch:             # 保留手动触发按钮，方便调试
+      - main
+  workflow_dispatch:
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     permissions:
-      contents: write            # 核心：必须赋予写权限
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,6 +25,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
       - name: Run count script
         run: python count_rules.py
