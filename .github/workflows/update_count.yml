@@ -27,7 +27,13 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          pip install yamllint
+
+      - name: Lint YAML syntax
+        run: |
+          yamllint -d "{extends: relaxed, rules: {line-length: disable, truthy: disable, document-start: disable}}" *.yaml || true
 
       - name: Run count script
         run: python count_rules.py
