@@ -9,7 +9,7 @@
 | cn-direct-pro.yaml | 32 |
 | cn-direct.yaml | 331 |
 | google-android.yaml | 33 |
-| international-website.yaml | 27 |
+| international-website.yaml | 25 |
 | telegram-ip-pro.yaml | 17 |
 | tv-player.yaml | 5 |
 | usa.yaml | 1 |
@@ -20,7 +20,7 @@
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX | 413 |
+| DOMAIN-SUFFIX | 411 |
 | DOMAIN | 115 |
 | PROCESS-NAME | 52 |
 | IP-CIDR | 20 |
@@ -30,12 +30,10 @@
 | DOMAIN-WILDCARD | 6 |
 | DST-PORT | 4 |
 
-### ⚠️ 跨文件重复规则（共 3 条）
+### ⚠️ 跨文件重复规则（共 1 条）
 
 | 规则内容 | 出现在 |
 | :--- | :--- |
-| `DOMAIN-SUFFIX,t.me` | international-website.yaml, telegram-ip-pro.yaml |
-| `DOMAIN-SUFFIX,telegram.org` | international-website.yaml, telegram-ip-pro.yaml |
 | `PROCESS-NAME,com.android.mms.service` | Reject-Manually.yaml, vivo-ads.yaml |
 
 <!-- STATS_END -->
