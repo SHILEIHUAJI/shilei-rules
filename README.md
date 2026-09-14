@@ -6,15 +6,44 @@
 | Reject-Manually.yaml | 85 |
 | bytedance-global.yaml | 12 |
 | claude-ai.yaml | 6 |
-| cn-direct-pro.yaml | 35 |
+| cn-direct-pro.yaml | 32 |
 | cn-direct.yaml | 331 |
 | google-android.yaml | 33 |
 | international-website.yaml | 27 |
+| requirements.txt | 1 |
 | telegram-ip-pro.yaml | 17 |
 | tv-player.yaml | 5 |
 | usa.yaml | 1 |
 | vivo-ads.yaml | 103 |
-| **全库去重总计** | **651** |
+| **全库去重总计** | **645** |
+
+### 🏷️ 规则类型分布
+
+| 类型 | 数量 |
+| :--- | :--- |
+| DOMAIN-SUFFIX | 416 |
+| DOMAIN | 117 |
+| PROCESS-NAME | 52 |
+| IP-CIDR | 20 |
+| IP-ASN | 18 |
+| DOMAIN-KEYWORD | 11 |
+| IP-CIDR6 | 8 |
+| DOMAIN-WILDCARD | 6 |
+| DST-PORT | 4 |
+| DOMAIN(text) | 1 |
+
+### ⚠️ 跨文件重复规则（共 8 条）
+
+| 规则内容 | 出现在 |
+| :--- | :--- |
+| `DOMAIN,lookup.api.bsb.baidu.com` | Reject-Manually.yaml, vivo-ads.yaml |
+| `DOMAIN,vcode-or.vivo.com.-` | Reject-Manually.yaml, vivo-ads.yaml |
+| `DOMAIN-SUFFIX,ip.cn` | Reject-Manually.yaml, cn-direct.yaml |
+| `DOMAIN-SUFFIX,liquidlink.cn` | Reject-Manually.yaml, cn-direct.yaml |
+| `DOMAIN-SUFFIX,nekogram.app` | Reject-Manually.yaml, telegram-ip-pro.yaml |
+| `DOMAIN-SUFFIX,t.me` | international-website.yaml, telegram-ip-pro.yaml |
+| `DOMAIN-SUFFIX,telegram.org` | international-website.yaml, telegram-ip-pro.yaml |
+| `PROCESS-NAME,com.android.mms.service` | Reject-Manually.yaml, vivo-ads.yaml |
 
 <!-- STATS_END -->
 
