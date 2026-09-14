@@ -47,7 +47,6 @@ payload:
   - DOMAIN,permanently-removed.invalid
   - DOMAIN,myip.ipip.net
   - IP-CIDR,120.238.90.212/32,no-resolve
-  - PROCESS-NAME,com.android.mms.service
   - PROCESS-NAME,com.android.keychain
 
   # 豆包 / 今日头条 / 抖音等特定 App 拦截
