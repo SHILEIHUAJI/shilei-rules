@@ -3,7 +3,7 @@
 
 | 规则集名称 | 唯一规则数量 |
 | :--- | :--- |
-| Reject-Manually.yaml | 80 |
+| Reject-Manually.yaml | 79 |
 | bytedance-global.yaml | 12 |
 | claude-ai.yaml | 6 |
 | cn-direct-pro.yaml | 32 |
@@ -22,7 +22,7 @@
 | :--- | :--- |
 | DOMAIN-SUFFIX | 411 |
 | DOMAIN | 115 |
-| PROCESS-NAME | 52 |
+| PROCESS-NAME | 51 |
 | IP-CIDR | 20 |
 | IP-ASN | 18 |
 | DOMAIN-KEYWORD | 11 |
@@ -30,11 +30,7 @@
 | DOMAIN-WILDCARD | 6 |
 | DST-PORT | 4 |
 
-### ⚠️ 跨文件重复规则（共 1 条）
-
-| 规则内容 | 出现在 |
-| :--- | :--- |
-| `PROCESS-NAME,com.android.mms.service` | Reject-Manually.yaml, vivo-ads.yaml |
+### ✅ 未发现跨文件重复规则
 
 <!-- STATS_END -->
 
