@@ -5,7 +5,7 @@ from collections import Counter, defaultdict
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # 不想统计的文件
-IGNORE_FILES = ['config.yaml', 'nodes.yaml']
+IGNORE_FILES = ['config.yaml', 'nodes.yaml', 'requirements.txt']
 
 # 纯 text 格式的规则文件（一行一条，没有 payload: 包裹）单独列出
 TEXT_FORMAT_FILES = []  # 例如 ['my-adblock.txt']
