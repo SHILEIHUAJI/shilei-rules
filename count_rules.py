@@ -1,38 +1,118 @@
 import os
+import re
 import yaml
 from collections import Counter, defaultdict
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# 不想统计的文件
-IGNORE_FILES = ['config.yaml', 'nodes.yaml', 'requirements.txt']
+# 不参与规则统计的文件（配置文件、脚本自身依赖等）
+IGNORE_FILES = ['config.yaml', 'nodes.yaml', 'requirements.txt', 'clashmi_api.md']
 
-# 纯 text 格式的规则文件（一行一条，没有 payload: 包裹）单独列出
-TEXT_FORMAT_FILES = []  # 例如 ['my-adblock.txt']
+LOGIC_TYPES = {'AND', 'OR', 'NOT'}
 
 
-def load_yaml_rules(path):
-    """解析标准 clash yaml 规则文件（带 payload: 结构）"""
-    with open(path, 'r', encoding='utf-8') as f:
-        data = yaml.safe_load(f)
-    if not data or 'payload' not in data:
-        return set()
-    return {str(r).strip() for r in data['payload'] if str(r).strip()}
+def split_top_level(s: str, sep: str = ',') -> list:
+    """按顶层逗号切分，忽略括号内部的逗号"""
+    parts, depth, current = [], 0, ''
+    for ch in s:
+        if ch == '(':
+            depth += 1
+            current += ch
+        elif ch == ')':
+            depth -= 1
+            current += ch
+        elif ch == sep and depth == 0:
+            parts.append(current)
+            current = ''
+        else:
+            current += ch
+    parts.append(current)
+    return [p.strip() for p in parts if p.strip()]
+
+
+def strip_outer_parens(s: str) -> str:
+    s = s.strip()
+    if s.startswith('(') and s.endswith(')'):
+        return s[1:-1].strip()
+    return s
+
+
+def normalize_rule(raw: str) -> str:
+    """
+    把规则归一化，让"逻辑等价但书写顺序不同"的 AND/OR 复合规则
+    在比较时被视为相同。简单规则（DOMAIN、PROCESS-NAME等）原样返回。
+    """
+    raw = raw.strip()
+    top = split_top_level(raw, ',')
+    if not top:
+        return raw
+
+    rule_type = top[0].strip().upper()
+
+    if rule_type in LOGIC_TYPES and len(top) >= 2:
+        # top[1] 形如 "((a),(b),(c))"，去掉最外层括号后按顶层逗号切分
+        group_str = strip_outer_parens(top[1])
+        children = split_top_level(group_str, ',')
+        normalized_children = sorted(
+            normalize_rule(strip_outer_parens(c)) for c in children
+        )
+        target_part = ','.join(top[2:])  # 保留目标策略/no-resolve等后续参数
+        return f"{rule_type}({'|'.join(normalized_children)})->{target_part}"
+
+    # 非逻辑规则，原样返回（大小写、空格已在 split_top_level 里 strip 过）
+    return raw
+
+
+def load_yaml_data(path):
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            return yaml.safe_load(f)
+    except yaml.YAMLError as e:
+        print(f"⚠️ 跳过 {os.path.basename(path)}：YAML 解析失败 - {e}")
+        return None
+
+
+def extract_entries(data, filename):
+    """
+    从解析后的 yaml 数据里提取所有规则条目，返回 [(来源标签, 原始规则文本), ...]
+    支持三种结构：
+      - payload: [...]                标准 rule-provider
+      - rules: [...]                  主配置文件的顶层规则列表
+      - sub-rules: {组名: [...], ...} 子规则定义
+    """
+    entries = []
+    if not data or not isinstance(data, dict):
+        return entries
+
+    if 'payload' in data and data['payload']:
+        for r in data['payload']:
+            entries.append((filename, str(r).strip()))
+
+    if 'rules' in data and data['rules']:
+        for r in data['rules']:
+            entries.append((f"{filename}[rules]", str(r).strip()))
+
+    if 'sub-rules' in data and data['sub-rules']:
+        for group_name, conditions in data['sub-rules'].items():
+            if not conditions:
+                continue
+            for r in conditions:
+                entries.append((f"{filename}[sub-rule:{group_name}]", str(r).strip()))
+
+    return entries
 
 
 def load_text_rules(path):
-    """解析纯 text 格式（一行一条，# 开头是注释）"""
-    rules = set()
+    entries = []
     with open(path, 'r', encoding='utf-8') as f:
         for line in f:
             clean = line.strip()
             if clean and not clean.startswith('#'):
-                rules.add(clean)
-    return rules
+                entries.append((os.path.basename(path), clean))
+    return entries
 
 
 def categorize(rule: str) -> str:
-    """按规则类型分类，纯域名/IP格式（没有逗号）归为 DOMAIN 或 IP-CIDR"""
     if ',' in rule:
         return rule.split(',', 1)[0].strip().upper()
     if rule.startswith('+.'):
@@ -60,10 +140,14 @@ def update_readme(stats, type_stats, total_unique, duplicates):
     table += "\n"
 
     if duplicates:
-        table += f"### ⚠️ 跨文件重复规则（共 {len(duplicates)} 条）\n\n"
+        table += f"### ⚠️ 跨文件/跨模块重复规则（共 {len(duplicates)} 条，含逻辑等价识别）\n\n"
         table += "| 规则内容 | 出现在 |\n| :--- | :--- |\n"
-        for rule, files in sorted(duplicates.items()):
-            table += f"| `{rule}` | {', '.join(files)} |\n"
+        for norm_key, occurrences in sorted(duplicates.items()):
+            # occurrences: list of (source, raw_text)
+            display_raw = occurrences[0][1]
+            sources = ', '.join(o[0] for o in occurrences)
+            safe_raw = display_raw.replace('|', '\\|')
+            table += f"| `{safe_raw}` | {sources} |\n"
         table += "\n"
     else:
         table += "### ✅ 未发现跨文件重复规则\n\n"
@@ -88,8 +172,9 @@ if __name__ == '__main__':
     stats = {}
     type_stats = Counter()
     all_rules_set = set()
-    # 记录每条规则出现在哪些文件里，用于查重
-    rule_to_files = defaultdict(list)
+
+    # normalized_key -> [(source, raw_text), ...]
+    norm_to_occurrences = defaultdict(list)
 
     yaml_files = [f for f in os.listdir(BASE_DIR)
                   if f.endswith(('.yaml', '.yml', '.txt', '.list'))
@@ -100,26 +185,34 @@ if __name__ == '__main__':
         if not os.path.exists(path):
             continue
 
-        if f_name in TEXT_FORMAT_FILES or f_name.endswith(('.txt', '.list')):
-            file_rules = load_text_rules(path)
+        if f_name.endswith(('.txt', '.list')):
+            file_entries = load_text_rules(path)
         else:
-            file_rules = load_yaml_rules(path)
-            # 兼容：万一 yaml 文件其实没有 payload 结构，退回按行读取
-            if not file_rules:
-                file_rules = load_text_rules(path)
+            data = load_yaml_data(path)
+            file_entries = extract_entries(data, f_name)
+            if not file_entries:
+                # 兼容非标准结构：退回按行读取
+                file_entries = load_text_rules(path)
 
-        stats[f_name] = len(file_rules)
-        all_rules_set.update(file_rules)
+        # 按"文件"维度去重计数（同文件内重复的规则只算一次）
+        file_rule_set = {raw for _, raw in file_entries}
+        stats[f_name] = len(file_rule_set)
+        all_rules_set.update(file_rule_set)
 
-        for rule in file_rules:
-            type_stats[categorize(rule)] += 1
-            rule_to_files[rule].append(f_name)
+        for source, raw in file_entries:
+            type_stats[categorize(raw)] += 1
+            norm_key = normalize_rule(raw)
+            norm_to_occurrences[norm_key].append((source, raw))
 
-    # 找出跨文件重复的规则
-    duplicates = {r: files for r, files in rule_to_files.items() if len(files) > 1}
+    # 只保留真正出现在"不同来源"里的重复（同一文件内部重复不算跨文件问题）
+    duplicates = {}
+    for norm_key, occ in norm_to_occurrences.items():
+        sources = {o[0] for o in occ}
+        if len(sources) > 1:
+            duplicates[norm_key] = occ
 
     update_readme(stats, type_stats, len(all_rules_set), duplicates)
 
     print(f"总计 {len(yaml_files)} 个文件，去重后 {len(all_rules_set)} 条规则")
     if duplicates:
-        print(f"⚠️ 发现 {len(duplicates)} 条跨文件重复规则，已写入 README")
+        print(f"⚠️ 发现 {len(duplicates)} 组跨来源重复规则（含逻辑等价识别），已写入 README")
