@@ -10,12 +10,11 @@
 | cn-direct.yaml | 331 |
 | google-android.yaml | 33 |
 | international-website.yaml | 27 |
-| requirements.txt | 1 |
 | telegram-ip-pro.yaml | 17 |
 | tv-player.yaml | 5 |
 | usa.yaml | 1 |
 | vivo-ads.yaml | 103 |
-| **全库去重总计** | **645** |
+| **全库去重总计** | **644** |
 
 ### 🏷️ 规则类型分布
 
@@ -30,7 +29,6 @@
 | IP-CIDR6 | 8 |
 | DOMAIN-WILDCARD | 6 |
 | DST-PORT | 4 |
-| DOMAIN(text) | 1 |
 
 ### ⚠️ 跨文件重复规则（共 8 条）
 
