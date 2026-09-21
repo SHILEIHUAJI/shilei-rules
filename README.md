@@ -10,11 +10,11 @@
 | google-android.yaml | 33 |
 | international-website.yaml | 25 |
 | my-rules.yaml | 202 |
-| telegram-ip-pro.yaml | 17 |
+| telegram-ip-pro.yaml | 15 |
 | tv-player.yaml | 5 |
 | usa.yaml | 1 |
 | vivo-ads.yaml | 103 |
-| **全库去重总计** | **814** |
+| **全库去重总计** | **812** |
 
 ### 🏷️ 规则类型分布
 
@@ -34,7 +34,6 @@
 | GEOSITE | 2 |
 | SRC-IP-CIDR | 2 |
 | MATCH | 2 |
-| IP-ASN | 2 |
 | OR | 1 |
 | SUB-RULE | 1 |
 | DOMAIN-REGEX | 1 |
