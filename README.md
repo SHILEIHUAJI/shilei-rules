@@ -6,7 +6,7 @@
 | Reject-Manually.yaml | 79 |
 | bytedance-global.yaml | 12 |
 | claude-ai.yaml | 6 |
-| cn-direct-pro.yaml | 14 |
+| cn-direct-pro.yaml | 0 |
 | cn-direct.yaml | 331 |
 | google-android.yaml | 33 |
 | international-website.yaml | 25 |
@@ -15,22 +15,22 @@
 | tv-player.yaml | 5 |
 | usa.yaml | 1 |
 | vivo-ads.yaml | 103 |
-| **全库去重总计** | **828** |
+| **全库去重总计** | **814** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX | 552 |
+| DOMAIN-SUFFIX | 551 |
 | DOMAIN | 120 |
 | PROCESS-NAME | 94 |
-| IP-CIDR | 30 |
 | AND | 23 |
+| IP-CIDR | 20 |
 | RULE-SET | 20 |
 | DOMAIN-KEYWORD | 17 |
-| IP-CIDR6 | 7 |
 | DOMAIN-WILDCARD | 6 |
 | DST-PORT | 5 |
+| IP-CIDR6 | 4 |
 | GEOIP | 2 |
 | GEOSITE | 2 |
 | SRC-IP-CIDR | 2 |
