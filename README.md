@@ -10,26 +10,24 @@
 | google-android.yaml | 33 |
 | international-website.yaml | 25 |
 | my-rules.yaml | 202 |
-| telegram-ip-pro.yaml | 15 |
 | tv-player.yaml | 5 |
 | usa.yaml | 1 |
 | vivo-ads.yaml | 103 |
-| **全库去重总计** | **812** |
+| **全库去重总计** | **797** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX | 551 |
+| DOMAIN-SUFFIX | 547 |
 | DOMAIN | 120 |
 | PROCESS-NAME | 94 |
 | AND | 23 |
-| IP-CIDR | 20 |
 | RULE-SET | 20 |
 | DOMAIN-KEYWORD | 17 |
+| IP-CIDR | 12 |
 | DOMAIN-WILDCARD | 6 |
 | DST-PORT | 5 |
-| IP-CIDR6 | 4 |
 | GEOIP | 2 |
 | GEOSITE | 2 |
 | SRC-IP-CIDR | 2 |
