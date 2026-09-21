@@ -1,28 +1,37 @@
+
 sub-rules:
   Sub-Vivo-Hell-Block:
-    # 1. 系统更新例外（若需要正常检测/下载 OriginOS 系统更新，可取消下行注释）
-
-    # 2. 第一重地狱拦截：系统级内置 App + 第三方广告/跨界 SDK 联合行为
-    # 覆盖：桌面、推送、安全中心、超级截屏、Jovi/智慧服务、负一屏、指纹服务、连接中心、后台定时任务等进程
     - AND,((OR,((PROCESS-NAME,com.bbk.launcher2),(PROCESS-NAME,com.vivo.pushservice),(PROCESS-NAME,com.vivo.safecenter),(PROCESS-NAME,com.vivo.smartshot),(PROCESS-NAME,com.vivo.agent),(PROCESS-NAME,com.vivo.aiservice),(PROCESS-NAME,com.vivo.hiboard),(PROCESS-NAME,com.vivo.fingerprint),(PROCESS-NAME,com.vivo.connbase),(PROCESS-NAME,com.android.BBKCrontab))),(OR,((DOMAIN-KEYWORD,stsdk),(DOMAIN-KEYWORD,vpush),(DOMAIN-KEYWORD,moni),(DOMAIN-KEYWORD,vcode),(DOMAIN-REGEX,byteimg|baidu|xiaohongshu|google|jd|360|tieba)))),🚨广告拦截
-
+    - MATCH,🇨🇳直连
+    
 
 rules:
-  - AND,((NETWORK,UDP),(DST-PORT,443)),❌拒绝
-  - DOMAIN,388583885.459245.xyz,⭕直连
+  - DOMAIN-SUFFIX,nagoya2026.org,海外网页
+  - AND,((DST-PORT,5228),(PROCESS-NAME,com.google.android.gms)),Google
+  - DOMAIN,mtalk.google.com,Google
+  - DOMAIN-SUFFIX,fcm.googleapis.com,Google
+  - DOMAIN-SUFFIX,googleapis.cn,Google
+
+  # GMS 框架与 Google Play 服务进程接管
+  - PROCESS-NAME,com.google.android.gms,Google
+  - PROCESS-NAME,com.google.android.gsf,Google
+  # FCM 核心信令、长连接端口与 GMS 框架进程聚合逻辑规则
+  
+  - OR,((DST-PORT,5228),(DOMAIN,mtalk.google.com),(DOMAIN-SUFFIX,fcm.googleapis.com),(PROCESS-NAME,com.google.android.gms)),Google
+  - DOMAIN,388583885.459245.xyz,🇨🇳直连
   - DOMAIN-SUFFIX,feiniaoyun.xyz,订阅更新
 # 在 REJECT 规则前优先放行信令域名
   - DOMAIN-SUFFIX,dcard.tw,台湾
   # ==================== 1. 本地 / 局域网直连 ====================
-  - IP-CIDR,127.0.0.0/8,⭕直连,no-resolve
-  - IP-CIDR,172.16.0.0/12,⭕直连,no-resolve
-  - IP-CIDR,192.168.0.0/16,⭕直连,no-resolve
-  - IP-CIDR,224.0.0.0/4,⭕直连,no-resolve
-  - RULE-SET,private,⭕直连
-  - RULE-SET,private-ip,⭕直连,no-resolve
-  - RULE-SET,cn,⭕直连          # 提前
-  - RULE-SET,cn-direct,⭕直连    # 提前
-  - RULE-SET,cn-direct-pro,⭕直连,no-resolve  # 提前
+  - IP-CIDR,127.0.0.0/8,🇨🇳直连,no-resolve
+  - IP-CIDR,172.16.0.0/12,🇨🇳直连,no-resolve
+  - IP-CIDR,192.168.0.0/16,🇨🇳直连,no-resolve
+  - IP-CIDR,224.0.0.0/4,🇨🇳直连,no-resolve
+  - GEOIP,private,🇨🇳直连,no-resolve
+  - GEOSITE,cn,🇨🇳直连          # 提前
+  - GEOIP,cn,🇨🇳直连,no-resolve
+  - RULE-SET,cn-direct,🇨🇳直连    # 提前
+  - RULE-SET,cn-direct-pro,🇨🇳直连,no-resolve  # 提前
   
   # ==================== 2. 广告拦截 / 隐私追踪 / 恶意域名 ====================
   - SUB-RULE,(OR,((DOMAIN-KEYWORD,vivo),(PROCESS-NAME-REGEX,^com\.(vivo|bbk)\..*))),Sub-Vivo-Hell-Block
@@ -30,36 +39,35 @@ rules:
   - AND,((DOMAIN-SUFFIX,doubao.com),(DOMAIN-KEYWORD,quic)),🚨广告拦截
   - AND,((DOMAIN-SUFFIX,doubao.com),(DOMAIN-KEYWORD,frontier)),🚨广告拦截
   - AND,((PROCESS-NAME,com.xunmeng.pinduoduo),(IP-CIDR6,::/0,no-resolve)),🚨广告拦截
-  - AND,((PROCESS-NAME,com.com.larus.nova),(RULE-SET,bytedance-global)),❌拒绝
-  - AND,((PROCESS-NAME,com.tencent.mm),(DOMAIN-KEYWORD,tiktok)),❌拒绝
+  - AND,((PROCESS-NAME,com.com.larus.nova),(RULE-SET,bytedance-global)),🚫拒绝
+  - AND,((PROCESS-NAME,com.tencent.mm),(DOMAIN-KEYWORD,tiktok)),🚫拒绝
 
 
 
 
 #抖音
-  - DOMAIN-SUFFIX,snssdk.com,⭕直连
   
   # 阻断规则正则匹配与规则集
-  - DOMAIN-REGEX,^.*\b(ads?|adm|adn|adlog|adreq|pcdn|track|trace|stat|report|adxlog|bdurl|snssdk|analytic|doubleclick|umeng|cnzz|loc)\b.*$,❌拒绝
+  - DOMAIN-REGEX,^.*\b(ads?|adm|adn|adlog|adreq|pcdn|track|trace|stat|report|adxlog|bdurl|snssdk|analytic|doubleclick|umeng|cnzz|loc)\b.*$,🚫拒绝
   # 规则集（误杀修正：已将 cn-direct 移至下方国内白名单）
 
   - RULE-SET,Reject-Manually,🚨广告拦截
-  - RULE-SET,reject,❌拒绝
-  - DOMAIN-SUFFIX,vivo.com,⭕直连
+  - RULE-SET,reject,🚫拒绝
+  - DOMAIN-SUFFIX,vivo.com,🇨🇳直连
   - RULE-SET,vivo-ads,🚨广告拦截
-  
+  - DOMAIN-SUFFIX,snssdk.com,🇨🇳直连
 
   # ==================== 3. DNS 与特定协议控制 ====================
   - DOMAIN-SUFFIX,dnsspeedtest.online,节点选择
-  - DOMAIN,time.android.com,⭕直连
-  - AND,((DOMAIN-SUFFIX,google.com),(DST-PORT,123)),⭕直连
-  - DST-PORT,123,⭕直连,no-resolve
-  - AND,((PROCESS-NAME,com.pikcloud.pikpak),(NETWORK,UDP)),❌拒绝
+  - DOMAIN,time.android.com,🇨🇳直连
+  - AND,((DOMAIN-SUFFIX,google.com),(DST-PORT,123)),🇨🇳直连
+  - DST-PORT,123,🇨🇳直连,no-resolve
+  - AND,((PROCESS-NAME,com.pikcloud.pikpak),(NETWORK,UDP)),🚫拒绝
 
 ##谷歌
 # === Google 统一处理 ===
   - RULE-SET,google-android,Google
-  - RULE-SET,google,Google
+  - GEOSITE,google,Google
   - DOMAIN-KEYWORD,google,Google
   - DOMAIN-KEYWORD,youtube,Google
   - PROCESS-NAME,com.android.vending,Google
@@ -101,18 +109,18 @@ rules:
   - PROCESS-NAME,com.pikcloud.pikpak,海外网页
 
   # Microsoft & Copilot
-  - DOMAIN-SUFFIX,edge.microsoft.com,⭕直连
-  - DOMAIN-SUFFIX,cn.bing.com,⭕直连
+  - DOMAIN-SUFFIX,edge.microsoft.com,🇨🇳直连
+  - DOMAIN-SUFFIX,cn.bing.com,🇨🇳直连
   - DOMAIN-SUFFIX,microsoft.com,Microsoft
   - DOMAIN-KEYWORD,copilot,Copilot
   - DOMAIN-SUFFIX,sydney.bing.com,Microsoft
   - DOMAIN-SUFFIX,edgeservices.bing.com,Microsoft
   - PROCESS-NAME,com.microsoft.copilot,Microsoft
-  - PROCESS-NAME,com.microsoft.translator,⭕直连
+  - PROCESS-NAME,com.microsoft.translator,🇨🇳直连
   - RULE-SET,microsoft,Microsoft
-  - AND,((PROCESS-NAME,com.microsoft.emmx),(RULE-SET,cn)),⭕直连
-  - AND,((PROCESS-NAME,com.microsoft.emmx),(RULE-SET,cn-ip,no-resolve)),⭕直连
-  - AND,((PROCESS-NAME,com.microsoft.emmx),(NOT,((RULE-SET,cn-ip,no-resolve)))),Cloudflare
+  - AND,((PROCESS-NAME,com.microsoft.emmx),(GEOSITE,cn)),🇨🇳直连
+  - AND,((PROCESS-NAME,com.microsoft.emmx),(GEOIP,cn,no-resolve)),🇨🇳直连
+  - AND,((PROCESS-NAME,com.microsoft.emmx),(NOT,((GEOIP,cn,no-resolve)))),Cloudflare
 
   # AI 智能服务 (Claude, OpenAI, Grok, Perplexity, Dola)
 
@@ -142,7 +150,7 @@ rules:
   # TikTok
   - DOMAIN,ad-instantpage.tiktokv.us,🚨广告拦截
   - DOMAIN,ad-instantpage-ttp2.tiktokv.us,🚨广告拦截
-  - AND,((PROCESS-NAME,com.ss.android.ugc.trill),(RULE-SET,cn-ip,no-resolve)),⭕直连
+  - AND,((PROCESS-NAME,com.ss.android.ugc.trill),(GEOIP,cn,no-resolve)),🇨🇳直连
   - RULE-SET,bytedance-global,Tiktok
   - RULE-SET,tiktok,Tiktok
   - AND,((PROCESS-NAME,com.ss.android.ugc.trill),(DOMAIN,mtalk.google.com)),Tiktok
@@ -182,11 +190,11 @@ rules:
   - DOMAIN-SUFFIX,mmsi01.com,TV
   - RULE-SET,tv-player,TV
   - DOMAIN-SUFFIX,netflix.com,Google
-  - DOMAIN-SUFFIX,wasu.tv,⭕直连
-  - AND,((IP-CIDR,192.168.8.0/24,no-resolve),(DST-PORT,5023)),⭕直连
-  - AND,((PROCESS-NAME,com.player.ku9),(RULE-SET,cn)),⭕直连
-  - AND,((PROCESS-NAME,com.player.ku9),(RULE-SET,cn-ip,no-resolve)),⭕直连
-  - AND,((PROCESS-NAME,com.github.mytv.android),(RULE-SET,cn-ip,no-resolve)),⭕直连
+  - DOMAIN-SUFFIX,wasu.tv,🇨🇳直连
+  - AND,((IP-CIDR,192.168.8.0/24,no-resolve),(DST-PORT,5023)),🇨🇳直连
+  - AND,((PROCESS-NAME,com.player.ku9),(GEOSITE,cn)),🇨🇳直连
+  - AND,((PROCESS-NAME,com.player.ku9),(GEOIP,cn,no-resolve)),🇨🇳直连
+  - AND,((PROCESS-NAME,com.github.mytv.android),(GEOIP,cn,no-resolve)),🇨🇳直连
 
   # 工具与第三方 App
   - PROCESS-NAME,com.termux,Termux
@@ -197,12 +205,11 @@ rules:
 
   # 浏览器代理回退 (Chrome)
   
-  - AND,((PROCESS-NAME,com.android.chrome),(NOT,((RULE-SET,cn,no-resolve)))),Google
+  - AND,((PROCESS-NAME,com.android.chrome),(NOT,((GEOIP,cn,no-resolve)))),Google
 
   # ==================== 5. 区域分流 (日本/美国/欧洲/俄罗斯) ====================
   - DOMAIN-SUFFIX,quad9.net,美国
   - DOMAIN-SUFFIX,opendns.com,美国
-  - DOMAIN-SUFFIX,dns.iij.jp,海外网页
   - DOMAIN-SUFFIX,navismithapis-cdn.com,日本
   - DOMAIN-SUFFIX,darkreader.org,日本
   - DOMAIN-SUFFIX,dmm.com,日本
@@ -233,49 +240,46 @@ rules:
 
   # ==================== 7. 国内直连白名单 ====================
 
-  - DOMAIN-SUFFIX,volces.com,⭕直连
-  - DOMAIN-SUFFIX,bytetos.com,⭕直连
-  - DOMAIN-SUFFIX,spthgb.com,⭕直连
-  - DOMAIN-SUFFIX,spfcas.com,⭕直连
-  - DOMAIN-SUFFIX,api.liquidlink.cn,⭕直连
-  - DOMAIN-SUFFIX,mijia.tech,⭕直连
-  - DOMAIN-SUFFIX,mi.com,⭕直连
-  - DOMAIN-SUFFIX,douyincdn.com,⭕直连
-  - DOMAIN-SUFFIX,toutiao.com,⭕直连
-  - DOMAIN-SUFFIX,winkawaks.org,⭕直连
-  - DOMAIN-SUFFIX,vivo.com.cn,⭕直连
-  - DOMAIN-SUFFIX,iqoo.com.cn,⭕直连
-  - DOMAIN-SUFFIX,krypton.sh,⭕直连
-  - DOMAIN-SUFFIX,qtaeixd.com,⭕直连
-  - PROCESS-NAME,com.luna.music,⭕直连
+  - DOMAIN-SUFFIX,volces.com,🇨🇳直连
+  - DOMAIN-SUFFIX,bytetos.com,🇨🇳直连
+  - DOMAIN-SUFFIX,spthgb.com,🇨🇳直连
+  - DOMAIN-SUFFIX,spfcas.com,🇨🇳直连
+  - DOMAIN-SUFFIX,api.liquidlink.cn,🇨🇳直连
+  - DOMAIN-SUFFIX,mijia.tech,🇨🇳直连
+  - DOMAIN-SUFFIX,mi.com,🇨🇳直连
+  - DOMAIN-SUFFIX,douyincdn.com,🇨🇳直连
+  - DOMAIN-SUFFIX,toutiao.com,🇨🇳直连
+  - DOMAIN-SUFFIX,winkawaks.org,🇨🇳直连
+  - DOMAIN-SUFFIX,vivo.com.cn,🇨🇳直连
+  - DOMAIN-SUFFIX,iqoo.com.cn,🇨🇳直连
+  - DOMAIN-SUFFIX,krypton.sh,🇨🇳直连
+  - DOMAIN-SUFFIX,qtaeixd.com,🇨🇳直连
+  - PROCESS-NAME,com.luna.music,🇨🇳直连
 
-  - DOMAIN-SUFFIX,xiaomi.com,⭕直连
-  - DOMAIN-SUFFIX,miui.com,⭕直连
-  - DOMAIN-SUFFIX,getui.net.com,⭕直连
-  - PROCESS-NAME,com.xiaomi.smarthome,⭕直连
+  - DOMAIN-SUFFIX,xiaomi.com,🇨🇳直连
+  - DOMAIN-SUFFIX,miui.com,🇨🇳直连
+  - DOMAIN-SUFFIX,getui.net.com,🇨🇳直连
+  - PROCESS-NAME,com.xiaomi.smarthome,🇨🇳直连
 
-  - PROCESS-NAME,com.yt.sz.szbank,⭕直连
-  - PROCESS-NAME,com.xunmeng.pinduoduo,⭕直连
-  - PROCESS-NAME,com.nasoft.socmark,⭕直连
-  - PROCESS-NAME,com.bytedance.android.doubaoime,⭕直连
-  - PROCESS-NAME,com.vivo.translator,⭕直连
-  - PROCESS-NAME,com.bbk.appstore,⭕直连
-  - PROCESS-NAME,com.lovebizhi.wallpaper,⭕直连
-  - PROCESS-NAME,com.heweather.weatherapp,⭕直连
-  - IP-CIDR,110.43.0.0/16,⭕直连,no-resolve
-  - IP-CIDR,1.12.0.0/14,⭕直连,no-resolve
+  - PROCESS-NAME,com.yt.sz.szbank,🇨🇳直连
+  - PROCESS-NAME,com.xunmeng.pinduoduo,🇨🇳直连
+  - PROCESS-NAME,com.nasoft.socmark,🇨🇳直连
+  - PROCESS-NAME,com.bytedance.android.doubaoime,🇨🇳直连
+  - PROCESS-NAME,com.vivo.translator,🇨🇳直连
+  - PROCESS-NAME,com.bbk.appstore,🇨🇳直连
+  - PROCESS-NAME,com.lovebizhi.wallpaper,🇨🇳直连
+  - PROCESS-NAME,com.heweather.weatherapp,🇨🇳直连
+  - IP-CIDR,110.43.0.0/16,🇨🇳直连,no-resolve
+  - IP-CIDR,1.12.0.0/14,🇨🇳直连,no-resolve
 
   # 特殊源 IP 路由控制
   - SRC-IP-CIDR,192.168.8.30/32,Tiktok,no-resolve
-  - SRC-IP-CIDR,192.168.0.0/16,⭕直连,no-resolve
+  - SRC-IP-CIDR,192.168.0.0/16,🇨🇳直连,no-resolve
 
   # 酷9
   - PROCESS-NAME,com.player.ku9,TV
 
   # ==================== 8. 兜底与漏网之鱼 ====================
-  - RULE-SET,cn-ip,⭕直连,no-resolve
-  - RULE-SET,google-ip,Google,no-resolve
   - RULE-SET,gfw,🐟漏网之鱼
   - RULE-SET,geolocation-!cn,🐟漏网之鱼
   - MATCH,🐟漏网之鱼
-
