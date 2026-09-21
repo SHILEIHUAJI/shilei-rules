@@ -10,32 +10,35 @@
 | cn-direct.yaml | 331 |
 | google-android.yaml | 33 |
 | international-website.yaml | 25 |
-| my-rules.yaml | 199 |
+| my-rules.yaml | 202 |
 | telegram-ip-pro.yaml | 17 |
 | tv-player.yaml | 5 |
 | usa.yaml | 1 |
 | vivo-ads.yaml | 103 |
-| **全库去重总计** | **825** |
+| **全库去重总计** | **828** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX | 550 |
-| DOMAIN | 119 |
-| PROCESS-NAME | 92 |
+| DOMAIN-SUFFIX | 552 |
+| DOMAIN | 120 |
+| PROCESS-NAME | 94 |
 | IP-CIDR | 30 |
-| RULE-SET | 26 |
 | AND | 23 |
+| RULE-SET | 20 |
 | DOMAIN-KEYWORD | 17 |
 | IP-CIDR6 | 7 |
 | DOMAIN-WILDCARD | 6 |
 | DST-PORT | 5 |
+| GEOIP | 2 |
+| GEOSITE | 2 |
 | SRC-IP-CIDR | 2 |
+| MATCH | 2 |
 | IP-ASN | 2 |
+| OR | 1 |
 | SUB-RULE | 1 |
 | DOMAIN-REGEX | 1 |
-| MATCH | 1 |
 
 ### ✅ 未发现跨文件重复规则
 
