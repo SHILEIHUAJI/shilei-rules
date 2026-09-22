@@ -1,5 +1,29 @@
-
 sub-rules:
+  # 谷歌流量专有处理管道 [cite: 177, 225]
+  Google-Pipeline:
+    # 阶段 ①：放行 Gemini Live 实时语音与交互端点 (最高优先级)
+    - DOMAIN,generativelanguage.googleapis.com,Google
+    - DOMAIN,alkalinetooling-pa.googleapis.com,Google
+    - DOMAIN-SUFFIX,proactive-backend-pa.googleapis.com,Google
+    # 阶段 ②：严格阻断 Google 定位 API 与地图全系服务 [cite: 217]
+    - DOMAIN,location.googleapis.com,🚮丢弃       # 定位 API 静默丢弃 [cite: 217]
+    - DOMAIN,geolocation.googleapis.com,🚮丢弃
+    - DOMAIN-SUFFIX,maps.googleapis.com,🚮丢弃    # 地图瓦片与路线 API
+    - DOMAIN,maps.gstatic.com,🚮丢弃
+    - DOMAIN-KEYWORD,googlemaps,🚮丢弃
+    # 阶段 ③：阻断 SDK 共享与追踪端点 (防直连泄露) [cite: 217]
+    - DOMAIN,clients4.google.com,🚮丢弃
+    - DOMAIN,csi.gstatic.com,🚮丢弃
+    # 阶段 ④：拦截 UDP 443 (QUIC)，解决 Play 商店下载卡“等待中” [cite: 43]
+    - AND,((NETWORK,UDP),(DST-PORT,443)),🚮丢弃         # 迫使 Play 商店与 Google API 降级 TCP [cite: 43]
+    # 阶段 ⑤：兜底流转 (剩余所有正常的谷歌流量走代理)
+    - OR,((DST-PORT,5228),(DOMAIN,mtalk.google.com),(DOMAIN-SUFFIX,fcm.googleapis.com),(PROCESS-NAME,com.google.android.gms)),Google
+    - DOMAIN,mtalk.google.com,Google
+    - DOMAIN-SUFFIX,fcm.googleapis.com,Google
+    - DOMAIN-SUFFIX,googleapis.cn,Google
+    - RULE-SET,google-android,Google
+    - GEOSITE,google,Google
+    - MATCH,Google
   Sub-Vivo-Hell-Block:
     - AND,((OR,((PROCESS-NAME,com.bbk.launcher2),(PROCESS-NAME,com.vivo.pushservice),(PROCESS-NAME,com.vivo.safecenter),(PROCESS-NAME,com.vivo.smartshot),(PROCESS-NAME,com.vivo.agent),(PROCESS-NAME,com.vivo.aiservice),(PROCESS-NAME,com.vivo.hiboard),(PROCESS-NAME,com.vivo.fingerprint),(PROCESS-NAME,com.vivo.connbase),(PROCESS-NAME,com.android.BBKCrontab))),(OR,((DOMAIN-KEYWORD,stsdk),(DOMAIN-KEYWORD,vpush),(DOMAIN-KEYWORD,moni),(DOMAIN-KEYWORD,vcode),(DOMAIN-REGEX,byteimg|baidu|xiaohongshu|google|jd|360|tieba)))),🚨广告拦截
     - MATCH,🇨🇳直连
@@ -7,17 +31,8 @@ sub-rules:
 
 rules:
   - DOMAIN-SUFFIX,nagoya2026.org,海外网页
-  - AND,((DST-PORT,5228),(PROCESS-NAME,com.google.android.gms)),Google
-  - DOMAIN,mtalk.google.com,Google
-  - DOMAIN-SUFFIX,fcm.googleapis.com,Google
-  - DOMAIN-SUFFIX,googleapis.cn,Google
-
-  # GMS 框架与 Google Play 服务进程接管
-  - PROCESS-NAME,com.google.android.gms,Google
-  - PROCESS-NAME,com.google.android.gsf,Google
-  # FCM 核心信令、长连接端口与 GMS 框架进程聚合逻辑规则
   
-  - OR,((DST-PORT,5228),(DOMAIN,mtalk.google.com),(DOMAIN-SUFFIX,fcm.googleapis.com),(PROCESS-NAME,com.google.android.gms)),Google
+
   - DOMAIN,388583885.459245.xyz,🇨🇳直连
   - DOMAIN-SUFFIX,feiniaoyun.xyz,订阅更新
 # 在 REJECT 规则前优先放行信令域名
@@ -31,7 +46,6 @@ rules:
   - GEOSITE,cn,🇨🇳直连          # 提前
   - GEOIP,cn,🇨🇳直连,no-resolve
   - RULE-SET,cn-direct,🇨🇳直连    # 提前
-  - RULE-SET,cn-direct-pro,🇨🇳直连,no-resolve  # 提前
   
   # ==================== 2. 广告拦截 / 隐私追踪 / 恶意域名 ====================
   - SUB-RULE,(OR,((DOMAIN-KEYWORD,vivo),(PROCESS-NAME-REGEX,^com\.(vivo|bbk)\..*))),Sub-Vivo-Hell-Block
@@ -66,10 +80,10 @@ rules:
 
 ##谷歌
 # === Google 统一处理 ===
-  - RULE-SET,google-android,Google
-  - GEOSITE,google,Google
-  - DOMAIN-KEYWORD,google,Google
-  - DOMAIN-KEYWORD,youtube,Google
+  # 只要匹配到谷歌域名或安卓谷歌服务，瞬间切入 Google 专属子管道 [cite: 177, 225]
+  - SUB-RULE,(OR,((GEOSITE,google),(RULE-SET,google-android))),Google-Pipeline
+  - PROCESS-NAME,com.google.android.gms,Google
+  - PROCESS-NAME,com.google.android.gsf,Google
   - PROCESS-NAME,com.android.vending,Google
   - PROCESS-NAME,com.google.android.gms,Google
   - PROCESS-NAME,com.google.android.gsf,Google
@@ -148,9 +162,6 @@ rules:
   - PROCESS-NAME,com.twitter.android,Google
 
   # TikTok
-  - DOMAIN,ad-instantpage.tiktokv.us,🚨广告拦截
-  - DOMAIN,ad-instantpage-ttp2.tiktokv.us,🚨广告拦截
-  - AND,((PROCESS-NAME,com.ss.android.ugc.trill),(GEOIP,cn,no-resolve)),🇨🇳直连
   - RULE-SET,bytedance-global,Tiktok
   - RULE-SET,tiktok,Tiktok
   - AND,((PROCESS-NAME,com.ss.android.ugc.trill),(DOMAIN,mtalk.google.com)),Tiktok
@@ -167,10 +178,10 @@ rules:
   - DOMAIN-SUFFIX,jsdelivr.net,Jsdelivr
 
   # Telegram & IM
-  - RULE-SET,telegram-ip,Telegram,no-resolve
-  - RULE-SET,telegram-ip-pro,Telegram,no-resolve
+  - GEOIP,telegram,Telegram
   - PROCESS-NAME,org.telegram.messenger,Telegram
   - PROCESS-NAME,tw.nekomimi.nekogram,Telegram
+  - PROCESS-NAME,xyz.nextalone.nagram,Telegram
 
 
   # Cloudflare
@@ -283,3 +294,4 @@ rules:
   - RULE-SET,gfw,🐟漏网之鱼
   - RULE-SET,geolocation-!cn,🐟漏网之鱼
   - MATCH,🐟漏网之鱼
+
