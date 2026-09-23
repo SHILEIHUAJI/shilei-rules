@@ -5,90 +5,82 @@ sub-rules:
     - DOMAIN,generativelanguage.googleapis.com,Google
     - DOMAIN,alkalinetooling-pa.googleapis.com,Google
     - DOMAIN-SUFFIX,proactive-backend-pa.googleapis.com,Google
-    # 阶段 ②：严格阻断 Google 定位 API 与地图全系服务 [cite: 217]
-    - DOMAIN,location.googleapis.com,🚮丢弃       # 定位 API 静默丢弃 [cite: 217]
+
+    # 阶段 ②：严格阻断 Google 定位 API 与地图全系服务
+    - DOMAIN,location.googleapis.com,🚮丢弃
     - DOMAIN,geolocation.googleapis.com,🚮丢弃
-    - DOMAIN-SUFFIX,maps.googleapis.com,🚮丢弃    # 地图瓦片与路线 API
+    - DOMAIN-SUFFIX,maps.googleapis.com,🚮丢弃
     - DOMAIN,maps.gstatic.com,🚮丢弃
     - DOMAIN-KEYWORD,googlemaps,🚮丢弃
-    # 阶段 ③：阻断 SDK 共享与追踪端点 (防直连泄露) [cite: 217]
+
+    # 阶段 ③：阻断 SDK 共享与追踪端点 (防直连泄露)
     - DOMAIN,clients4.google.com,🚮丢弃
     - DOMAIN,csi.gstatic.com,🚮丢弃
-    # 阶段 ④：拦截 UDP 443 (QUIC)，解决 Play 商店下载卡“等待中” [cite: 43]
-    - AND,((NETWORK,UDP),(DST-PORT,443)),🚮丢弃         # 迫使 Play 商店与 Google API 降级 TCP [cite: 43]
+
+    # 阶段 ④：拦截 UDP 443 (QUIC)，解决 Play 商店下载卡“等待中”
+    - AND,((NETWORK,UDP),(DST-PORT,443)),🚮丢弃
+
     # 阶段 ⑤：兜底流转 (剩余所有正常的谷歌流量走代理)
-    - OR,((DST-PORT,5228),(DOMAIN,mtalk.google.com),(DOMAIN-SUFFIX,fcm.googleapis.com),(PROCESS-NAME,com.google.android.gms)),Google
     - DOMAIN,mtalk.google.com,Google
     - DOMAIN-SUFFIX,fcm.googleapis.com,Google
     - DOMAIN-SUFFIX,googleapis.cn,Google
     - RULE-SET,google-android,Google
     - GEOSITE,google,Google
     - MATCH,Google
+
+  # Vivo 系统地狱级广告拦截子管道
   Sub-Vivo-Hell-Block:
     - AND,((OR,((PROCESS-NAME,com.bbk.launcher2),(PROCESS-NAME,com.vivo.pushservice),(PROCESS-NAME,com.vivo.safecenter),(PROCESS-NAME,com.vivo.smartshot),(PROCESS-NAME,com.vivo.agent),(PROCESS-NAME,com.vivo.aiservice),(PROCESS-NAME,com.vivo.hiboard),(PROCESS-NAME,com.vivo.fingerprint),(PROCESS-NAME,com.vivo.connbase),(PROCESS-NAME,com.android.BBKCrontab))),(OR,((DOMAIN-KEYWORD,stsdk),(DOMAIN-KEYWORD,vpush),(DOMAIN-KEYWORD,moni),(DOMAIN-KEYWORD,vcode),(DOMAIN-REGEX,byteimg|baidu|xiaohongshu|google|jd|360|tieba)))),🚨广告拦截
     - MATCH,🇨🇳直连
-    
 
 rules:
-  - DOMAIN-SUFFIX,nagoya2026.org,海外网页
-  
+  # ==================== 0. 特殊源 IP 设备分流 (最高优先) ====================
+  - SRC-IP-CIDR,192.168.8.30/32,Tiktok,no-resolve
+  - SRC-IP-CIDR,192.168.0.0/16,🇨🇳直连,no-resolve
 
-  - DOMAIN,388583885.459245.xyz,🇨🇳直连
-  - DOMAIN-SUFFIX,feiniaoyun.xyz,订阅更新
-# 在 REJECT 规则前优先放行信令域名
-  - DOMAIN-SUFFIX,dcard.tw,台湾
   # ==================== 1. 本地 / 局域网直连 ====================
   - IP-CIDR,127.0.0.0/8,🇨🇳直连,no-resolve
   - IP-CIDR,172.16.0.0/12,🇨🇳直连,no-resolve
   - IP-CIDR,192.168.0.0/16,🇨🇳直连,no-resolve
   - IP-CIDR,224.0.0.0/4,🇨🇳直连,no-resolve
   - GEOIP,private,🇨🇳直连,no-resolve
-  - GEOSITE,cn,🇨🇳直连          # 提前
-  - GEOIP,cn,🇨🇳直连,no-resolve
-  - RULE-SET,cn-direct,🇨🇳直连    # 提前
-  
+
+  # 特殊域名/订阅直连与放行
+  - DOMAIN-SUFFIX,feiniaoyun.xyz,订阅更新
+  - DOMAIN-SUFFIX,fwcloud.me,订阅更新
+  - DOMAIN-SUFFIX,nagoya2026.org,海外网页
+  - DOMAIN,388583885.459245.xyz,🇨🇳直连
+  - DOMAIN-SUFFIX,dcard.tw,台湾
+
   # ==================== 2. 广告拦截 / 隐私追踪 / 恶意域名 ====================
   - SUB-RULE,(OR,((DOMAIN-KEYWORD,vivo),(PROCESS-NAME-REGEX,^com\.(vivo|bbk)\..*))),Sub-Vivo-Hell-Block
-  # AND 复合规则拦截
   - AND,((DOMAIN-SUFFIX,doubao.com),(DOMAIN-KEYWORD,quic)),🚨广告拦截
   - AND,((DOMAIN-SUFFIX,doubao.com),(DOMAIN-KEYWORD,frontier)),🚨广告拦截
   - AND,((PROCESS-NAME,com.xunmeng.pinduoduo),(IP-CIDR6,::/0,no-resolve)),🚨广告拦截
-  - AND,((PROCESS-NAME,com.com.larus.nova),(RULE-SET,bytedance-global)),🚫拒绝
+  - AND,((PROCESS-NAME,com.larus.nova),(RULE-SET,bytedance-global)),🚫拒绝 # 修正包名
   - AND,((PROCESS-NAME,com.tencent.mm),(DOMAIN-KEYWORD,tiktok)),🚫拒绝
 
-
-
-
-#抖音
-  
-  # 阻断规则正则匹配与规则集
+  # 广告正则与手动规则集
   - DOMAIN-REGEX,^.*\b(ads?|adm|adn|adlog|adreq|pcdn|track|trace|stat|report|adxlog|bdurl|snssdk|analytic|doubleclick|umeng|cnzz|loc)\b.*$,🚫拒绝
-  # 规则集（误杀修正：已将 cn-direct 移至下方国内白名单）
-
   - RULE-SET,Reject-Manually,🚨广告拦截
   - RULE-SET,reject,🚫拒绝
-  - DOMAIN-SUFFIX,vivo.com,🇨🇳直连
   - RULE-SET,vivo-ads,🚨广告拦截
-  - DOMAIN-SUFFIX,snssdk.com,🇨🇳直连
 
-  # ==================== 3. DNS 与特定协议控制 ====================
+  # ==================== 3. 谷歌专属子管道接入 (修复死锁点) ====================
+  # 直接接入 SUB-RULE，消除了上方抢先拦截的普通规则，让 Google-Pipeline 正确生效
+  - SUB-RULE,(OR,((GEOSITE,google),(RULE-SET,google-android))),Google-Pipeline
+
+  # ==================== 4. 特定应用与服务分流 ====================
+  # DNS 与时间同步
   - DOMAIN-SUFFIX,dnsspeedtest.online,节点选择
   - DOMAIN,time.android.com,🇨🇳直连
   - AND,((DOMAIN-SUFFIX,google.com),(DST-PORT,123)),🇨🇳直连
   - DST-PORT,123,🇨🇳直连,no-resolve
   - AND,((PROCESS-NAME,com.pikcloud.pikpak),(NETWORK,UDP)),🚫拒绝
 
-##谷歌
-# === Google 统一处理 ===
-  # 只要匹配到谷歌域名或安卓谷歌服务，瞬间切入 Google 专属子管道 [cite: 177, 225]
-  - SUB-RULE,(OR,((GEOSITE,google),(RULE-SET,google-android))),Google-Pipeline
-  - PROCESS-NAME,com.google.android.gms,Google
-  - PROCESS-NAME,com.google.android.gsf,Google
-  - PROCESS-NAME,com.android.vending,Google
-  - PROCESS-NAME,com.google.android.gms,Google
-  - PROCESS-NAME,com.google.android.gsf,Google
-#抖音
+  # 国内App
   - PROCESS-NAME,com.ss.android.ugc.aweme,抖音
+  - PROCESS-NAME,com.tencent.mm,🇨🇳直连
 
   # ClashMi GitHub 更新放行
   - AND,((PROCESS-NAME,com.nebula.clashmi),(DOMAIN-SUFFIX,githubusercontent.com)),海外网页
@@ -96,7 +88,6 @@ rules:
 
   # 节点订阅与链式代理
   - DOMAIN-SUFFIX,shilei2.pages.dev,CHAIN
-  - DOMAIN-SUFFIX,fwcloud.me,订阅更新
 
   # IP 查询与测速
   - DOMAIN-SUFFIX,fast.com,节点选择
@@ -106,14 +97,13 @@ rules:
   - DOMAIN-SUFFIX,speedtest.net,Speedtest
   - PROCESS-NAME,org.zwanoo.android.speedtest,Speedtest
   - IP-CIDR,119.41.87.0/24,节点选择
-  # 海外网页
+
+  # 海外网页 & PikPak
   - RULE-SET,international-website,海外网页
   - DOMAIN-SUFFIX,missav.ws,海外网页
   - DOMAIN-SUFFIX,missav.ai,海外网页
   - DOMAIN-KEYWORD,missav,海外网页
   - DOMAIN-SUFFIX,surrit.com,海外网页
-
-  # PikPak 网盘
   - DOMAIN-SUFFIX,pikpakfile.com,海外网页
   - DOMAIN-SUFFIX,mypikpak.com,海外网页
   - DOMAIN-SUFFIX,pikpak.io,海外网页
@@ -136,8 +126,7 @@ rules:
   - AND,((PROCESS-NAME,com.microsoft.emmx),(GEOIP,cn,no-resolve)),🇨🇳直连
   - AND,((PROCESS-NAME,com.microsoft.emmx),(NOT,((GEOIP,cn,no-resolve)))),Cloudflare
 
-  # AI 智能服务 (Claude, OpenAI, Grok, Perplexity, Dola)
-
+  # AI 智能服务 (Claude, OpenAI, Dola)
   - RULE-SET,claude-ai,AI人工智能
   - DOMAIN-SUFFIX,chatgpt.com,AI人工智能
   - DOMAIN-SUFFIX,openai.com,AI人工智能
@@ -146,13 +135,11 @@ rules:
   - DOMAIN-SUFFIX,perplexity.ai,AI人工智能
   - DOMAIN-SUFFIX,revenuecat.com,AI人工智能
   - DOMAIN-SUFFIX,cloudinary.com,AI人工智能
-
   - IP-CIDR,34.102.215.99/32,Dola,no-resolve
   - DOMAIN-SUFFIX,byteintlapi.com,Dola
   - DOMAIN-SUFFIX,ciciai.com,Dola
   - DOMAIN-SUFFIX,dola.com,Dola
   - PROCESS-NAME,com.larus.wolf,Dola
-
 
   # Twitter / X
   - DOMAIN-SUFFIX,t.co,Google
@@ -161,7 +148,8 @@ rules:
   - DOMAIN-SUFFIX,x.com,Google
   - PROCESS-NAME,com.twitter.android,Google
 
-  # TikTok
+  # TikTok (含 UDP 443 QUIC 降级防御)
+  - AND,((RULE-SET,bytedance-global),(NETWORK,UDP),(DST-PORT,443)),🚮丢弃
   - RULE-SET,bytedance-global,Tiktok
   - RULE-SET,tiktok,Tiktok
   - AND,((PROCESS-NAME,com.ss.android.ugc.trill),(DOMAIN,mtalk.google.com)),Tiktok
@@ -183,7 +171,6 @@ rules:
   - PROCESS-NAME,tw.nekomimi.nekogram,Telegram
   - PROCESS-NAME,xyz.nextalone.nagram,Telegram
 
-
   # Cloudflare
   - DOMAIN-SUFFIX,cloudflare-dns.com,海外网页
   - DOMAIN-SUFFIX,dnshe.com,Cloudflare
@@ -193,11 +180,12 @@ rules:
   - RULE-SET,cloudflare-ip,Cloudflare,no-resolve
   - RULE-SET,cloudflare,Cloudflare
 
-  # 影视 / 播放器 / 媒体
+  # 影视 / 媒体 / 工具
   - PROCESS-NAME,com.github.libretube,TV
   - PROCESS-NAME,com.layaboxhmhz.gamehmhz.okys,TV
   - PROCESS-NAME,com.github.mytv.android,TV
   - PROCESS-NAME,com.ysf.icu121,TV
+  - PROCESS-NAME,com.player.ku9,TV
   - DOMAIN-SUFFIX,mmsi01.com,TV
   - RULE-SET,tv-player,TV
   - DOMAIN-SUFFIX,netflix.com,Google
@@ -207,7 +195,6 @@ rules:
   - AND,((PROCESS-NAME,com.player.ku9),(GEOIP,cn,no-resolve)),🇨🇳直连
   - AND,((PROCESS-NAME,com.github.mytv.android),(GEOIP,cn,no-resolve)),🇨🇳直连
 
-  # 工具与第三方 App
   - PROCESS-NAME,com.termux,Termux
   - PROCESS-NAME,org.fdroid.fdroid,Cloudflare
   - PROCESS-NAME,org.torproject.torbrowser,Tor
@@ -215,10 +202,9 @@ rules:
   - PROCESS-NAME,xxx.pornhub.fuck,海外网页
 
   # 浏览器代理回退 (Chrome)
-  
   - AND,((PROCESS-NAME,com.android.chrome),(NOT,((GEOIP,cn,no-resolve)))),Google
 
-  # ==================== 5. 区域分流 (日本/美国/欧洲/俄罗斯) ====================
+  # 区域分流 (日本/美国/欧洲/俄罗斯)
   - DOMAIN-SUFFIX,quad9.net,美国
   - DOMAIN-SUFFIX,opendns.com,美国
   - DOMAIN-SUFFIX,navismithapis-cdn.com,日本
@@ -230,14 +216,12 @@ rules:
   - DOMAIN-SUFFIX,dmm.sh,日本
   - DOMAIN-SUFFIX,akabane.io,日本
   - DOMAIN-SUFFIX,dmm,日本
-
   - DOMAIN-SUFFIX,tampermonkey.net,Cloudflare
   - PROCESS-NAME,com.paypal.android.p2pmobile,美国
   - RULE-SET,usa,美国
   - IP-CIDR,88.212.7.0/24,欧洲,no-resolve
   - IP-CIDR,190.11.225.0/24,美国,no-resolve
   - IP-CIDR,23.237.100.0/24,美国,no-resolve
-
   - DOMAIN-SUFFIX,vk.com,Yandex
   - DOMAIN-SUFFIX,mail.ru,Yandex
   - DOMAIN-SUFFIX,avito.ru,Yandex
@@ -247,9 +231,10 @@ rules:
   - DOMAIN-SUFFIX,yandex.net,Yandex
   - PROCESS-NAME,com.vkontakte.android,Yandex
 
-  
-
-  # ==================== 7. 国内直连白名单 ====================
+  # ==================== 5. 国内直连白名单 (正确置于特定代理之后) ====================
+  - GEOSITE,cn,🇨🇳直连
+  - GEOIP,cn,🇨🇳直连,no-resolve
+  - RULE-SET,cn-direct,🇨🇳直连
 
   - DOMAIN-SUFFIX,volces.com,🇨🇳直连
   - DOMAIN-SUFFIX,bytetos.com,🇨🇳直连
@@ -263,13 +248,15 @@ rules:
   - DOMAIN-SUFFIX,winkawaks.org,🇨🇳直连
   - DOMAIN-SUFFIX,vivo.com.cn,🇨🇳直连
   - DOMAIN-SUFFIX,iqoo.com.cn,🇨🇳直连
+  - DOMAIN-SUFFIX,vivo.com,🇨🇳直连
+  - DOMAIN-SUFFIX,snssdk.com,🇨🇳直连
   - DOMAIN-SUFFIX,krypton.sh,🇨🇳直连
   - DOMAIN-SUFFIX,qtaeixd.com,🇨🇳直连
   - PROCESS-NAME,com.luna.music,🇨🇳直连
 
   - DOMAIN-SUFFIX,xiaomi.com,🇨🇳直连
   - DOMAIN-SUFFIX,miui.com,🇨🇳直连
-  - DOMAIN-SUFFIX,getui.net.com,🇨🇳直连
+  - DOMAIN-SUFFIX,getui.com,🇨🇳直连 # 修正拼写
   - PROCESS-NAME,com.xiaomi.smarthome,🇨🇳直连
 
   - PROCESS-NAME,com.yt.sz.szbank,🇨🇳直连
@@ -283,14 +270,7 @@ rules:
   - IP-CIDR,110.43.0.0/16,🇨🇳直连,no-resolve
   - IP-CIDR,1.12.0.0/14,🇨🇳直连,no-resolve
 
-  # 特殊源 IP 路由控制
-  - SRC-IP-CIDR,192.168.8.30/32,Tiktok,no-resolve
-  - SRC-IP-CIDR,192.168.0.0/16,🇨🇳直连,no-resolve
-
-  # 酷9
-  - PROCESS-NAME,com.player.ku9,TV
-
-  # ==================== 8. 兜底与漏网之鱼 ====================
+  # ==================== 6. 兜底与漏网之鱼 ====================
   - RULE-SET,gfw,🐟漏网之鱼
   - RULE-SET,geolocation-!cn,🐟漏网之鱼
   - MATCH,🐟漏网之鱼
