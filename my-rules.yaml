@@ -1,5 +1,5 @@
 sub-rules:
-  # 谷歌流量专有处理管道 [cite: 177, 225]
+  # 谷歌流量专有处理管道
   Google-Pipeline:
     # 阶段 ①：放行 Gemini Live 实时语音与交互端点 (最高优先级)
     - DOMAIN,generativelanguage.googleapis.com,Google
@@ -7,25 +7,25 @@ sub-rules:
     - DOMAIN-SUFFIX,proactive-backend-pa.googleapis.com,Google
 
     # 阶段 ②：严格阻断 Google 定位 API 与地图全系服务
-    - DOMAIN,location.googleapis.com,🚮丢弃
-    - DOMAIN,geolocation.googleapis.com,🚮丢弃
-    - DOMAIN-SUFFIX,maps.googleapis.com,🚮丢弃
-    - DOMAIN,maps.gstatic.com,🚮丢弃
-    - DOMAIN-KEYWORD,googlemaps,🚮丢弃
+    - DOMAIN,location.googleapis.com,🚫拒绝
+    - DOMAIN,geolocation.googleapis.com,🚫拒绝
+    - DOMAIN-SUFFIX,maps.googleapis.com,🚫拒绝
+    - DOMAIN,maps.gstatic.com,🚫拒绝
+    - DOMAIN-KEYWORD,googlemaps,🚫拒绝
 
     # 阶段 ③：阻断 SDK 共享与追踪端点 (防直连泄露)
-    - DOMAIN,clients4.google.com,🚮丢弃
-    - DOMAIN,csi.gstatic.com,🚮丢弃
+    - DOMAIN,clients4.google.com,🚫拒绝
+    - DOMAIN,csi.gstatic.com,🚫拒绝
 
     # 阶段 ④：拦截 UDP 443 (QUIC)，解决 Play 商店下载卡“等待中”
-    - AND,((NETWORK,UDP),(DST-PORT,443)),🚮丢弃
+    - AND,((NETWORK,UDP),(DST-PORT,443)),🚫拒绝
 
     # 阶段 ⑤：兜底流转 (剩余所有正常的谷歌流量走代理)
     - DOMAIN,mtalk.google.com,Google
     - DOMAIN-SUFFIX,fcm.googleapis.com,Google
     - DOMAIN-SUFFIX,googleapis.cn,Google
     - RULE-SET,google-android,Google
-    - GEOSITE,google,Google
+    - RULE-SET,google,Google
     - MATCH,Google
 
   # Vivo 系统地狱级广告拦截子管道
@@ -39,11 +39,9 @@ rules:
   - SRC-IP-CIDR,192.168.0.0/16,🇨🇳直连,no-resolve
 
   # ==================== 1. 本地 / 局域网直连 ====================
-  - IP-CIDR,127.0.0.0/8,🇨🇳直连,no-resolve
-  - IP-CIDR,172.16.0.0/12,🇨🇳直连,no-resolve
-  - IP-CIDR,192.168.0.0/16,🇨🇳直连,no-resolve
-  - IP-CIDR,224.0.0.0/4,🇨🇳直连,no-resolve
-  - GEOIP,private,🇨🇳直连,no-resolve
+  
+  - RULE-SET,private-ip,🇨🇳直连,no-resolve
+  - RULE-SET,private,🇨🇳直连
 
   # 特殊域名/订阅直连与放行
   - DOMAIN-SUFFIX,feiniaoyun.xyz,订阅更新
@@ -66,9 +64,10 @@ rules:
   - RULE-SET,reject,🚫拒绝
   - RULE-SET,vivo-ads,🚨广告拦截
 
-  # ==================== 3. 谷歌专属子管道接入 (修复死锁点) ====================
+  - PROCESS-NAME,InfinityLoop1309.NewPipeEnhanced,Pipe
+
   # 直接接入 SUB-RULE，消除了上方抢先拦截的普通规则，让 Google-Pipeline 正确生效
-  - SUB-RULE,(OR,((GEOSITE,google),(RULE-SET,google-android))),Google-Pipeline
+  - SUB-RULE,(OR,((RULE-SET,google),(RULE-SET,google-android))),Google-Pipeline
 
   # ==================== 4. 特定应用与服务分流 ====================
   # DNS 与时间同步
@@ -96,7 +95,7 @@ rules:
   - DOMAIN-SUFFIX,ip.sb,节点选择
   - DOMAIN-SUFFIX,speedtest.net,Speedtest
   - PROCESS-NAME,org.zwanoo.android.speedtest,Speedtest
-  - IP-CIDR,119.41.87.0/24,节点选择
+  - IP-CIDR,119.41.87.0/24,节点选择,no-resolve
 
   # 海外网页 & PikPak
   - RULE-SET,international-website,海外网页
@@ -122,9 +121,9 @@ rules:
   - PROCESS-NAME,com.microsoft.copilot,Microsoft
   - PROCESS-NAME,com.microsoft.translator,🇨🇳直连
   - RULE-SET,microsoft,Microsoft
-  - AND,((PROCESS-NAME,com.microsoft.emmx),(GEOSITE,cn)),🇨🇳直连
-  - AND,((PROCESS-NAME,com.microsoft.emmx),(GEOIP,cn,no-resolve)),🇨🇳直连
-  - AND,((PROCESS-NAME,com.microsoft.emmx),(NOT,((GEOIP,cn,no-resolve)))),Cloudflare
+  - AND,((PROCESS-NAME,com.microsoft.emmx),(RULE-SET,direct)),🇨🇳直连
+  - AND,((PROCESS-NAME,com.microsoft.emmx),(RULE-SET,cncidr,no-resolve)),🇨🇳直连
+  - AND,((PROCESS-NAME,com.microsoft.emmx),(NOT,((RULE-SET,cncidr,no-resolve)))),Cloudflare
 
   # AI 智能服务 (Claude, OpenAI, Dola)
   - RULE-SET,claude-ai,AI人工智能
@@ -149,9 +148,8 @@ rules:
   - PROCESS-NAME,com.twitter.android,Google
 
   # TikTok (含 UDP 443 QUIC 降级防御)
-  - AND,((RULE-SET,bytedance-global),(NETWORK,UDP),(DST-PORT,443)),🚮丢弃
+  # - AND,((RULE-SET,bytedance-global),(NETWORK,UDP),(DST-PORT,443)),🚮丢弃
   - RULE-SET,bytedance-global,Tiktok
-  - RULE-SET,tiktok,Tiktok
   - AND,((PROCESS-NAME,com.ss.android.ugc.trill),(DOMAIN,mtalk.google.com)),Tiktok
   - AND,((PROCESS-NAME,com.ss.android.ugc.trill),(DOMAIN-KEYWORD,googleapis)),Tiktok
   - AND,((PROCESS-NAME,com.ss.android.ugc.trill),(DOMAIN-KEYWORD,google)),Tiktok
@@ -166,7 +164,7 @@ rules:
   - DOMAIN-SUFFIX,jsdelivr.net,Jsdelivr
 
   # Telegram & IM
-  - GEOIP,telegram,Telegram
+  - RULE-SET,telegramcidr,Telegram
   - PROCESS-NAME,org.telegram.messenger,Telegram
   - PROCESS-NAME,tw.nekomimi.nekogram,Telegram
   - PROCESS-NAME,xyz.nextalone.nagram,Telegram
@@ -191,9 +189,9 @@ rules:
   - DOMAIN-SUFFIX,netflix.com,Google
   - DOMAIN-SUFFIX,wasu.tv,🇨🇳直连
   - AND,((IP-CIDR,192.168.8.0/24,no-resolve),(DST-PORT,5023)),🇨🇳直连
-  - AND,((PROCESS-NAME,com.player.ku9),(GEOSITE,cn)),🇨🇳直连
-  - AND,((PROCESS-NAME,com.player.ku9),(GEOIP,cn,no-resolve)),🇨🇳直连
-  - AND,((PROCESS-NAME,com.github.mytv.android),(GEOIP,cn,no-resolve)),🇨🇳直连
+  - AND,((PROCESS-NAME,com.player.ku9),(RULE-SET,direct)),🇨🇳直连
+  - AND,((PROCESS-NAME,com.player.ku9),(RULE-SET,cncidr,no-resolve)),🇨🇳直连
+  - AND,((PROCESS-NAME,com.github.mytv.android),(RULE-SET,cncidr,no-resolve)),🇨🇳直连
 
   - PROCESS-NAME,com.termux,Termux
   - PROCESS-NAME,org.fdroid.fdroid,Cloudflare
@@ -202,7 +200,7 @@ rules:
   - PROCESS-NAME,xxx.pornhub.fuck,海外网页
 
   # 浏览器代理回退 (Chrome)
-  - AND,((PROCESS-NAME,com.android.chrome),(NOT,((GEOIP,cn,no-resolve)))),Google
+  - AND,((PROCESS-NAME,com.android.chrome),(NOT,((RULE-SET,cncidr,no-resolve)))),Google
 
   # 区域分流 (日本/美国/欧洲/俄罗斯)
   - DOMAIN-SUFFIX,quad9.net,美国
@@ -232,8 +230,8 @@ rules:
   - PROCESS-NAME,com.vkontakte.android,Yandex
 
   # ==================== 5. 国内直连白名单 (正确置于特定代理之后) ====================
-  - GEOSITE,cn,🇨🇳直连
-  - GEOIP,cn,🇨🇳直连,no-resolve
+  - RULE-SET,direct,🇨🇳直连
+  - RULE-SET,cncidr,🇨🇳直连,no-resolve
   - RULE-SET,cn-direct,🇨🇳直连
 
   - DOMAIN-SUFFIX,volces.com,🇨🇳直连
@@ -274,4 +272,3 @@ rules:
   - RULE-SET,gfw,🐟漏网之鱼
   - RULE-SET,geolocation-!cn,🐟漏网之鱼
   - MATCH,🐟漏网之鱼
-
