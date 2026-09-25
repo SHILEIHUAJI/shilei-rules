@@ -1,5 +1,6 @@
 behavior: classical
 payload:
+  - DOMAIN-SUFFIX,clashmi.app
   - DOMAIN-SUFFIX,telemetry.us-ashburn-1.oci.oraclecloud.com
   - DST-PORT,3478
   - DST-PORT,3479
