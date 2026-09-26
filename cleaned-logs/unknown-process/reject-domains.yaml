@@ -1,0 +1,4 @@
+payload:
+  - DOMAIN,ecom5-normal-lf.ecombdapi.com
+  - DOMAIN,ecset5-core-gl2.ecombdapi.com
+  - DOMAIN-SUFFIX,snssdk.com
