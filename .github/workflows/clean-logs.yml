@@ -1,0 +1,33 @@
+name: Clean mihomo logs
+
+on:
+  push:
+    branches: [Temporary-Files]
+    paths:
+      - 'logs/**.log'
+      - 'logs/**.txt'
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: Temporary-Files
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run cleaning script
+        run: python3 scripts/clean_mihomo_logs.py logs cleaned-logs
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add cleaned-logs logs
+          git diff --cached --quiet || git commit -m "chore: clean mihomo logs [skip ci]"
+          git push
