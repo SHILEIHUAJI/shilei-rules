@@ -14,16 +14,16 @@
 ## 📊 包名数据可视化统计大屏
 
 ### 📈 概览
-- **配置文件总行数**: `149` 条
-- **独立有效应用数**: `140` 个
-- **重复包名状态**: ❌ **存在 9 个重复项**
+- **配置文件总行数**: `139` 条
+- **独立有效应用数**: `139` 个
+- **重复包名状态**: ✅ **校验通过 (无重复)**
 
 
 ### 🎨 应用分类分布饼图
 
 ```mermaid
 pie title 包名分类占比统计
-    "Google 系应用" : 55
+    "Google 系应用" : 54
     "其他第三方应用" : 50
     "GitHub/开源极客工具" : 7
     "开源组织应用" : 7
@@ -36,26 +36,12 @@ pie title 包名分类占比统计
     "腾讯系" : 1
 ```
 
-### ❌ 重复包名告警
-| 包名 (Package Name) | 首次出现 | 重复冲突行号 |
-| :--- | :---: | :---: |
-| `com.google.android.apps.docs` | `第 95 行` | `第 128 行` |
-| `com.google.android.apps.docs.editors.sheets` | `第 97 行` | `第 129 行` |
-| `com.google.android.apps.docs.editors.slides` | `第 98 行` | `第 130 行` |
-| `com.google.android.apps.tasks` | `第 106 行` | `第 132 行` |
-| `com.google.android.calendar` | `第 110 行` | `第 133 行` |
-| `com.google.android.apps.translate` | `第 107 行` | `第 134 行` |
-| `com.google.android.apps.photos` | `第 104 行` | `第 138 行` |
-| `com.google.android.apps.youtube.music` | `第 108 行` | `第 139 行` |
-| `com.google.android.apps.messaging` | `第 103 行` | `第 149 行` |
-
-
 ### 📋 分类列表明细
-<details><summary><b>Google 系应用</b> （包含 55 个应用）</summary>
+<details><summary><b>Google 系应用</b> （包含 54 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
-| `com.google.android.GoogleCamera` | `google-camera` | Google 相机 / Pixel Camera |
+| `com.google.android.GoogleCamera` | `google-camera` | Google 相机 |
 | `com.google.android.app.keyverifier` | `android-keyverifier` | Android System Key Verifier |
 | `com.google.android.apps.adm` | `google-find-my-device` | 查找我的设备 |
 | `com.google.android.apps.authenticator2` | `google-authenticator` | 身份验证器 |
@@ -71,8 +57,7 @@ pie title 包名分类占比统计
 | `com.google.android.apps.fitness` | `google-fit` | Google Fit |
 | `com.google.android.apps.googleassistant` | `google-assistant` | Google 助理 |
 | `com.google.android.apps.healthdata` | `health-connect` | 健康数据共享 |
-| `com.google.android.apps.keep` | `google-keep` | Google Keep 记事 |
-| `com.google.android.apps.labs.language.tailwind` | `google-Notebook` | Google-笔记本 |
+| `com.google.android.apps.labs.language.tailwind` | `google-notebook` | Google 笔记本 |
 | `com.google.android.apps.magazines` | `google-news` | Google 新闻 |
 | `com.google.android.apps.maps` | `google-maps` | 地图 |
 | `com.google.android.apps.messaging` | `google-messages` | Google 信息 |
@@ -83,7 +68,7 @@ pie title 包名分类占比统计
 | `com.google.android.apps.tachyon` | `google-meet` | Google Meet |
 | `com.google.android.apps.tasks` | `google-tasks` | Google Tasks |
 | `com.google.android.apps.translate` | `google-translate` | Google 翻译 |
-| `com.google.android.apps.walletnfcrerel` | `google-wallet` | Google 钱包 (Wallet) |
+| `com.google.android.apps.walletnfcrel` | `google-wallet` | Google 钱包 |
 | `com.google.android.apps.wallpaper` | `google-wallpapers` | Google 壁纸 |
 | `com.google.android.apps.wellbeing` | `digital-wellbeing` | 数字健康 |
 | `com.google.android.apps.youtube.creator` | `youtube-studio` | YouTube Studio |
@@ -106,7 +91,7 @@ pie title 包名分类占比统计
 | `com.google.android.recorder` | `google-recorder` | Google 录音机 |
 | `com.google.android.safetycore` | `android-safetycore` | Android System SafetyCore |
 | `com.google.android.tts` | `google-tts` | Google 语音服务 (TTS) |
-| `com.google.android.videos` | `google-tv` | Google TV / Play 影视 |
+| `com.google.android.videos` | `google-tv` | Google TV |
 | `com.google.android.youtube` | `youtube` | YouTube |
 | `com.google.ar.lens` | `google-lens` | 智能镜头 |
 | `com.google.earth` | `google-earth` | Google 地球 |
@@ -154,7 +139,7 @@ pie title 包名分类占比统计
 | `com.rhmsoft.edit` | `quickedit` | QuickEdit |
 | `com.sgcc.wsgw.cn` | `wsgw` | 网上国网 |
 | `com.termux` | `termux` | Termux |
-| `com.twitter.android` | `twitter` | Cash M |
+| `com.twitter.android` | `twitter` | Twitter / X |
 | `com.v2ray.ang` | `v2rayng` | v2rayNG |
 | `com.waze` | `waze` | Waze 导航 |
 | `com.wirelesssaleri.zipxtract` | `zipxtract` | ZipXtract |
