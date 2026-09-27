@@ -8,7 +8,7 @@ from collections import defaultdict
 
 YAML_PATH = "proc-alias.yaml"
 
-# 分类规则：正则匹配前缀 -> 分类标签
+# 包名分类正则匹配规则
 CLASSIFICATION_RULES = [
     (r"^com\.google\.", "Google 系应用与服务"),
     (r"^com\.android\.", "Android 系统核心组件"),
@@ -40,11 +40,9 @@ def parse_yaml_file(filepath):
         for line in f:
             line_num += 1
             stripped = line.strip()
-            # 过滤空行和纯注释行
             if not stripped or stripped.startswith("#"):
                 continue
             
-            # 解析格式: package.name: alias # 注释
             match = re.match(r"^([a-zA-Z0-9_\.]+):\s*([^\s#]+)(?:\s*#\s*(.*))?$", stripped)
             if match:
                 pkg, alias, comment = match.groups()
@@ -54,18 +52,68 @@ def parse_yaml_file(filepath):
                     "alias": alias,
                     "comment": comment.strip() if comment else ""
                 })
-            else:
-                print(f"⚠️  第 {line_num} 行语法解析跳过: {stripped}")
 
     return entries
 
+def build_markdown_report(entries, dup_pkgs, seen_pkgs, category_map):
+    total_count = len(entries)
+    unique_count = len(seen_pkgs)
+    dup_count = len(dup_pkgs)
+
+    md = []
+    md.append("# 📊 proc-alias.yaml 分析与检测报告\n")
+
+    # 1. 核心数据统计面板
+    md.append("## 📈 核心指标数据")
+    md.append("| 统计指标 | 数量 | 校验状态 |")
+    md.append("| :--- | :---: | :---: |")
+    md.append(f"| 原始解析总条数 | `{total_count}` | - |")
+    md.append(f"| 去重后有效包名数 | `{unique_count}` | - |")
+    if dup_count > 0:
+        md.append(f"| 重复包名数 | `{dup_count}` | ❌ **失败（存在重复）** |")
+    else:
+        md.append(f"| 重复包名数 | `0` | ✅ **通过（无重复）** |")
+    md.append("\n")
+
+    # 2. 重复告警列表（若有重复）
+    if dup_count > 0:
+        md.append("## ❌ 报错：发现重复包名")
+        md.append("| 包名 (Package Name) | 首次出现位置 | 冲突/重复行号 |")
+        md.append("| :--- | :---: | :---: |")
+        for pkg, items in dup_pkgs.items():
+            first_line = seen_pkgs[pkg]['line']
+            other_lines = ", ".join([f"`第 {x['line']} 行`" for x in items])
+            md.append(f"| `{pkg}` | `第 {first_line} 行` | {other_lines} |")
+        md.append("\n> ⚠️ **请尽快修改 `proc-alias.yaml` 删除上述重复行！**\n")
+
+    # 3. 按包名名称分类统计
+    md.append("## 📦 包名按类别汇总统计")
+    md.append("| 应用分类类别 | 包含应用数 | 占比 |")
+    md.append("| :--- | :---: | :---: |")
+    for cat, items in sorted(category_map.items(), key=lambda x: len(x[1]), reverse=True):
+        ratio = (len(items) / unique_count * 100) if unique_count else 0
+        md.append(f"| **{cat}** | `{len(items)}` | `{ratio:.1f}%` |")
+    md.append("\n")
+
+    # 4. 可折叠的完整包名分类清单
+    md.append("## 📋 包名分类明细")
+    for cat, items in sorted(category_map.items(), key=lambda x: len(x[1]), reverse=True):
+        md.append(f"<details><summary><b>{cat}</b> （点击展开明细 - 共 {len(items)} 个应用）</summary>\n")
+        md.append("| 包名 (Package Name) | 目录别名 (Alias) | 备注说明 |")
+        md.append("| :--- | :--- | :--- |")
+        for item in sorted(items, key=lambda x: x["pkg"]):
+            comment = item['comment'] if item['comment'] else "-"
+            md.append(f"| `{item['pkg']}` | `{item['alias']}` | {comment} |")
+        md.append("\n</details>\n")
+
+    return "\n".join(md)
+
 def main():
     entries = parse_yaml_file(YAML_PATH)
-    
-    # 1. 检测重复项
+
     seen_pkgs = {}
     dup_pkgs = defaultdict(list)
-    
+
     for item in entries:
         pkg = item["pkg"]
         if pkg in seen_pkgs:
@@ -75,55 +123,25 @@ def main():
 
     unique_entries = list(seen_pkgs.values())
 
-    print("=" * 60)
-    print("📊 proc-alias.yaml 检测与分析报告")
-    print("=" * 60)
-    
-    print(f"📈 原始总解析数 : {len(entries)} 条")
-    print(f"✨ 去重后有效数 : {len(unique_entries)} 条")
-
-    # 2. 输出重复警报
-    has_duplicates = False
-    if dup_pkgs:
-        has_duplicates = True
-        print(f"\n❌ 发现 {len(dup_pkgs)} 个重复的包名:")
-        for pkg, items in dup_pkgs.items():
-            first_line = seen_pkgs[pkg]['line']
-            other_lines = ", ".join([str(x['line']) for x in items])
-            print(f"   • {pkg}")
-            print(f"     - 首次出现: 第 {first_line} 行")
-            print(f"     - 重复出现: 第 {other_lines} 行")
-    else:
-        print("\n✅ 包名唯一性校验通过（未发现重复项）")
-
-    # 3. 按包名规则归类统计
     category_map = defaultdict(list)
     for item in unique_entries:
         cat = classify_package(item["pkg"])
         category_map[cat].append(item)
 
-    print("\n📦 包名分类汇总统计:")
-    print("-" * 40)
-    for cat, items in sorted(category_map.items(), key=lambda x: len(x[1]), reverse=True):
-        print(f"  • {cat:<25}: {len(items):>3} 个应用")
+    # 生成完整 Markdown 报告
+    md_content = build_markdown_report(entries, dup_pkgs, seen_pkgs, category_map)
 
-    # 4. 输出各分类下的详细清单
-    print("\n📋 各分类明细列表:")
-    print("-" * 40)
-    for cat, items in sorted(category_map.items(), key=lambda x: len(x[1]), reverse=True):
-        print(f"\n【{cat}】(共 {len(items)} 个):")
-        for item in sorted(items, key=lambda x: x["pkg"]):
-            comment_info = f" ({item['comment']})" if item['comment'] else ""
-            print(f"  - {item['pkg']} => {item['alias']}{comment_info}")
+    # 终端打印输出
+    print(md_content)
 
-    print("\n" + "=" * 60)
+    # 如果运行在 GitHub Actions 环境中，直接写入 GitHub Step Summary
+    summary_env = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary_env:
+        with open(summary_env, "a", encoding="utf-8") as f:
+            f.write(md_content + "\n")
 
-    # 如果有重复，让 CI 运行失败并退出
-    if has_duplicates:
-        print("❌ 校验未通过：请删除或合并 `proc-alias.yaml` 中的重复包名。")
+    if dup_pkgs:
         sys.exit(1)
-    else:
-        print("🎉 校验成功完成！")
 
 if __name__ == "__main__":
     main()
