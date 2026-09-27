@@ -14,7 +14,6 @@ com.vivo.sda: vivo-sda                             # 售后诊断助手 ✅ 修�
 com.vivo.wallet: vivo-wallet                        # vivo 钱包
 com.android.filemanager: vivo-file-management     # vivo 文件管理
 com.android.documentsui: vivo-file                  # vivo 文件
-
 com.vivo.abe: smart-engine                     # 智慧引擎
 com.vivo.ai.copilot: blueheart-v               # 蓝心小V
 com.vivo.aiservice: ai-service                 # AIService
@@ -82,7 +81,6 @@ com.android.vivo.tws.vivotws: vivo-tws          # vivo TWS
 com.bbk.account: bbk-account                   # vivo账号
 com.vivo.singularity: vivo-webview             # vivo系统WebView
 com.vivo.accessibilityenhance: accessibility-enhance # 无障碍增强
-
 com.vivo.systemblur.server: system-blur-server       # SystemBlur
 com.vivo.countdownwidget: countdown-widget          # 计时器组件
 com.vivo.bsptest: bsp-test                          # BSP测试
@@ -291,3 +289,7 @@ com.google.android.tts: google-tts                    # Google 语音服务(TTS)
 com.google.android.GoogleCamera: google-camera        # Google 相机
 com.google.android.recorder: google-recorder          # Google 录音机
 com.google.android.contactkeys: android-keyverifier   # Android密钥验证 ✅ 修正包名
+
+
+# ========== System Services ==========
+com.android.vendors.bridge.softsim: b-sim             # SIM/虚拟SIM相关
