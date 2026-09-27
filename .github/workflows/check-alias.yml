@@ -1,10 +1,7 @@
-### GitHub Actions 自动触发配置：`.github/workflows/check-a
 name: Check proc-alias.yaml
 
 on:
   push:
-    branches:
-      - Temporary-Files
     paths:
       - 'proc-alias.yaml'
       - 'check_proc_alias.py'
@@ -12,7 +9,7 @@ on:
   pull_request:
     paths:
       - 'proc-alias.yaml'
-  workflow_dispatch: # 支持在 GitHub 页面手动点击触发运行
+  workflow_dispatch:
 
 jobs:
   validate-and-analyze:
@@ -27,6 +24,6 @@ jobs:
         with:
           python-language: '3.x'
 
-      - name: 执行 proc-alias 检测脚本
+      - name: 执行 proc-alias 检测并生成可视化 Summary
         run: |
           python check_proc_alias.py
