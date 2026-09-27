@@ -14,8 +14,8 @@
 ## 📊 包名数据可视化统计大屏
 
 ### 📈 概览
-- **配置文件总行数**: `275` 条
-- **独立有效应用数**: `275` 个
+- **配置文件总行数**: `276` 条
+- **独立有效应用数**: `276` 个
 - **重复包名状态**: ✅ **校验通过 (无重复)**
 
 
@@ -28,7 +28,7 @@ pie title 包名分类占比统计
     "Google 系应用" : 54
     "GitHub/开源极客工具" : 9
     "开源组织应用" : 9
-    "Android 系统组件" : 6
+    "Android 系统组件" : 7
     "主流电商与服务" : 5
     "字节跳动系" : 4
     "百度系" : 2
@@ -327,7 +327,7 @@ pie title 包名分类占比统计
 
 </details>
 
-<details><summary><b>Android 系统组件</b> （包含 6 个应用）</summary>
+<details><summary><b>Android 系统组件</b> （包含 7 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
@@ -336,6 +336,7 @@ pie title 包名分类占比统计
 | `com.android.documentsui` | `vivo-file` | vivo 文件 |
 | `com.android.filemanager` | `vivo-file-management` | vivo 文件管理 |
 | `com.android.vending` | `google-play-store` | Google Play 商店 |
+| `com.android.vendors.bridge.softsim` | `b-sim` | SIM/虚拟SIM相关 |
 | `com.android.vivo.tws.vivotws` | `vivo-tws` | vivo TWS |
 
 </details>
