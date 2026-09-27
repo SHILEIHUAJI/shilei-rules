@@ -74,7 +74,7 @@ com.vivo.widget.cleanspeed: clean-speed        # 清理加速组件
 com.vivo.widget.healthcare: healthcare-widget  # 健康关怀
 com.vivo.xspace: atom-privacy-system            # 原子隐私系统
 com.vivo.aiengine: ai-engine                   # 智慧服务
-com.vivo.vivo3rdgoservice: image-algo-service   # ImageAlgoService
+com.vivo.vivo3rdalgoservice: image-algo-service   # ImageAlgoService
 com.vivo.globalanimation.resources: global-animation-res # 全局动画资源
 com.vivo.appfilter: pull-up-prevent-service    # 防拉起服务
 com.android.vivo.tws.vivotws: vivo-tws          # vivo TWS
