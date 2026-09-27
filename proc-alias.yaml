@@ -1,20 +1,160 @@
 # proc-alias.yaml —— 包名 → 目录别名映射表
-# 日常维护只改这个文件，脚本一行都不用动
-# 核对基准：2026-09-27 两张截图共139项+补充遗漏8项
 
 # ========== 基础与示例应用 ==========
 com.ss.android.ugc.aweme: aweme              # 抖音
 com.luna.music: luna-music                   # 汽水音乐
 com.tencent.mm: wechat                       # 微信
-com.vivo.gallery: vivo-gallery               # vivo相册
 mark.via.gp: via-browser                     # Via浏览器
+
+# ========== VIVO系应用 ==========
+com.vivo.gallery: vivo-gallery                      # vivo相册
+com.android.bbkcalculatos: vivo-calculator         # vivo计算器 ✅ 修正：原com.vivo.calculator
+com.vivo.remotemplugin: vivo-remote              # 客服协助 ✅ 修正：原com.vivo.remotepass
+com.vivo.sda: vivo-sda                             # 售后诊断助手 ✅ 修正：原com.vivo.ada
+com.vivo.wallet: vivo-wallet                        # vivo 钱包
+com.android.filemanager: vivo-file-management     # vivo 文件管理
+com.android.documentsui: vivo-file                  # vivo 文件
+
+com.vivo.abe: smart-engine                     # 智慧引擎
+com.vivo.ai.copilot: blueheart-v               # 蓝心小V
+com.vivo.aiservice: ai-service                 # AIService
+com.vivo.alldocuments: all-documents-viewer    # vivo万能查看器
+com.vivo.android.connectivity.mainline.manufacturer.resources.overlay: connectivity-overlay # 连接资源覆盖层
+com.vivo.android.wifi.common.resources.overlay: wifi-common-overlay # WiFi通用资源覆盖层
+com.vivo.android.wifi.mainline.manufacturer.resources.overlay: wifi-mainline-overlay # WiFi主线路资源覆盖层
+com.vivo.android.wifi.manufacturer.resources.overlay: wifi-mfg-overlay # WiFi厂商资源覆盖层
+com.vivo.android.wifi.platform.resources.overlay: wifi-platform-overlay # WiFi平台资源覆盖层
+com.vivo.assistant: important-notification     # 重要通知
+com.vivo.car.launcher: car-launcher            # 车载launcher
+com.vivo.car.networking: smart-car-networking  # 智能车载
+com.vivo.compass: compass                       # 指南针
+com.vivo.devicepower: device-power             # 设备电量
+com.vivo.desktopstickers: desktop-stickers     # 贴纸
+com.vivo.easyshare: easyshare                  # 互传
+com.vivo.familycare.local: familycare-local    # 健康使用设备
+com.vivo.favorite: favorite                    # 收藏
+com.vivo.findphone: find-phone                 # 查找
+com.vivo.fingerprintvit: fingerprint-vit      # 指纹组件
+com.vivo.floatingball: floating-ball           # 悬浮球
+com.vivo.gamecube: gamecube                    # 游戏魔盒
+com.vivo.globalsearch: global-search           # 全局搜索
+com.vivo.health: vivo-health                   # vivo健康
+com.vivo.healthservice: health-service         # 健康服务
+com.vivo.hiboard: smart-desktop                # 智慧桌面
+com.vivo.hybrid: quick-app-framework           # 快应用框架服务
+com.vivo.iotserver: iot-engine                 # IoT服务引擎
+com.vivo.launchercopilot: blueheart-v-widget   # 蓝心小V组件
+com.vivo.magazine: lockscreen-magazine         # 阅图锁屏
+com.vivo.musicwidgetmix: atom-music-widget      # 原子随身听
+com.vivo.nightpearl: night-pearl               # 熄屏显示
+com.vivo.numbermark: number-mark               # 陌电识别
+com.vivo.pem: power-guard                       # 电量守护
+com.vivo.phonehandoff: phone-handoff           # 通话接力
+com.vivo.pay: multi-scene-secure-pay           # 多场景安全支付服务
+com.vivo.pushservice: push-service             # 推送引擎
+com.vivo.remotassistant: remote-assistant      # 远程协助
+com.vivo.safecenter: safe-center               # 安全中心
+com.vivo.sdkplugin: service-secure-plugin      # vivo服务安全插件
+com.vivo.screenagent: v-note-helper            # 小V帮记
+com.vivo.setupwizard: setup-wizard             # 开机引导
+com.vivo.smartanswer: smart-answer             # 电话秘书
+com.vivo.smartmultiwindow: smart-multiwindow   # 多任务
+com.vivo.sos: sos-emergency                     # 紧急呼叫
+com.vivo.space: vivo-official-site              # vivo官网
+com.vivo.sps: super-process-system             # SuperProcessSystem
+com.vivo.symmetry: vivo-camera                  # vivo摄影
+com.vivo.third.numbermark: third-number-mark   # 陌生电话识别组件
+com.vivo.translator: translator                # 翻译机
+com.vivo.upnp.server: dlna-server              # 投屏
+com.vivo.videoservice: video-editor            # 视频编辑
+com.vivo.vms: vivo-mobile-service              # vivo移动服务
+com.vivo.vtouch: scan-assistant                # 扫描
+com.vivo.wallet: vivo-wallet                   # 钱包
+com.vivo.weather.provider: weather-provider    # 天气存储
+com.vivo.widget.calendar: calendar-widget      # 日历组件
+com.vivo.widget.cleanspeed: clean-speed        # 清理加速组件
+com.vivo.widget.healthcare: healthcare-widget  # 健康关怀
+com.vivo.xspace: atom-privacy-system            # 原子隐私系统
+com.vivo.aiengine: ai-engine                   # 智慧服务
+com.vivo.vivo3rdgoservice: image-algo-service   # ImageAlgoService
+com.vivo.globalanimation.resources: global-animation-res # 全局动画资源
+com.vivo.appfilter: pull-up-prevent-service    # 防拉起服务
+com.android.vivo.tws.vivotws: vivo-tws          # vivo TWS
+com.bbk.account: bbk-account                   # vivo账号
+com.vivo.singularity: vivo-webview             # vivo系统WebView
+com.vivo.accessibilityenhance: accessibility-enhance # 无障碍增强
+
+com.vivo.systemblur.server: system-blur-server       # SystemBlur
+com.vivo.countdownwidget: countdown-widget          # 计时器组件
+com.vivo.bsptest: bsp-test                          # BSP测试
+com.vivo.motionrecognition: motion-recognition      # 智能体感
+com.yozo.vivo.office: vivo-document                 # vivo文档
+com.vivo.voicerecognition: voice-recognition       # 声音识别
+com.vivo.healthwidget: health-widget                # 健康组件
+com.vivo.defaultPlayer: default-player              # 视频播放器
+com.vivo.share: vivo-share                          # vivo互传
+com.vivo.fingerprint: fingerprint-unlock            # 指纹与密码
+com.vivo.minscreen: mini-screen                     # 小屏
+com.vivo.doubleinstance: app-clone                  # 应用分身
+com.vivo.fingerprintui: fingerprint-ui              # 指纹UI组件
+com.vivo.audiofx: audio-effects                    # 音效设置
+com.bbk.theme.resources: wallpaper-res              # vivo壁纸资源
+com.vivo.video.floating: video-beauty               # 视频通话美颜
+com.vivo.multinlp: location-service                 # 定位服务
+com.vivo.privacylauncher: privacy-launcher          # 隐私桌面
+com.vivo.upslide: interaction-pool                  # 交互池
+com.vivo.agent: jovi-voice                          # Jovi语音
+com.vivo.gametrain: sound-position-train            # 听音辨位训练场
+com.vivo.seservice: digital-car-key                 # 数字车钥匙服务
+com.vivo.connbase.sysui: control-center             # ControlCenter
+com.vivo.cipherchain: cipher-vault                  # 密码保险箱
+com.vivo.pcsuite: pc-suite                          # vivo办公套件
+com.vivo.networkimprove: network-improve            # 网络优化
+com.vivo.accessibility: accessibility                # 无障碍
+com.vivo.faceunlock: face-unlock                    # 面部识别
+com.vivo.base.player: system-audio-player           # 系统音频播放器
+com.vivo.networkstate: network-state                # 网络状态
+com.vivo.devicereg: device-management               # 设备管理
+com.vivo.systemuiplugin: system-ui-plugin           # 系统界面组件
+com.vivo.doubletimezoneclock: dual-clock-widget     # i挂件
+com.vivo.vibrator4d: vibrator-4d                    # 4D振感
+com.vivo.sim.contacts: sim-contacts-service         # SIM卡联系人服务
+com.vivo.connbase: multi-device-connect             # 多设备互联
+com.vivo.SmartKey: quick-launch                     # 快捷启动
+com.vivo.faceui: face-ui                            # FaceUI
+com.vivo.permissionmanager: permission-manager      # 权限管理
+com.vivo.moodcube: morph-engine                     # 变形器
+com.vivo.voicewakeup: voice-wakeup                  # 语音唤醒
+com.vivo.livewallpaper.box: live-wallpaper-box      # 动态壁纸盒子
+com.vivo.globalanimation: global-animation          # 全局动效
+com.vivo.card: super-card-wallet                    # 超级卡包
+com.vivo.cota: cota                                 # COTA升级
+com.vivo.vdfs: cross-device-share                   # 跨设备使用
+com.vivo.alphacamera: alpha-camera                   # AlphaCamera
+com.vivo.smartshot: smart-screenshot                # 超级截屏
+com.vivo.smartunlock: smart-unlock                  # 智能解锁
+com.vivo.vhomeguide: v-home-guide                   # VHome指引
+com.vivo.simpleiconthemeres: simple-icon-theme-res  # 简约图标主题资源
+com.vivo.quickpay: quick-pay                        # 快捷支付
+com.vivo.daemonService: vivo-service-daemon         # vivo服务
+android.overlay.vivoresrro: vivo-res-overlay        # vivo资源覆盖层
+com.vivo.android.connectivity.mainline.common.resources.overlay: conn-common-overlay # 连接通用覆盖层
+com.vivo.android.connectivity.mainline.manufacturer.resources.overlay: conn-mfg-overlay # 连接厂商覆盖层
+com.vivo.android.wifi.mainline.common.resources.overlay: wifi-mainline-common-overlay # WiFi主线通用覆盖层
+com.vivo.android.wifi.mainline.platform.resources.overlay: wifi-mainline-platform-overlay # WiFi主线平台覆盖层
+
+
+
+
+
+
 
 # ========== 第一批：非谷歌系应用 ==========
 app.intra: intra                             # Intra
-bin.mt.termex: mt-manager                    # MT终端扩展包 ✅ 修正：原bin.mt.plus
+bin.mt.termex: mt-terminal-extension-pack                   # MT终端扩展包 ✅ 修正：原bin.mt.plus
+bin.mt.plus: mt-file-manager
 cn.wps.moffice_eng: wps-office               # WPS Office
 com.aliyun.tongyi: tongyi                    # 千问
-com.android.bbkcalculatos: vivo-calculator   # vivo计算器 ✅ 修正：原com.vivo.calculator
 com.android.chrome: chrome                   # Chrome
 com.android.vending: google-play-store       # Google Play 商店
 com.anthropic.claude: claude                 # Claude
@@ -28,7 +168,7 @@ com.ct.client: chinatelecom                  # 中国电信
 com.ddm.iptools: ip-tools                    # IP Tools
 com.deepl.mobiletranslator: deepl            # DeepL ✅ 修正：多了点→连写
 com.eg.android.AlipayGphone: zhifubao          # 支付宝
-com.energy.weather: breezy-weather           # Breezy Weather ✅ 统一别名
+org.breezyweather: breezy-weather           # Breezy Weather
 com.fitbit.FitbitMobile: health-mobile       # Health ✅ 修正：原com.health.mobile
 com.github.android: github                    # GitHub
 com.github.nrfr: nrfr                        # Nrfr
@@ -49,7 +189,7 @@ com.mmbox.xbrowser: xbrowser                 # X浏览器
 com.nasoft.socmark: socmark                  # 手机性能排行
 com.ookla.speedtest: speedtest               # Speedtest
 com.openai.chatgpt: chatgpt                  # ChatGPT
-com.payoneer.mobile: payoneer                # Payoneer
+com.payoneer.mobile: payoneer                # 派安盈
 ai.perplexity.app.android: perplexity        # Perplexity ✅ 修正：原com.perplexity.perplexity
 com.pikcloud.pikpak: pikpak                  # PikPak网盘 ✅ 补充
 com.larus.wolf: dola                         # Dola(字节海外AI) ✅ 补充
@@ -69,8 +209,6 @@ com.tailscale.ipn: tailscale                 # Tailscale ✅ 补充
 com.twitter.android: twitter                 # Twitter / X
 com.v2ray.ang: v2rayng                       # v2rayNG
 com.v2ray.ang.fdroid: v2rayng-fdroid         # v2rayNG(F-Droid版) ✅ 补充变体
-com.vivo.remotemplugin: vivo-remote          # 客服协助 ✅ 修正：原com.vivo.remotepass
-com.vivo.sda: vivo-sda                       # 售后诊断助手 ✅ 修正：原com.vivo.ada
 com.wirelessalien.zipxtract: zipxtract       # ZipXtract ✅ 修正：saleri→alien
 com.xtc.originwidget: xtc-widget             # 小天才组件 ✅ 修正：少i→originwidget
 com.xunmeng.pinduoduo: pinduoduo             # 拼多多
@@ -83,7 +221,6 @@ io.github.samolego.canta: canta              # Canta
 jp.ddo.hotmist.unicodepad: unicodepad        # UnicodePad ✅ 修正：pakutoma→hotmist
 li.songe.gkd: gkd                            # GKD
 moe.shizuku.privileged.api: shizuku          # Shizuku
-org.breezyweather: breezy-weather            # Breezy Weather
 org.fdroid.fdroid: fdroid                    # F-Droid
 org.localsend.localsend_app: localsend       # LocalSend
 org.mozilla.firefox: firefox                 # Firefox
@@ -99,6 +236,7 @@ xxx.pornhub.fuck: javdb                      # JavDB ✅ 修正：xio→xxx
 com.cctv.yangshipin.app.androidp: yangshipin # 央视频
 com.xiaomi.smarthome: mijia                  # 米家
 com.meizu.flyme.calculator: meizu-calculator # 魅族计算器
+
 
 # ========== 第二批：Google系应用与服务 ==========
 com.google.android.gms: google-gms                    # 谷歌服务
