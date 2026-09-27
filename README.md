@@ -14,8 +14,8 @@
 ## 📊 包名数据可视化统计大屏
 
 ### 📈 概览
-- **配置文件总行数**: `146` 条
-- **独立有效应用数**: `146` 个
+- **配置文件总行数**: `149` 条
+- **独立有效应用数**: `149` 个
 - **重复包名状态**: ✅ **校验通过 (无重复)**
 
 
@@ -23,7 +23,7 @@
 
 ```mermaid
 pie title 包名分类占比统计
-    "其他第三方应用" : 55
+    "其他第三方应用" : 58
     "Google 系应用" : 54
     "开源组织应用" : 9
     "GitHub/开源极客工具" : 8
@@ -37,7 +37,7 @@ pie title 包名分类占比统计
 ```
 
 ### 📋 分类列表明细
-<details><summary><b>其他第三方应用</b> （包含 55 个应用）</summary>
+<details><summary><b>其他第三方应用</b> （包含 58 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
@@ -49,6 +49,7 @@ pie title 包名分类占比统计
 | `com.apkpure.aegon` | `apkpure` | APKPure ✅ 修正：原com.apkpure.aframe |
 | `com.bd.nproject` | `lemon8` | Lemon8 ✅ 修正：原com.lumi.lemon8 |
 | `com.browser2345` | `browser2345` | 2345浏览器 |
+| `com.cctv.yangshipin.app.androidp` | `yangshipin` | 央视频 |
 | `com.coolapk.market` | `coolapk` | 酷安 |
 | `com.ct.client` | `chinatelecom` | 中国电信 |
 | `com.ddm.iptools` | `ip-tools` | IP Tools |
@@ -66,6 +67,7 @@ pie title 包名分类占比统计
 | `com.lonelycatgames.Xplore` | `x-plore` | X-plore |
 | `com.lovebizhi.wallpaper` | `lovebizhi` | 爱壁纸 |
 | `com.luna.music` | `luna-music` | 汽水音乐 |
+| `com.meizu.flyme.calculator` | `meizu-calculator` | 魅族计算器 |
 | `com.mmbox.xbrowser` | `xbrowser` | X浏览器 |
 | `com.nasoft.socmark` | `socmark` | 手机性能排行 |
 | `com.nebula.clashmi` | `clash-mi` | Clash Mi ✅ 补充 |
@@ -80,14 +82,15 @@ pie title 包名分类占比统计
 | `com.sgcc.wsgw.cn` | `wsgw` | 网上国网 |
 | `com.tailscale.ipn` | `tailscale` | Tailscale ✅ 补充 |
 | `com.termux` | `termux` | Termux |
+| `com.tiktok.lite.go` | `tiktok-lite` | TikTok Lite |
 | `com.twitter.android` | `twitter` | Twitter / X |
 | `com.v2ray.ang` | `v2rayng` | v2rayNG |
 | `com.v2ray.ang.fdroid` | `v2rayng-fdroid` | v2rayNG(F-Droid版) ✅ 补充变体 |
 | `com.waze` | `waze` | Waze 导航 |
 | `com.wirelessalien.zipxtract` | `zipxtract` | ZipXtract ✅ 修正：saleri→alien |
+| `com.xiaomi.smarthome` | `mijia` | 米家 |
 | `com.xtc.originwidget` | `xtc-widget` | 小天才组件 ✅ 修正：少i→originwidget |
 | `com.zhiliaoapp.musically` | `tiktok` | TikTok国际版 ✅ 修正+补充 |
-| `com.zhiliaoapp.musically.go` | `tiktok-lite` | TikTok Lite |
 | `com.zidongdianji` | `auto-clicker` | 自动点击器 |
 | `com.zoho.notebook` | `zoho-notebook` | Notebook |
 | `info.muge.appshare` | `appshare` | AppShare ✅ 修正：myapp→muge |
@@ -195,7 +198,7 @@ pie title 包名分类占比统计
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
-| `com.eg.android.AlipayGphone` | `alipay` | 支付宝 |
+| `com.eg.android.AlipayGphone` | `zhifubao` | 支付宝 |
 | `com.sankuai.meituan` | `meituan` | 美团 |
 | `com.taobao.idlefish` | `idlefish` | 闲鱼 |
 | `com.taobao.taobao` | `taobao` | 淘宝 |
