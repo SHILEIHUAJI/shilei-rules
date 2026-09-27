@@ -138,7 +138,6 @@ com.vivo.quickpay: quick-pay                        # 快捷支付
 com.vivo.daemonService: vivo-service-daemon         # vivo服务
 android.overlay.vivoresrro: vivo-res-overlay        # vivo资源覆盖层
 com.vivo.android.connectivity.mainline.common.resources.overlay: conn-common-overlay # 连接通用覆盖层
-com.vivo.android.connectivity.mainline.manufacturer.resources.overlay: conn-mfg-overlay # 连接厂商覆盖层
 com.vivo.android.wifi.mainline.platform.resources.overlay: wifi-mainline-platform-overlay # WiFi主线平台覆盖层
 
 
