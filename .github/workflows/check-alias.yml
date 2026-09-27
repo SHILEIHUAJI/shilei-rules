@@ -1,4 +1,4 @@
-name: Check proc-alias.yaml
+name: Check proc-alias.yaml & Auto Update README
 
 on:
   push:
@@ -6,24 +6,32 @@ on:
       - 'proc-alias.yaml'
       - 'check_proc_alias.py'
       - '.github/workflows/check-alias.yml'
-  pull_request:
-    paths:
-      - 'proc-alias.yaml'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  validate-and-analyze:
+  validate-and-update-readme:
     runs-on: ubuntu-latest
 
     steps:
       - name: 检出仓库代码
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
 
       - name: 设置 Python 环境
         uses: actions/setup-python@v5
         with:
           python-language: '3.x'
 
-      - name: 执行 proc-alias 检测并生成可视化 Summary
+      - name: 执行检测脚本并更新 README.md
         run: |
-          python check_proc_alias.py
+          python check_proc_alias.py || true
+
+      - name: 自动提交更新后的 README.md 到当前分支
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: 🤖 自动更新 proc-alias.yaml 统计数据面板 [skip ci]"
+          file_pattern: 'README.md'
