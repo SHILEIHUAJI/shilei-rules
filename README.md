@@ -14,16 +14,16 @@
 ## 📊 包名数据可视化统计大屏
 
 ### 📈 概览
-- **配置文件总行数**: `278` 条
-- **独立有效应用数**: `276` 个
-- **重复包名状态**: ❌ **存在 2 个重复项**
+- **配置文件总行数**: `276` 条
+- **独立有效应用数**: `275` 个
+- **重复包名状态**: ❌ **存在 1 个重复项**
 
 
 ### 🎨 应用分类分布饼图
 
 ```mermaid
 pie title 包名分类占比统计
-    "vivo 厂商应用" : 123
+    "vivo 厂商应用" : 122
     "其他第三方应用" : 61
     "Google 系应用" : 54
     "GitHub/开源极客工具" : 9
@@ -39,12 +39,11 @@ pie title 包名分类占比统计
 ### ❌ 重复包名告警
 | 包名 (Package Name) | 首次出现 | 重复冲突行号 |
 | :--- | :---: | :---: |
-| `com.vivo.wallet` | `第 14 行` | `第 72 行` |
-| `com.vivo.android.connectivity.mainline.manufacturer.resources.overlay` | `第 22 行` | `第 142 行` |
+| `com.vivo.android.connectivity.mainline.manufacturer.resources.overlay` | `第 22 行` | `第 141 行` |
 
 
 ### 📋 分类列表明细
-<details><summary><b>vivo 厂商应用</b> （包含 123 个应用）</summary>
+<details><summary><b>vivo 厂商应用</b> （包含 122 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
@@ -61,7 +60,6 @@ pie title 包名分类占比统计
 | `com.vivo.android.connectivity.mainline.common.resources.overlay` | `conn-common-overlay` | 连接通用覆盖层 |
 | `com.vivo.android.connectivity.mainline.manufacturer.resources.overlay` | `connectivity-overlay` | 连接资源覆盖层 |
 | `com.vivo.android.wifi.common.resources.overlay` | `wifi-common-overlay` | WiFi通用资源覆盖层 |
-| `com.vivo.android.wifi.mainline.common.resources.overlay` | `wifi-mainline-common-overlay` | WiFi主线通用覆盖层 |
 | `com.vivo.android.wifi.mainline.manufacturer.resources.overlay` | `wifi-mainline-overlay` | WiFi主线路资源覆盖层 |
 | `com.vivo.android.wifi.mainline.platform.resources.overlay` | `wifi-mainline-platform-overlay` | WiFi主线平台覆盖层 |
 | `com.vivo.android.wifi.manufacturer.resources.overlay` | `wifi-mfg-overlay` | WiFi厂商资源覆盖层 |
