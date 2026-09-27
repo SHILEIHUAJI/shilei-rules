@@ -27,7 +27,7 @@ com.coolapk.market: coolapk                   # 酷安
 com.ct.client: chinatelecom                  # 中国电信
 com.ddm.iptools: ip-tools                    # IP Tools
 com.deepl.mobiletranslator: deepl            # DeepL ✅ 修正：多了点→连写
-com.eg.android.AlipayGphone: alipay          # 支付宝
+com.eg.android.AlipayGphone: zhifubao          # 支付宝
 com.energy.weather: breezy-weather           # Breezy Weather ✅ 统一别名
 com.fitbit.FitbitMobile: health-mobile       # Health ✅ 修正：原com.health.mobile
 com.github.android: github                    # GitHub
@@ -75,7 +75,7 @@ com.wirelessalien.zipxtract: zipxtract       # ZipXtract ✅ 修正：saleri→a
 com.xtc.originwidget: xtc-widget             # 小天才组件 ✅ 修正：少i→originwidget
 com.xunmeng.pinduoduo: pinduoduo             # 拼多多
 com.zhiliaoapp.musically: tiktok             # TikTok国际版 ✅ 修正+补充
-com.zhiliaoapp.musically.go: tiktok-lite     # TikTok Lite
+com.tiktok.lite.go: tiktok-lite              # TikTok Lite
 com.zidongdianji: auto-clicker               # 自动点击器
 com.zoho.notebook: zoho-notebook             # Notebook
 info.muge.appshare: appshare                 # AppShare ✅ 修正：myapp→muge
@@ -96,6 +96,9 @@ org.chromium.webapk.ac00537baef003203_v2: wikipedia-pwa  # Wikipedia(PWA) ✅ �
 org.chromium.webapk.a71da6c439749dd60_v2: google-pwa      # Google PWA ✅ 补充
 sz.szsmk.citizencard: szsmk                  # 智慧苏州
 xxx.pornhub.fuck: javdb                      # JavDB ✅ 修正：xio→xxx
+com.cctv.yangshipin.app.androidp: yangshipin # 央视频
+com.xiaomi.smarthome: mijia                  # 米家
+com.meizu.flyme.calculator: meizu-calculator # 魅族计算器
 
 # ========== 第二批：Google系应用与服务 ==========
 com.google.android.gms: google-gms                    # 谷歌服务
