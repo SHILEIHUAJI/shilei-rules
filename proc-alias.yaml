@@ -1,8 +1,159 @@
 # proc-alias.yaml —— 包名 → 目录别名映射表
 # 日常维护只改这个文件，脚本一行都不用动
+
+# 已有规则
 com.ss.android.ugc.aweme: aweme        # 抖音
-com.luna.music: luna-music             # 汽水音乐
-com.tencent.mm: wechat                 # 微信
+com.luna.music: luna-music             # 汽水音乐[span_0](start_span)[span_0](end_span)
+com.tencent.mm: wechat                 # 微信[span_1](start_span)[span_1](end_span)
 com.google.android.gms: google-gms     # 谷歌服务
 com.vivo.gallery: vivo-gallery         # vivo相册
-mark.via.gp: via-browser               # Via浏览器
+mark.via.gp: via-browser               # Via浏览器[span_2](start_span)[span_2](end_span)
+
+# 使用中完整映射表
+app.intra: intra                       # Intra[span_3](start_span)[span_3](end_span)
+bin.mt.plus: mt-manager                # MT管理器[span_4](start_span)[span_4](end_span)
+cn.wps.moffice_eng: wps-office         # WPS Office[span_5](start_span)[span_5](end_span)
+com.aliyun.tongyi: tongyi              # 千问[span_6](start_span)[span_6](end_span)
+com.android.calculator2: calculator    # 计算器[span_7](start_span)[span_7](end_span)
+com.android.chrome: chrome             # Chrome[span_8](start_span)[span_8](end_span)
+com.anthropic.claude: claude           # Claude[span_9](start_span)[span_9](end_span)
+com.apkpure.aframe: apkpure            # APKPure[span_10](start_span)[span_10](end_span)
+com.baidu.dict: baidu-dict             # 百度汉语[span_11](start_span)[span_11](end_span)
+com.baidu.tieba: baidu-tieba           # 百度贴吧[span_12](start_span)[span_12](end_span)
+com.browser2345: browser2345           # 2345浏览器[span_13](start_span)[span_13](end_span)
+com.bytedance.android.ludao.online: ludao # 笨包路人谈[span_14](start_span)[span_14](end_span)
+com.coolapk.market: coolapk            # 酷安[span_15](start_span)[span_15](end_span)
+com.ct.client: chinatelecom            # 中国电信[span_16](start_span)[span_16](end_span)
+com.ddm.iptools: ip-tools              # IP Tools[span_17](start_span)[span_17](end_span)
+com.deepl.mobile.translator: deepl     # DeepL[span_18](start_span)[span_18](end_span)
+com.eg.android.AlipayGphone: alipay    # 支付宝[span_19](start_span)[span_19](end_span)
+com.energy.weather: energy-weather     # Energy Weather[span_20](start_span)[span_20](end_span)
+com.github.android: github             # GitHub[span_21](start_span)[span_21](end_span)
+com.github.nrfr: nrfr                  # Nrfr[span_22](start_span)[span_22](end_span)
+com.google.android.app.keyverifier: android-keyverifier # Android System Key Verifier[span_23](start_span)[span_23](end_span)
+com.google.android.apps.authenticator2: google-authenticator # 身份验证器[span_24](start_span)[span_24](end_span)
+com.google.android.apps.bard: gemini   # Gemini[span_25](start_span)[span_25](end_span)
+com.google.android.apps.docs.editors.docs: google-docs # Google文档[span_26](start_span)[span_26](end_span)
+com.google.android.apps.googleassistant: google-assistant # Google助理[span_27](start_span)[span_27](end_span)
+com.google.android.apps.healthdata: health-connect # 健康数据共享[span_28](start_span)[span_28](end_span)
+com.google.android.apps.maps: google-maps # 地图[span_29](start_span)[span_29](end_span)
+com.google.android.apps.photosgo: photos-go # 相册[span_30](start_span)[span_30](end_span)
+com.google.android.as: private-compute-services # Private Compute Services[span_31](start_span)[span_31](end_span)
+com.google.android.contacts: google-contacts # 通讯录[span_32](start_span)[span_32](end_span)
+com.google.android.dialer: google-dialer # 电话[span_33](start_span)[span_33](end_span)
+com.google.android.gm: gmail           # Gmail[span_34](start_span)[span_34](end_span)
+com.google.android.googlequicksearchbox: google-search # Google[span_35](start_span)[span_35](end_span)
+com.google.android.ims: carrier-services # Carrier Services[span_36](start_span)[span_36](end_span)
+com.google.android.inputmethod.latin: gboard # Gboard[span_37](start_span)[span_37](end_span)
+com.google.android.safetycore: android-safetycore # Android System SafetyCore[span_38](start_span)[span_38](end_span)
+com.google.android.youtube: youtube    # YouTube[span_39](start_span)[span_39](end_span)
+com.google.ar.lens: google-lens        # 智能镜头[span_40](start_span)[span_40](end_span)
+com.health.mobile: health              # Health[span_41](start_span)[span_41](end_span)
+com.hp.printercontrol: hp-smart        # HP[span_42](start_span)[span_42](end_span)
+com.huawei.smarthome: huawei-smarthome # 智慧生活[span_43](start_span)[span_43](end_span)
+com.icbc: icbc                         # 中国工商银行[span_44](start_span)[span_44](end_span)
+com.jincheng.supercalculator: super-calculator # 全能计算器[span_45](start_span)[span_45](end_span)
+com.kwai.video: kwai                   # Kwai[span_46](start_span)[span_46](end_span)
+com.kwai.videoeditor: kwai-videoeditor # 快影[span_47](start_span)[span_47](end_span)
+com.lenovo.safecenter: lenovo-safecenter # 联想智能设备安全组件[span_48](start_span)[span_48](end_span)
+com.lonelycatgames.Xplore: x-plore     # X-plore[span_49](start_span)[span_49](end_span)
+com.lovebizhi.wallpaper: lovebizhi     # 爱壁纸[span_50](start_span)[span_50](end_span)
+com.lumi.lemon8: lemon8                # Lemon8[span_51](start_span)[span_51](end_span)
+com.meizu.flyme.calculator: flyme-calculator # 计算器[span_52](start_span)[span_52](end_span)
+com.microsoft.copilot: copilot         # Copilot[span_53](start_span)[span_53](end_span)
+com.microsoft.emmx: edge               # Edge[span_54](start_span)[span_54](end_span)
+com.mmbox.xbrowser: xbrowser           # X浏览器[span_55](start_span)[span_55](end_span)
+com.mt.termux: mt-termux               # MT终端扩展包[span_56](start_span)[span_56](end_span)
+com.nasoft.socmark: socmark            # 手机性能排行[span_57](start_span)[span_57](end_span)
+com.ookla.speedtest: speedtest         # Speedtest[span_58](start_span)[span_58](end_span)
+com.openai.chatgpt: chatgpt            # ChatGPT[span_59](start_span)[span_59](end_span)
+com.payoneer.mobile: payoneer          # Payoneer[span_60](start_span)[span_60](end_span)
+com.perplexity.perplexity: perplexity  # Perplexity[span_61](start_span)[span_61](end_span)
+com.pipepipe.app: pipepipe             # PipePipe[span_62](start_span)[span_62](end_span)
+com.pranavpandey.rotation: rotation    # Rotation[span_63](start_span)[span_63](end_span)
+com.rhmsoft.edit: quickedit            # QuickEdit[span_64](start_span)[span_64](end_span)
+com.sankuai.meituan: meituan           # 美团[span_65](start_span)[span_65](end_span)
+com.sgcc.wsgw.cn: wsgw                 # 网上国网[span_66](start_span)[span_66](end_span)
+com.ss.android.article.news: toutiao   # 头条搜索[span_67](start_span)[span_67](end_span)
+com.ss.android.ugc.trill: tiktok       # TikTok[span_68](start_span)[span_68](end_span)
+com.taobao.idlefish: idlefish          # 闲鱼[span_69](start_span)[span_69](end_span)
+com.taobao.taobao: taobao              # 淘宝[span_70](start_span)[span_70](end_span)[span_71](start_span)[span_71](end_span)
+com.termux: termux                     # Termux[span_72](start_span)[span_72](end_span)
+com.twitter.android: twitter           # Cash M[span_73](start_span)[span_73](end_span)
+com.v2ray.ang: v2rayng                 # v2rayNG[span_74](start_span)[span_74](end_span)
+com.vivo.ada: vivo-ada                 # 售后诊断助手[span_75](start_span)[span_75](end_span)
+com.vivo.calculator: vivo-calculator   # vivo计算器[span_76](start_span)[span_76](end_span)
+com.vivo.remotepass: vivo-remote       # 客服协助[span_77](start_span)[span_77](end_span)
+com.wirelesssaleri.zipxtract: zipxtract # ZipXtract[span_78](start_span)[span_78](end_span)
+com.xtc.orginwidget: xtc-widget        # 小天才组件[span_79](start_span)[span_79](end_span)
+com.xunmeng.pinduoduo: pinduoduo       # 拼多多[span_80](start_span)[span_80](end_span)
+com.zhiliaoapp.musically.go: tiktok-lite # TikTok Lite[span_81](start_span)[span_81](end_span)
+com.zidongdianji: auto-clicker         # 自动点击器[span_82](start_span)[span_82](end_span)
+com.zoho.notebook: zoho-notebook       # Notebook[span_83](start_span)[span_83](end_span)
+info.myapp.appshare: appshare          # AppShare[span_84](start_span)[span_84](end_span)
+io.github.samolego.canta: canta        # Canta[span_85](start_span)[span_85](end_span)
+jp.ddo.pakutoma.unicodepad: unicodepad # UnicodePad[span_86](start_span)[span_86](end_span)
+li.songe.gkd: gkd                      # GKD[span_87](start_span)[span_87](end_span)
+moe.shizuku.privileged.api: shizuku    # Shizuku[span_88](start_span)[span_88](end_span)
+org.breezyweather: breezy-weather      # Breezy Weather[span_89](start_span)[span_89](end_span)
+org.fdroid.fdroid: fdroid              # F-Droid[span_90](start_span)[span_90](end_span)
+org.localsend.localsend_app: localsend # LocalSend[span_91](start_span)[span_91](end_span)
+org.mozilla.firefox: firefox           # Firefox[span_92](start_span)[span_92](end_span)
+org.telegram.messenger: telegram       # Telegram[span_93](start_span)[span_93](end_span)
+org.torproject.torbrowser: tor-browser # Tor Browser[span_94](start_span)[span_94](end_span)
+org.videolan.vlc: vlc                  # VLC[span_95](start_span)[span_95](end_span)
+org.wikipedia: wikipedia               # Wikipedia[span_96](start_span)[span_96](end_span)
+sz.szsmk.citizencard: szsmk            # 智慧苏州[span_97](start_span)[span_97](end_span)
+xio.javdb.fuck: javdb                  # JavDB[span_98](start_span)[span_98](end_span)
+
+# 追加 Google 系应用包名映射表（已排除前次整理列表，按分类排列）
+
+# --- Google 核心框架与商店 ---
+com.android.vending: google-play-store                # Google Play 商店
+
+# --- Google 办公与生产力工具 ---
+com.google.android.apps.docs: google-drive             # Google 云端硬盘 (Drive)
+com.google.android.apps.docs.editors.sheets: google-sheets # Google 表格 (Sheets)
+com.google.android.apps.docs.editors.slides: google-slides # Google 幻灯片 (Slides)
+com.google.android.keep: google-keep                   # Google Keep 记事
+com.google.android.apps.tasks: google-tasks            # Google Tasks 任务
+com.google.android.calendar: google-calendar           # Google 日历
+com.google.android.apps.translate: google-translate    # Google 翻译
+com.google.android.apps.labs.language.tailwind: google-Notebook      # Google-笔记本
+
+# --- Google 媒体与娱乐 ---
+com.google.android.apps.photos: google-photos          # Google 相册 (完整版)
+com.google.android.apps.youtube.music: youtube-music   # YouTube Music
+com.google.android.apps.youtube.kids: youtube-kids     # YouTube Kids
+com.google.android.apps.youtube.creator: youtube-studio # YouTube Studio
+com.google.android.videos: google-tv                   # Google TV / Play 影视
+com.google.android.apps.magazines: google-news         # Google 新闻
+com.google.android.apps.podcasts: google-podcasts      # Google 播客
+com.google.android.apps.books: google-play-books      # Google Play 图书
+com.google.android.play.games: google-play-games      # Google Play 游戏
+
+# --- Google 社交通讯与协同 ---
+com.google.android.apps.messaging: google-messages     # Google 信息 (Messages)
+com.google.android.apps.tachyon: google-meet           # Google Meet
+com.google.android.apps.dynamite: google-chat          # Google Chat
+com.google.android.apps.classroom: google-classroom    # Google 课堂
+
+# --- Google 生活与实用工具 ---
+com.google.android.apps.walletnfcrerel: google-wallet  # Google 钱包 (Wallet)
+com.google.android.apps.nbu.files: google-files        # Google Files / 文件极客
+com.google.android.apps.chromecast.app: google-home    # Google Home
+com.google.android.apps.fitness: google-fit            # Google Fit
+com.google.android.apps.adm: google-find-my-device     # 查找我的设备
+com.google.earth: google-earth                         # Google 地球
+com.niksoftware.snapseed: snapseed                     # Snapseed
+com.waze: waze                                         # Waze 导航
+
+# --- Google 系统工具与 Pixel 特性应用 ---
+com.google.android.calculator: google-calculator       # Google 计算器
+com.google.android.deskclock: google-clock             # Google 时钟
+com.google.android.apps.wallpaper: google-wallpapers   # Google 壁纸
+com.google.android.apps.wellbeing: digital-wellbeing   # 数字健康
+com.google.android.projection.gearhead: android-auto   # Android Auto
+com.google.android.tts: google-tts                     # Google 语音服务 (TTS)
+com.google.android.GoogleCamera: google-camera         # Google 相机 / Pixel Camera
+com.google.android.recorder: google-recorder           # Google 录音机
