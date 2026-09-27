@@ -14,16 +14,16 @@ END_MARKER = "<!-- STATS_END -->"
 
 # 分类规则
 CLASSIFICATION_RULES = [
-    (r"^com\.google\.", "Google 系应用与服务"),
-    (r"^com\.android\.", "Android 系统核心组件"),
-    (r"^(com\.ss\.android|com\.bytedance)", "字节跳动系 (ByteDance)"),
-    (r"^com\.tencent\.", "腾讯系 (Tencent)"),
-    (r"^com\.baidu\.", "百度系 (Baidu)"),
-    (r"^(com\.taobao|com\.eg\.android|com\.xunmeng|com\.sankuai)", "主流电商与服务 (阿里/拼多多/美团)"),
+    (r"^com\.google\.", "Google 系应用"),
+    (r"^com\.android\.", "Android 系统组件"),
+    (r"^(com\.ss\.android|com\.bytedance)", "字节跳动系"),
+    (r"^com\.tencent\.", "腾讯系"),
+    (r"^com\.baidu\.", "百度系"),
+    (r"^(com\.taobao|com\.eg\.android|com\.xunmeng|com\.sankuai)", "主流电商与服务"),
     (r"^com\.vivo\.", "vivo 厂商应用"),
-    (r"^com\.microsoft\.", "微软系 (Microsoft)"),
-    (r"^(io\.github|com\.github|org\.fdroid|moe\.shizuku|li\.songe|bin\.mt)", "GitHub / 开源与极客工具"),
-    (r"^org\.", "开源软件组织 (org.*)"),
+    (r"^com\.microsoft\.", "微软系"),
+    (r"^(io\.github|com\.github|org\.fdroid|moe\.shizuku|li\.songe|bin\.mt)", "GitHub/开源极客工具"),
+    (r"^org\.", "开源组织应用"),
 ]
 
 def classify_package(pkg):
@@ -66,44 +66,41 @@ def build_markdown_report(entries, dup_pkgs, seen_pkgs, category_map):
 
     md = []
     md.append(f"{START_MARKER}")
-    md.append("## 📊 实时数据统计大屏\n")
+    md.append("## 📊 包名数据可视化统计大屏\n")
 
-    # 1. 指标概览
-    md.append("### 📈 核心指标")
-    md.append("| 统计指标 | 数量 | 状态 |")
-    md.append("| :--- | :---: | :---: |")
-    md.append(f"| 原始配置总条数 | `{total_count}` | - |")
-    md.append(f"| 去重后独立应用数 | `{unique_count}` | - |")
+    # 1. 核心指标卡片
+    md.append("### 📈 概览")
+    md.append(f"- **配置文件总行数**: `{total_count}` 条")
+    md.append(f"- **独立有效应用数**: `{unique_count}` 个")
     if dup_count > 0:
-        md.append(f"| 重复包名冲突 | `{dup_count}` | ❌ **存在重复** |")
+        md.append(f"- **重复包名状态**: ❌ **存在 {dup_count} 个重复项**")
     else:
-        md.append(f"| 重复包名冲突 | `0` | ✅ **正常** |")
+        md.append(f"- **重复包名状态**: ✅ **校验通过 (无重复)**")
     md.append("\n")
 
-    # 2. 重复报错
+    # 2. 🎨 重点：生成 GitHub 原生渲染的彩色饼图（Mermaid 图形）
+    md.append("### 🎨 应用分类分布饼图\n")
+    md.append("```mermaid")
+    md.append("pie title 包名分类占比统计")
+    for cat, items in sorted(category_map.items(), key=lambda x: len(x[1]), reverse=True):
+        md.append(f'    "{cat}" : {len(items)}')
+    md.append("```\n")
+
+    # 3. 重复告警
     if dup_count > 0:
         md.append("### ❌ 重复包名告警")
-        md.append("| 包名 (Package Name) | 首次出现行号 | 冲突行号 |")
+        md.append("| 包名 (Package Name) | 首次出现 | 重复冲突行号 |")
         md.append("| :--- | :---: | :---: |")
         for pkg, items in dup_pkgs.items():
             first_line = seen_pkgs[pkg]['line']
             other_lines = ", ".join([f"`第 {x['line']} 行`" for x in items])
             md.append(f"| `{pkg}` | `第 {first_line} 行` | {other_lines} |")
-        md.append("\n> ⚠️ **请尽快在 `proc-alias.yaml` 中清理上述重复项！**\n")
+        md.append("\n")
 
-    # 3. 按包名名称分类统计
-    md.append("### 📦 包名分类汇总统计")
-    md.append("| 应用分类类别 | 包含应用数 | 占比 |")
-    md.append("| :--- | :---: | :---: |")
+    # 4. 可折叠应用清单
+    md.append("### 📋 分类列表明细")
     for cat, items in sorted(category_map.items(), key=lambda x: len(x[1]), reverse=True):
-        ratio = (len(items) / unique_count * 100) if unique_count else 0
-        md.append(f"| **{cat}** | `{len(items)}` | `{ratio:.1f}%` |")
-    md.append("\n")
-
-    # 4. 分类明细
-    md.append("### 📋 详细分类清单")
-    for cat, items in sorted(category_map.items(), key=lambda x: len(x[1]), reverse=True):
-        md.append(f"<details><summary><b>{cat}</b> （包含 {len(items)} 个应用，点击展开）</summary>\n")
+        md.append(f"<details><summary><b>{cat}</b> （包含 {len(items)} 个应用）</summary>\n")
         md.append("| 包名 (Package Name) | 目录别名 (Alias) | 备注 |")
         md.append("| :--- | :--- | :--- |")
         for item in sorted(items, key=lambda x: x["pkg"]):
@@ -116,7 +113,7 @@ def build_markdown_report(entries, dup_pkgs, seen_pkgs, category_map):
 
 def update_readme(stats_md):
     if not os.path.exists(README_PATH):
-        readme_content = "# Proc Alias 映射表管理与自动校验\n\n"
+        readme_content = "# Proc Alias 映射表管理\n\n"
     else:
         with open(README_PATH, "r", encoding="utf-8") as f:
             readme_content = f.read()
