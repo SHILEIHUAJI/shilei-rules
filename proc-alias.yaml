@@ -1,0 +1,8 @@
+# proc-alias.yaml —— 包名 → 目录别名映射表
+# 日常维护只改这个文件，脚本一行都不用动
+com.ss.android.ugc.aweme: aweme        # 抖音
+com.luna.music: luna-music             # 汽水音乐
+com.tencent.mm: wechat                 # 微信
+com.google.android.gms: google-gms     # 谷歌服务
+com.vivo.gallery: vivo-gallery         # vivo相册
+mark.via.gp: via-browser               # Via浏览器
