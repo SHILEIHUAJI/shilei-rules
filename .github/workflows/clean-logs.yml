@@ -21,6 +21,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install dependencies
+        run: pip install pyyaml
+
       - name: Run cleaning script
         run: python3 scripts/clean_mihomo_logs.py logs cleaned-logs
 
