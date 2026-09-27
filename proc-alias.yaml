@@ -69,7 +69,6 @@ com.vivo.upnp.server: dlna-server              # 投屏
 com.vivo.videoservice: video-editor            # 视频编辑
 com.vivo.vms: vivo-mobile-service              # vivo移动服务
 com.vivo.vtouch: scan-assistant                # 扫描
-com.vivo.wallet: vivo-wallet                   # 钱包
 com.vivo.weather.provider: weather-provider    # 天气存储
 com.vivo.widget.calendar: calendar-widget      # 日历组件
 com.vivo.widget.cleanspeed: clean-speed        # 清理加速组件
@@ -140,7 +139,6 @@ com.vivo.daemonService: vivo-service-daemon         # vivo服务
 android.overlay.vivoresrro: vivo-res-overlay        # vivo资源覆盖层
 com.vivo.android.connectivity.mainline.common.resources.overlay: conn-common-overlay # 连接通用覆盖层
 com.vivo.android.connectivity.mainline.manufacturer.resources.overlay: conn-mfg-overlay # 连接厂商覆盖层
-com.vivo.android.wifi.mainline.common.resources.overlay: wifi-mainline-common-overlay # WiFi主线通用覆盖层
 com.vivo.android.wifi.mainline.platform.resources.overlay: wifi-mainline-platform-overlay # WiFi主线平台覆盖层
 
 
