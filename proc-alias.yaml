@@ -8,7 +8,7 @@ com.tencent.mm: wechat                 # 微信
 com.vivo.gallery: vivo-gallery         # vivo相册
 mark.via.gp: via-browser               # Via浏览器
 
-# 截图整理的第三方应用映射
+# 第三方应用映射
 app.intra: intra                       # Intra
 bin.mt.plus: mt-manager                # MT管理器
 cn.wps.moffice_eng: wps-office         # WPS Office
@@ -60,7 +60,7 @@ com.ss.android.ugc.trill: tiktok       # TikTok
 com.taobao.idlefish: idlefish          # 闲鱼
 com.taobao.taobao: taobao              # 淘宝
 com.termux: termux                     # Termux
-com.twitter.android: twitter           # Cash M
+com.twitter.android: twitter           # Twitter / X
 com.v2ray.ang: v2rayng                 # v2rayNG
 com.vivo.ada: vivo-ada                 # 售后诊断助手
 com.vivo.calculator: vivo-calculator   # vivo计算器
@@ -88,85 +88,60 @@ sz.szsmk.citizencard: szsmk            # 智慧苏州
 xio.javdb.fuck: javdb                  # JavDB
 
 # Google 系应用与服务映射
-com.google.android.gms: google-gms     # 谷歌服务
+com.android.vending: google-play-store                # Google Play 商店
+com.google.android.gms: google-gms                    # 谷歌服务
 com.google.android.app.keyverifier: android-keyverifier # Android System Key Verifier
 com.google.android.apps.authenticator2: google-authenticator # 身份验证器
-com.google.android.apps.bard: gemini   # Gemini
-com.google.android.apps.docs: google-drive # Google 云端硬盘
+com.google.android.apps.bard: gemini                  # Gemini
+com.google.android.apps.docs: google-drive            # Google 云端硬盘
 com.google.android.apps.docs.editors.docs: google-docs # Google 文档
 com.google.android.apps.docs.editors.sheets: google-sheets # Google 表格
 com.google.android.apps.docs.editors.slides: google-slides # Google 幻灯片
 com.google.android.apps.googleassistant: google-assistant # Google 助理
-com.google.android.apps.healthdata: health-connect # 健康数据共享
-com.google.android.apps.keep: google-keep # Google Keep 记事
-com.google.android.apps.maps: google-maps # 地图
-com.google.android.apps.messaging: google-messages # Google 信息
-com.google.android.apps.photos: google-photos # Google 相册
-com.google.android.apps.photosgo: photos-go # 相册 (Go版)
-com.google.android.apps.tasks: google-tasks # Google Tasks
-com.google.android.apps.translate: google-translate # Google 翻译
-com.google.android.apps.youtube.music: youtube-music # YouTube Music
-com.google.android.as: private-compute-services # Private Compute Services
-com.google.android.calendar: google-calendar # Google 日历
-com.google.android.contacts: google-contacts # 通讯录
-com.google.android.dialer: google-dialer # 电话
-com.google.android.gm: gmail           # Gmail
+com.google.android.apps.healthdata: health-connect    # 健康数据共享
+com.google.android.keep: google-keep                  # Google Keep 记事
+com.google.android.apps.maps: google-maps             # 地图
+com.google.android.apps.messaging: google-messages    # Google 信息
+com.google.android.apps.photos: google-photos         # Google 相册
+com.google.android.apps.photosgo: photos-go           # 相册 (Go版)
+com.google.android.apps.tasks: google-tasks           # Google Tasks
+com.google.android.apps.translate: google-translate   # Google 翻译
+com.google.android.apps.youtube.music: youtube-music  # YouTube Music
+com.google.android.as: private-compute-services       # Private Compute Services
+com.google.android.calendar: google-calendar          # Google 日历
+com.google.android.contacts: google-contacts          # 通讯录
+com.google.android.dialer: google-dialer              # 电话
+com.google.android.gm: gmail                          # Gmail
 com.google.android.googlequicksearchbox: google-search # Google 搜索
-com.google.android.ims: carrier-services # Carrier Services
-com.google.android.inputmethod.latin: gboard # Gboard
-com.google.android.safetycore: android-safetycore # Android System SafetyCore
-com.google.android.youtube: youtube    # YouTube
-com.google.ar.lens: google-lens        # 智能镜头
-
-
-# 追加 Google 系应用包名映射表（已排除前次整理列表，按分类排列）
-
-# --- Google 核心框架与商店 ---
-com.android.vending: google-play-store                # Google Play 商店
-
-# --- Google 办公与生产力工具 ---
-com.google.android.apps.docs: google-drive             # Google 云端硬盘 (Drive)
-com.google.android.apps.docs.editors.sheets: google-sheets # Google 表格 (Sheets)
-com.google.android.apps.docs.editors.slides: google-slides # Google 幻灯片 (Slides)
-com.google.android.keep: google-keep                   # Google Keep 记事
-com.google.android.apps.tasks: google-tasks            # Google Tasks 任务
-com.google.android.calendar: google-calendar           # Google 日历
-com.google.android.apps.translate: google-translate    # Google 翻译
-com.google.android.apps.labs.language.tailwind: google-Notebook      # Google-笔记本
-
-# --- Google 媒体与娱乐 ---
-com.google.android.apps.photos: google-photos          # Google 相册 (完整版)
-com.google.android.apps.youtube.music: youtube-music   # YouTube Music
-com.google.android.apps.youtube.kids: youtube-kids     # YouTube Kids
+com.google.android.ims: carrier-services              # Carrier Services
+com.google.android.inputmethod.latin: gboard          # Gboard
+com.google.android.safetycore: android-safetycore    # Android System SafetyCore
+com.google.android.youtube: youtube                   # YouTube
+com.google.ar.lens: google-lens                       # 智能镜头
+com.google.android.apps.labs.language.tailwind: google-notebook # Google 笔记本
+com.google.android.apps.youtube.kids: youtube-kids    # YouTube Kids
 com.google.android.apps.youtube.creator: youtube-studio # YouTube Studio
-com.google.android.videos: google-tv                   # Google TV / Play 影视
-com.google.android.apps.magazines: google-news         # Google 新闻
-com.google.android.apps.podcasts: google-podcasts      # Google 播客
-com.google.android.apps.books: google-play-books      # Google Play 图书
-com.google.android.play.games: google-play-games      # Google Play 游戏
-
-# --- Google 社交通讯与协同 ---
-com.google.android.apps.messaging: google-messages     # Google 信息 (Messages)
-com.google.android.apps.tachyon: google-meet           # Google Meet
-com.google.android.apps.dynamite: google-chat          # Google Chat
-com.google.android.apps.classroom: google-classroom    # Google 课堂
-
-# --- Google 生活与实用工具 ---
-com.google.android.apps.walletnfcrerel: google-wallet  # Google 钱包 (Wallet)
-com.google.android.apps.nbu.files: google-files        # Google Files / 文件极客
-com.google.android.apps.chromecast.app: google-home    # Google Home
-com.google.android.apps.fitness: google-fit            # Google Fit
-com.google.android.apps.adm: google-find-my-device     # 查找我的设备
-com.google.earth: google-earth                         # Google 地球
-com.niksoftware.snapseed: snapseed                     # Snapseed
-com.waze: waze                                         # Waze 导航
-
-# --- Google 系统工具与 Pixel 特性应用 ---
-com.google.android.calculator: google-calculator       # Google 计算器
-com.google.android.deskclock: google-clock             # Google 时钟
-com.google.android.apps.wallpaper: google-wallpapers   # Google 壁纸
-com.google.android.apps.wellbeing: digital-wellbeing   # 数字健康
-com.google.android.projection.gearhead: android-auto   # Android Auto
-com.google.android.tts: google-tts                     # Google 语音服务 (TTS)
-com.google.android.GoogleCamera: google-camera         # Google 相机 / Pixel Camera
-com.google.android.recorder: google-recorder           # Google 录音机
+com.google.android.videos: google-tv                  # Google TV
+com.google.android.apps.magazines: google-news        # Google 新闻
+com.google.android.apps.podcasts: google-podcasts     # Google 播客
+com.google.android.apps.books: google-play-books     # Google Play 图书
+com.google.android.play.games: google-play-games     # Google Play 游戏
+com.google.android.apps.tachyon: google-meet          # Google Meet
+com.google.android.apps.dynamite: google-chat         # Google Chat
+com.google.android.apps.classroom: google-classroom   # Google 课堂
+com.google.android.apps.walletnfcrel: google-wallet   # Google 钱包
+com.google.android.apps.nbu.files: google-files       # Google Files / 文件极客
+com.google.android.apps.chromecast.app: google-home   # Google Home
+com.google.android.apps.fitness: google-fit           # Google Fit
+com.google.android.apps.adm: google-find-my-device    # 查找我的设备
+com.google.earth: google-earth                        # Google 地球
+com.niksoftware.snapseed: snapseed                    # Snapseed
+com.waze: waze                                        # Waze 导航
+com.google.android.calculator: google-calculator      # Google 计算器
+com.google.android.deskclock: google-clock            # Google 时钟
+com.google.android.apps.wallpaper: google-wallpapers  # Google 壁纸
+com.google.android.apps.wellbeing: digital-wellbeing  # 数字健康
+com.google.android.projection.gearhead: android-auto  # Android Auto
+com.google.android.tts: google-tts                    # Google 语音服务 (TTS)
+com.google.android.GoogleCamera: google-camera        # Google 相机
+com.google.android.recorder: google-recorder          # Google 录音机
