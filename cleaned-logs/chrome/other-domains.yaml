@@ -1,0 +1,4 @@
+payload:
+  - DOMAIN,alive.github.com
+  - DOMAIN,chrome.cloudflare-dns.com
+  - DOMAIN,github.com

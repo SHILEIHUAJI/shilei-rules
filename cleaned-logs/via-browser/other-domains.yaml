@@ -1,2 +1,3 @@
 payload:
+  - DOMAIN,api.github.com
   - DOMAIN,content-autofill.googleapis.com
