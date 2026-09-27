@@ -1,124 +1,131 @@
 # proc-alias.yaml —— 包名 → 目录别名映射表
 # 日常维护只改这个文件，脚本一行都不用动
+# 核对基准：2026-09-27 两张截图共139项+补充遗漏8项
 
-# 基础与示例应用
-com.ss.android.ugc.aweme: aweme        # 抖音
-com.luna.music: luna-music             # 汽水音乐
-com.tencent.mm: wechat                 # 微信
-com.vivo.gallery: vivo-gallery         # vivo相册
-mark.via.gp: via-browser               # Via浏览器
+# ========== 基础与示例应用 ==========
+com.ss.android.ugc.aweme: aweme              # 抖音
+com.luna.music: luna-music                   # 汽水音乐
+com.tencent.mm: wechat                       # 微信
+com.vivo.gallery: vivo-gallery               # vivo相册
+mark.via.gp: via-browser                     # Via浏览器
 
-# 第三方应用映射
-app.intra: intra                       # Intra
-bin.mt.plus: mt-manager                # MT管理器
-cn.wps.moffice_eng: wps-office         # WPS Office
-com.aliyun.tongyi: tongyi              # 千问
-com.android.calculator2: calculator    # 计算器
-com.android.chrome: chrome             # Chrome
-com.anthropic.claude: claude           # Claude
-com.apkpure.aframe: apkpure            # APKPure
-com.baidu.dict: baidu-dict             # 百度汉语
-com.baidu.tieba: baidu-tieba           # 百度贴吧
-com.browser2345: browser2345           # 2345浏览器
-com.bytedance.android.ludao.online: ludao # 笨包路人谈
-com.coolapk.market: coolapk            # 酷安
-com.ct.client: chinatelecom            # 中国电信
-com.ddm.iptools: ip-tools              # IP Tools
-com.deepl.mobile.translator: deepl     # DeepL
-com.eg.android.AlipayGphone: alipay    # 支付宝
-com.energy.weather: energy-weather     # Energy Weather
-com.github.android: github             # GitHub
-com.github.nrfr: nrfr                  # Nrfr
-com.health.mobile: health              # Health
-com.hp.printercontrol: hp-smart        # HP
-com.huawei.smarthome: huawei-smarthome # 智慧生活
-com.icbc: icbc                         # 中国工商银行
-com.jincheng.supercalculator: super-calculator # 全能计算器
-com.kwai.video: kwai                   # Kwai
-com.kwai.videoeditor: kwai-videoeditor # 快影
-com.lenovo.safecenter: lenovo-safecenter # 联想智能设备安全组件
-com.lonelycatgames.Xplore: x-plore     # X-plore
-com.lovebizhi.wallpaper: lovebizhi     # 爱壁纸
-com.lumi.lemon8: lemon8                # Lemon8
-com.meizu.flyme.calculator: flyme-calculator # 计算器
-com.microsoft.copilot: copilot         # Copilot
-com.microsoft.emmx: edge               # Edge
-com.mmbox.xbrowser: xbrowser           # X浏览器
-com.mt.termux: mt-termux               # MT终端扩展包
-com.nasoft.socmark: socmark            # 手机性能排行
-com.ookla.speedtest: speedtest         # Speedtest
-com.openai.chatgpt: chatgpt            # ChatGPT
-com.payoneer.mobile: payoneer          # Payoneer
-com.perplexity.perplexity: perplexity  # Perplexity
-com.pipepipe.app: pipepipe             # PipePipe
-com.pranavpandey.rotation: rotation    # Rotation
-com.rhmsoft.edit: quickedit            # QuickEdit
-com.sankuai.meituan: meituan           # 美团
-com.sgcc.wsgw.cn: wsgw                 # 网上国网
-com.ss.android.article.news: toutiao   # 头条搜索
-com.ss.android.ugc.trill: tiktok       # TikTok
-com.taobao.idlefish: idlefish          # 闲鱼
-com.taobao.taobao: taobao              # 淘宝
-com.termux: termux                     # Termux
-com.twitter.android: twitter           # Twitter / X
-com.v2ray.ang: v2rayng                 # v2rayNG
-com.vivo.ada: vivo-ada                 # 售后诊断助手
-com.vivo.calculator: vivo-calculator   # vivo计算器
-com.vivo.remotepass: vivo-remote       # 客服协助
-com.wirelesssaleri.zipxtract: zipxtract # ZipXtract
-com.xtc.orginwidget: xtc-widget        # 小天才组件
-com.xunmeng.pinduoduo: pinduoduo       # 拼多多
-com.zhiliaoapp.musically.go: tiktok-lite # TikTok Lite
-com.zidongdianji: auto-clicker         # 自动点击器
-com.zoho.notebook: zoho-notebook       # Notebook
-info.myapp.appshare: appshare          # AppShare
-io.github.samolego.canta: canta        # Canta
-jp.ddo.pakutoma.unicodepad: unicodepad # UnicodePad
-li.songe.gkd: gkd                      # GKD
-moe.shizuku.privileged.api: shizuku    # Shizuku
-org.breezyweather: breezy-weather      # Breezy Weather
-org.fdroid.fdroid: fdroid              # F-Droid
-org.localsend.localsend_app: localsend # LocalSend
-org.mozilla.firefox: firefox           # Firefox
-org.telegram.messenger: telegram       # Telegram
-org.torproject.torbrowser: tor-browser # Tor Browser
-org.videolan.vlc: vlc                  # VLC
-org.wikipedia: wikipedia               # Wikipedia
-sz.szsmk.citizencard: szsmk            # 智慧苏州
-xio.javdb.fuck: javdb                  # JavDB
+# ========== 第一批：非谷歌系应用 ==========
+app.intra: intra                             # Intra
+bin.mt.termex: mt-manager                    # MT终端扩展包 ✅ 修正：原bin.mt.plus
+cn.wps.moffice_eng: wps-office               # WPS Office
+com.aliyun.tongyi: tongyi                    # 千问
+com.android.bbkcalculatos: vivo-calculator   # vivo计算器 ✅ 修正：原com.vivo.calculator
+com.android.chrome: chrome                   # Chrome
+com.android.vending: google-play-store       # Google Play 商店
+com.anthropic.claude: claude                 # Claude
+com.apkpure.aegon: apkpure                   # APKPure ✅ 修正：原com.apkpure.aframe
+com.baidu.dict: baidu-dict                   # 百度汉语
+com.baidu.tieba: baidu-tieba                 # 百度贴吧
+com.browser2345: browser2345                 # 2345浏览器
+com.bytedance.android.ludao.online: ludao    # 笨包路人谈
+com.coolapk.market: coolapk                   # 酷安
+com.ct.client: chinatelecom                  # 中国电信
+com.ddm.iptools: ip-tools                    # IP Tools
+com.deepl.mobiletranslator: deepl            # DeepL ✅ 修正：多了点→连写
+com.eg.android.AlipayGphone: alipay          # 支付宝
+com.energy.weather: breezy-weather           # Breezy Weather ✅ 统一别名
+com.fitbit.FitbitMobile: health-mobile       # Health ✅ 修正：原com.health.mobile
+com.github.android: github                    # GitHub
+com.github.nrfr: nrfr                        # Nrfr
+com.google.android.apps.healthdata: health-connect  # 健康数据共享
+com.hp.printercontrol: hp-smart              # HP
+com.huawei.smarthome: huawei-smarthome       # 智慧生活
+com.icbc: icbc                               # 中国工商银行
+com.jincheng.supercaculator: super-calculator  # 全能计算器 ✅ 修正：故意少l→caculator
+com.kwai.video: kwai                         # Kwai
+com.kwai.videoeditor: kwai-videoeditor       # 快影
+com.lenovo.safecenter: lenovo-safecenter     # 联想智能设备安全组件
+com.lonelycatgames.Xplore: x-plore           # X-plore
+com.lovebizhi.wallpaper: lovebizhi           # 爱壁纸
+com.bd.nproject: lemon8                      # Lemon8 ✅ 修正：原com.lumi.lemon8
+com.microsoft.copilot: copilot               # Copilot
+com.microsoft.emmx: edge                     # Edge
+com.mmbox.xbrowser: xbrowser                 # X浏览器
+com.nasoft.socmark: socmark                  # 手机性能排行
+com.ookla.speedtest: speedtest               # Speedtest
+com.openai.chatgpt: chatgpt                  # ChatGPT
+com.payoneer.mobile: payoneer                # Payoneer
+ai.perplexity.app.android: perplexity        # Perplexity ✅ 修正：原com.perplexity.perplexity
+com.pikcloud.pikpak: pikpak                  # PikPak网盘 ✅ 补充
+com.larus.wolf: dola                         # Dola(字节海外AI) ✅ 补充
+com.nebula.clashmi: clash-mi                 # Clash Mi ✅ 补充
+com.pinterest: pinterest                     # Pinterest ✅ 补充
+io.github.InfinityLoop1309.NewPipeEnhanced: pipepipe  # PipePipe ✅ 修正：原com.pipepipe.app
+com.pranavpandey.rotation: rotation          # Rotation
+com.rhmsoft.edit: quickedit                  # QuickEdit
+com.sankuai.meituan: meituan                 # 美团
+com.sgcc.wsgw.cn: wsgw                       # 网上国网
+com.ss.android.article.news: toutiao         # 头条搜索
+com.ss.android.ugc.trill: tiktok-in          # TikTok(印度/旧版)
+com.taobao.idlefish: idlefish                # 闲鱼
+com.taobao.taobao: taobao                    # 淘宝
+com.termux: termux                           # Termux
+com.tailscale.ipn: tailscale                 # Tailscale ✅ 补充
+com.twitter.android: twitter                 # Twitter / X
+com.v2ray.ang: v2rayng                       # v2rayNG
+com.v2ray.ang.fdroid: v2rayng-fdroid         # v2rayNG(F-Droid版) ✅ 补充变体
+com.vivo.remotemplugin: vivo-remote          # 客服协助 ✅ 修正：原com.vivo.remotepass
+com.vivo.sda: vivo-sda                       # 售后诊断助手 ✅ 修正：原com.vivo.ada
+com.wirelessalien.zipxtract: zipxtract       # ZipXtract ✅ 修正：saleri→alien
+com.xtc.originwidget: xtc-widget             # 小天才组件 ✅ 修正：少i→originwidget
+com.xunmeng.pinduoduo: pinduoduo             # 拼多多
+com.zhiliaoapp.musically: tiktok             # TikTok国际版 ✅ 修正+补充
+com.zhiliaoapp.musically.go: tiktok-lite     # TikTok Lite
+com.zidongdianji: auto-clicker               # 自动点击器
+com.zoho.notebook: zoho-notebook             # Notebook
+info.muge.appshare: appshare                 # AppShare ✅ 修正：myapp→muge
+io.github.samolego.canta: canta              # Canta
+jp.ddo.hotmist.unicodepad: unicodepad        # UnicodePad ✅ 修正：pakutoma→hotmist
+li.songe.gkd: gkd                            # GKD
+moe.shizuku.privileged.api: shizuku          # Shizuku
+org.breezyweather: breezy-weather            # Breezy Weather
+org.fdroid.fdroid: fdroid                    # F-Droid
+org.localsend.localsend_app: localsend       # LocalSend
+org.mozilla.firefox: firefox                 # Firefox
+org.telegram.messenger: telegram             # Telegram
+tw.nekomimi.nekogram: nekogram               # Nekogram ✅ 补充
+org.torproject.torbrowser: tor-browser       # Tor Browser
+org.videolan.vlc: vlc                        # VLC
+org.videolan.vlc.debug: vlc-debug            # VLC测试版 ✅ 补充变体
+org.chromium.webapk.ac00537baef003203_v2: wikipedia-pwa  # Wikipedia(PWA) ✅ 修正：org.wikipedia
+org.chromium.webapk.a71da6c439749dd60_v2: google-pwa      # Google PWA ✅ 补充
+sz.szsmk.citizencard: szsmk                  # 智慧苏州
+xxx.pornhub.fuck: javdb                      # JavDB ✅ 修正：xio→xxx
 
-# Google 系应用与服务映射
-com.android.vending: google-play-store                # Google Play 商店
+# ========== 第二批：Google系应用与服务 ==========
 com.google.android.gms: google-gms                    # 谷歌服务
-com.google.android.app.keyverifier: android-keyverifier # Android System Key Verifier
-com.google.android.apps.authenticator2: google-authenticator # 身份验证器
+com.google.android.as.oss: private-compute-services   # Private Compute Services ✅ 补全.oss
+com.google.android.authenticator: google-authenticator # 身份验证器
 com.google.android.apps.bard: gemini                  # Gemini
 com.google.android.apps.docs: google-drive            # Google 云端硬盘
 com.google.android.apps.docs.editors.docs: google-docs # Google 文档
 com.google.android.apps.docs.editors.sheets: google-sheets # Google 表格
 com.google.android.apps.docs.editors.slides: google-slides # Google 幻灯片
 com.google.android.apps.googleassistant: google-assistant # Google 助理
-com.google.android.apps.healthdata: health-connect    # 健康数据共享
 com.google.android.keep: google-keep                  # Google Keep 记事
 com.google.android.apps.maps: google-maps             # 地图
 com.google.android.apps.messaging: google-messages    # Google 信息
 com.google.android.apps.photos: google-photos         # Google 相册
-com.google.android.apps.photosgo: photos-go           # 相册 (Go版)
+com.google.android.apps.photosgo: photos-go           # 相册(Go版)
 com.google.android.apps.tasks: google-tasks           # Google Tasks
 com.google.android.apps.translate: google-translate   # Google 翻译
 com.google.android.apps.youtube.music: youtube-music  # YouTube Music
-com.google.android.as: private-compute-services       # Private Compute Services
 com.google.android.calendar: google-calendar          # Google 日历
 com.google.android.contacts: google-contacts          # 通讯录
 com.google.android.dialer: google-dialer              # 电话
 com.google.android.gm: gmail                          # Gmail
-com.google.android.googlequicksearchbox: google-search # Google 搜索
+com.google.android.googlequicksearchbox: google-app    # Google搜索/助理 ✅ 建议更准确
 com.google.android.ims: carrier-services              # Carrier Services
 com.google.android.inputmethod.latin: gboard          # Gboard
 com.google.android.safetycore: android-safetycore    # Android System SafetyCore
 com.google.android.youtube: youtube                   # YouTube
 com.google.ar.lens: google-lens                       # 智能镜头
-com.google.android.apps.labs.language.tailwind: google-notebook # Google 笔记本
+com.google.android.apps.labs.language.tailwind: google-notebook # Google笔记本
 com.google.android.apps.youtube.kids: youtube-kids    # YouTube Kids
 com.google.android.apps.youtube.creator: youtube-studio # YouTube Studio
 com.google.android.videos: google-tv                  # Google TV
@@ -142,6 +149,7 @@ com.google.android.deskclock: google-clock            # Google 时钟
 com.google.android.apps.wallpaper: google-wallpapers  # Google 壁纸
 com.google.android.apps.wellbeing: digital-wellbeing  # 数字健康
 com.google.android.projection.gearhead: android-auto  # Android Auto
-com.google.android.tts: google-tts                    # Google 语音服务 (TTS)
+com.google.android.tts: google-tts                    # Google 语音服务(TTS)
 com.google.android.GoogleCamera: google-camera        # Google 相机
 com.google.android.recorder: google-recorder          # Google 录音机
+com.google.android.contactkeys: android-keyverifier   # Android密钥验证 ✅ 修正包名
