@@ -11,18 +11,33 @@
 ---
 
 <!-- STATS_START -->
-## 📊 实时数据统计大屏
+## 📊 包名数据可视化统计大屏
 
-### 📈 核心指标
-| 统计指标 | 数量 | 状态 |
-| :--- | :---: | :---: |
-| 原始配置总条数 | `149` | - |
-| 去重后独立应用数 | `140` | - |
-| 重复包名冲突 | `9` | ❌ **存在重复** |
+### 📈 概览
+- **配置文件总行数**: `149` 条
+- **独立有效应用数**: `140` 个
+- **重复包名状态**: ❌ **存在 9 个重复项**
 
+
+### 🎨 应用分类分布饼图
+
+```mermaid
+pie title 包名分类占比统计
+    "Google 系应用" : 55
+    "其他第三方应用" : 50
+    "GitHub/开源极客工具" : 7
+    "开源组织应用" : 7
+    "主流电商与服务" : 5
+    "字节跳动系" : 4
+    "vivo 厂商应用" : 4
+    "Android 系统组件" : 3
+    "百度系" : 2
+    "微软系" : 2
+    "腾讯系" : 1
+```
 
 ### ❌ 重复包名告警
-| 包名 (Package Name) | 首次出现行号 | 冲突行号 |
+| 包名 (Package Name) | 首次出现 | 重复冲突行号 |
 | :--- | :---: | :---: |
 | `com.google.android.apps.docs` | `第 95 行` | `第 128 行` |
 | `com.google.android.apps.docs.editors.sheets` | `第 97 行` | `第 129 行` |
@@ -34,26 +49,9 @@
 | `com.google.android.apps.youtube.music` | `第 108 行` | `第 139 行` |
 | `com.google.android.apps.messaging` | `第 103 行` | `第 149 行` |
 
-> ⚠️ **请尽快在 `proc-alias.yaml` 中清理上述重复项！**
 
-### 📦 包名分类汇总统计
-| 应用分类类别 | 包含应用数 | 占比 |
-| :--- | :---: | :---: |
-| **Google 系应用与服务** | `55` | `39.3%` |
-| **其他第三方应用** | `50` | `35.7%` |
-| **GitHub / 开源与极客工具** | `7` | `5.0%` |
-| **开源软件组织 (org.*)** | `7` | `5.0%` |
-| **主流电商与服务 (阿里/拼多多/美团)** | `5` | `3.6%` |
-| **字节跳动系 (ByteDance)** | `4` | `2.9%` |
-| **vivo 厂商应用** | `4` | `2.9%` |
-| **Android 系统核心组件** | `3` | `2.1%` |
-| **百度系 (Baidu)** | `2` | `1.4%` |
-| **微软系 (Microsoft)** | `2` | `1.4%` |
-| **腾讯系 (Tencent)** | `1` | `0.7%` |
-
-
-### 📋 详细分类清单
-<details><summary><b>Google 系应用与服务</b> （包含 55 个应用，点击展开）</summary>
+### 📋 分类列表明细
+<details><summary><b>Google 系应用</b> （包含 55 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
@@ -115,7 +113,7 @@
 
 </details>
 
-<details><summary><b>其他第三方应用</b> （包含 50 个应用，点击展开）</summary>
+<details><summary><b>其他第三方应用</b> （包含 50 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
@@ -172,7 +170,7 @@
 
 </details>
 
-<details><summary><b>GitHub / 开源与极客工具</b> （包含 7 个应用，点击展开）</summary>
+<details><summary><b>GitHub/开源极客工具</b> （包含 7 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
@@ -186,7 +184,7 @@
 
 </details>
 
-<details><summary><b>开源软件组织 (org.*)</b> （包含 7 个应用，点击展开）</summary>
+<details><summary><b>开源组织应用</b> （包含 7 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
@@ -200,7 +198,7 @@
 
 </details>
 
-<details><summary><b>主流电商与服务 (阿里/拼多多/美团)</b> （包含 5 个应用，点击展开）</summary>
+<details><summary><b>主流电商与服务</b> （包含 5 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
@@ -212,7 +210,7 @@
 
 </details>
 
-<details><summary><b>字节跳动系 (ByteDance)</b> （包含 4 个应用，点击展开）</summary>
+<details><summary><b>字节跳动系</b> （包含 4 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
@@ -223,7 +221,7 @@
 
 </details>
 
-<details><summary><b>vivo 厂商应用</b> （包含 4 个应用，点击展开）</summary>
+<details><summary><b>vivo 厂商应用</b> （包含 4 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
@@ -234,7 +232,7 @@
 
 </details>
 
-<details><summary><b>Android 系统核心组件</b> （包含 3 个应用，点击展开）</summary>
+<details><summary><b>Android 系统组件</b> （包含 3 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
@@ -244,7 +242,7 @@
 
 </details>
 
-<details><summary><b>百度系 (Baidu)</b> （包含 2 个应用，点击展开）</summary>
+<details><summary><b>百度系</b> （包含 2 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
@@ -253,7 +251,7 @@
 
 </details>
 
-<details><summary><b>微软系 (Microsoft)</b> （包含 2 个应用，点击展开）</summary>
+<details><summary><b>微软系</b> （包含 2 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
@@ -262,7 +260,7 @@
 
 </details>
 
-<details><summary><b>腾讯系 (Tencent)</b> （包含 1 个应用，点击展开）</summary>
+<details><summary><b>腾讯系</b> （包含 1 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
