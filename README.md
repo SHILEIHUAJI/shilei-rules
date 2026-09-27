@@ -14,8 +14,8 @@
 ## 📊 包名数据可视化统计大屏
 
 ### 📈 概览
-- **配置文件总行数**: `277` 条
-- **独立有效应用数**: `277` 个
+- **配置文件总行数**: `278` 条
+- **独立有效应用数**: `278` 个
 - **重复包名状态**: ✅ **校验通过 (无重复)**
 
 
@@ -24,7 +24,7 @@
 ```mermaid
 pie title 包名分类占比统计
     "vivo 厂商应用" : 122
-    "其他第三方应用" : 61
+    "其他第三方应用" : 62
     "Google 系应用" : 54
     "GitHub/开源极客工具" : 9
     "开源组织应用" : 9
@@ -166,7 +166,7 @@ pie title 包名分类占比统计
 
 </details>
 
-<details><summary><b>其他第三方应用</b> （包含 61 个应用）</summary>
+<details><summary><b>其他第三方应用</b> （包含 62 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
@@ -179,6 +179,7 @@ pie title 包名分类占比统计
 | `com.apkpure.aegon` | `apkpure` | APKPure ✅ 修正：原com.apkpure.aframe |
 | `com.bbk.account` | `bbk-account` | vivo账号 |
 | `com.bbk.theme.resources` | `wallpaper-res` | vivo壁纸资源 |
+| `com.bbk.updater` | `bbk-system-upgrade` | vivo 系统升级 |
 | `com.bd.nproject` | `lemon8` | Lemon8 ✅ 修正：原com.lumi.lemon8 |
 | `com.browser2345` | `browser2345` | 2345浏览器 |
 | `com.cctv.yangshipin.app.androidp` | `yangshipin` | 央视频 |
@@ -358,7 +359,7 @@ pie title 包名分类占比统计
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
-| `com.bytedance.android.ludao.online` | `ludao` | 笨包路人谈 |
+| `com.bytedance.android.doubaoime` | `doubao-Keyboard` | 豆包输入法 |
 | `com.ss.android.article.news` | `toutiao` | 头条搜索 |
 | `com.ss.android.ugc.aweme` | `aweme` | 抖音 |
 | `com.ss.android.ugc.trill` | `tiktok-in` | TikTok(印度/旧版) |
