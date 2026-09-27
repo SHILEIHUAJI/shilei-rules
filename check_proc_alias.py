@@ -7,8 +7,13 @@ import sys
 from collections import defaultdict
 
 YAML_PATH = "proc-alias.yaml"
+README_PATH = "README.md"
 
-# 包名分类正则匹配规则
+# README 中的自动插入锚点
+START_MARKER = "<!-- STATS_START -->"
+END_MARKER = "<!-- STATS_END -->"
+
+# 包名分类正则规则
 CLASSIFICATION_RULES = [
     (r"^com\.google\.", "Google 系应用与服务"),
     (r"^com\.android\.", "Android 系统核心组件"),
@@ -61,33 +66,34 @@ def build_markdown_report(entries, dup_pkgs, seen_pkgs, category_map):
     dup_count = len(dup_pkgs)
 
     md = []
-    md.append("# 📊 proc-alias.yaml 分析与检测报告\n")
+    md.append(f"{START_MARKER}")
+    md.append("## 📊 实时数据统计大屏\n")
 
-    # 1. 核心数据统计面板
-    md.append("## 📈 核心指标数据")
+    # 1. 核心数据指标
+    md.append("### 📈 核心指标")
     md.append("| 统计指标 | 数量 | 校验状态 |")
     md.append("| :--- | :---: | :---: |")
-    md.append(f"| 原始解析总条数 | `{total_count}` | - |")
-    md.append(f"| 去重后有效包名数 | `{unique_count}` | - |")
+    md.append(f"| 原始配置条数 | `{total_count}` | - |")
+    md.append(f"| 去重后有效应用数 | `{unique_count}` | - |")
     if dup_count > 0:
-        md.append(f"| 重复包名数 | `{dup_count}` | ❌ **失败（存在重复）** |")
+        md.append(f"| 重复包名冲突 | `{dup_count}` | ❌ **存在冲突（请清理）** |")
     else:
-        md.append(f"| 重复包名数 | `0` | ✅ **通过（无重复）** |")
+        md.append(f"| 重复包名冲突 | `0` | ✅ **无重复（正常）** |")
     md.append("\n")
 
-    # 2. 重复告警列表（若有重复）
+    # 2. 重复告警列表
     if dup_count > 0:
-        md.append("## ❌ 报错：发现重复包名")
-        md.append("| 包名 (Package Name) | 首次出现位置 | 冲突/重复行号 |")
+        md.append("### ❌ 重复包名警报")
+        md.append("| 包名 (Package Name) | 首次出现行号 | 重复冲突行号 |")
         md.append("| :--- | :---: | :---: |")
         for pkg, items in dup_pkgs.items():
             first_line = seen_pkgs[pkg]['line']
             other_lines = ", ".join([f"`第 {x['line']} 行`" for x in items])
             md.append(f"| `{pkg}` | `第 {first_line} 行` | {other_lines} |")
-        md.append("\n> ⚠️ **请尽快修改 `proc-alias.yaml` 删除上述重复行！**\n")
+        md.append("\n> ⚠️ **请尽快在 `proc-alias.yaml` 中清理上述重复项！**\n")
 
-    # 3. 按包名名称分类统计
-    md.append("## 📦 包名按类别汇总统计")
+    # 3. 按包名名称分类汇总
+    md.append("### 📦 按分类汇总统计")
     md.append("| 应用分类类别 | 包含应用数 | 占比 |")
     md.append("| :--- | :---: | :---: |")
     for cat, items in sorted(category_map.items(), key=lambda x: len(x[1]), reverse=True):
@@ -95,10 +101,10 @@ def build_markdown_report(entries, dup_pkgs, seen_pkgs, category_map):
         md.append(f"| **{cat}** | `{len(items)}` | `{ratio:.1f}%` |")
     md.append("\n")
 
-    # 4. 可折叠的完整包名分类清单
-    md.append("## 📋 包名分类明细")
+    # 4. 可折叠分类明细表
+    md.append("### 📋 详细分类清单")
     for cat, items in sorted(category_map.items(), key=lambda x: len(x[1]), reverse=True):
-        md.append(f"<details><summary><b>{cat}</b> （点击展开明细 - 共 {len(items)} 个应用）</summary>\n")
+        md.append(f"<details><summary><b>{cat}</b> （包含 {len(items)} 个应用，点击展开）</summary>\n")
         md.append("| 包名 (Package Name) | 目录别名 (Alias) | 备注说明 |")
         md.append("| :--- | :--- | :--- |")
         for item in sorted(items, key=lambda x: x["pkg"]):
@@ -106,7 +112,26 @@ def build_markdown_report(entries, dup_pkgs, seen_pkgs, category_map):
             md.append(f"| `{item['pkg']}` | `{item['alias']}` | {comment} |")
         md.append("\n</details>\n")
 
+    md.append(f"{END_MARKER}")
     return "\n".join(md)
+
+def update_readme(stats_md):
+    if not os.path.exists(README_PATH):
+        readme_content = "# Proc Alias 映射表管理与自动校验\n\n"
+    else:
+        with open(README_PATH, "r", encoding="utf-8") as f:
+            readme_content = f.read()
+
+    # 如果存在锚点，替换锚点中间的内容；如果不存在，直接追加到末尾
+    if START_MARKER in readme_content and END_MARKER in readme_content:
+        pattern = re.escape(START_MARKER) + r".*?" + re.escape(END_MARKER)
+        new_content = re.sub(pattern, stats_md, readme_content, flags=re.DOTALL)
+    else:
+        new_content = readme_content.rstrip() + f"\n\n{stats_md}\n"
+
+    with open(README_PATH, "w", encoding="utf-8") as f:
+        f.write(new_content)
+    print("✅ 已将最新统计数据写回 README.md！")
 
 def main():
     entries = parse_yaml_file(YAML_PATH)
@@ -128,19 +153,14 @@ def main():
         cat = classify_package(item["pkg"])
         category_map[cat].append(item)
 
-    # 生成完整 Markdown 报告
-    md_content = build_markdown_report(entries, dup_pkgs, seen_pkgs, category_map)
+    # 1. 生成 Markdown 统计文本
+    stats_md = build_markdown_report(entries, dup_pkgs, seen_pkgs, category_map)
 
-    # 终端打印输出
-    print(md_content)
-
-    # 如果运行在 GitHub Actions 环境中，直接写入 GitHub Step Summary
-    summary_env = os.environ.get("GITHUB_STEP_SUMMARY")
-    if summary_env:
-        with open(summary_env, "a", encoding="utf-8") as f:
-            f.write(md_content + "\n")
+    # 2. 直接写回 README.md 页面
+    update_readme(stats_md)
 
     if dup_pkgs:
+        print(f"❌ 检测到 {len(dup_pkgs)} 个重复包名，请前往 README.md 查看详细行号并清理！")
         sys.exit(1)
 
 if __name__ == "__main__":
