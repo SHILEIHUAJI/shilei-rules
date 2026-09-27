@@ -79,6 +79,7 @@ com.vivo.globalanimation.resources: global-animation-res # 全局动画资源
 com.vivo.appfilter: pull-up-prevent-service    # 防拉起服务
 com.android.vivo.tws.vivotws: vivo-tws          # vivo TWS
 com.bbk.account: bbk-account                   # vivo账号
+com.bbk.updater: bbk-system-upgrade                   # vivo 系统升级
 com.vivo.singularity: vivo-webview             # vivo系统WebView
 com.vivo.accessibilityenhance: accessibility-enhance # 无障碍增强
 com.vivo.systemblur.server: system-blur-server       # SystemBlur
@@ -157,7 +158,7 @@ com.apkpure.aegon: apkpure                   # APKPure ✅ 修正：原com.apkpu
 com.baidu.dict: baidu-dict                   # 百度汉语
 com.baidu.tieba: baidu-tieba                 # 百度贴吧
 com.browser2345: browser2345                 # 2345浏览器
-com.bytedance.android.ludao.online: ludao    # 笨包路人谈
+com.bytedance.android.doubaoime: doubao-Keyboard    # 豆包输入法
 com.coolapk.market: coolapk                   # 酷安
 com.ct.client: chinatelecom                  # 中国电信
 com.ddm.iptools: ip-tools                    # IP Tools
