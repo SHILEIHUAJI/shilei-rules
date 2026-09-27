@@ -9,11 +9,10 @@ from collections import defaultdict
 YAML_PATH = "proc-alias.yaml"
 README_PATH = "README.md"
 
-# README 中的自动插入锚点
 START_MARKER = "<!-- STATS_START -->"
 END_MARKER = "<!-- STATS_END -->"
 
-# 包名分类正则规则
+# 分类规则
 CLASSIFICATION_RULES = [
     (r"^com\.google\.", "Google 系应用与服务"),
     (r"^com\.android\.", "Android 系统核心组件"),
@@ -35,7 +34,7 @@ def classify_package(pkg):
 
 def parse_yaml_file(filepath):
     if not os.path.exists(filepath):
-        print(f"❌ 错误: 未在根目录下找到文件 '{filepath}'")
+        print(f"❌ 错误: 未找到 {filepath}")
         sys.exit(1)
 
     entries = []
@@ -69,22 +68,22 @@ def build_markdown_report(entries, dup_pkgs, seen_pkgs, category_map):
     md.append(f"{START_MARKER}")
     md.append("## 📊 实时数据统计大屏\n")
 
-    # 1. 核心数据指标
+    # 1. 指标概览
     md.append("### 📈 核心指标")
-    md.append("| 统计指标 | 数量 | 校验状态 |")
+    md.append("| 统计指标 | 数量 | 状态 |")
     md.append("| :--- | :---: | :---: |")
-    md.append(f"| 原始配置条数 | `{total_count}` | - |")
-    md.append(f"| 去重后有效应用数 | `{unique_count}` | - |")
+    md.append(f"| 原始配置总条数 | `{total_count}` | - |")
+    md.append(f"| 去重后独立应用数 | `{unique_count}` | - |")
     if dup_count > 0:
-        md.append(f"| 重复包名冲突 | `{dup_count}` | ❌ **存在冲突（请清理）** |")
+        md.append(f"| 重复包名冲突 | `{dup_count}` | ❌ **存在重复** |")
     else:
-        md.append(f"| 重复包名冲突 | `0` | ✅ **无重复（正常）** |")
+        md.append(f"| 重复包名冲突 | `0` | ✅ **正常** |")
     md.append("\n")
 
-    # 2. 重复告警列表
+    # 2. 重复报错
     if dup_count > 0:
-        md.append("### ❌ 重复包名警报")
-        md.append("| 包名 (Package Name) | 首次出现行号 | 重复冲突行号 |")
+        md.append("### ❌ 重复包名告警")
+        md.append("| 包名 (Package Name) | 首次出现行号 | 冲突行号 |")
         md.append("| :--- | :---: | :---: |")
         for pkg, items in dup_pkgs.items():
             first_line = seen_pkgs[pkg]['line']
@@ -92,8 +91,8 @@ def build_markdown_report(entries, dup_pkgs, seen_pkgs, category_map):
             md.append(f"| `{pkg}` | `第 {first_line} 行` | {other_lines} |")
         md.append("\n> ⚠️ **请尽快在 `proc-alias.yaml` 中清理上述重复项！**\n")
 
-    # 3. 按包名名称分类汇总
-    md.append("### 📦 按分类汇总统计")
+    # 3. 按包名名称分类统计
+    md.append("### 📦 包名分类汇总统计")
     md.append("| 应用分类类别 | 包含应用数 | 占比 |")
     md.append("| :--- | :---: | :---: |")
     for cat, items in sorted(category_map.items(), key=lambda x: len(x[1]), reverse=True):
@@ -101,11 +100,11 @@ def build_markdown_report(entries, dup_pkgs, seen_pkgs, category_map):
         md.append(f"| **{cat}** | `{len(items)}` | `{ratio:.1f}%` |")
     md.append("\n")
 
-    # 4. 可折叠分类明细表
+    # 4. 分类明细
     md.append("### 📋 详细分类清单")
     for cat, items in sorted(category_map.items(), key=lambda x: len(x[1]), reverse=True):
         md.append(f"<details><summary><b>{cat}</b> （包含 {len(items)} 个应用，点击展开）</summary>\n")
-        md.append("| 包名 (Package Name) | 目录别名 (Alias) | 备注说明 |")
+        md.append("| 包名 (Package Name) | 目录别名 (Alias) | 备注 |")
         md.append("| :--- | :--- | :--- |")
         for item in sorted(items, key=lambda x: x["pkg"]):
             comment = item['comment'] if item['comment'] else "-"
@@ -122,7 +121,6 @@ def update_readme(stats_md):
         with open(README_PATH, "r", encoding="utf-8") as f:
             readme_content = f.read()
 
-    # 如果存在锚点，替换锚点中间的内容；如果不存在，直接追加到末尾
     if START_MARKER in readme_content and END_MARKER in readme_content:
         pattern = re.escape(START_MARKER) + r".*?" + re.escape(END_MARKER)
         new_content = re.sub(pattern, stats_md, readme_content, flags=re.DOTALL)
@@ -131,7 +129,6 @@ def update_readme(stats_md):
 
     with open(README_PATH, "w", encoding="utf-8") as f:
         f.write(new_content)
-    print("✅ 已将最新统计数据写回 README.md！")
 
 def main():
     entries = parse_yaml_file(YAML_PATH)
@@ -153,14 +150,10 @@ def main():
         cat = classify_package(item["pkg"])
         category_map[cat].append(item)
 
-    # 1. 生成 Markdown 统计文本
     stats_md = build_markdown_report(entries, dup_pkgs, seen_pkgs, category_map)
-
-    # 2. 直接写回 README.md 页面
     update_readme(stats_md)
 
     if dup_pkgs:
-        print(f"❌ 检测到 {len(dup_pkgs)} 个重复包名，请前往 README.md 查看详细行号并清理！")
         sys.exit(1)
 
 if __name__ == "__main__":
