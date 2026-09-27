@@ -293,3 +293,4 @@ com.google.android.contactkeys: android-keyverifier   # Android密钥验证 ✅ 
 
 # ========== System Services ==========
 com.android.vendors.bridge.softsim: b-sim             # SIM/虚拟SIM相关
+com.android.bbksoundrecorder: vivo-tape-recorder      # vivo 录音机
