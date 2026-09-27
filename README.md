@@ -14,39 +14,179 @@
 ## 📊 包名数据可视化统计大屏
 
 ### 📈 概览
-- **配置文件总行数**: `149` 条
-- **独立有效应用数**: `149` 个
-- **重复包名状态**: ✅ **校验通过 (无重复)**
+- **配置文件总行数**: `278` 条
+- **独立有效应用数**: `276` 个
+- **重复包名状态**: ❌ **存在 2 个重复项**
 
 
 ### 🎨 应用分类分布饼图
 
 ```mermaid
 pie title 包名分类占比统计
-    "其他第三方应用" : 58
+    "vivo 厂商应用" : 123
+    "其他第三方应用" : 61
     "Google 系应用" : 54
+    "GitHub/开源极客工具" : 9
     "开源组织应用" : 9
-    "GitHub/开源极客工具" : 8
+    "Android 系统组件" : 6
     "主流电商与服务" : 5
     "字节跳动系" : 4
-    "vivo 厂商应用" : 3
-    "Android 系统组件" : 3
     "百度系" : 2
     "微软系" : 2
     "腾讯系" : 1
 ```
 
+### ❌ 重复包名告警
+| 包名 (Package Name) | 首次出现 | 重复冲突行号 |
+| :--- | :---: | :---: |
+| `com.vivo.wallet` | `第 14 行` | `第 72 行` |
+| `com.vivo.android.connectivity.mainline.manufacturer.resources.overlay` | `第 22 行` | `第 142 行` |
+
+
 ### 📋 分类列表明细
-<details><summary><b>其他第三方应用</b> （包含 58 个应用）</summary>
+<details><summary><b>vivo 厂商应用</b> （包含 123 个应用）</summary>
+
+| 包名 (Package Name) | 目录别名 (Alias) | 备注 |
+| :--- | :--- | :--- |
+| `com.vivo.SmartKey` | `quick-launch` | 快捷启动 |
+| `com.vivo.abe` | `smart-engine` | 智慧引擎 |
+| `com.vivo.accessibility` | `accessibility` | 无障碍 |
+| `com.vivo.accessibilityenhance` | `accessibility-enhance` | 无障碍增强 |
+| `com.vivo.agent` | `jovi-voice` | Jovi语音 |
+| `com.vivo.ai.copilot` | `blueheart-v` | 蓝心小V |
+| `com.vivo.aiengine` | `ai-engine` | 智慧服务 |
+| `com.vivo.aiservice` | `ai-service` | AIService |
+| `com.vivo.alldocuments` | `all-documents-viewer` | vivo万能查看器 |
+| `com.vivo.alphacamera` | `alpha-camera` | AlphaCamera |
+| `com.vivo.android.connectivity.mainline.common.resources.overlay` | `conn-common-overlay` | 连接通用覆盖层 |
+| `com.vivo.android.connectivity.mainline.manufacturer.resources.overlay` | `connectivity-overlay` | 连接资源覆盖层 |
+| `com.vivo.android.wifi.common.resources.overlay` | `wifi-common-overlay` | WiFi通用资源覆盖层 |
+| `com.vivo.android.wifi.mainline.common.resources.overlay` | `wifi-mainline-common-overlay` | WiFi主线通用覆盖层 |
+| `com.vivo.android.wifi.mainline.manufacturer.resources.overlay` | `wifi-mainline-overlay` | WiFi主线路资源覆盖层 |
+| `com.vivo.android.wifi.mainline.platform.resources.overlay` | `wifi-mainline-platform-overlay` | WiFi主线平台覆盖层 |
+| `com.vivo.android.wifi.manufacturer.resources.overlay` | `wifi-mfg-overlay` | WiFi厂商资源覆盖层 |
+| `com.vivo.android.wifi.platform.resources.overlay` | `wifi-platform-overlay` | WiFi平台资源覆盖层 |
+| `com.vivo.appfilter` | `pull-up-prevent-service` | 防拉起服务 |
+| `com.vivo.assistant` | `important-notification` | 重要通知 |
+| `com.vivo.audiofx` | `audio-effects` | 音效设置 |
+| `com.vivo.base.player` | `system-audio-player` | 系统音频播放器 |
+| `com.vivo.bsptest` | `bsp-test` | BSP测试 |
+| `com.vivo.car.launcher` | `car-launcher` | 车载launcher |
+| `com.vivo.car.networking` | `smart-car-networking` | 智能车载 |
+| `com.vivo.card` | `super-card-wallet` | 超级卡包 |
+| `com.vivo.cipherchain` | `cipher-vault` | 密码保险箱 |
+| `com.vivo.compass` | `compass` | 指南针 |
+| `com.vivo.connbase` | `multi-device-connect` | 多设备互联 |
+| `com.vivo.connbase.sysui` | `control-center` | ControlCenter |
+| `com.vivo.cota` | `cota` | COTA升级 |
+| `com.vivo.countdownwidget` | `countdown-widget` | 计时器组件 |
+| `com.vivo.daemonService` | `vivo-service-daemon` | vivo服务 |
+| `com.vivo.defaultPlayer` | `default-player` | 视频播放器 |
+| `com.vivo.desktopstickers` | `desktop-stickers` | 贴纸 |
+| `com.vivo.devicepower` | `device-power` | 设备电量 |
+| `com.vivo.devicereg` | `device-management` | 设备管理 |
+| `com.vivo.doubleinstance` | `app-clone` | 应用分身 |
+| `com.vivo.doubletimezoneclock` | `dual-clock-widget` | i挂件 |
+| `com.vivo.easyshare` | `easyshare` | 互传 |
+| `com.vivo.faceui` | `face-ui` | FaceUI |
+| `com.vivo.faceunlock` | `face-unlock` | 面部识别 |
+| `com.vivo.familycare.local` | `familycare-local` | 健康使用设备 |
+| `com.vivo.favorite` | `favorite` | 收藏 |
+| `com.vivo.findphone` | `find-phone` | 查找 |
+| `com.vivo.fingerprint` | `fingerprint-unlock` | 指纹与密码 |
+| `com.vivo.fingerprintui` | `fingerprint-ui` | 指纹UI组件 |
+| `com.vivo.fingerprintvit` | `fingerprint-vit` | 指纹组件 |
+| `com.vivo.floatingball` | `floating-ball` | 悬浮球 |
+| `com.vivo.gallery` | `vivo-gallery` | vivo相册 |
+| `com.vivo.gamecube` | `gamecube` | 游戏魔盒 |
+| `com.vivo.gametrain` | `sound-position-train` | 听音辨位训练场 |
+| `com.vivo.globalanimation` | `global-animation` | 全局动效 |
+| `com.vivo.globalanimation.resources` | `global-animation-res` | 全局动画资源 |
+| `com.vivo.globalsearch` | `global-search` | 全局搜索 |
+| `com.vivo.health` | `vivo-health` | vivo健康 |
+| `com.vivo.healthservice` | `health-service` | 健康服务 |
+| `com.vivo.healthwidget` | `health-widget` | 健康组件 |
+| `com.vivo.hiboard` | `smart-desktop` | 智慧桌面 |
+| `com.vivo.hybrid` | `quick-app-framework` | 快应用框架服务 |
+| `com.vivo.iotserver` | `iot-engine` | IoT服务引擎 |
+| `com.vivo.launchercopilot` | `blueheart-v-widget` | 蓝心小V组件 |
+| `com.vivo.livewallpaper.box` | `live-wallpaper-box` | 动态壁纸盒子 |
+| `com.vivo.magazine` | `lockscreen-magazine` | 阅图锁屏 |
+| `com.vivo.minscreen` | `mini-screen` | 小屏 |
+| `com.vivo.moodcube` | `morph-engine` | 变形器 |
+| `com.vivo.motionrecognition` | `motion-recognition` | 智能体感 |
+| `com.vivo.multinlp` | `location-service` | 定位服务 |
+| `com.vivo.musicwidgetmix` | `atom-music-widget` | 原子随身听 |
+| `com.vivo.networkimprove` | `network-improve` | 网络优化 |
+| `com.vivo.networkstate` | `network-state` | 网络状态 |
+| `com.vivo.nightpearl` | `night-pearl` | 熄屏显示 |
+| `com.vivo.numbermark` | `number-mark` | 陌电识别 |
+| `com.vivo.pay` | `multi-scene-secure-pay` | 多场景安全支付服务 |
+| `com.vivo.pcsuite` | `pc-suite` | vivo办公套件 |
+| `com.vivo.pem` | `power-guard` | 电量守护 |
+| `com.vivo.permissionmanager` | `permission-manager` | 权限管理 |
+| `com.vivo.phonehandoff` | `phone-handoff` | 通话接力 |
+| `com.vivo.privacylauncher` | `privacy-launcher` | 隐私桌面 |
+| `com.vivo.pushservice` | `push-service` | 推送引擎 |
+| `com.vivo.quickpay` | `quick-pay` | 快捷支付 |
+| `com.vivo.remotassistant` | `remote-assistant` | 远程协助 |
+| `com.vivo.remotemplugin` | `vivo-remote` | 客服协助 ✅ 修正：原com.vivo.remotepass |
+| `com.vivo.safecenter` | `safe-center` | 安全中心 |
+| `com.vivo.screenagent` | `v-note-helper` | 小V帮记 |
+| `com.vivo.sda` | `vivo-sda` | 售后诊断助手 ✅ 修正：原com.vivo.ada |
+| `com.vivo.sdkplugin` | `service-secure-plugin` | vivo服务安全插件 |
+| `com.vivo.seservice` | `digital-car-key` | 数字车钥匙服务 |
+| `com.vivo.setupwizard` | `setup-wizard` | 开机引导 |
+| `com.vivo.share` | `vivo-share` | vivo互传 |
+| `com.vivo.sim.contacts` | `sim-contacts-service` | SIM卡联系人服务 |
+| `com.vivo.simpleiconthemeres` | `simple-icon-theme-res` | 简约图标主题资源 |
+| `com.vivo.singularity` | `vivo-webview` | vivo系统WebView |
+| `com.vivo.smartanswer` | `smart-answer` | 电话秘书 |
+| `com.vivo.smartmultiwindow` | `smart-multiwindow` | 多任务 |
+| `com.vivo.smartshot` | `smart-screenshot` | 超级截屏 |
+| `com.vivo.smartunlock` | `smart-unlock` | 智能解锁 |
+| `com.vivo.sos` | `sos-emergency` | 紧急呼叫 |
+| `com.vivo.space` | `vivo-official-site` | vivo官网 |
+| `com.vivo.sps` | `super-process-system` | SuperProcessSystem |
+| `com.vivo.symmetry` | `vivo-camera` | vivo摄影 |
+| `com.vivo.systemblur.server` | `system-blur-server` | SystemBlur |
+| `com.vivo.systemuiplugin` | `system-ui-plugin` | 系统界面组件 |
+| `com.vivo.third.numbermark` | `third-number-mark` | 陌生电话识别组件 |
+| `com.vivo.translator` | `translator` | 翻译机 |
+| `com.vivo.upnp.server` | `dlna-server` | 投屏 |
+| `com.vivo.upslide` | `interaction-pool` | 交互池 |
+| `com.vivo.vdfs` | `cross-device-share` | 跨设备使用 |
+| `com.vivo.vhomeguide` | `v-home-guide` | VHome指引 |
+| `com.vivo.vibrator4d` | `vibrator-4d` | 4D振感 |
+| `com.vivo.video.floating` | `video-beauty` | 视频通话美颜 |
+| `com.vivo.videoservice` | `video-editor` | 视频编辑 |
+| `com.vivo.vivo3rdgoservice` | `image-algo-service` | ImageAlgoService |
+| `com.vivo.vms` | `vivo-mobile-service` | vivo移动服务 |
+| `com.vivo.voicerecognition` | `voice-recognition` | 声音识别 |
+| `com.vivo.voicewakeup` | `voice-wakeup` | 语音唤醒 |
+| `com.vivo.vtouch` | `scan-assistant` | 扫描 |
+| `com.vivo.wallet` | `vivo-wallet` | vivo 钱包 |
+| `com.vivo.weather.provider` | `weather-provider` | 天气存储 |
+| `com.vivo.widget.calendar` | `calendar-widget` | 日历组件 |
+| `com.vivo.widget.cleanspeed` | `clean-speed` | 清理加速组件 |
+| `com.vivo.widget.healthcare` | `healthcare-widget` | 健康关怀 |
+| `com.vivo.xspace` | `atom-privacy-system` | 原子隐私系统 |
+
+</details>
+
+<details><summary><b>其他第三方应用</b> （包含 61 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
 | `ai.perplexity.app.android` | `perplexity` | Perplexity ✅ 修正：原com.perplexity.perplexity |
+| `android.overlay.vivoresrro` | `vivo-res-overlay` | vivo资源覆盖层 |
 | `app.intra` | `intra` | Intra |
 | `cn.wps.moffice_eng` | `wps-office` | WPS Office |
 | `com.aliyun.tongyi` | `tongyi` | 千问 |
 | `com.anthropic.claude` | `claude` | Claude |
 | `com.apkpure.aegon` | `apkpure` | APKPure ✅ 修正：原com.apkpure.aframe |
+| `com.bbk.account` | `bbk-account` | vivo账号 |
+| `com.bbk.theme.resources` | `wallpaper-res` | vivo壁纸资源 |
 | `com.bd.nproject` | `lemon8` | Lemon8 ✅ 修正：原com.lumi.lemon8 |
 | `com.browser2345` | `browser2345` | 2345浏览器 |
 | `com.cctv.yangshipin.app.androidp` | `yangshipin` | 央视频 |
@@ -54,7 +194,6 @@ pie title 包名分类占比统计
 | `com.ct.client` | `chinatelecom` | 中国电信 |
 | `com.ddm.iptools` | `ip-tools` | IP Tools |
 | `com.deepl.mobiletranslator` | `deepl` | DeepL ✅ 修正：多了点→连写 |
-| `com.energy.weather` | `breezy-weather` | Breezy Weather ✅ 统一别名 |
 | `com.fitbit.FitbitMobile` | `health-mobile` | Health ✅ 修正：原com.health.mobile |
 | `com.hp.printercontrol` | `hp-smart` | HP |
 | `com.huawei.smarthome` | `huawei-smarthome` | 智慧生活 |
@@ -74,7 +213,7 @@ pie title 包名分类占比统计
 | `com.niksoftware.snapseed` | `snapseed` | Snapseed |
 | `com.ookla.speedtest` | `speedtest` | Speedtest |
 | `com.openai.chatgpt` | `chatgpt` | ChatGPT |
-| `com.payoneer.mobile` | `payoneer` | Payoneer |
+| `com.payoneer.mobile` | `payoneer` | 派安盈 |
 | `com.pikcloud.pikpak` | `pikpak` | PikPak网盘 ✅ 补充 |
 | `com.pinterest` | `pinterest` | Pinterest ✅ 补充 |
 | `com.pranavpandey.rotation` | `rotation` | Rotation |
@@ -90,6 +229,7 @@ pie title 包名分类占比统计
 | `com.wirelessalien.zipxtract` | `zipxtract` | ZipXtract ✅ 修正：saleri→alien |
 | `com.xiaomi.smarthome` | `mijia` | 米家 |
 | `com.xtc.originwidget` | `xtc-widget` | 小天才组件 ✅ 修正：少i→originwidget |
+| `com.yozo.vivo.office` | `vivo-document` | vivo文档 |
 | `com.zhiliaoapp.musically` | `tiktok` | TikTok国际版 ✅ 修正+补充 |
 | `com.zidongdianji` | `auto-clicker` | 自动点击器 |
 | `com.zoho.notebook` | `zoho-notebook` | Notebook |
@@ -163,6 +303,22 @@ pie title 包名分类占比统计
 
 </details>
 
+<details><summary><b>GitHub/开源极客工具</b> （包含 9 个应用）</summary>
+
+| 包名 (Package Name) | 目录别名 (Alias) | 备注 |
+| :--- | :--- | :--- |
+| `bin.mt.plus` | `mt-file-manager` | - |
+| `bin.mt.termex` | `mt-terminal-extension-pack` | MT终端扩展包 ✅ 修正：原bin.mt.plus |
+| `com.github.android` | `github` | GitHub |
+| `com.github.nrfr` | `nrfr` | Nrfr |
+| `io.github.InfinityLoop1309.NewPipeEnhanced` | `pipepipe` | PipePipe ✅ 修正：原com.pipepipe.app |
+| `io.github.samolego.canta` | `canta` | Canta |
+| `li.songe.gkd` | `gkd` | GKD |
+| `moe.shizuku.privileged.api` | `shizuku` | Shizuku |
+| `org.fdroid.fdroid` | `fdroid` | F-Droid |
+
+</details>
+
 <details><summary><b>开源组织应用</b> （包含 9 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
@@ -179,18 +335,16 @@ pie title 包名分类占比统计
 
 </details>
 
-<details><summary><b>GitHub/开源极客工具</b> （包含 8 个应用）</summary>
+<details><summary><b>Android 系统组件</b> （包含 6 个应用）</summary>
 
 | 包名 (Package Name) | 目录别名 (Alias) | 备注 |
 | :--- | :--- | :--- |
-| `bin.mt.termex` | `mt-manager` | MT终端扩展包 ✅ 修正：原bin.mt.plus |
-| `com.github.android` | `github` | GitHub |
-| `com.github.nrfr` | `nrfr` | Nrfr |
-| `io.github.InfinityLoop1309.NewPipeEnhanced` | `pipepipe` | PipePipe ✅ 修正：原com.pipepipe.app |
-| `io.github.samolego.canta` | `canta` | Canta |
-| `li.songe.gkd` | `gkd` | GKD |
-| `moe.shizuku.privileged.api` | `shizuku` | Shizuku |
-| `org.fdroid.fdroid` | `fdroid` | F-Droid |
+| `com.android.bbkcalculatos` | `vivo-calculator` | vivo计算器 ✅ 修正：原com.vivo.calculator |
+| `com.android.chrome` | `chrome` | Chrome |
+| `com.android.documentsui` | `vivo-file` | vivo 文件 |
+| `com.android.filemanager` | `vivo-file-management` | vivo 文件管理 |
+| `com.android.vending` | `google-play-store` | Google Play 商店 |
+| `com.android.vivo.tws.vivotws` | `vivo-tws` | vivo TWS |
 
 </details>
 
@@ -214,26 +368,6 @@ pie title 包名分类占比统计
 | `com.ss.android.article.news` | `toutiao` | 头条搜索 |
 | `com.ss.android.ugc.aweme` | `aweme` | 抖音 |
 | `com.ss.android.ugc.trill` | `tiktok-in` | TikTok(印度/旧版) |
-
-</details>
-
-<details><summary><b>vivo 厂商应用</b> （包含 3 个应用）</summary>
-
-| 包名 (Package Name) | 目录别名 (Alias) | 备注 |
-| :--- | :--- | :--- |
-| `com.vivo.gallery` | `vivo-gallery` | vivo相册 |
-| `com.vivo.remotemplugin` | `vivo-remote` | 客服协助 ✅ 修正：原com.vivo.remotepass |
-| `com.vivo.sda` | `vivo-sda` | 售后诊断助手 ✅ 修正：原com.vivo.ada |
-
-</details>
-
-<details><summary><b>Android 系统组件</b> （包含 3 个应用）</summary>
-
-| 包名 (Package Name) | 目录别名 (Alias) | 备注 |
-| :--- | :--- | :--- |
-| `com.android.bbkcalculatos` | `vivo-calculator` | vivo计算器 ✅ 修正：原com.vivo.calculator |
-| `com.android.chrome` | `chrome` | Chrome |
-| `com.android.vending` | `google-play-store` | Google Play 商店 |
 
 </details>
 
