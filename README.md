@@ -11,35 +11,35 @@
 ---
 
 <!-- STATS_START -->
-## 📊 包名数据可视化统计大屏
+## 📊 包名映射统计
 
 ### 📈 概览
-- **配置文件总行数**: `278` 条
-- **独立有效应用数**: `278` 个
-- **重复包名状态**: ✅ **校验通过 (无重复)**
+- **配置总条数**: `278` 条
+- **独立应用数**: `278` 个
+- **校验状态**: ✅ 通过
 
-
-### 🎨 应用分类分布饼图
+### 🎨 应用分类分布
 
 ```mermaid
 pie title 包名分类占比统计
     "vivo 厂商应用" : 122
-    "其他第三方应用" : 62
+    "其他第三方应用" : 58
     "Google 系应用" : 54
     "GitHub/开源极客工具" : 9
     "开源组织应用" : 9
     "Android 系统组件" : 8
     "主流电商与服务" : 5
-    "字节跳动系" : 4
-    "百度系" : 2
+    "字节跳动系(国内)" : 5
+    "字节跳动系(国际版)" : 3
     "微软系" : 2
+    "百度系" : 2
     "腾讯系" : 1
 ```
 
-### 📋 分类列表明细
-<details><summary><b>vivo 厂商应用</b> （包含 122 个应用）</summary>
+### 📋 分类明细
+<details><summary><b>vivo 厂商应用</b>(包含 122 个应用)</summary>
 
-| 包名 (Package Name) | 目录别名 (Alias) | 备注 |
+| 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
 | `com.vivo.SmartKey` | `quick-launch` | 快捷启动 |
 | `com.vivo.abe` | `smart-engine` | 智慧引擎 |
@@ -166,9 +166,9 @@ pie title 包名分类占比统计
 
 </details>
 
-<details><summary><b>其他第三方应用</b> （包含 62 个应用）</summary>
+<details><summary><b>其他第三方应用</b>(包含 58 个应用)</summary>
 
-| 包名 (Package Name) | 目录别名 (Alias) | 备注 |
+| 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
 | `ai.perplexity.app.android` | `perplexity` | Perplexity ✅ 修正：原com.perplexity.perplexity |
 | `android.overlay.vivoresrro` | `vivo-res-overlay` | vivo资源覆盖层 |
@@ -180,7 +180,6 @@ pie title 包名分类占比统计
 | `com.bbk.account` | `bbk-account` | vivo账号 |
 | `com.bbk.theme.resources` | `wallpaper-res` | vivo壁纸资源 |
 | `com.bbk.updater` | `bbk-system-upgrade` | vivo 系统升级 |
-| `com.bd.nproject` | `lemon8` | Lemon8 ✅ 修正：原com.lumi.lemon8 |
 | `com.browser2345` | `browser2345` | 2345浏览器 |
 | `com.cctv.yangshipin.app.androidp` | `yangshipin` | 央视频 |
 | `com.coolapk.market` | `coolapk` | 酷安 |
@@ -194,11 +193,9 @@ pie title 包名分类占比统计
 | `com.jincheng.supercaculator` | `super-calculator` | 全能计算器 ✅ 修正：故意少l→caculator |
 | `com.kwai.video` | `kwai` | Kwai |
 | `com.kwai.videoeditor` | `kwai-videoeditor` | 快影 |
-| `com.larus.wolf` | `dola` | Dola(字节海外AI) ✅ 补充 |
 | `com.lenovo.safecenter` | `lenovo-safecenter` | 联想智能设备安全组件 |
 | `com.lonelycatgames.Xplore` | `x-plore` | X-plore |
 | `com.lovebizhi.wallpaper` | `lovebizhi` | 爱壁纸 |
-| `com.luna.music` | `luna-music` | 汽水音乐 |
 | `com.meizu.flyme.calculator` | `meizu-calculator` | 魅族计算器 |
 | `com.mmbox.xbrowser` | `xbrowser` | X浏览器 |
 | `com.nasoft.socmark` | `socmark` | 手机性能排行 |
@@ -223,7 +220,6 @@ pie title 包名分类占比统计
 | `com.xiaomi.smarthome` | `mijia` | 米家 |
 | `com.xtc.originwidget` | `xtc-widget` | 小天才组件 ✅ 修正：少i→originwidget |
 | `com.yozo.vivo.office` | `vivo-document` | vivo文档 |
-| `com.zhiliaoapp.musically` | `tiktok` | TikTok国际版 ✅ 修正+补充 |
 | `com.zidongdianji` | `auto-clicker` | 自动点击器 |
 | `com.zoho.notebook` | `zoho-notebook` | Notebook |
 | `info.muge.appshare` | `appshare` | AppShare ✅ 修正：myapp→muge |
@@ -235,9 +231,9 @@ pie title 包名分类占比统计
 
 </details>
 
-<details><summary><b>Google 系应用</b> （包含 54 个应用）</summary>
+<details><summary><b>Google 系应用</b>(包含 54 个应用)</summary>
 
-| 包名 (Package Name) | 目录别名 (Alias) | 备注 |
+| 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
 | `com.google.android.GoogleCamera` | `google-camera` | Google 相机 |
 | `com.google.android.apps.adm` | `google-find-my-device` | 查找我的设备 |
@@ -296,9 +292,9 @@ pie title 包名分类占比统计
 
 </details>
 
-<details><summary><b>GitHub/开源极客工具</b> （包含 9 个应用）</summary>
+<details><summary><b>GitHub/开源极客工具</b>(包含 9 个应用)</summary>
 
-| 包名 (Package Name) | 目录别名 (Alias) | 备注 |
+| 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
 | `bin.mt.plus` | `mt-file-manager` | - |
 | `bin.mt.termex` | `mt-terminal-extension-pack` | MT终端扩展包 ✅ 修正：原bin.mt.plus |
@@ -312,9 +308,9 @@ pie title 包名分类占比统计
 
 </details>
 
-<details><summary><b>开源组织应用</b> （包含 9 个应用）</summary>
+<details><summary><b>开源组织应用</b>(包含 9 个应用)</summary>
 
-| 包名 (Package Name) | 目录别名 (Alias) | 备注 |
+| 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
 | `org.breezyweather` | `breezy-weather` | Breezy Weather |
 | `org.chromium.webapk.a71da6c439749dd60_v2` | `google-pwa` | Google PWA ✅ 补充 |
@@ -328,9 +324,9 @@ pie title 包名分类占比统计
 
 </details>
 
-<details><summary><b>Android 系统组件</b> （包含 8 个应用）</summary>
+<details><summary><b>Android 系统组件</b>(包含 8 个应用)</summary>
 
-| 包名 (Package Name) | 目录别名 (Alias) | 备注 |
+| 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
 | `com.android.bbkcalculatos` | `vivo-calculator` | vivo计算器 ✅ 修正：原com.vivo.calculator |
 | `com.android.bbksoundrecorder` | `vivo-tape-recorder` | vivo 录音机 |
@@ -343,9 +339,9 @@ pie title 包名分类占比统计
 
 </details>
 
-<details><summary><b>主流电商与服务</b> （包含 5 个应用）</summary>
+<details><summary><b>主流电商与服务</b>(包含 5 个应用)</summary>
 
-| 包名 (Package Name) | 目录别名 (Alias) | 备注 |
+| 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
 | `com.eg.android.AlipayGphone` | `zhifubao` | 支付宝 |
 | `com.sankuai.meituan` | `meituan` | 美团 |
@@ -355,38 +351,49 @@ pie title 包名分类占比统计
 
 </details>
 
-<details><summary><b>字节跳动系</b> （包含 4 个应用）</summary>
+<details><summary><b>字节跳动系(国内)</b>(包含 5 个应用)</summary>
 
-| 包名 (Package Name) | 目录别名 (Alias) | 备注 |
+| 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
 | `com.bytedance.android.doubaoime` | `doubao-Keyboard` | 豆包输入法 |
+| `com.larus.wolf` | `dola` | Dola(字节海外AI) ✅ 补充 |
+| `com.luna.music` | `luna-music` | 汽水音乐 |
 | `com.ss.android.article.news` | `toutiao` | 头条搜索 |
 | `com.ss.android.ugc.aweme` | `aweme` | 抖音 |
-| `com.ss.android.ugc.trill` | `tiktok-in` | TikTok(印度/旧版) |
 
 </details>
 
-<details><summary><b>百度系</b> （包含 2 个应用）</summary>
+<details><summary><b>字节跳动系(国际版)</b>(包含 3 个应用)</summary>
 
-| 包名 (Package Name) | 目录别名 (Alias) | 备注 |
+| 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
-| `com.baidu.dict` | `baidu-dict` | 百度汉语 |
-| `com.baidu.tieba` | `baidu-tieba` | 百度贴吧 |
+| `com.bd.nproject` | `lemon8` | Lemon8 ✅ 修正：原com.lumi.lemon8 |
+| `com.ss.android.ugc.trill` | `tiktok-in` | TikTok(印度/旧版) |
+| `com.zhiliaoapp.musically` | `tiktok` | TikTok国际版 ✅ 修正+补充 |
 
 </details>
 
-<details><summary><b>微软系</b> （包含 2 个应用）</summary>
+<details><summary><b>微软系</b>(包含 2 个应用)</summary>
 
-| 包名 (Package Name) | 目录别名 (Alias) | 备注 |
+| 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
 | `com.microsoft.copilot` | `copilot` | Copilot |
 | `com.microsoft.emmx` | `edge` | Edge |
 
 </details>
 
-<details><summary><b>腾讯系</b> （包含 1 个应用）</summary>
+<details><summary><b>百度系</b>(包含 2 个应用)</summary>
 
-| 包名 (Package Name) | 目录别名 (Alias) | 备注 |
+| 包名 | 目录别名 | 备注 |
+| :--- | :--- | :--- |
+| `com.baidu.dict` | `baidu-dict` | 百度汉语 |
+| `com.baidu.tieba` | `baidu-tieba` | 百度贴吧 |
+
+</details>
+
+<details><summary><b>腾讯系</b>(包含 1 个应用)</summary>
+
+| 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
 | `com.tencent.mm` | `wechat` | 微信 |
 
