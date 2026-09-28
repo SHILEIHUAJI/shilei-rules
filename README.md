@@ -14,9 +14,9 @@
 ## 📊 包名映射统计
 
 ### 📈 概览
-- **配置总条数**: `278` 条
-- **独立应用数**: `278` 个
-- **分类数**: `5` 个
+- **配置总条数**: `307` 条
+- **独立应用数**: `307` 个
+- **分类数**: `12` 个
 - **校验状态**: ✅ 通过
 
 ### 🎨 应用分类分布
@@ -25,6 +25,13 @@
 pie title 包名分类占比统计
     "基础与示例应用" : 4
     "VIVO系应用" : 131
+    "vivo系统小组件" : 9
+    "地图导航" : 2
+    "电商购物" : 1
+    "影音娱乐" : 7
+    "实用工具" : 6
+    "金融支付与健康" : 3
+    "生活服务" : 1
     "第一批：非谷歌系应用" : 86
     "第二批：Google系应用与服务" : 55
     "System Services" : 2
@@ -177,6 +184,84 @@ pie title 包名分类占比统计
 | `com.vivo.widget.healthcare` | `healthcare-widget` | 健康关怀 |
 | `com.vivo.xspace` | `atom-privacy-system` | 原子隐私系统 |
 | `com.yozo.vivo.office` | `vivo-document` | vivo文档 |
+
+</details>
+
+<details><summary><b>vivo系统小组件</b>(包含 9 个应用)</summary>
+
+| 包名 | 目录别名 | 备注 |
+| :--- | :--- | :--- |
+| `com.vivo.browser.novel.widget` | `browser-novel-widget` | vivo浏览器小说挂件 |
+| `com.vivo.ese.widget` | `easy-mode-widget` | 简易模式小组件 |
+| `com.vivo.familycare.widget` | `family-care-widget` | 家庭关怀组件 |
+| `com.vivo.healthcode` | `health-code` | 健康码服务 |
+| `com.vivo.sosappwidget` | `sos-widget` | SOS求助挂件 |
+| `com.vivo.vhome` | `v-home` | VHome桌面 |
+| `com.vivo.video.widget` | `video-widget` | 视频小组件 |
+| `com.vivo.wallet.appwidget` | `wallet-widget` | vivo钱包挂件 |
+| `com.vivo.widget.iot` | `iot-widget` | IoT智能设备挂件 |
+
+</details>
+
+<details><summary><b>地图导航</b>(包含 2 个应用)</summary>
+
+| 包名 | 目录别名 | 备注 |
+| :--- | :--- | :--- |
+| `com.autonavi.minimap` | `amap` | 高德地图 |
+| `com.baidu.BaiduMap` | `baidu-map` | 百度地图 |
+
+</details>
+
+<details><summary><b>电商购物</b>(包含 1 个应用)</summary>
+
+| 包名 | 目录别名 | 备注 |
+| :--- | :--- | :--- |
+| `com.jingdong.app.mall` | `jd-mall` | 京东商城 |
+
+</details>
+
+<details><summary><b>影音娱乐</b>(包含 7 个应用)</summary>
+
+| 包名 | 目录别名 | 备注 |
+| :--- | :--- | :--- |
+| `InfinityLoop1309.NewPipeEnhanced` | `newpipe-enhanced` | NewPipe增强版 |
+| `ab16.Tuozi` | `tuozi-video` | 兔子视频 |
+| `com.kaixinkan.ugc.video.atom` | `kaixinkan` | 开心看 |
+| `com.layaboxhmhz.gamehmhz.okys` | `ok-player` | ok影视pro |
+| `com.player.ku9` | `ku9-player` | 酷9影院 |
+| `com.smile.gifmaker` | `kuaishou` | 快手 |
+| `com.xlkj.international.sunri` | `sunri-intl` | 旭日国际 |
+
+</details>
+
+<details><summary><b>实用工具</b>(包含 6 个应用)</summary>
+
+| 包名 | 目录别名 | 备注 |
+| :--- | :--- | :--- |
+| `com.appshub.bettbox` | `bettbox` | BettBox应用库 |
+| `com.miui.calculator` | `miui-calc` | 小米计算器 |
+| `com.tumuyan.ncnn.realsr` | `real-sr` | RealSR图像超分 |
+| `jp.co.toshiba.android.FlashAir` | `flashair-tool` | 东芝FlashAir工具 |
+| `org.breezyweather.oneui2iconprovider` | `breezy-oneui2` | 天气图标包OneUI2版 |
+| `org.breezyweather.pixeliconprovider` | `breezy-pixel` | 天气图标包Pixel版 |
+
+</details>
+
+<details><summary><b>金融支付与健康</b>(包含 3 个应用)</summary>
+
+| 包名 | 目录别名 | 备注 |
+| :--- | :--- | :--- |
+| `cn.com.omronhealthcare.omronplus.vivo` | `omron-health` | 欧姆龙健康vivo定制版 |
+| `com.payoneer.android` | `payoneer` | Payoneer跨境支付 |
+| `com.unionpay.tsmservice` | `unionpay-tsm` | 银联安全支付服务 |
+
+</details>
+
+<details><summary><b>生活服务</b>(包含 1 个应用)</summary>
+
+| 包名 | 目录别名 | 备注 |
+| :--- | :--- | :--- |
+| `me.ele` | `eleme` | 饿了么 |
 
 </details>
 
