@@ -14,8 +14,8 @@
 ## 📊 包名映射统计
 
 ### 📈 概览
-- **配置总条数**: `307` 条
-- **独立应用数**: `307` 个
+- **配置总条数**: `308` 条
+- **独立应用数**: `308` 个
 - **分类数**: `12` 个
 - **校验状态**: ✅ 通过
 
@@ -24,7 +24,7 @@
 ```mermaid
 pie title 包名分类占比统计
     "基础与示例应用" : 4
-    "VIVO系应用" : 131
+    "VIVO系应用" : 132
     "vivo系统小组件" : 9
     "地图导航" : 2
     "电商购物" : 1
@@ -49,12 +49,13 @@ pie title 包名分类占比统计
 
 </details>
 
-<details><summary><b>VIVO系应用</b>(包含 131 个应用)</summary>
+<details><summary><b>VIVO系应用</b>(包含 132 个应用)</summary>
 
 | 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
 | `android.overlay.vivoresrro` | `vivo-res-overlay` | vivo资源覆盖层 |
-| `com.android.bbkcalculatos` | `vivo-calculator` | vivo计算器 ✅ 修正：原com.vivo.calculator |
+| `com.android.bbkcalculator` | `vivo-calculator` | vivo计算器 官方版 |
+| `com.android.bbkcalculatos` | `vivo-calculator-ver` | vivo计算器 修改版 |
 | `com.android.documentsui` | `vivo-file` | vivo 文件 |
 | `com.android.filemanager` | `vivo-file-management` | vivo 文件管理 |
 | `com.android.vivo.tws.vivotws` | `vivo-tws` | vivo TWS |
