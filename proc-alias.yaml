@@ -139,6 +139,49 @@ android.overlay.vivoresrro: vivo-res-overlay        # vivo资源覆盖层
 com.vivo.android.connectivity.mainline.common.resources.overlay: conn-common-overlay # 连接通用覆盖层
 com.vivo.android.wifi.mainline.platform.resources.overlay: wifi-mainline-platform-overlay # WiFi主线平台覆盖层
 
+# ========== vivo系统小组件 ==========
+com.vivo.browser.novel.widget: browser-novel-widget     # vivo浏览器小说挂件
+com.vivo.ese.widget: easy-mode-widget                   # 简易模式小组件
+com.vivo.familycare.widget: family-care-widget          # 家庭关怀组件
+com.vivo.healthcode: health-code                        # 健康码服务
+com.vivo.sosappwidget: sos-widget                       # SOS求助挂件
+com.vivo.vhome: v-home                                  # VHome桌面
+com.vivo.video.widget: video-widget                     # 视频小组件
+com.vivo.wallet.appwidget: wallet-widget               # vivo钱包挂件
+com.vivo.widget.iot: iot-widget                         # IoT智能设备挂件
+
+# ========== 地图导航 ==========
+com.autonavi.minimap: amap                              # 高德地图
+com.baidu.BaiduMap: baidu-map                           # 百度地图
+
+# ========== 电商购物 ==========
+com.jingdong.app.mall: jd-mall                          # 京东商城
+
+# ========== 影音娱乐 ==========
+InfinityLoop1309.NewPipeEnhanced: newpipe-enhanced      # NewPipe增强版
+ab16.Tuozi: tuozi-video                                 # 兔子视频
+com.kaixinkan.ugc.video.atom: kaixinkan                 # 开心看
+com.player.ku9: ku9-player                              # 酷9影院
+com.smile.gifmaker: kuaishou                            # 快手
+com.xlkj.international.sunri: sunri-intl                # 旭日国际
+com.layaboxhmhz.gamehmhz.okys: ok-player              # ok影视pro
+
+# ========== 实用工具 ==========
+com.appshub.bettbox: bettbox                            # BettBox应用库
+com.miui.calculator: miui-calc                          # 小米计算器
+com.tumuyan.ncnn.realsr: real-sr                        # RealSR图像超分
+jp.co.toshiba.android.FlashAir: flashair-tool           # 东芝FlashAir工具
+org.breezyweather.oneui2iconprovider: breezy-oneui2     # 天气图标包OneUI2版
+org.breezyweather.pixeliconprovider: breezy-pixel       # 天气图标包Pixel版
+
+# ========== 金融支付与健康 ==========
+cn.com.omronhealthcare.omronplus.vivo: omron-health      # 欧姆龙健康vivo定制版
+com.payoneer.android: payoneer                           # Payoneer跨境支付
+com.unionpay.tsmservice: unionpay-tsm                    # 银联安全支付服务
+
+# ========== 生活服务 ==========
+me.ele: eleme                                           # 饿了么
+
 
 
 
