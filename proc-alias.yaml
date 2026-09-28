@@ -140,7 +140,7 @@ android.overlay.vivoresrro: vivo-res-overlay        # vivo资源覆盖层
 com.vivo.android.connectivity.mainline.common.resources.overlay: conn-common-overlay # 连接通用覆盖层
 com.vivo.android.wifi.mainline.platform.resources.overlay: wifi-mainline-platform-overlay # WiFi主线平台覆盖层
 
-# ========== vivo系统小组件 ==========
+
 com.vivo.browser.novel.widget: browser-novel-widget     # vivo浏览器小说挂件
 com.vivo.ese.widget: easy-mode-widget                   # 简易模式小组件
 com.vivo.familycare.widget: family-care-widget          # 家庭关怀组件
