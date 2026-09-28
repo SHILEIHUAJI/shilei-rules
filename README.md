@@ -16,7 +16,7 @@
 ### 📈 概览
 - **配置总条数**: `308` 条
 - **独立应用数**: `308` 个
-- **分类数**: `12` 个
+- **分类数**: `11` 个
 - **校验状态**: ✅ 通过
 
 ### 🎨 应用分类分布
@@ -24,8 +24,7 @@
 ```mermaid
 pie title 包名分类占比统计
     "基础与示例应用" : 4
-    "VIVO系应用" : 132
-    "vivo系统小组件" : 9
+    "VIVO系应用" : 141
     "地图导航" : 2
     "电商购物" : 1
     "影音娱乐" : 7
@@ -49,7 +48,7 @@ pie title 包名分类占比统计
 
 </details>
 
-<details><summary><b>VIVO系应用</b>(包含 132 个应用)</summary>
+<details><summary><b>VIVO系应用</b>(包含 141 个应用)</summary>
 
 | 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
@@ -83,6 +82,7 @@ pie title 包名分类占比统计
 | `com.vivo.assistant` | `important-notification` | 重要通知 |
 | `com.vivo.audiofx` | `audio-effects` | 音效设置 |
 | `com.vivo.base.player` | `system-audio-player` | 系统音频播放器 |
+| `com.vivo.browser.novel.widget` | `browser-novel-widget` | vivo浏览器小说挂件 |
 | `com.vivo.bsptest` | `bsp-test` | BSP测试 |
 | `com.vivo.car.launcher` | `car-launcher` | 车载launcher |
 | `com.vivo.car.networking` | `smart-car-networking` | 智能车载 |
@@ -101,9 +101,11 @@ pie title 包名分类占比统计
 | `com.vivo.doubleinstance` | `app-clone` | 应用分身 |
 | `com.vivo.doubletimezoneclock` | `dual-clock-widget` | i挂件 |
 | `com.vivo.easyshare` | `easyshare` | 互传 |
+| `com.vivo.ese.widget` | `easy-mode-widget` | 简易模式小组件 |
 | `com.vivo.faceui` | `face-ui` | FaceUI |
 | `com.vivo.faceunlock` | `face-unlock` | 面部识别 |
 | `com.vivo.familycare.local` | `familycare-local` | 健康使用设备 |
+| `com.vivo.familycare.widget` | `family-care-widget` | 家庭关怀组件 |
 | `com.vivo.favorite` | `favorite` | 收藏 |
 | `com.vivo.findphone` | `find-phone` | 查找 |
 | `com.vivo.fingerprint` | `fingerprint-unlock` | 指纹与密码 |
@@ -117,6 +119,7 @@ pie title 包名分类占比统计
 | `com.vivo.globalanimation.resources` | `global-animation-res` | 全局动画资源 |
 | `com.vivo.globalsearch` | `global-search` | 全局搜索 |
 | `com.vivo.health` | `vivo-health` | vivo健康 |
+| `com.vivo.healthcode` | `health-code` | 健康码服务 |
 | `com.vivo.healthservice` | `health-service` | 健康服务 |
 | `com.vivo.healthwidget` | `health-widget` | 健康组件 |
 | `com.vivo.hiboard` | `smart-desktop` | 智慧桌面 |
@@ -159,6 +162,7 @@ pie title 包名分类占比统计
 | `com.vivo.smartshot` | `smart-screenshot` | 超级截屏 |
 | `com.vivo.smartunlock` | `smart-unlock` | 智能解锁 |
 | `com.vivo.sos` | `sos-emergency` | 紧急呼叫 |
+| `com.vivo.sosappwidget` | `sos-widget` | SOS求助挂件 |
 | `com.vivo.space` | `vivo-official-site` | vivo官网 |
 | `com.vivo.sps` | `super-process-system` | SuperProcessSystem |
 | `com.vivo.symmetry` | `vivo-camera` | vivo摄影 |
@@ -169,9 +173,11 @@ pie title 包名分类占比统计
 | `com.vivo.upnp.server` | `dlna-server` | 投屏 |
 | `com.vivo.upslide` | `interaction-pool` | 交互池 |
 | `com.vivo.vdfs` | `cross-device-share` | 跨设备使用 |
+| `com.vivo.vhome` | `v-home` | VHome桌面 |
 | `com.vivo.vhomeguide` | `v-home-guide` | VHome指引 |
 | `com.vivo.vibrator4d` | `vibrator-4d` | 4D振感 |
 | `com.vivo.video.floating` | `video-beauty` | 视频通话美颜 |
+| `com.vivo.video.widget` | `video-widget` | 视频小组件 |
 | `com.vivo.videoservice` | `video-editor` | 视频编辑 |
 | `com.vivo.vivo3rdalgoservice` | `image-algo-service` | ImageAlgoService |
 | `com.vivo.vms` | `vivo-mobile-service` | vivo移动服务 |
@@ -179,28 +185,14 @@ pie title 包名分类占比统计
 | `com.vivo.voicewakeup` | `voice-wakeup` | 语音唤醒 |
 | `com.vivo.vtouch` | `scan-assistant` | 扫描 |
 | `com.vivo.wallet` | `vivo-wallet` | vivo 钱包 |
+| `com.vivo.wallet.appwidget` | `wallet-widget` | vivo钱包挂件 |
 | `com.vivo.weather.provider` | `weather-provider` | 天气存储 |
 | `com.vivo.widget.calendar` | `calendar-widget` | 日历组件 |
 | `com.vivo.widget.cleanspeed` | `clean-speed` | 清理加速组件 |
 | `com.vivo.widget.healthcare` | `healthcare-widget` | 健康关怀 |
+| `com.vivo.widget.iot` | `iot-widget` | IoT智能设备挂件 |
 | `com.vivo.xspace` | `atom-privacy-system` | 原子隐私系统 |
 | `com.yozo.vivo.office` | `vivo-document` | vivo文档 |
-
-</details>
-
-<details><summary><b>vivo系统小组件</b>(包含 9 个应用)</summary>
-
-| 包名 | 目录别名 | 备注 |
-| :--- | :--- | :--- |
-| `com.vivo.browser.novel.widget` | `browser-novel-widget` | vivo浏览器小说挂件 |
-| `com.vivo.ese.widget` | `easy-mode-widget` | 简易模式小组件 |
-| `com.vivo.familycare.widget` | `family-care-widget` | 家庭关怀组件 |
-| `com.vivo.healthcode` | `health-code` | 健康码服务 |
-| `com.vivo.sosappwidget` | `sos-widget` | SOS求助挂件 |
-| `com.vivo.vhome` | `v-home` | VHome桌面 |
-| `com.vivo.video.widget` | `video-widget` | 视频小组件 |
-| `com.vivo.wallet.appwidget` | `wallet-widget` | vivo钱包挂件 |
-| `com.vivo.widget.iot` | `iot-widget` | IoT智能设备挂件 |
 
 </details>
 
