@@ -84,7 +84,3 @@ provider is Classical, only matching it contain domain rule
 这个文件是主配置文件里 `rules:` / `sub-rules:` 主列表的副本，专门放进仓库参与上述自动检测（查重、类型校验、语义冲突），本身不作为独立的 rule-provider 被 mihomo 引用。每次修改主配置的 `rules` 列表后，记得同步更新这份副本，保证检测结果反映的是线上实际生效的规则。
 
 ## 关于规则集的详细配置，请参考 [Mihomo 官方文档](https://wiki.metacubex.one/config/rule-providers/)
-
-## 状态
-
-规则集维护中，欢迎贡献。
