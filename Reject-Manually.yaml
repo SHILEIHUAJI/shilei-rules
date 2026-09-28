@@ -49,7 +49,7 @@ payload:
   - DOMAIN,myip.ipip.net
   - IP-CIDR,120.238.90.212/32,no-resolve
   - PROCESS-NAME,com.android.keychain
-
+  - PROCESS-NAME,bin.mt.plus
   # 豆包 / 今日头条 / 抖音等特定 App 拦截
   - DOMAIN,os.oceancloudapi.com
   - DOMAIN,log-report.rtc.volcvideo.com
