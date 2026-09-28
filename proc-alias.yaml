@@ -8,7 +8,8 @@ mark.via.gp: via-browser                     # Via浏览器
 
 # ========== VIVO系应用 ==========
 com.vivo.gallery: vivo-gallery                      # vivo相册
-com.android.bbkcalculatos: vivo-calculator         # vivo计算器 ✅ 修正：原com.vivo.calculator
+com.android.bbkcalculator: vivo-calculator         # vivo计算器 官方版
+com.android.bbkcalculatos: vivo-calculator-ver         # vivo计算器 修改版
 com.vivo.remotemplugin: vivo-remote              # 客服协助 ✅ 修正：原com.vivo.remotepass
 com.vivo.sda: vivo-sda                             # 售后诊断助手 ✅ 修正：原com.vivo.ada
 com.vivo.wallet: vivo-wallet                        # vivo 钱包
