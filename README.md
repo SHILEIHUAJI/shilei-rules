@@ -16,31 +16,44 @@
 ### 📈 概览
 - **配置总条数**: `278` 条
 - **独立应用数**: `278` 个
+- **分类数**: `5` 个
 - **校验状态**: ✅ 通过
 
 ### 🎨 应用分类分布
 
 ```mermaid
 pie title 包名分类占比统计
-    "vivo 厂商应用" : 122
-    "其他第三方应用" : 58
-    "Google 系应用" : 54
-    "GitHub/开源极客工具" : 9
-    "开源组织应用" : 9
-    "Android 系统组件" : 8
-    "主流电商与服务" : 5
-    "字节跳动系(国内)" : 5
-    "字节跳动系(国际版)" : 3
-    "微软系" : 2
-    "百度系" : 2
-    "腾讯系" : 1
+    "基础与示例应用" : 4
+    "VIVO系应用" : 131
+    "第一批：非谷歌系应用" : 86
+    "第二批：Google系应用与服务" : 55
+    "System Services" : 2
 ```
 
 ### 📋 分类明细
-<details><summary><b>vivo 厂商应用</b>(包含 122 个应用)</summary>
+<details><summary><b>基础与示例应用</b>(包含 4 个应用)</summary>
 
 | 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
+| `com.luna.music` | `luna-music` | 汽水音乐 |
+| `com.ss.android.ugc.aweme` | `aweme` | 抖音 |
+| `com.tencent.mm` | `wechat` | 微信 |
+| `mark.via.gp` | `via-browser` | Via浏览器 |
+
+</details>
+
+<details><summary><b>VIVO系应用</b>(包含 131 个应用)</summary>
+
+| 包名 | 目录别名 | 备注 |
+| :--- | :--- | :--- |
+| `android.overlay.vivoresrro` | `vivo-res-overlay` | vivo资源覆盖层 |
+| `com.android.bbkcalculatos` | `vivo-calculator` | vivo计算器 ✅ 修正：原com.vivo.calculator |
+| `com.android.documentsui` | `vivo-file` | vivo 文件 |
+| `com.android.filemanager` | `vivo-file-management` | vivo 文件管理 |
+| `com.android.vivo.tws.vivotws` | `vivo-tws` | vivo TWS |
+| `com.bbk.account` | `bbk-account` | vivo账号 |
+| `com.bbk.theme.resources` | `wallpaper-res` | vivo壁纸资源 |
+| `com.bbk.updater` | `bbk-system-upgrade` | vivo 系统升级 |
 | `com.vivo.SmartKey` | `quick-launch` | 快捷启动 |
 | `com.vivo.abe` | `smart-engine` | 智慧引擎 |
 | `com.vivo.accessibility` | `accessibility` | 无障碍 |
@@ -163,44 +176,55 @@ pie title 包名分类占比统计
 | `com.vivo.widget.cleanspeed` | `clean-speed` | 清理加速组件 |
 | `com.vivo.widget.healthcare` | `healthcare-widget` | 健康关怀 |
 | `com.vivo.xspace` | `atom-privacy-system` | 原子隐私系统 |
+| `com.yozo.vivo.office` | `vivo-document` | vivo文档 |
 
 </details>
 
-<details><summary><b>其他第三方应用</b>(包含 58 个应用)</summary>
+<details><summary><b>第一批：非谷歌系应用</b>(包含 86 个应用)</summary>
 
 | 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
 | `ai.perplexity.app.android` | `perplexity` | Perplexity ✅ 修正：原com.perplexity.perplexity |
-| `android.overlay.vivoresrro` | `vivo-res-overlay` | vivo资源覆盖层 |
 | `app.intra` | `intra` | Intra |
+| `bin.mt.plus` | `mt-file-manager` | - |
+| `bin.mt.termex` | `mt-terminal-extension-pack` | MT终端扩展包 ✅ 修正：原bin.mt.plus |
 | `cn.wps.moffice_eng` | `wps-office` | WPS Office |
 | `com.aliyun.tongyi` | `tongyi` | 千问 |
+| `com.android.chrome` | `chrome` | Chrome |
+| `com.android.vending` | `google-play-store` | Google Play 商店 |
 | `com.anthropic.claude` | `claude` | Claude |
 | `com.apkpure.aegon` | `apkpure` | APKPure ✅ 修正：原com.apkpure.aframe |
-| `com.bbk.account` | `bbk-account` | vivo账号 |
-| `com.bbk.theme.resources` | `wallpaper-res` | vivo壁纸资源 |
-| `com.bbk.updater` | `bbk-system-upgrade` | vivo 系统升级 |
+| `com.baidu.dict` | `baidu-dict` | 百度汉语 |
+| `com.baidu.tieba` | `baidu-tieba` | 百度贴吧 |
+| `com.bd.nproject` | `lemon8` | Lemon8 ✅ 修正：原com.lumi.lemon8 |
 | `com.browser2345` | `browser2345` | 2345浏览器 |
+| `com.bytedance.android.doubaoime` | `doubao-Keyboard` | 豆包输入法 |
 | `com.cctv.yangshipin.app.androidp` | `yangshipin` | 央视频 |
 | `com.coolapk.market` | `coolapk` | 酷安 |
 | `com.ct.client` | `chinatelecom` | 中国电信 |
 | `com.ddm.iptools` | `ip-tools` | IP Tools |
 | `com.deepl.mobiletranslator` | `deepl` | DeepL ✅ 修正：多了点→连写 |
+| `com.eg.android.AlipayGphone` | `zhifubao` | 支付宝 |
 | `com.fitbit.FitbitMobile` | `health-mobile` | Health ✅ 修正：原com.health.mobile |
+| `com.github.android` | `github` | GitHub |
+| `com.github.nrfr` | `nrfr` | Nrfr |
+| `com.google.android.apps.healthdata` | `health-connect` | 健康数据共享 |
 | `com.hp.printercontrol` | `hp-smart` | HP |
 | `com.huawei.smarthome` | `huawei-smarthome` | 智慧生活 |
 | `com.icbc` | `icbc` | 中国工商银行 |
 | `com.jincheng.supercaculator` | `super-calculator` | 全能计算器 ✅ 修正：故意少l→caculator |
 | `com.kwai.video` | `kwai` | Kwai |
 | `com.kwai.videoeditor` | `kwai-videoeditor` | 快影 |
+| `com.larus.wolf` | `dola` | Dola(字节海外AI) ✅ 补充 |
 | `com.lenovo.safecenter` | `lenovo-safecenter` | 联想智能设备安全组件 |
 | `com.lonelycatgames.Xplore` | `x-plore` | X-plore |
 | `com.lovebizhi.wallpaper` | `lovebizhi` | 爱壁纸 |
 | `com.meizu.flyme.calculator` | `meizu-calculator` | 魅族计算器 |
+| `com.microsoft.copilot` | `copilot` | Copilot |
+| `com.microsoft.emmx` | `edge` | Edge |
 | `com.mmbox.xbrowser` | `xbrowser` | X浏览器 |
 | `com.nasoft.socmark` | `socmark` | 手机性能排行 |
 | `com.nebula.clashmi` | `clash-mi` | Clash Mi ✅ 补充 |
-| `com.niksoftware.snapseed` | `snapseed` | Snapseed |
 | `com.ookla.speedtest` | `speedtest` | Speedtest |
 | `com.openai.chatgpt` | `chatgpt` | ChatGPT |
 | `com.payoneer.mobile` | `payoneer` | 派安盈 |
@@ -208,30 +232,48 @@ pie title 包名分类占比统计
 | `com.pinterest` | `pinterest` | Pinterest ✅ 补充 |
 | `com.pranavpandey.rotation` | `rotation` | Rotation |
 | `com.rhmsoft.edit` | `quickedit` | QuickEdit |
+| `com.sankuai.meituan` | `meituan` | 美团 |
 | `com.sgcc.wsgw.cn` | `wsgw` | 网上国网 |
+| `com.ss.android.article.news` | `toutiao` | 头条搜索 |
+| `com.ss.android.ugc.trill` | `tiktok-in` | TikTok(印度/旧版) |
 | `com.tailscale.ipn` | `tailscale` | Tailscale ✅ 补充 |
+| `com.taobao.idlefish` | `idlefish` | 闲鱼 |
+| `com.taobao.taobao` | `taobao` | 淘宝 |
 | `com.termux` | `termux` | Termux |
 | `com.tiktok.lite.go` | `tiktok-lite` | TikTok Lite |
 | `com.twitter.android` | `twitter` | Twitter / X |
 | `com.v2ray.ang` | `v2rayng` | v2rayNG |
 | `com.v2ray.ang.fdroid` | `v2rayng-fdroid` | v2rayNG(F-Droid版) ✅ 补充变体 |
-| `com.waze` | `waze` | Waze 导航 |
 | `com.wirelessalien.zipxtract` | `zipxtract` | ZipXtract ✅ 修正：saleri→alien |
 | `com.xiaomi.smarthome` | `mijia` | 米家 |
 | `com.xtc.originwidget` | `xtc-widget` | 小天才组件 ✅ 修正：少i→originwidget |
-| `com.yozo.vivo.office` | `vivo-document` | vivo文档 |
+| `com.xunmeng.pinduoduo` | `pinduoduo` | 拼多多 |
+| `com.zhiliaoapp.musically` | `tiktok` | TikTok国际版 ✅ 修正+补充 |
 | `com.zidongdianji` | `auto-clicker` | 自动点击器 |
 | `com.zoho.notebook` | `zoho-notebook` | Notebook |
 | `info.muge.appshare` | `appshare` | AppShare ✅ 修正：myapp→muge |
+| `io.github.InfinityLoop1309.NewPipeEnhanced` | `pipepipe` | PipePipe ✅ 修正：原com.pipepipe.app |
+| `io.github.samolego.canta` | `canta` | Canta |
 | `jp.ddo.hotmist.unicodepad` | `unicodepad` | UnicodePad ✅ 修正：pakutoma→hotmist |
-| `mark.via.gp` | `via-browser` | Via浏览器 |
+| `li.songe.gkd` | `gkd` | GKD |
+| `moe.shizuku.privileged.api` | `shizuku` | Shizuku |
+| `org.breezyweather` | `breezy-weather` | Breezy Weather |
+| `org.chromium.webapk.a71da6c439749dd60_v2` | `google-pwa` | Google PWA ✅ 补充 |
+| `org.chromium.webapk.ac00537baef003203_v2` | `wikipedia-pwa` | Wikipedia(PWA) ✅ 修正：org.wikipedia |
+| `org.fdroid.fdroid` | `fdroid` | F-Droid |
+| `org.localsend.localsend_app` | `localsend` | LocalSend |
+| `org.mozilla.firefox` | `firefox` | Firefox |
+| `org.telegram.messenger` | `telegram` | Telegram |
+| `org.torproject.torbrowser` | `tor-browser` | Tor Browser |
+| `org.videolan.vlc` | `vlc` | VLC |
+| `org.videolan.vlc.debug` | `vlc-debug` | VLC测试版 ✅ 补充变体 |
 | `sz.szsmk.citizencard` | `szsmk` | 智慧苏州 |
 | `tw.nekomimi.nekogram` | `nekogram` | Nekogram ✅ 补充 |
 | `xxx.pornhub.fuck` | `javdb` | JavDB ✅ 修正：xio→xxx |
 
 </details>
 
-<details><summary><b>Google 系应用</b>(包含 54 个应用)</summary>
+<details><summary><b>第二批：Google系应用与服务</b>(包含 55 个应用)</summary>
 
 | 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
@@ -248,7 +290,6 @@ pie title 包名分类占比统计
 | `com.google.android.apps.dynamite` | `google-chat` | Google Chat |
 | `com.google.android.apps.fitness` | `google-fit` | Google Fit |
 | `com.google.android.apps.googleassistant` | `google-assistant` | Google 助理 |
-| `com.google.android.apps.healthdata` | `health-connect` | 健康数据共享 |
 | `com.google.android.apps.labs.language.tailwind` | `google-notebook` | Google笔记本 |
 | `com.google.android.apps.magazines` | `google-news` | Google 新闻 |
 | `com.google.android.apps.maps` | `google-maps` | 地图 |
@@ -289,113 +330,17 @@ pie title 包名分类占比统计
 | `com.google.android.youtube` | `youtube` | YouTube |
 | `com.google.ar.lens` | `google-lens` | 智能镜头 |
 | `com.google.earth` | `google-earth` | Google 地球 |
+| `com.niksoftware.snapseed` | `snapseed` | Snapseed |
+| `com.waze` | `waze` | Waze 导航 |
 
 </details>
 
-<details><summary><b>GitHub/开源极客工具</b>(包含 9 个应用)</summary>
+<details><summary><b>System Services</b>(包含 2 个应用)</summary>
 
 | 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
-| `bin.mt.plus` | `mt-file-manager` | - |
-| `bin.mt.termex` | `mt-terminal-extension-pack` | MT终端扩展包 ✅ 修正：原bin.mt.plus |
-| `com.github.android` | `github` | GitHub |
-| `com.github.nrfr` | `nrfr` | Nrfr |
-| `io.github.InfinityLoop1309.NewPipeEnhanced` | `pipepipe` | PipePipe ✅ 修正：原com.pipepipe.app |
-| `io.github.samolego.canta` | `canta` | Canta |
-| `li.songe.gkd` | `gkd` | GKD |
-| `moe.shizuku.privileged.api` | `shizuku` | Shizuku |
-| `org.fdroid.fdroid` | `fdroid` | F-Droid |
-
-</details>
-
-<details><summary><b>开源组织应用</b>(包含 9 个应用)</summary>
-
-| 包名 | 目录别名 | 备注 |
-| :--- | :--- | :--- |
-| `org.breezyweather` | `breezy-weather` | Breezy Weather |
-| `org.chromium.webapk.a71da6c439749dd60_v2` | `google-pwa` | Google PWA ✅ 补充 |
-| `org.chromium.webapk.ac00537baef003203_v2` | `wikipedia-pwa` | Wikipedia(PWA) ✅ 修正：org.wikipedia |
-| `org.localsend.localsend_app` | `localsend` | LocalSend |
-| `org.mozilla.firefox` | `firefox` | Firefox |
-| `org.telegram.messenger` | `telegram` | Telegram |
-| `org.torproject.torbrowser` | `tor-browser` | Tor Browser |
-| `org.videolan.vlc` | `vlc` | VLC |
-| `org.videolan.vlc.debug` | `vlc-debug` | VLC测试版 ✅ 补充变体 |
-
-</details>
-
-<details><summary><b>Android 系统组件</b>(包含 8 个应用)</summary>
-
-| 包名 | 目录别名 | 备注 |
-| :--- | :--- | :--- |
-| `com.android.bbkcalculatos` | `vivo-calculator` | vivo计算器 ✅ 修正：原com.vivo.calculator |
 | `com.android.bbksoundrecorder` | `vivo-tape-recorder` | vivo 录音机 |
-| `com.android.chrome` | `chrome` | Chrome |
-| `com.android.documentsui` | `vivo-file` | vivo 文件 |
-| `com.android.filemanager` | `vivo-file-management` | vivo 文件管理 |
-| `com.android.vending` | `google-play-store` | Google Play 商店 |
 | `com.android.vendors.bridge.softsim` | `b-sim` | SIM/虚拟SIM相关 |
-| `com.android.vivo.tws.vivotws` | `vivo-tws` | vivo TWS |
-
-</details>
-
-<details><summary><b>主流电商与服务</b>(包含 5 个应用)</summary>
-
-| 包名 | 目录别名 | 备注 |
-| :--- | :--- | :--- |
-| `com.eg.android.AlipayGphone` | `zhifubao` | 支付宝 |
-| `com.sankuai.meituan` | `meituan` | 美团 |
-| `com.taobao.idlefish` | `idlefish` | 闲鱼 |
-| `com.taobao.taobao` | `taobao` | 淘宝 |
-| `com.xunmeng.pinduoduo` | `pinduoduo` | 拼多多 |
-
-</details>
-
-<details><summary><b>字节跳动系(国内)</b>(包含 5 个应用)</summary>
-
-| 包名 | 目录别名 | 备注 |
-| :--- | :--- | :--- |
-| `com.bytedance.android.doubaoime` | `doubao-Keyboard` | 豆包输入法 |
-| `com.larus.wolf` | `dola` | Dola(字节海外AI) ✅ 补充 |
-| `com.luna.music` | `luna-music` | 汽水音乐 |
-| `com.ss.android.article.news` | `toutiao` | 头条搜索 |
-| `com.ss.android.ugc.aweme` | `aweme` | 抖音 |
-
-</details>
-
-<details><summary><b>字节跳动系(国际版)</b>(包含 3 个应用)</summary>
-
-| 包名 | 目录别名 | 备注 |
-| :--- | :--- | :--- |
-| `com.bd.nproject` | `lemon8` | Lemon8 ✅ 修正：原com.lumi.lemon8 |
-| `com.ss.android.ugc.trill` | `tiktok-in` | TikTok(印度/旧版) |
-| `com.zhiliaoapp.musically` | `tiktok` | TikTok国际版 ✅ 修正+补充 |
-
-</details>
-
-<details><summary><b>微软系</b>(包含 2 个应用)</summary>
-
-| 包名 | 目录别名 | 备注 |
-| :--- | :--- | :--- |
-| `com.microsoft.copilot` | `copilot` | Copilot |
-| `com.microsoft.emmx` | `edge` | Edge |
-
-</details>
-
-<details><summary><b>百度系</b>(包含 2 个应用)</summary>
-
-| 包名 | 目录别名 | 备注 |
-| :--- | :--- | :--- |
-| `com.baidu.dict` | `baidu-dict` | 百度汉语 |
-| `com.baidu.tieba` | `baidu-tieba` | 百度贴吧 |
-
-</details>
-
-<details><summary><b>腾讯系</b>(包含 1 个应用)</summary>
-
-| 包名 | 目录别名 | 备注 |
-| :--- | :--- | :--- |
-| `com.tencent.mm` | `wechat` | 微信 |
 
 </details>
 
