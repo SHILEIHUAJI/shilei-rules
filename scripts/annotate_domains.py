@@ -6,6 +6,7 @@ annotate_domains.py
 """
 import json
 import os
+import re
 import sys
 import time
 import urllib.request
@@ -14,10 +15,8 @@ from pathlib import Path
 
 import yaml
 
-# GitHub Models 标准 Endpoint 和模型名（不带 openai/ 前缀）
 MODEL = "gpt-4o-mini"
-API_URL = "https://models.github.ai/inference/chat/completions"
-
+API_URL = "[https://models.inference.ai.azure.com/chat/completions](https://models.inference.ai.azure.com/chat/completions)"
 BATCH_SIZE = 25
 
 SYSTEM_PROMPT = (
@@ -47,6 +46,7 @@ def call_model(domains: list, token: str) -> dict:
     }
 
     req = urllib.request.Request(API_URL, data=body, method="POST", headers=headers)
+    content = ""
     
     try:
         with urllib.request.urlopen(req, timeout=60) as resp:
@@ -54,22 +54,22 @@ def call_model(domains: list, token: str) -> dict:
             data = json.loads(raw_data)
             content = data["choices"][0]["message"]["content"].strip()
             
-            # 清理 markdown 代码块标记
-            if content.startswith("```"):
-                content = content.split("\n", 1)[-1]
-            if content.endswith("```"):
-                content = content.rsplit("```", 1)[0]
-            content = content.strip()
-            
-            res = json.loads(content)
-            return res if isinstance(res, dict) else {}
+            # 使用正则表达式精准匹配 JSON 对象部分 {...}
+            match = re.search(r"\{.*\}", content, re.DOTALL)
+            if match:
+                json_str = match.group(0)
+                res = json.loads(json_str)
+                return res if isinstance(res, dict) else {}
+            else:
+                print(f"模型未返回有效 JSON 结构，原始输出:\n{content}")
+                return {}
             
     except urllib.error.HTTPError as e:
         error_body = e.read().decode("utf-8", errors="ignore")
         print(f"API 请求失败 HTTP {e.code}: {error_body}")
         raise
-    except json.JSONDecodeError as e:
-        print(f"JSON 解析失败: {e}")
+    except Exception as e:
+        print(f"解析模型输出失败: {e}\n模型原始返回内容 content 为:\n{content}")
         raise
 
 
