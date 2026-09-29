@@ -14,8 +14,9 @@ from pathlib import Path
 
 import yaml
 
-MODEL = "openai/gpt-4o-mini"
-API_URL = "https://models.github.ai/inference/chat/completions"
+# GitHub Models 标准 Endpoint 和模型名（不带 openai/ 前缀）
+MODEL = "gpt-4o-mini"
+API_URL = "https://models.inference.ai.azure.com/chat/completions"
 BATCH_SIZE = 25
 
 SYSTEM_PROMPT = (
@@ -38,23 +39,37 @@ def call_model(domains: list, token: str) -> dict:
         "temperature": 0,
     }).encode("utf-8")
 
-    req = urllib.request.Request(API_URL, data=body, method="POST", headers={
+    headers = {
         "Authorization": f"Bearer {token}",
         "Content-Type": "application/json",
-    })
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        data = json.loads(resp.read())
-    content = data["choices"][0]["message"]["content"].strip()
+        "User-Agent": "GitHubActions-Annotator/1.0",
+    }
+
+    req = urllib.request.Request(API_URL, data=body, method="POST", headers=headers)
     
-    # 清理 markdown 代码块包裹标记
-    if content.startswith("```"):
-        content = content.split("\n", 1)[-1]
-    if content.endswith("```"):
-        content = content.rsplit("```", 1)[0]
-    content = content.strip()
-    
-    res = json.loads(content)
-    return res if isinstance(res, dict) else {}
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            raw_data = resp.read().decode("utf-8")
+            data = json.loads(raw_data)
+            content = data["choices"][0]["message"]["content"].strip()
+            
+            # 清理 markdown 代码块标记
+            if content.startswith("```"):
+                content = content.split("\n", 1)[-1]
+            if content.endswith("```"):
+                content = content.rsplit("```", 1)[0]
+            content = content.strip()
+            
+            res = json.loads(content)
+            return res if isinstance(res, dict) else {}
+            
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode("utf-8", errors="ignore")
+        print(f"API 请求失败 HTTP {e.code}: {error_body}")
+        raise
+    except json.JSONDecodeError as e:
+        print(f"JSON 解析失败: {e}")
+        raise
 
 
 def load_cache(path: Path) -> dict:
@@ -70,7 +85,7 @@ def save_cache(path: Path, cache: dict):
 
 def parse_domain(line: str) -> str | None:
     """去除缩进后准确解析规则行中的域名，兼容 DOMAIN 及 DOMAIN-SUFFIX"""
-    clean_line = line.split("#", 1)[0].strip() # strip() 自动清除了前导空格
+    clean_line = line.split("#", 1)[0].strip()
     if clean_line.startswith("- DOMAIN"):
         parts = [p.strip().strip("'\"") for p in clean_line.split(",")]
         if len(parts) >= 2:
@@ -92,13 +107,11 @@ def annotate_files(cleaned_dir: Path, cache: dict):
     for f in cleaned_dir.glob("*/*.yaml"):
         out_lines = []
         for raw in f.read_text(encoding="utf-8").splitlines():
-            # 先去空行/去除前导空格判断是否为域名行
             clean_code = raw.split("#", 1)[0].strip()
             domain = parse_domain(raw)
             
             if clean_code.startswith("- DOMAIN") and domain and domain in cache:
                 note = cache[domain]
-                # 拿掉原有注释（如果有），保留前面的缩进格式追加 AI 注释
                 base_code = raw.split("#", 1)[0].rstrip()
                 out_lines.append(f"{base_code}  # {note}")
             else:
@@ -125,7 +138,7 @@ def main():
                 result = call_model(batch, token)
                 cache.update(result)
             except Exception as e:
-                print(f"批次 {i} 标注失败,跳过: {e}")
+                print(f"批次 {i} 标注失败: {e}")
             time.sleep(1)
         save_cache(cache_path, cache)
 
