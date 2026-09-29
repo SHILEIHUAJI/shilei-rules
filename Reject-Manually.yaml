@@ -34,8 +34,6 @@ payload:
   - DOMAIN-SUFFIX,textads
   - DOMAIN,d3ward.github.io
   - DOMAIN,ime-igw.doubao.com
-  - DOMAIN-SUFFIX,googletagmanager.com
-  - DOMAIN-SUFFIX,google-analytics.com
   - DOMAIN-SUFFIX,flurry.com
   - DOMAIN-SUFFIX,appsflyer.com
   - DOMAIN-SUFFIX,adjust.com
