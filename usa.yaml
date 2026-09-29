@@ -1,3 +1,4 @@
 payload:
-  - 'DOMAIN-SUFFIX,duckduckgo.com'
-  
+- DOMAIN-SUFFIX,duckduckgo.com
+- DOMAIN-SUFFIX,gitlab.com
+- DOMAIN-SUFFIX,gitlab.net
