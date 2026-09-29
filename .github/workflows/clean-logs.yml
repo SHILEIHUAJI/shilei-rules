@@ -7,6 +7,11 @@ on:
       - 'logs/**.log'
       - 'logs/**.txt'
 
+# 1. 顶层新增权限声明（包含 models: read）
+permissions:
+  contents: write
+  models: read
+
 jobs:
   clean:
     runs-on: ubuntu-latest
@@ -27,10 +32,17 @@ jobs:
       - name: Run cleaning script
         run: python3 scripts/clean_mihomo_logs.py logs cleaned-logs
 
+      # 2. 新增步骤：通过 GitHub Models API 标注域名并更新缓存
+      - name: Annotate domains with GitHub Models
+        run: python3 scripts/annotate_domains.py cleaned-logs domain-notes.yaml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 3. 修改提交步骤：加入 domain-notes.yaml 缓存文件
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add cleaned-logs logs
-          git diff --cached --quiet || git commit -m "chore: clean mihomo logs [skip ci]"
+          git add cleaned-logs logs domain-notes.yaml
+          git diff --cached --quiet || git commit -m "chore: clean + annotate mihomo logs [skip ci]"
           git push
