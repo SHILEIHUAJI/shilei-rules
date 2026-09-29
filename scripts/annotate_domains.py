@@ -51,11 +51,16 @@ def call_model(domains: list, token: str) -> dict:
     with urllib.request.urlopen(req, timeout=60) as resp:
         data = json.loads(resp.read())
     content = data["choices"][0]["message"]["content"].strip()
-    for fence in ("```json", "```"):
-        if content.startswith(fence):
-            content = content[len(fence):]
-    content = content.rstrip("`").strip()
-    return json.loads(content)
+    
+    # 清理 markdown 代码块包裹标记
+    if content.startswith("```"):
+        content = content.split("\n", 1)[-1]
+    if content.endswith("```"):
+        content = content.rsplit("```", 1)[0]
+    content = content.strip()
+    
+    res = json.loads(content)
+    return res if isinstance(res, dict) else {}
 
 
 def load_cache(path: Path) -> dict:
@@ -65,17 +70,28 @@ def load_cache(path: Path) -> dict:
 
 
 def save_cache(path: Path, cache: dict):
-    lines = [f'{d}: "{cache[d]}"' for d in sorted(cache)]
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    # 使用 pyyaml 序列化，自动处理特殊字符转义，保证 YAML 语法安全
+    with path.open("w", encoding="utf-8") as f:
+        yaml.dump(cache, f, allow_unicode=True, sort_keys=True)
+
+
+def parse_domain(line: str) -> str | None:
+    """准确解析规则行中的域名，兼容 - DOMAIN 及 - DOMAIN-SUFFIX，忽略尾随策略名"""
+    clean_line = line.split("#", 1)[0].strip()
+    if clean_line.startswith("- DOMAIN"):
+        parts = [p.strip() for p in clean_line.split(",")]
+        if len(parts) >= 2:
+            return parts[1]
+    return None
 
 
 def collect_domains(cleaned_dir: Path) -> set:
     domains = set()
     for f in cleaned_dir.glob("*/*.yaml"):
         for line in f.read_text(encoding="utf-8").splitlines():
-            line = line.split("#", 1)[0].strip()
-            if line.startswith("- DOMAIN"):
-                domains.add(line.split(",", 1)[1].strip())
+            domain = parse_domain(line)
+            if domain:
+                domains.add(domain)
     return domains
 
 
@@ -83,11 +99,11 @@ def annotate_files(cleaned_dir: Path, cache: dict):
     for f in cleaned_dir.glob("*/*.yaml"):
         out_lines = []
         for raw in f.read_text(encoding="utf-8").splitlines():
-            line = raw.split("#", 1)[0].rstrip()
-            if line.startswith("- DOMAIN"):
-                host = line.split(",", 1)[1].strip()
-                note = cache.get(host)
-                out_lines.append(f"{line}  # {note}" if note else line)
+            line_code = raw.split("#", 1)[0].rstrip()
+            domain = parse_domain(raw)
+            if domain and domain in cache:
+                note = cache[domain]
+                out_lines.append(f"{line_code}  # {note}")
             else:
                 out_lines.append(raw)
         f.write_text("\n".join(out_lines) + "\n", encoding="utf-8")
@@ -109,8 +125,9 @@ def main():
         for i in range(0, len(unknown), BATCH_SIZE):
             batch = unknown[i:i + BATCH_SIZE]
             try:
-                cache.update(call_model(batch, token))
-            except (urllib.error.HTTPError, json.JSONDecodeError, KeyError) as e:
+                result = call_model(batch, token)
+                cache.update(result)
+            except Exception as e:
                 print(f"批次 {i} 标注失败,跳过: {e}")
             time.sleep(1)
         save_cache(cache_path, cache)
