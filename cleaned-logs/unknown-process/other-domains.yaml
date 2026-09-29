@@ -1,0 +1,4 @@
+payload:
+  - DOMAIN,cloudflare-dns.com
+  - DOMAIN,dns.quad9.net
+  - DOMAIN,doh.opendns.com

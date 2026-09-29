@@ -1,0 +1,8 @@
+payload:
+  - DOMAIN,cdn.ghostery.com
+  - DOMAIN,config.edge.skype.com
+  - DOMAIN,filters.adtidy.org
+  - DOMAIN,in.appcenter.ms
+  - DOMAIN,login.microsoftonline.com
+  - DOMAIN-SUFFIX,microsoft.com
+  - DOMAIN,www.bing.com

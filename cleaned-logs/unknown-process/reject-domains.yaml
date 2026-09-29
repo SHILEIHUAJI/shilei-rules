@@ -1,5 +1,10 @@
 payload:
-  - DOMAIN-SUFFIX,ciciai.com
+  - DOMAIN,c2c.cdn.weixin.qq.com
+  - DOMAIN,ciciai.com
   - DOMAIN,ecom5-normal-lf.ecombdapi.com
   - DOMAIN,ecset5-core-gl2.ecombdapi.com
+  - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN,p19-oec-va.ibyteimg.com
   - DOMAIN-SUFFIX,snssdk.com
+  - DOMAIN-SUFFIX,tiktokcdn-us.com
+  - DOMAIN-SUFFIX,tiktokv.us

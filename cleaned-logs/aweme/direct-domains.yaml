@@ -24,6 +24,7 @@ payload:
   - DOMAIN-SUFFIX,sjxydc.com
   - DOMAIN-SUFFIX,smtcdns.com
   - DOMAIN-SUFFIX,starrydyn.com
+  - DOMAIN,www.bytedance.com
   - DOMAIN-SUFFIX,xdrtc.com
   - DOMAIN-SUFFIX,ydycdn.com
   - DOMAIN,yslrf1v6dcdn.qnqcdn.net

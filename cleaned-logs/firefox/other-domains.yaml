@@ -1,0 +1,4 @@
+payload:
+  - DOMAIN,filters.adtidy.org
+  - DOMAIN,sync-1-us-west1-g.sync.services.mozilla.com
+  - DOMAIN,token.services.mozilla.com
