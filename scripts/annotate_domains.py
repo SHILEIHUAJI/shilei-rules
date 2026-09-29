@@ -16,7 +16,8 @@ import yaml
 
 # GitHub Models 标准 Endpoint 和模型名（不带 openai/ 前缀）
 MODEL = "gpt-4o-mini"
-API_URL = "https://models.inference.ai.azure.com/chat/completions"
+API_URL = "https://models.github.ai/inference/chat/completions"
+
 BATCH_SIZE = 25
 
 SYSTEM_PROMPT = (
