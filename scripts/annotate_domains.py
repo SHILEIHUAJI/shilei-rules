@@ -3,12 +3,6 @@
 annotate_domains.py
 给 cleaned-logs/*/*.yaml 里的域名加业务用途注释。
 用法: python3 scripts/annotate_domains.py cleaned-logs domain-notes.yaml
-
-原理:
-- domain-notes.yaml 是持久缓存(域名 -> 注释),跨多次运行复用,避免重复调用模型
-- clean_mihomo_logs.py 每次都会重写 cleaned-logs(不带注释),所以本脚本必须在它之后运行,
-  注释来源始终是缓存文件,不依赖 cleaned-logs 里已有的注释,重复执行是安全的
-- 模型判断不了的域名会标"未知",不强行瞎编
 """
 import json
 import os
@@ -51,11 +45,16 @@ def call_model(domains: list, token: str) -> dict:
     with urllib.request.urlopen(req, timeout=60) as resp:
         data = json.loads(resp.read())
     content = data["choices"][0]["message"]["content"].strip()
-    for fence in ("```json", "```"):
-        if content.startswith(fence):
-            content = content[len(fence):]
-    content = content.rstrip("`").strip()
-    return json.loads(content)
+    
+    # 清理 markdown 代码块包裹标记
+    if content.startswith("```"):
+        content = content.split("\n", 1)[-1]
+    if content.endswith("```"):
+        content = content.rsplit("```", 1)[0]
+    content = content.strip()
+    
+    res = json.loads(content)
+    return res if isinstance(res, dict) else {}
 
 
 def load_cache(path: Path) -> dict:
@@ -65,17 +64,27 @@ def load_cache(path: Path) -> dict:
 
 
 def save_cache(path: Path, cache: dict):
-    lines = [f'{d}: "{cache[d]}"' for d in sorted(cache)]
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    with path.open("w", encoding="utf-8") as f:
+        yaml.dump(cache, f, allow_unicode=True, sort_keys=True)
+
+
+def parse_domain(line: str) -> str | None:
+    """去除缩进后准确解析规则行中的域名，兼容 DOMAIN 及 DOMAIN-SUFFIX"""
+    clean_line = line.split("#", 1)[0].strip() # strip() 自动清除了前导空格
+    if clean_line.startswith("- DOMAIN"):
+        parts = [p.strip().strip("'\"") for p in clean_line.split(",")]
+        if len(parts) >= 2:
+            return parts[1]
+    return None
 
 
 def collect_domains(cleaned_dir: Path) -> set:
     domains = set()
     for f in cleaned_dir.glob("*/*.yaml"):
         for line in f.read_text(encoding="utf-8").splitlines():
-            line = line.split("#", 1)[0].strip()
-            if line.startswith("- DOMAIN"):
-                domains.add(line.split(",", 1)[1].strip())
+            domain = parse_domain(line)
+            if domain:
+                domains.add(domain)
     return domains
 
 
@@ -83,11 +92,15 @@ def annotate_files(cleaned_dir: Path, cache: dict):
     for f in cleaned_dir.glob("*/*.yaml"):
         out_lines = []
         for raw in f.read_text(encoding="utf-8").splitlines():
-            line = raw.split("#", 1)[0].rstrip()
-            if line.startswith("- DOMAIN"):
-                host = line.split(",", 1)[1].strip()
-                note = cache.get(host)
-                out_lines.append(f"{line}  # {note}" if note else line)
+            # 先去空行/去除前导空格判断是否为域名行
+            clean_code = raw.split("#", 1)[0].strip()
+            domain = parse_domain(raw)
+            
+            if clean_code.startswith("- DOMAIN") and domain and domain in cache:
+                note = cache[domain]
+                # 拿掉原有注释（如果有），保留前面的缩进格式追加 AI 注释
+                base_code = raw.split("#", 1)[0].rstrip()
+                out_lines.append(f"{base_code}  # {note}")
             else:
                 out_lines.append(raw)
         f.write_text("\n".join(out_lines) + "\n", encoding="utf-8")
@@ -109,8 +122,9 @@ def main():
         for i in range(0, len(unknown), BATCH_SIZE):
             batch = unknown[i:i + BATCH_SIZE]
             try:
-                cache.update(call_model(batch, token))
-            except (urllib.error.HTTPError, json.JSONDecodeError, KeyError) as e:
+                result = call_model(batch, token)
+                cache.update(result)
+            except Exception as e:
                 print(f"批次 {i} 标注失败,跳过: {e}")
             time.sleep(1)
         save_cache(cache_path, cache)
