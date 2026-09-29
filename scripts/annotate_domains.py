@@ -16,7 +16,7 @@ from pathlib import Path
 import yaml
 
 MODEL = "gpt-4o-mini"
-API_URL = "https://models.inference.ai.azure.com/chat/completions](https://models.inference.ai.azure.com/chat/completions"
+API_URL = "https://models.inference.ai.azure.com/chat/completions"
 BATCH_SIZE = 25
 
 SYSTEM_PROMPT = (
