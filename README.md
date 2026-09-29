@@ -11,15 +11,15 @@
 | international-website.yaml | 25 |
 | my-rules.yaml | 202 |
 | tv-player.yaml | 5 |
-| usa.yaml | 1 |
+| usa.yaml | 3 |
 | vivo-ads.yaml | 103 |
-| **全库去重总计** | **799** |
+| **全库去重总计** | **801** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX | 550 |
+| DOMAIN-SUFFIX | 552 |
 | DOMAIN | 125 |
 | PROCESS-NAME | 93 |
 | RULE-SET | 22 |
