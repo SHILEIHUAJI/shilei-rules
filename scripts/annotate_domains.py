@@ -22,7 +22,7 @@ from pathlib import Path
 
 import yaml
 
-MODEL = "gemini-2.0-flash-lite"
+MODEL = "gemini-2.5-flash-lite"
 API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
 BATCH_SIZE = 30
 MAX_RETRIES = 4
