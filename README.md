@@ -6,7 +6,7 @@
 | Reject-Manually.yaml | 79 |
 | bytedance-global.yaml | 12 |
 | claude-ai.yaml | 6 |
-| cn-direct.txt | 329 |
+| cn-direct.list | 329 |
 | google-android.yaml | 33 |
 | international-website.yaml | 25 |
 | my-rules.yaml | 202 |
