@@ -1,31 +1,43 @@
 payload:
-  - DOMAIN-SUFFIX,0kkkkkt.com  # 未知
+  - DOMAIN,0kkkkkt.com  # 未知
   - DOMAIN,202-168-160-110-ne2423b5.free-lbv6.idouyinvod.com  # 字节跳动服务
   - DOMAIN-SUFFIX,amemv.com  # 未知
-  - DOMAIN-SUFFIX,byteeffecttos.com  # 未知
+  - DOMAIN,amemv.com  # 未知
+  - DOMAIN,byteeffecttos.com  # 未知
   - DOMAIN-SUFFIX,bytegecko.com  # 未知
-  - DOMAIN-SUFFIX,cjjd14.com  # 未知
-  - DOMAIN-SUFFIX,comfylink.com  # 未知
-  - DOMAIN-SUFFIX,ctydoh.cn  # 未知
-  - DOMAIN-SUFFIX,douyincdn.com  # CDN节点
-  - DOMAIN-SUFFIX,douyinpic.com  # 字节跳动服务
-  - DOMAIN-SUFFIX,douyinstatic.com  # 字节跳动服务
+  - DOMAIN,bytegecko.com  # 未知
+  - DOMAIN,cjjd14.com  # 未知
+  - DOMAIN,comfylink.com  # 未知
+  - DOMAIN,ctydoh.cn  # 未知
+  - DOMAIN,douyincdn.com  # CDN节点
+  - DOMAIN,douyinpic.com  # 字节跳动服务
+  - DOMAIN,douyinstatic.com  # 字节跳动服务
   - DOMAIN-SUFFIX,douyinvod.com  # 字节跳动服务
-  - DOMAIN-SUFFIX,ecombdapi.com  # 未知
+  - DOMAIN,douyinvod.com  # 字节跳动服务
+  - DOMAIN,ecom-normal-m.ecombdapi.com
+  - DOMAIN,ecom5-normal-gl2.ecombdapi.com
+  - DOMAIN,ecombdapi.com  # 未知
   - DOMAIN-SUFFIX,ndcpp.com  # 未知
+  - DOMAIN,ndcpp.com  # 未知
   - DOMAIN,p9-developer-sign.bytemaimg.com  # AI服务
   - DOMAIN-SUFFIX,qishui.com  # 未知
-  - DOMAIN-SUFFIX,qrstuvwxyzab.com  # 未知
-  - DOMAIN-SUFFIX,qtaeixd.com  # 未知
+  - DOMAIN,qishui.com  # 未知
+  - DOMAIN,qrstuvwxyzab.com  # 未知
+  - DOMAIN,qtaeixd.com  # 未知
   - DOMAIN,rn2257n-41.free-lbv13.idouyinvod.com  # 字节跳动服务
   - DOMAIN,rq2066n-41.free-lbv13.idouyinvod.com  # 字节跳动服务
   - DOMAIN,rt2016n-41.free-lbv13.idouyinvod.com  # 字节跳动服务
-  - DOMAIN-SUFFIX,sjxydc.com  # 未知
-  - DOMAIN-SUFFIX,smtcdns.com  # CDN节点
+  - DOMAIN,sjxydc.com  # 未知
+  - DOMAIN,smtcdns.com  # CDN节点
   - DOMAIN-SUFFIX,starrydyn.com  # 未知
+  - DOMAIN,starrydyn.com  # 未知
+  - DOMAIN,voqhrjfz.z1cdn.com  # CDN节点
   - DOMAIN,voqhrjfz.z1cdn.com  # CDN节点
   - DOMAIN,www.bytedance.com  # 字节跳动服务
+  - DOMAIN,www.bytedance.com  # 字节跳动服务
   - DOMAIN-SUFFIX,xdrtc.com  # 未知
-  - DOMAIN-SUFFIX,ydycdn.com  # CDN节点
+  - DOMAIN,xdrtc.com  # 未知
+  - DOMAIN,ydycdn.com  # CDN节点
   - DOMAIN,yslrf1v6dcdn.qnqcdn.net  # CDN节点
   - DOMAIN-SUFFIX,zijieapi.com  # 未知
+  - DOMAIN,zijieapi.com  # 未知

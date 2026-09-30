@@ -1,2 +1,4 @@
 payload:
-  - DOMAIN-SUFFIX,qq.com  # 腾讯服务
+  - DOMAIN,cfg.imtt.qq.com
+  - DOMAIN,log.tbs.qq.com
+  - DOMAIN,qq.com  # 腾讯服务

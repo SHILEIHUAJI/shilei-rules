@@ -1,6 +1,10 @@
 payload:
   - DOMAIN,api.map.baidu.com  # 百度服务
+  - DOMAIN,api.map.baidu.com  # 百度服务
+  - DOMAIN,cloudalbum-api.vivo.com  # 未知
   - DOMAIN,cloudalbum-api.vivo.com  # 未知
   - DOMAIN,vcloud-api.vivo.com.cn  # 未知
+  - DOMAIN,vcloud-api.vivo.com.cn  # 未知
+  - DOMAIN,vcode-od.vivo.com.cn  # 未知
   - DOMAIN,vcode-od.vivo.com.cn  # 未知
   - DOMAIN,vhs.wwstat.com  # 未知

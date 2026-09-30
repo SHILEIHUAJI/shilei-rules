@@ -1,13 +1,21 @@
 payload:
   - DOMAIN,aggr16-normal.tiktokv.us  # 未知
+  - DOMAIN,aggr16-normal.tiktokv.us  # 未知
   - DOMAIN,ciciai.com  # AI服务
-  - DOMAIN-SUFFIX,ecombdapi.com  # 未知
+  - DOMAIN,ec5-core-lf.ecombdapi.com
+  - DOMAIN,ecom5-normal-gl2.ecombdapi.com
+  - DOMAIN,ecom5-normal-lf.ecombdapi.com
+  - DOMAIN,ecombdapi.com  # 未知
   - DOMAIN,googleapis.com  # 谷歌服务
   - DOMAIN,p19-common-sign.tiktokcdn-us.com  # CDN节点
+  - DOMAIN,p19-common-sign.tiktokcdn-us.com  # CDN节点
+  - DOMAIN,p19-oec-ttp.tiktokcdn-us.com  # CDN节点
   - DOMAIN,p19-oec-ttp.tiktokcdn-us.com  # CDN节点
   - DOMAIN,p19-oec-va.ibyteimg.com  # 未知
+  - DOMAIN,p19-oec-va.ibyteimg.com  # 未知
   - DOMAIN,play-fe.googleapis.com  # 谷歌服务
-  - DOMAIN-SUFFIX,qq.com  # 腾讯服务
-  - DOMAIN-SUFFIX,snssdk.com  # 未知
+  - DOMAIN,play-fe.googleapis.com  # 谷歌服务
+  - DOMAIN,qq.com  # 腾讯服务
+  - DOMAIN,snssdk.com  # 未知
   - DOMAIN,tiktokcdn-us.com  # CDN节点
   - DOMAIN,tiktokv.us  # 未知

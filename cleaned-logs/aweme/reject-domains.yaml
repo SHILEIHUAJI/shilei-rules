@@ -1,5 +1,6 @@
 payload:
-  - DOMAIN-SUFFIX,bdurl.net  # 未知
-  - DOMAIN-SUFFIX,jspcdn.cn  # CDN节点
+  - DOMAIN,bdurl.net  # 未知
+  - DOMAIN,jspcdn.cn  # CDN节点
   - DOMAIN-SUFFIX,snssdk.com  # 未知
-  - DOMAIN-SUFFIX,xdrtc.com  # 未知
+  - DOMAIN,snssdk.com  # 未知
+  - DOMAIN,xdrtc.com  # 未知

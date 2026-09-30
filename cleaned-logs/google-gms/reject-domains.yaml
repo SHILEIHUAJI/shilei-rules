@@ -1,2 +1,2 @@
 payload:
-  - DOMAIN-SUFFIX,app-measurement.com  # 疑似广告追踪
+  - DOMAIN,app-measurement.com  # 疑似广告追踪
