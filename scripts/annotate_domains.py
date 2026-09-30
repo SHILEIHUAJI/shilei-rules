@@ -4,14 +4,13 @@ annotate_domains.py
 给 cleaned-logs/*/*.yaml 里的域名加业务用途注释,用 Gemini API。
 用法: python3 scripts/annotate_domains.py cleaned-logs domain-notes.yaml
 
-密钥来自环境变量 GEMINI_API_KEY,绝不写死在代码里,
-在 Action 里通过 GitHub Secrets 注入。
+密钥来自环境变量 GEMINI_API_KEY,通过 GitHub Secrets 注入,绝不写死在代码里。
 
 架构说明:
 - domain-notes.yaml 是持久缓存(域名 -> 注释),跨多次运行复用,避免重复调用
 - clean_mihomo_logs.py 每次都会重写 cleaned-logs(不带注释),所以本脚本要在它之后运行,
-  注释来源始终是缓存文件,和 cleaned-logs 里已有的注释无关,重复执行是安全的
-- 模型判断不了的域名会标"未知",不强行瞎编
+  注释来源始终是缓存文件,重复执行是安全的
+- 强制 JSON 输出 + 429 指数退避重试,模型判断不了的域名标"未知",不强行瞎编
 """
 import json
 import os
@@ -23,9 +22,10 @@ from pathlib import Path
 
 import yaml
 
-MODEL = "gemini-2.0-flash-lite"  # 免费额度较宽松(1500次/天),按需换成 gemini-2.5-flash-lite
+MODEL = "gemini-2.0-flash-lite"
 API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
-BATCH_SIZE = 25
+BATCH_SIZE = 30
+MAX_RETRIES = 4
 
 SYSTEM_PROMPT = (
     "你是网络流量分析助手。给定一批域名,判断每个域名最可能属于什么业务/服务,"
@@ -33,7 +33,7 @@ SYSTEM_PROMPT = (
     "如果域名看起来是随机生成的CDN节点、无法判断具体业务,输出\"未知(CDN节点)\"。"
     "如果看起来像广告/追踪域名,标注\"疑似广告追踪\"。"
     "不要编造你不确定的具体公司名。"
-    "严格按JSON对象格式输出,key是域名,value是说明,不要输出其他任何文字,不要用代码块包裹。"
+    "严格按JSON对象格式输出,key是域名,value是说明。"
 )
 
 
@@ -42,7 +42,10 @@ def call_model(domains: list, api_key: str) -> dict:
         "contents": [{
             "parts": [{"text": SYSTEM_PROMPT + "\n\n域名列表:\n" + "\n".join(domains)}]
         }],
-        "generationConfig": {"temperature": 0},
+        "generationConfig": {
+            "temperature": 0,
+            "responseMimeType": "application/json",
+        },
     }).encode("utf-8")
 
     req = urllib.request.Request(
@@ -50,14 +53,21 @@ def call_model(domains: list, api_key: str) -> dict:
         data=body, method="POST",
         headers={"Content-Type": "application/json"},
     )
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        data = json.loads(resp.read())
-    content = data["candidates"][0]["content"]["parts"][0]["text"].strip()
-    for fence in ("```json", "```"):
-        if content.startswith(fence):
-            content = content[len(fence):]
-    content = content.rstrip("`").strip()
-    return json.loads(content)
+
+    delay = 2
+    for attempt in range(MAX_RETRIES):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                data = json.loads(resp.read())
+            content = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+            return json.loads(content)
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt < MAX_RETRIES - 1:
+                print(f"  触发限流,{delay}秒后重试(第{attempt + 1}次)")
+                time.sleep(delay)
+                delay *= 2
+                continue
+            raise
 
 
 def load_cache(path: Path) -> dict:
@@ -116,13 +126,17 @@ def main():
 
     if unknown:
         print(f"需要标注的新域名: {len(unknown)} 个")
+        failed_batches = 0
         for i in range(0, len(unknown), BATCH_SIZE):
             batch = unknown[i:i + BATCH_SIZE]
             try:
                 cache.update(call_model(batch, api_key))
             except (urllib.error.HTTPError, json.JSONDecodeError, KeyError) as e:
+                failed_batches += 1
                 print(f"批次 {i} 标注失败,跳过: {e}")
-            time.sleep(4)  # 免费额度有每分钟请求数限制,留够间隔
+            time.sleep(1)
+        if failed_batches:
+            print(f"共 {failed_batches} 个批次失败,下次运行会重试(未写入缓存)")
         save_cache(cache_path, cache)
 
     annotate_files(cleaned_dir, cache)
