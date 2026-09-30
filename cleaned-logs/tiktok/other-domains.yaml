@@ -1,4 +1,5 @@
 payload:
-  - DOMAIN,reqhfg-launches.appsflyersdk.com
-  - DOMAIN-SUFFIX,tiktokcdn-us.com
-  - DOMAIN-SUFFIX,tiktokv.us
+  - DOMAIN,pull-w5-sg01.tiktokcdn-us.com  # CDN节点
+  - DOMAIN,reqhfg-launches.appsflyersdk.com  # 未知
+  - DOMAIN,tiktokcdn-us.com  # CDN节点
+  - DOMAIN,tiktokv.us  # 未知

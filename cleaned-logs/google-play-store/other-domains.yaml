@@ -1,2 +1,4 @@
 payload:
-  - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN,connectivitycheck.gstatic.com  # 谷歌服务
+  - DOMAIN,googleapis.com  # 谷歌服务
+  - DOMAIN,play-fe.googleapis.com  # 谷歌服务

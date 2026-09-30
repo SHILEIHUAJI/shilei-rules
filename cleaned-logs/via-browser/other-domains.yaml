@@ -1,3 +1,8 @@
 payload:
-  - DOMAIN,api.github.com
-  - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN,api.github.com  # 未知
+  - DOMAIN,api.ip.sb  # 未知
+  - DOMAIN,content-autofill.googleapis.com  # 谷歌服务
+  - DOMAIN,github.githubassets.com  # 未知
+  - DOMAIN,googleapis.com  # 谷歌服务
+  - DOMAIN,www.cloudflare.com  # CDN节点
+  - DOMAIN,yt3.ggpht.com  # 未知

@@ -1,4 +1,4 @@
 payload:
-  - DOMAIN,alive.github.com
-  - DOMAIN,chrome.cloudflare-dns.com
-  - DOMAIN,github.com
+  - DOMAIN,alive.github.com  # 未知
+  - DOMAIN,chrome.cloudflare-dns.com  # CDN节点
+  - DOMAIN,github.com  # 未知

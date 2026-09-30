@@ -1,8 +1,8 @@
 payload:
-  - DOMAIN,cdn.ghostery.com
-  - DOMAIN,config.edge.skype.com
-  - DOMAIN,filters.adtidy.org
-  - DOMAIN,in.appcenter.ms
-  - DOMAIN,login.microsoftonline.com
-  - DOMAIN-SUFFIX,microsoft.com
-  - DOMAIN,www.bing.com
+  - DOMAIN,cdn.ghostery.com  # CDN节点
+  - DOMAIN,config.edge.skype.com  # 未知
+  - DOMAIN,filters.adtidy.org  # 未知
+  - DOMAIN,in.appcenter.ms  # 未知
+  - DOMAIN,login.microsoftonline.com  # 微软服务
+  - DOMAIN,microsoft.com  # 微软服务
+  - DOMAIN,www.bing.com  # 未知

@@ -1,6 +1,6 @@
 payload:
-  - DOMAIN-SUFFIX,amemv.com
-  - DOMAIN,ecset5-core-gl2.ecombdapi.com
-  - DOMAIN-SUFFIX,qishui.com
-  - DOMAIN,www.bytedance.com
-  - DOMAIN-SUFFIX,zijieapi.com
+  - DOMAIN-SUFFIX,amemv.com  # 未知
+  - DOMAIN-SUFFIX,ecombdapi.com  # 未知
+  - DOMAIN-SUFFIX,qishui.com  # 未知
+  - DOMAIN,www.bytedance.com  # 字节跳动服务
+  - DOMAIN-SUFFIX,zijieapi.com  # 未知

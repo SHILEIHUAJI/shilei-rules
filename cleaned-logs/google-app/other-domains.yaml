@@ -1,2 +1,2 @@
 payload:
-  - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN,googleapis.com  # 谷歌服务

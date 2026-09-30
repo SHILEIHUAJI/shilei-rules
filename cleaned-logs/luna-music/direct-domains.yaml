@@ -1,4 +1,4 @@
 payload:
-  - DOMAIN,dig.zjurl.cn
-  - DOMAIN-SUFFIX,qishui.com
-  - DOMAIN-SUFFIX,zijieapi.com
+  - DOMAIN,dig.zjurl.cn  # 未知
+  - DOMAIN-SUFFIX,qishui.com  # 未知
+  - DOMAIN-SUFFIX,zijieapi.com  # 未知

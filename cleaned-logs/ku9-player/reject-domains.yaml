@@ -1,3 +1,2 @@
 payload:
-  - DOMAIN,dns.weixin.qq.com.cn  # 腾讯服务
   - DOMAIN-SUFFIX,qq.com  # 腾讯服务
