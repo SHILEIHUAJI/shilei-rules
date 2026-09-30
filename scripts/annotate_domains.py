@@ -1,16 +1,10 @@
 #!/usr/bin/env python3
 """
 annotate_domains.py
-给 cleaned-logs/*/*.yaml 里的域名加业务用途注释,用 Gemini API。
+给 cleaned-logs/*/*.yaml 里的域名加业务用途注释:
+先用本地关键词匹配处理明显可识别的域名(免费、即时),
+剩下真正认不出的再交给 Gemini 判断。
 用法: python3 scripts/annotate_domains.py cleaned-logs domain-notes.yaml
-
-密钥来自环境变量 GEMINI_API_KEY,通过 GitHub Secrets 注入,绝不写死在代码里。
-
-架构说明:
-- domain-notes.yaml 是持久缓存(域名 -> 注释),跨多次运行复用,避免重复调用
-- clean_mihomo_logs.py 每次都会重写 cleaned-logs(不带注释),所以本脚本要在它之后运行,
-  注释来源始终是缓存文件,重复执行是安全的
-- 强制 JSON 输出 + 429 指数退避重试,模型判断不了的域名标"未知",不强行瞎编
 """
 import json
 import os
@@ -26,6 +20,31 @@ MODEL = "gemini-2.5-flash-lite"
 API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
 BATCH_SIZE = 30
 MAX_RETRIES = 4
+
+# 本地关键词表:命中直接判定,不消耗模型调用。
+# 顺序敏感,越靠前优先级越高。按需扩充。
+LOCAL_RULES = [
+    (("doubleclick", "adservice", "adjust.com", "pangolin-sdk-toutiao",
+      "tagmanager", "mmstat.com"), "疑似广告追踪"),
+    (("googleapis.com", "gstatic.com", "google.com"), "谷歌服务"),
+    (("tencent.com", "qq.com", "weixin", "wechat"), "腾讯服务"),
+    (("alicdn.com", "aliyuncs.com", "taobao.com", "tmall.com"), "阿里服务"),
+    (("baidu.com", "bdstatic.com"), "百度服务"),
+    (("amazonaws.com", "cloudfront.net"), "AWS云服务"),
+    (("cloudflare.com", "cloudflare.net"), "Cloudflare CDN"),
+    (("apple.com", "icloud.com"), "苹果服务"),
+    (("microsoft.com", "windows.net", "live.com"), "微软服务"),
+    (("facebook.com", "fbcdn.net", "instagram.com"), "Meta服务"),
+]
+
+
+def local_match(domain: str):
+    d = domain.lower()
+    for keywords, label in LOCAL_RULES:
+        if any(k in d for k in keywords):
+            return label
+    return None
+
 
 SYSTEM_PROMPT = (
     "你是网络流量分析助手。给定一批域名,判断每个域名最可能属于什么业务/服务,"
@@ -117,18 +136,29 @@ def main():
     cleaned_dir = Path(sys.argv[1] if len(sys.argv) > 1 else "cleaned-logs")
     cache_path = Path(sys.argv[2] if len(sys.argv) > 2 else "domain-notes.yaml")
     api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
-        print("缺少 GEMINI_API_KEY,跳过标注")
-        return
 
     cache = load_cache(cache_path)
-    unknown = sorted(collect_domains(cleaned_dir) - cache.keys())
+    all_unknown = sorted(collect_domains(cleaned_dir) - cache.keys())
 
-    if unknown:
-        print(f"需要标注的新域名: {len(unknown)} 个")
+    # 第一步:本地关键词能认出来的,直接判定,不消耗模型调用
+    still_unknown = []
+    local_hits = 0
+    for d in all_unknown:
+        label = local_match(d)
+        if label:
+            cache[d] = label
+            local_hits += 1
+        else:
+            still_unknown.append(d)
+    if local_hits:
+        print(f"本地规则直接识别: {local_hits} 个")
+
+    # 第二步:真正认不出的,交给模型
+    if still_unknown and api_key:
+        print(f"需要模型判断的域名: {len(still_unknown)} 个")
         failed_batches = 0
-        for i in range(0, len(unknown), BATCH_SIZE):
-            batch = unknown[i:i + BATCH_SIZE]
+        for i in range(0, len(still_unknown), BATCH_SIZE):
+            batch = still_unknown[i:i + BATCH_SIZE]
             try:
                 cache.update(call_model(batch, api_key))
             except (urllib.error.HTTPError, json.JSONDecodeError, KeyError) as e:
@@ -137,6 +167,10 @@ def main():
             time.sleep(1)
         if failed_batches:
             print(f"共 {failed_batches} 个批次失败,下次运行会重试(未写入缓存)")
+    elif still_unknown and not api_key:
+        print(f"缺少 GEMINI_API_KEY,{len(still_unknown)} 个域名暂不标注")
+
+    if local_hits or still_unknown:
         save_cache(cache_path, cache)
 
     annotate_files(cleaned_dir, cache)
