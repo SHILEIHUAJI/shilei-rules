@@ -1,4 +1,4 @@
 payload:
-  - DOMAIN,cfg.imtt.qq.com
-  - DOMAIN,log.tbs.qq.com
+  - DOMAIN,cfg.imtt.qq.com  # 腾讯IMT配置服务
+  - DOMAIN,log.tbs.qq.com  # 腾讯TBS日志服务
   - DOMAIN,qq.com  # 腾讯服务

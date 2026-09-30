@@ -14,8 +14,8 @@ payload:
   - DOMAIN,douyinstatic.com  # 字节跳动服务
   - DOMAIN-SUFFIX,douyinvod.com  # 字节跳动服务
   - DOMAIN,douyinvod.com  # 字节跳动服务
-  - DOMAIN,ecom-normal-m.ecombdapi.com
-  - DOMAIN,ecom5-normal-gl2.ecombdapi.com
+  - DOMAIN,ecom-normal-m.ecombdapi.com  # 电商普通API服务
+  - DOMAIN,ecom5-normal-gl2.ecombdapi.com  # 电商普通API服务
   - DOMAIN,ecombdapi.com  # 未知
   - DOMAIN-SUFFIX,ndcpp.com  # 未知
   - DOMAIN,ndcpp.com  # 未知
