@@ -229,9 +229,9 @@ def load_existing_yaml(path: Path) -> set:
         return set()
     hosts = set()
     for line in path.read_text(encoding='utf-8').splitlines():
-        line = line.strip()
+        line = line.split('#', 1)[0].strip()  # 先去掉注释,再解析
         if line.startswith('- DOMAIN-SUFFIX,') or line.startswith('- DOMAIN,'):
-            hosts.add(line.split(',', 1)[1])
+            hosts.add(line.split(',', 1)[1].strip())
     return hosts
 
 
