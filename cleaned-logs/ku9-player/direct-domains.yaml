@@ -1,5 +1,3 @@
 payload:
-  - DOMAIN,i.33xp.cn  # 未知
-  - DOMAIN,i.33xp.cn  # 未知
-  - DOMAIN,imgapi.cn  # 未知
-  - DOMAIN,imgapi.cn  # 未知
+  - DOMAIN,i.33xp.cn  # 无明确公开服务
+  - DOMAIN,imgapi.cn  # 第三方图片API服务

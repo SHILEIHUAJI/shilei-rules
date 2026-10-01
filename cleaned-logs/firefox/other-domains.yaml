@@ -1,4 +1,4 @@
 payload:
-  - DOMAIN,filters.adtidy.org  # 未知
-  - DOMAIN,sync-1-us-west1-g.sync.services.mozilla.com  # 未知
-  - DOMAIN,token.services.mozilla.com  # 未知
+  - DOMAIN,filters.adtidy.org  # AdGuard过滤规则服务
+  - DOMAIN,sync-1-us-west1-g.sync.services.mozilla.com  # Mozilla/Firefox同步
+  - DOMAIN,token.services.mozilla.com  # Mozilla账号服务

@@ -1,4 +1,4 @@
 payload:
-  - DOMAIN,dig.zjurl.cn  # 未知
-  - DOMAIN,qishui.com  # 未知
-  - DOMAIN,zijieapi.com  # 未知
+  - DOMAIN,dig.zjurl.cn  # 字节跳动服务
+  - DOMAIN-SUFFIX,qishui.com  # 字节跳动/汽水音乐
+  - DOMAIN-SUFFIX,zijieapi.com  # 字节跳动服务

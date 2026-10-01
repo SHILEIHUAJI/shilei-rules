@@ -1,4 +1,4 @@
 payload:
   - DOMAIN,ciciai.com  # AI服务
-  - DOMAIN,dola.com  # 未知
-  - DOMAIN,ksgost-launches.appsflyersdk.com  # 未知
+  - DOMAIN,dola.com  # 字节跳动/Dola豆包国际版
+  - DOMAIN,ksgost-launches.appsflyersdk.com  # 广告归因/追踪

@@ -1,3 +1,2 @@
 payload:
-  - DOMAIN,myip.ipip.net  # 未知
-  - DOMAIN,myip.ipip.net  # 未知
+  - DOMAIN,myip.ipip.net  # IP查询服务

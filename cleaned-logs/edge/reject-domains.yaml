@@ -1,3 +1,3 @@
 payload:
-  - DOMAIN,app.adjust.com  # 未知
-  - DOMAIN,app.adjust.io  # 未知
+  - DOMAIN,app.adjust.com  # 广告归因/追踪
+  - DOMAIN,app.adjust.io  # 广告归因/追踪

@@ -1,6 +1,5 @@
 payload:
-  - DOMAIN,bdurl.net  # 百度服务
-  - DOMAIN,jspcdn.cn  # 优云科技/开源静态资源CDN
+  - DOMAIN-SUFFIX,bdurl.net  # 百度服务
+  - DOMAIN-SUFFIX,jspcdn.cn  # 优云科技/开源静态资源CDN
   - DOMAIN-SUFFIX,snssdk.com  # 字节跳动服务
-  - DOMAIN,snssdk.com  # 字节跳动服务
-  - DOMAIN,xdrtc.com  # 无明确公开服务
+  - DOMAIN-SUFFIX,xdrtc.com  # 无明确公开服务

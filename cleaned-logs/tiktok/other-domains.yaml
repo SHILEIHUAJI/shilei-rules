@@ -1,6 +1,5 @@
 payload:
-  - DOMAIN,pull-w5-sg01.tiktokcdn-us.com  # CDN节点
-  - DOMAIN,pull-w5-sg01.tiktokcdn-us.com  # CDN节点
-  - DOMAIN,reqhfg-launches.appsflyersdk.com  # 未知
-  - DOMAIN,tiktokcdn-us.com  # CDN节点
-  - DOMAIN,tiktokv.us  # 未知
+  - DOMAIN,pull-w5-sg01.tiktokcdn-us.com  # 字节跳动/TikTok海外CDN
+  - DOMAIN,reqhfg-launches.appsflyersdk.com  # 广告归因/追踪
+  - DOMAIN,tiktokcdn-us.com  # 字节跳动/TikTok海外CDN
+  - DOMAIN,tiktokv.us  # 字节跳动/TikTok服务

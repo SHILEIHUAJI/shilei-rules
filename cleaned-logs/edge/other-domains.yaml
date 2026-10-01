@@ -1,8 +1,8 @@
 payload:
-  - DOMAIN,cdn.ghostery.com  # CDN节点
-  - DOMAIN,config.edge.skype.com  # 未知
-  - DOMAIN,filters.adtidy.org  # 未知
-  - DOMAIN,in.appcenter.ms  # 未知
+  - DOMAIN,cdn.ghostery.com  # Ghostery隐私防护CDN
+  - DOMAIN,config.edge.skype.com  # 微软Skype服务
+  - DOMAIN,filters.adtidy.org  # AdGuard过滤规则服务
+  - DOMAIN,in.appcenter.ms  # 微软AppCenter/应用分析
   - DOMAIN,login.microsoftonline.com  # 微软服务
   - DOMAIN,microsoft.com  # 微软服务
-  - DOMAIN,www.bing.com  # 未知
+  - DOMAIN,www.bing.com  # 微软必应服务

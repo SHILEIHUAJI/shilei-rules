@@ -1,13 +1,8 @@
 payload:
-  - DOMAIN,api.github.com  # 未知
-  - DOMAIN,api.ip.sb  # 未知
-  - DOMAIN,api.ip.sb  # 未知
+  - DOMAIN,api.github.com  # GitHub服务
+  - DOMAIN,api.ip.sb  # IP查询服务
   - DOMAIN,content-autofill.googleapis.com  # 谷歌服务
-  - DOMAIN,content-autofill.googleapis.com  # 谷歌服务
-  - DOMAIN,github.githubassets.com  # 未知
-  - DOMAIN,github.githubassets.com  # 未知
+  - DOMAIN,github.githubassets.com  # GitHub服务
   - DOMAIN,googleapis.com  # 谷歌服务
-  - DOMAIN,www.cloudflare.com  # CDN节点
-  - DOMAIN,www.cloudflare.com  # CDN节点
-  - DOMAIN,yt3.ggpht.com  # 未知
-  - DOMAIN,yt3.ggpht.com  # 未知
+  - DOMAIN,www.cloudflare.com  # Cloudflare官网/CDN基础设施
+  - DOMAIN,yt3.ggpht.com  # 谷歌/YouTube服务
