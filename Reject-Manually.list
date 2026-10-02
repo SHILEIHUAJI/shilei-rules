@@ -1,74 +1,69 @@
-behavior: domain
-payload:
-  # ===== 精准域名 =====
-  apd-pcdnwxlogin.teg.tencent-cloud.net
-  apd-pcdnwxstat.teg.tencent-cloud.net
-  js96110.com.cn
-  app.ipdatacloud.com
-  www.ipdatacloud.com
-  udpolimenew.baidu.com
-  app.getsentry.com
-  browser.sentry-cdn.com
-  appmetrica.yandex.ru
-  d3ward.github.io
-  ime-igw.doubao.com
-  permanently-removed.invalid
-  myip.ipip.net
-  os.oceancloudapi.com
-  log-report.rtc.volcvideo.com
-  log.doubao.com
-  long.doubao.com
-  xlog.bytedance.com
-  monitor.zijieapi.com
-  monitor.bytedance.net
-  rtlog.amemv.com
-  rtlog3-applog-hl.amemv.com
-  logbk-qd.amemv.com
-  ad.toutiao.com
-  dsp.toutiao.com
-  adx.toutiao.com
-  union.toutiao.com
-  adshare.toutiao.com
-  ad-sgl-ip.toutiao.com
-  partner.toutiao.com
-  partner-share.toutiao.com
-  landing.toutiao.com
-  clue.toutiao.com
-  temai.toutiao.com
-  market.toutiao.com
-  mon.toutiao.com
-  monsetting.toutiao.com
-  dm.toutiao.com
-  dm-c.toutiao.com
-  dm-hl.toutiao.com
-  dm-lq.toutiao.com
-  om.toutiao.com
-  om-lf.toutiao.com
+# ========== 精准域名 ==========
+apd-pcdnwxlogin.teg.tencent-cloud.net
+apd-pcdnwxstat.teg.tencent-cloud.net
+js96110.com.cn
+app.ipdatacloud.com
+www.ipdatacloud.com
+udpolimenew.baidu.com
+app.getsentry.com
+browser.sentry-cdn.com
+appmetrica.yandex.ru
+d3ward.github.io
+ime-igw.doubao.com
+permanently-removed.invalid
+myip.ipip.net
+os.oceancloudapi.com
+log-report.rtc.volcvideo.com
+log.doubao.com
+long.doubao.com
+xlog.bytedance.com
+monitor.zijieapi.com
+monitor.bytedance.net
+rtlog.amemv.com
+rtlog3-applog-hl.amemv.com
+logbk-qd.amemv.com
+ad.toutiao.com
+dsp.toutiao.com
+adx.toutiao.com
+union.toutiao.com
+adshare.toutiao.com
+ad-sgl-ip.toutiao.com
+partner.toutiao.com
+partner-share.toutiao.com
+landing.toutiao.com
+clue.toutiao.com
+temai.toutiao.com
+market.toutiao.com
+mon.toutiao.com
+monsetting.toutiao.com
+dm.toutiao.com
+dm-c.toutiao.com
+dm-hl.toutiao.com
+dm-lq.toutiao.com
+om.toutiao.com
+om-lf.toutiao.com
 
-  # ===== 泛域名 +. =====
-  +.telemetry.us-ashburn-1.oci.oraclecloud.com
-  +.stun.services.mozilla.com
-  +.sentry.io
-  +.myappsget.com
-  +.bugly.qq.com
-  +.bjmxy.net
-  +.bytefae.com
-  +.js96110
-  +.log-upload
-  +.statsdk
-  +.iP138.com
-  +.ip-api.com
-  +.pull.yximgs.com
-  +.ad.tieba.baidu.com
-  +.mobads.baidu.com
-  +.textads
-  +.flurry.com
-  +.appsflyer.com
-  +.adjust.com
-  +.zjstat.com
-  +.gdt.qq.com
-  +.googleads
-  +.adservice
-  +.googleadservices.com
-  +.googleadsserving.cn
-  +.log
+# ========== 泛域名 +. ==========
++.telemetry.us-ashburn-1.oci.oraclecloud.com
++.stun.services.mozilla.com
++.sentry.io
++.myappsget.com
++.bugly.qq.com
++.bjmxy.net
++.bytefae.com
++.js96110
++.log-upload
++.iP138.com
++.ip-api.com
++.pull.yximgs.com
++.ad.tieba.baidu.com
++.mobads.baidu.com
++.flurry.com
++.appsflyer.com
++.adjust.com
++.zjstat.com
++.gdt.qq.com
++.googleads
++.adservice
++.googleadservices.com
++.googleadsserving.cn
