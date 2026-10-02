@@ -1,0 +1,26 @@
+# ========== 精准域名 DOMAIN ==========
+self.events.data.microsoft.com
+edge.microsoft.com
+
+# ========== 泛域名 DOMAIN-SUFFIX → +. ==========
++.ghcr.io
++.githubassets.com
++.githubusercontent.com
++.gh-proxy.org
++.github.com
++.pornhub.com
++.dmm.com
++.dmm.co.jp
++.dmm.sh
++.sydney.bing.com
++.jsdelivr.net
++.emojiall.com
++.7mmtv.sx
++.mmvh01.com
++.ingest.sentry.io
++.apkpure.com
++.weather.com
++.mapbox.com
++.weatherfx.com
++.pureapk.com
++.spthgb.com
