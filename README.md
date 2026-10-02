@@ -3,7 +3,7 @@
 
 | 规则集名称 | 唯一规则数量 |
 | :--- | :--- |
-| Reject-Manually.yaml | 79 |
+| Reject-Manually.yaml | 71 |
 | bytedance-global.yaml | 12 |
 | claude-ai.yaml | 6 |
 | cn-direct.list | 329 |
@@ -13,27 +13,27 @@
 | tv-player.yaml | 5 |
 | usa.yaml | 4 |
 | vivo-ads.yaml | 103 |
-| **全库去重总计** | **798** |
+| **全库去重总计** | **790** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 322 |
-| DOMAIN-SUFFIX | 172 |
-| DOMAIN | 119 |
-| PROCESS-NAME | 93 |
+| DOMAIN-SUFFIX(text) | 348 |
+| DOMAIN-SUFFIX | 146 |
+| PROCESS-NAME | 91 |
+| DOMAIN | 76 |
+| DOMAIN(text) | 52 |
 | RULE-SET | 22 |
 | AND | 22 |
-| DOMAIN-KEYWORD | 14 |
-| IP-CIDR | 8 |
-| DOMAIN(text) | 7 |
+| DOMAIN-KEYWORD | 11 |
+| IP-CIDR | 7 |
 | DOMAIN-WILDCARD | 6 |
-| DST-PORT | 5 |
 | MATCH | 3 |
 | SRC-IP-CIDR | 2 |
 | SUB-RULE | 2 |
 | DOMAIN-REGEX | 1 |
+| DST-PORT | 1 |
 
 ### ✅ 未发现跨文件重复规则
 
