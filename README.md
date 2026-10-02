@@ -12,7 +12,7 @@
 | my-rules.yaml | 202 |
 | usa.yaml | 4 |
 | vivo-ads.yaml | 103 |
-| zijie-cn.yaml | 55 |
+| zijie-cn.list | 55 |
 | **全库去重总计** | **828** |
 
 ### 🏷️ 规则类型分布
@@ -39,16 +39,16 @@
 
 | 规则内容 | 出现在 |
 | :--- | :--- |
-| `+.amemv.com` | cn-direct.list, zijie-cn.yaml |
-| `+.douyin.com` | cn-direct.list, zijie-cn.yaml |
-| `+.douyincdn.com` | cn-direct.list, zijie-cn.yaml |
-| `+.douyinpic.com` | cn-direct.list, zijie-cn.yaml |
-| `+.douyinstatic.com` | cn-direct.list, zijie-cn.yaml |
-| `+.douyinvod.com` | cn-direct.list, zijie-cn.yaml |
-| `+.huoshan.com` | cn-direct.list, zijie-cn.yaml |
-| `+.huoshanzhibo.com` | cn-direct.list, zijie-cn.yaml |
-| `+.idouyinvod.com` | cn-direct.list, zijie-cn.yaml |
-| `+.qishui.com` | cn-direct.list, zijie-cn.yaml |
+| `+.amemv.com` | zijie-cn.list, cn-direct.list |
+| `+.douyin.com` | zijie-cn.list, cn-direct.list |
+| `+.douyincdn.com` | zijie-cn.list, cn-direct.list |
+| `+.douyinpic.com` | zijie-cn.list, cn-direct.list |
+| `+.douyinstatic.com` | zijie-cn.list, cn-direct.list |
+| `+.douyinvod.com` | zijie-cn.list, cn-direct.list |
+| `+.huoshan.com` | zijie-cn.list, cn-direct.list |
+| `+.huoshanzhibo.com` | zijie-cn.list, cn-direct.list |
+| `+.idouyinvod.com` | zijie-cn.list, cn-direct.list |
+| `+.qishui.com` | zijie-cn.list, cn-direct.list |
 
 <!-- STATS_END -->
 
