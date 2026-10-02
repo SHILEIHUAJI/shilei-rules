@@ -8,25 +8,25 @@
 | claude-ai.yaml | 6 |
 | cn-direct.list | 329 |
 | google-android.yaml | 33 |
-| international-website.yaml | 25 |
+| international-website.list | 23 |
 | my-rules.yaml | 202 |
 | tv-player.yaml | 5 |
 | usa.yaml | 4 |
 | vivo-ads.yaml | 103 |
-| **全库去重总计** | **785** |
+| **全库去重总计** | **783** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 345 |
-| DOMAIN-SUFFIX | 146 |
-| PROCESS-NAME | 91 |
-| DOMAIN | 76 |
-| DOMAIN(text) | 50 |
+| DOMAIN-SUFFIX(text) | 366 |
+| DOMAIN-SUFFIX | 125 |
+| PROCESS-NAME | 90 |
+| DOMAIN | 74 |
+| DOMAIN(text) | 52 |
 | RULE-SET | 22 |
 | AND | 22 |
-| DOMAIN-KEYWORD | 11 |
+| DOMAIN-KEYWORD | 10 |
 | IP-CIDR | 7 |
 | DOMAIN-WILDCARD | 6 |
 | MATCH | 3 |
