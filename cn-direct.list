@@ -11,6 +11,7 @@ tse2-mm.cn.bing.net
 fds.api.xiaomi.com
 
 # 泛域名匹配 (主域名 + 所有子域名)
++.mt.cc
 +.live.com.cn
 +.live.cn
 +.123684.com
