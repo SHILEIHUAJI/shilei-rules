@@ -1,82 +1,74 @@
-behavior: classical
+behavior: domain
 payload:
-  - DOMAIN-SUFFIX,telemetry.us-ashburn-1.oci.oraclecloud.com
-  - DST-PORT,3478
-  - DST-PORT,3479
-  - DST-PORT,3480
-  - DST-PORT,3481
-  - DOMAIN-SUFFIX,stun.services.mozilla.com
-  - DOMAIN-SUFFIX,sentry.io
-  - DOMAIN-KEYWORD,stun
-  - DOMAIN-KEYWORD,turn
-  - DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net
-  - DOMAIN,apd-pcdnwxstat.teg.tencent-cloud.net
-  - DOMAIN-SUFFIX,myappsget.com
-  - DOMAIN-SUFFIX,bugly.qq.com
-  - DOMAIN-KEYWORD,3132372e302e302e31
-  - DOMAIN-SUFFIX,bjmxy.net
-  - DOMAIN-SUFFIX,bytefae.com
-  - DOMAIN-SUFFIX,js96110
-  - DOMAIN,js96110.com.cn
-  - DOMAIN-SUFFIX,log-upload
-  - DOMAIN-SUFFIX,statsdk
-  - DOMAIN,app.ipdatacloud.com
-  - DOMAIN,www.ipdatacloud.com
-  - DOMAIN,udpolimenew.baidu.com
-  - DOMAIN-SUFFIX,iP138.com
-  - DOMAIN-SUFFIX,ip-api.com
-  - DOMAIN-SUFFIX,pull.yximgs.com
-  - DOMAIN-SUFFIX,ad.tieba.baidu.com
-  - DOMAIN-SUFFIX,mobads.baidu.com
-  - DOMAIN,app.getsentry.com
-  - DOMAIN,browser.sentry-cdn.com
-  - DOMAIN,appmetrica.yandex.ru
-  - DOMAIN-SUFFIX,textads
-  - DOMAIN,d3ward.github.io
-  - DOMAIN,ime-igw.doubao.com
-  - DOMAIN-SUFFIX,flurry.com
-  - DOMAIN-SUFFIX,appsflyer.com
-  - DOMAIN-SUFFIX,adjust.com
-  - DOMAIN-SUFFIX,zjstat.com
-  - DOMAIN-SUFFIX,gdt.qq.com
-  - DOMAIN-SUFFIX,googleads
-  - DOMAIN-SUFFIX,adservice
-  - DOMAIN-SUFFIX,googleadservices.com
-  - DOMAIN-SUFFIX,googleadsserving.cn
-  - DOMAIN,permanently-removed.invalid
-  - DOMAIN,myip.ipip.net
-  - IP-CIDR,120.238.90.212/32,no-resolve
-  - PROCESS-NAME,com.android.keychain
-  - PROCESS-NAME,bin.mt.plus
-  # 豆包 / 今日头条 / 抖音等特定 App 拦截
-  - DOMAIN,os.oceancloudapi.com
-  - DOMAIN,log-report.rtc.volcvideo.com
-  - DOMAIN,log.doubao.com
-  - DOMAIN,long.doubao.com
-  - DOMAIN,xlog.bytedance.com
-  - DOMAIN,monitor.zijieapi.com
-  - DOMAIN,monitor.bytedance.net
-  - DOMAIN,rtlog.amemv.com
-  - DOMAIN,rtlog3-applog-hl.amemv.com
-  - DOMAIN,logbk-qd.amemv.com
-  - DOMAIN-SUFFIX,log
-  - DOMAIN,ad.toutiao.com
-  - DOMAIN,dsp.toutiao.com
-  - DOMAIN,adx.toutiao.com
-  - DOMAIN,union.toutiao.com
-  - DOMAIN,adshare.toutiao.com
-  - DOMAIN,ad-sgl-ip.toutiao.com
-  - DOMAIN,partner.toutiao.com
-  - DOMAIN,partner-share.toutiao.com
-  - DOMAIN,landing.toutiao.com
-  - DOMAIN,clue.toutiao.com
-  - DOMAIN,temai.toutiao.com
-  - DOMAIN,market.toutiao.com
-  - DOMAIN,mon.toutiao.com
-  - DOMAIN,monsetting.toutiao.com
-  - DOMAIN,dm.toutiao.com
-  - DOMAIN,dm-c.toutiao.com
-  - DOMAIN,dm-hl.toutiao.com
-  - DOMAIN,dm-lq.toutiao.com
-  - DOMAIN,om.toutiao.com
-  - DOMAIN,om-lf.toutiao.com
+  # ===== 精准域名 =====
+  apd-pcdnwxlogin.teg.tencent-cloud.net
+  apd-pcdnwxstat.teg.tencent-cloud.net
+  js96110.com.cn
+  app.ipdatacloud.com
+  www.ipdatacloud.com
+  udpolimenew.baidu.com
+  app.getsentry.com
+  browser.sentry-cdn.com
+  appmetrica.yandex.ru
+  d3ward.github.io
+  ime-igw.doubao.com
+  permanently-removed.invalid
+  myip.ipip.net
+  os.oceancloudapi.com
+  log-report.rtc.volcvideo.com
+  log.doubao.com
+  long.doubao.com
+  xlog.bytedance.com
+  monitor.zijieapi.com
+  monitor.bytedance.net
+  rtlog.amemv.com
+  rtlog3-applog-hl.amemv.com
+  logbk-qd.amemv.com
+  ad.toutiao.com
+  dsp.toutiao.com
+  adx.toutiao.com
+  union.toutiao.com
+  adshare.toutiao.com
+  ad-sgl-ip.toutiao.com
+  partner.toutiao.com
+  partner-share.toutiao.com
+  landing.toutiao.com
+  clue.toutiao.com
+  temai.toutiao.com
+  market.toutiao.com
+  mon.toutiao.com
+  monsetting.toutiao.com
+  dm.toutiao.com
+  dm-c.toutiao.com
+  dm-hl.toutiao.com
+  dm-lq.toutiao.com
+  om.toutiao.com
+  om-lf.toutiao.com
+
+  # ===== 泛域名 +. =====
+  +.telemetry.us-ashburn-1.oci.oraclecloud.com
+  +.stun.services.mozilla.com
+  +.sentry.io
+  +.myappsget.com
+  +.bugly.qq.com
+  +.bjmxy.net
+  +.bytefae.com
+  +.js96110
+  +.log-upload
+  +.statsdk
+  +.iP138.com
+  +.ip-api.com
+  +.pull.yximgs.com
+  +.ad.tieba.baidu.com
+  +.mobads.baidu.com
+  +.textads
+  +.flurry.com
+  +.appsflyer.com
+  +.adjust.com
+  +.zjstat.com
+  +.gdt.qq.com
+  +.googleads
+  +.adservice
+  +.googleadservices.com
+  +.googleadsserving.cn
+  +.log
