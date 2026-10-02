@@ -12,14 +12,14 @@
 | my-rules.yaml | 202 |
 | usa.yaml | 4 |
 | vivo-ads.yaml | 103 |
-| zijie-cn.list | 55 |
-| **全库去重总计** | **827** |
+| zijie-cn.list | 56 |
+| **全库去重总计** | **828** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 415 |
+| DOMAIN-SUFFIX(text) | 416 |
 | DOMAIN-SUFFIX | 120 |
 | PROCESS-NAME | 90 |
 | DOMAIN | 74 |
