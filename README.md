@@ -3,7 +3,7 @@
 
 | 规则集名称 | 唯一规则数量 |
 | :--- | :--- |
-| Reject-Manually.list | 71 |
+| Reject-Manually.list | 66 |
 | bytedance-global.yaml | 12 |
 | claude-ai.yaml | 6 |
 | cn-direct.list | 329 |
@@ -13,17 +13,17 @@
 | tv-player.yaml | 5 |
 | usa.yaml | 4 |
 | vivo-ads.yaml | 103 |
-| **全库去重总计** | **790** |
+| **全库去重总计** | **785** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 348 |
+| DOMAIN-SUFFIX(text) | 345 |
 | DOMAIN-SUFFIX | 146 |
 | PROCESS-NAME | 91 |
 | DOMAIN | 76 |
-| DOMAIN(text) | 52 |
+| DOMAIN(text) | 50 |
 | RULE-SET | 22 |
 | AND | 22 |
 | DOMAIN-KEYWORD | 11 |
