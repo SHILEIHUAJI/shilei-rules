@@ -10,7 +10,7 @@ payload:
   - DOMAIN,p19-oec-ttp.tiktokcdn-us.com  # 字节跳动/TikTok海外CDN
   - DOMAIN,p19-oec-va.ibyteimg.com  # 字节跳动服务
   - DOMAIN,play-fe.googleapis.com  # 谷歌服务
-  - DOMAIN,qq.com  # 腾讯服务
+  - DOMAIN-SUFFIX,qq.com  # 腾讯服务
   - DOMAIN-SUFFIX,snssdk.com  # 字节跳动服务
   - DOMAIN,tiktokcdn-us.com  # 字节跳动/TikTok海外CDN
   - DOMAIN,tiktokv.us  # 字节跳动/TikTok服务

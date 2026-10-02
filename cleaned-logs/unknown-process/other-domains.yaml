@@ -2,3 +2,4 @@ payload:
   - DOMAIN,cloudflare-dns.com  # Cloudflare DNS/DoH服务
   - DOMAIN,dns.quad9.net  # DNS/运营商服务
   - DOMAIN,doh.opendns.com  # DNS/运营商服务
+  - DOMAIN,gh-proxy.org  # GitHub代理服务

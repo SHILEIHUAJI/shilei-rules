@@ -1,3 +1,4 @@
 payload:
   - DOMAIN,app.adjust.com  # 广告归因/追踪
   - DOMAIN,app.adjust.io  # 广告归因/追踪
+  - DOMAIN,o4510860521897984.ingest.us.sentry.io  # Sentry错误监控服务
