@@ -10,17 +10,17 @@
 | google-android.yaml | 33 |
 | international-website.list | 28 |
 | my-rules.yaml | 202 |
-| tv-player.yaml | 5 |
 | usa.yaml | 4 |
 | vivo-ads.yaml | 103 |
-| **全库去重总计** | **788** |
+| zijie-cn.yaml | 55 |
+| **全库去重总计** | **828** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 371 |
-| DOMAIN-SUFFIX | 125 |
+| DOMAIN-SUFFIX(text) | 426 |
+| DOMAIN-SUFFIX | 120 |
 | PROCESS-NAME | 90 |
 | DOMAIN | 74 |
 | DOMAIN(text) | 52 |
@@ -35,7 +35,20 @@
 | DOMAIN-REGEX | 1 |
 | DST-PORT | 1 |
 
-### ✅ 未发现跨文件重复规则
+### ⚠️ 跨文件/跨模块重复规则（共 10 条，含逻辑等价识别）
+
+| 规则内容 | 出现在 |
+| :--- | :--- |
+| `+.amemv.com` | cn-direct.list, zijie-cn.yaml |
+| `+.douyin.com` | cn-direct.list, zijie-cn.yaml |
+| `+.douyincdn.com` | cn-direct.list, zijie-cn.yaml |
+| `+.douyinpic.com` | cn-direct.list, zijie-cn.yaml |
+| `+.douyinstatic.com` | cn-direct.list, zijie-cn.yaml |
+| `+.douyinvod.com` | cn-direct.list, zijie-cn.yaml |
+| `+.huoshan.com` | cn-direct.list, zijie-cn.yaml |
+| `+.huoshanzhibo.com` | cn-direct.list, zijie-cn.yaml |
+| `+.idouyinvod.com` | cn-direct.list, zijie-cn.yaml |
+| `+.qishui.com` | cn-direct.list, zijie-cn.yaml |
 
 <!-- STATS_END -->
 
