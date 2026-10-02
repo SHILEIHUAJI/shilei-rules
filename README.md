@@ -6,7 +6,7 @@
 | Reject-Manually.list | 66 |
 | bytedance-global.yaml | 12 |
 | claude-ai.yaml | 6 |
-| cn-direct.list | 321 |
+| cn-direct.list | 319 |
 | google-android.yaml | 33 |
 | international-website.list | 28 |
 | my-rules.yaml | 202 |
@@ -19,7 +19,7 @@
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 418 |
+| DOMAIN-SUFFIX(text) | 416 |
 | DOMAIN-SUFFIX | 120 |
 | PROCESS-NAME | 90 |
 | DOMAIN | 74 |
@@ -35,12 +35,7 @@
 | DOMAIN-REGEX | 1 |
 | DST-PORT | 1 |
 
-### ⚠️ 跨文件/跨模块重复规则（共 2 条，含逻辑等价识别）
-
-| 规则内容 | 出现在 |
-| :--- | :--- |
-| `+.huoshanzhibo.com` | zijie-cn.list, cn-direct.list |
-| `+.qishui.com` | zijie-cn.list, cn-direct.list |
+### ✅ 未发现跨文件重复规则
 
 <!-- STATS_END -->
 
