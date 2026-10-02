@@ -6,7 +6,7 @@
 | Reject-Manually.list | 66 |
 | bytedance-global.yaml | 12 |
 | claude-ai.yaml | 6 |
-| cn-direct.list | 329 |
+| cn-direct.list | 321 |
 | google-android.yaml | 33 |
 | international-website.list | 28 |
 | my-rules.yaml | 202 |
@@ -19,7 +19,7 @@
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 426 |
+| DOMAIN-SUFFIX(text) | 418 |
 | DOMAIN-SUFFIX | 120 |
 | PROCESS-NAME | 90 |
 | DOMAIN | 74 |
@@ -35,19 +35,11 @@
 | DOMAIN-REGEX | 1 |
 | DST-PORT | 1 |
 
-### ⚠️ 跨文件/跨模块重复规则（共 10 条，含逻辑等价识别）
+### ⚠️ 跨文件/跨模块重复规则（共 2 条，含逻辑等价识别）
 
 | 规则内容 | 出现在 |
 | :--- | :--- |
-| `+.amemv.com` | zijie-cn.list, cn-direct.list |
-| `+.douyin.com` | zijie-cn.list, cn-direct.list |
-| `+.douyincdn.com` | zijie-cn.list, cn-direct.list |
-| `+.douyinpic.com` | zijie-cn.list, cn-direct.list |
-| `+.douyinstatic.com` | zijie-cn.list, cn-direct.list |
-| `+.douyinvod.com` | zijie-cn.list, cn-direct.list |
-| `+.huoshan.com` | zijie-cn.list, cn-direct.list |
 | `+.huoshanzhibo.com` | zijie-cn.list, cn-direct.list |
-| `+.idouyinvod.com` | zijie-cn.list, cn-direct.list |
 | `+.qishui.com` | zijie-cn.list, cn-direct.list |
 
 <!-- STATS_END -->
