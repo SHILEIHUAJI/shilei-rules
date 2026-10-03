@@ -14,8 +14,8 @@
 ## 📊 包名映射统计
 
 ### 📈 概览
-- **配置总条数**: `309` 条
-- **独立应用数**: `308` 个
+- **配置总条数**: `312` 条
+- **独立应用数**: `311` 个
 - **分类数**: `11` 个
 - **校验状态**: ❌ 发现 1 个问题
 
@@ -24,7 +24,7 @@
 ```mermaid
 pie title 包名分类占比统计
     "基础与示例应用" : 4
-    "VIVO系应用" : 141
+    "VIVO系应用" : 144
     "地图导航" : 2
     "电商购物" : 1
     "影音娱乐" : 7
@@ -39,7 +39,7 @@ pie title 包名分类占比统计
 ### ❌ 重复包名
 | 包名 | 出现位置 → 别名 | 别名是否冲突 |
 | :--- | :--- | :---: |
-| `com.mmbox.xbrowser` | 第228行→`xbrowser`, 第344行→`xbrowser` | 相同 |
+| `com.mmbox.xbrowser` | 第230行→`xbrowser`, 第346行→`xbrowser` | 相同 |
 
 ### 📋 分类明细
 <details><summary><b>基础与示例应用</b>(包含 4 个应用)</summary>
@@ -53,7 +53,7 @@ pie title 包名分类占比统计
 
 </details>
 
-<details><summary><b>VIVO系应用</b>(包含 141 个应用)</summary>
+<details><summary><b>VIVO系应用</b>(包含 144 个应用)</summary>
 
 | 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
@@ -66,6 +66,9 @@ pie title 包名分类占比统计
 | `com.bbk.account` | `bbk-account` | vivo账号 |
 | `com.bbk.theme.resources` | `wallpaper-res` | vivo壁纸资源 |
 | `com.bbk.updater` | `bbk-system-upgrade` | vivo 系统升级 |
+| `com.iqoo.engineermode` | `vivo-gongchang-ceshi` | vivo 工厂测试 |
+| `com.iqoo.powersaving` | `vivo-battery` | vivo 电池 |
+| `com.iqoo.secure` | `vivo-shouji-guanjia` | vivo手机管家 |
 | `com.vivo.SmartKey` | `quick-launch` | 快捷启动 |
 | `com.vivo.abe` | `smart-engine` | 智慧引擎 |
 | `com.vivo.accessibility` | `accessibility` | 无障碍 |
@@ -87,7 +90,7 @@ pie title 包名分类占比统计
 | `com.vivo.assistant` | `important-notification` | 重要通知 |
 | `com.vivo.audiofx` | `audio-effects` | 音效设置 |
 | `com.vivo.base.player` | `system-audio-player` | 系统音频播放器 |
-| `com.vivo.browser.novel.widget` | `browser-novel-widget` | vivo浏览器小说挂件 |
+| `com.vivo.browser.novel.widget` | `vivo-browser` | vivo浏览器小说挂件 |
 | `com.vivo.bsptest` | `bsp-test` | BSP测试 |
 | `com.vivo.car.launcher` | `car-launcher` | 车载launcher |
 | `com.vivo.car.networking` | `smart-car-networking` | 智能车载 |
