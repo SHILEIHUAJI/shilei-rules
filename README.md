@@ -15,59 +15,66 @@
 
 ### 📈 概览
 - **配置总条数**: `312` 条
-- **独立应用数**: `311` 个
-- **分类数**: `11` 个
-- **校验状态**: ❌ 发现 1 个问题
+- **独立应用数**: `309` 个
+- **分类数**: `9` 个
+- **校验状态**: ❌ 发现 3 个问题
 
 ### 🎨 应用分类分布
 
 ```mermaid
 pie title 包名分类占比统计
-    "基础与示例应用" : 4
-    "VIVO系应用" : 144
-    "地图导航" : 2
-    "电商购物" : 1
-    "影音娱乐" : 7
-    "实用工具" : 6
-    "金融支付与健康" : 3
-    "生活服务" : 1
-    "第一批：非谷歌系应用" : 86
-    "第二批：Google系应用与服务" : 55
-    "安卓系统服务" : 2
+    "基础与通用应用" : 10
+    "VIVO 系统/自带应用" : 145
+    "地图与出行" : 3
+    "影音娱乐与短视频" : 19
+    "工具与效率" : 74
+    "应用商店与分发" : 2
+    "Google 服务与应用" : 53
+    "安卓系统底层/服务" : 2
+    "其他" : 1
 ```
 
 ### ❌ 重复包名
 | 包名 | 出现位置 → 别名 | 别名是否冲突 |
 | :--- | :--- | :---: |
-| `com.mmbox.xbrowser` | 第230行→`xbrowser`, 第346行→`xbrowser` | 相同 |
+| `com.mmbox.xbrowser` | 第193行→`xbrowser`, 第194行→`xbrowser` | 相同 |
+| `com.xiaomi.smarthome` | 第243行→`mijia`, 第267行→`mijia` | 相同 |
+| `com.miui.calculator` | 第245行→`miui-calc`, 第247行→`miui-calc` | 相同 |
 
 ### 📋 分类明细
-<details><summary><b>基础与示例应用</b>(包含 4 个应用)</summary>
+<details><summary><b>基础与通用应用</b>(包含 10 个应用)</summary>
 
 | 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
+| `com.eg.android.AlipayGphone` | `zhifubao` | 支付宝 |
 | `com.luna.music` | `luna-music` | 汽水音乐 |
+| `com.sankuai.meituan` | `meituan` | 美团 |
 | `com.ss.android.ugc.aweme` | `aweme` | 抖音 |
+| `com.taobao.idlefish` | `idlefish` | 闲鱼 |
+| `com.taobao.taobao` | `taobao` | 淘宝 |
 | `com.tencent.mm` | `wechat` | 微信 |
+| `com.xunmeng.pinduoduo` | `pinduoduo` | 拼多多 |
 | `mark.via.gp` | `via-browser` | Via浏览器 |
+| `me.ele` | `eleme` | 饿了么 |
 
 </details>
 
-<details><summary><b>VIVO系应用</b>(包含 144 个应用)</summary>
+<details><summary><b>VIVO 系统/自带应用</b>(包含 145 个应用)</summary>
 
 | 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
 | `android.overlay.vivoresrro` | `vivo-res-overlay` | vivo资源覆盖层 |
 | `com.android.bbkcalculator` | `vivo-calculator` | vivo计算器 官方版 |
 | `com.android.bbkcalculatos` | `vivo-calculator-ver` | vivo计算器 修改版 |
-| `com.android.documentsui` | `vivo-file` | vivo 文件 |
-| `com.android.filemanager` | `vivo-file-management` | vivo 文件管理 |
+| `com.android.bbksoundrecorder` | `vivo-tape-recorder` | vivo录音机 |
+| `com.android.documentsui` | `vivo-file` | vivo文件 |
+| `com.android.filemanager` | `vivo-file-management` | vivo文件管理 |
 | `com.android.vivo.tws.vivotws` | `vivo-tws` | vivo TWS |
 | `com.bbk.account` | `bbk-account` | vivo账号 |
 | `com.bbk.theme.resources` | `wallpaper-res` | vivo壁纸资源 |
-| `com.bbk.updater` | `bbk-system-upgrade` | vivo 系统升级 |
-| `com.iqoo.engineermode` | `vivo-gongchang-ceshi` | vivo 工厂测试 |
-| `com.iqoo.powersaving` | `vivo-battery` | vivo 电池 |
+| `com.bbk.updater` | `bbk-system-upgrade` | vivo系统升级 |
+| `com.iqoo.engineermode` | `vivo-gongchang-ceshi` | vivo工厂测试 |
+| `com.iqoo.powersaving` | `vivo-battery` | vivo电池 |
 | `com.iqoo.secure` | `vivo-shouji-guanjia` | vivo手机管家 |
 | `com.vivo.SmartKey` | `quick-launch` | 快捷启动 |
 | `com.vivo.abe` | `smart-engine` | 智慧引擎 |
@@ -82,10 +89,10 @@ pie title 包名分类占比统计
 | `com.vivo.android.connectivity.mainline.common.resources.overlay` | `conn-common-overlay` | 连接通用覆盖层 |
 | `com.vivo.android.connectivity.mainline.manufacturer.resources.overlay` | `connectivity-overlay` | 连接资源覆盖层 |
 | `com.vivo.android.wifi.common.resources.overlay` | `wifi-common-overlay` | WiFi通用资源覆盖层 |
-| `com.vivo.android.wifi.mainline.manufacturer.resources.overlay` | `wifi-mainline-overlay` | WiFi主线路资源覆盖层 |
+| `com.vivo.android.wifi.mainline.manufacturer.resources.overlay` | `wifi-mainline-overlay` | WiFi主线路覆盖层 |
 | `com.vivo.android.wifi.mainline.platform.resources.overlay` | `wifi-mainline-platform-overlay` | WiFi主线平台覆盖层 |
 | `com.vivo.android.wifi.manufacturer.resources.overlay` | `wifi-mfg-overlay` | WiFi厂商资源覆盖层 |
-| `com.vivo.android.wifi.platform.resources.overlay` | `wifi-platform-overlay` | WiFi平台资源覆盖层 |
+| `com.vivo.android.wifi.platform.resources.overlay` | `wifi-platform-overlay` | WiFi平台覆盖层 |
 | `com.vivo.appfilter` | `pull-up-prevent-service` | 防拉起服务 |
 | `com.vivo.assistant` | `important-notification` | 重要通知 |
 | `com.vivo.audiofx` | `audio-effects` | 音效设置 |
@@ -154,10 +161,10 @@ pie title 包名分类占比统计
 | `com.vivo.pushservice` | `push-service` | 推送引擎 |
 | `com.vivo.quickpay` | `quick-pay` | 快捷支付 |
 | `com.vivo.remotassistant` | `remote-assistant` | 远程协助 |
-| `com.vivo.remotemplugin` | `vivo-remote` | 客服协助 ✅ 修正：原com.vivo.remotepass |
+| `com.vivo.remotemplugin` | `vivo-remote` | 客服协助 |
 | `com.vivo.safecenter` | `safe-center` | 安全中心 |
 | `com.vivo.screenagent` | `v-note-helper` | 小V帮记 |
-| `com.vivo.sda` | `vivo-sda` | 售后诊断助手 ✅ 修正：原com.vivo.ada |
+| `com.vivo.sda` | `vivo-sda` | 售后诊断助手 |
 | `com.vivo.sdkplugin` | `service-secure-plugin` | vivo服务安全插件 |
 | `com.vivo.seservice` | `digital-car-key` | 数字车钥匙服务 |
 | `com.vivo.setupwizard` | `setup-wizard` | 开机引导 |
@@ -192,7 +199,7 @@ pie title 包名分类占比统计
 | `com.vivo.voicerecognition` | `voice-recognition` | 声音识别 |
 | `com.vivo.voicewakeup` | `voice-wakeup` | 语音唤醒 |
 | `com.vivo.vtouch` | `scan-assistant` | 扫描 |
-| `com.vivo.wallet` | `vivo-wallet` | vivo 钱包 |
+| `com.vivo.wallet` | `vivo-wallet` | vivo钱包 |
 | `com.vivo.wallet.appwidget` | `wallet-widget` | vivo钱包挂件 |
 | `com.vivo.weather.provider` | `weather-provider` | 天气存储 |
 | `com.vivo.widget.calendar` | `calendar-widget` | 日历组件 |
@@ -204,229 +211,206 @@ pie title 包名分类占比统计
 
 </details>
 
-<details><summary><b>地图导航</b>(包含 2 个应用)</summary>
+<details><summary><b>地图与出行</b>(包含 3 个应用)</summary>
 
 | 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
 | `com.autonavi.minimap` | `amap` | 高德地图 |
 | `com.baidu.BaiduMap` | `baidu-map` | 百度地图 |
+| `com.waze` | `waze` | Waze导航 |
 
 </details>
 
-<details><summary><b>电商购物</b>(包含 1 个应用)</summary>
-
-| 包名 | 目录别名 | 备注 |
-| :--- | :--- | :--- |
-| `com.jingdong.app.mall` | `jd-mall` | 京东商城 |
-
-</details>
-
-<details><summary><b>影音娱乐</b>(包含 7 个应用)</summary>
+<details><summary><b>影音娱乐与短视频</b>(包含 19 个应用)</summary>
 
 | 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
 | `InfinityLoop1309.NewPipeEnhanced` | `newpipe-enhanced` | NewPipe增强版 |
 | `ab16.Tuozi` | `tuozi-video` | 兔子视频 |
+| `com.cctv.yangshipin.app.androidp` | `yangshipin` | 央视频 |
 | `com.kaixinkan.ugc.video.atom` | `kaixinkan` | 开心看 |
+| `com.kwai.video` | `kwai` | Kwai |
+| `com.kwai.videoeditor` | `kwai-videoeditor` | 快影 |
 | `com.layaboxhmhz.gamehmhz.okys` | `ok-player` | ok影视pro |
+| `com.pinterest` | `pinterest` | Pinterest |
 | `com.player.ku9` | `ku9-player` | 酷9影院 |
 | `com.smile.gifmaker` | `kuaishou` | 快手 |
+| `com.ss.android.article.news` | `toutiao` | 头条搜索 |
+| `com.ss.android.ugc.trill` | `tiktok-in` | TikTok(印度/旧版) |
+| `com.tiktok.lite.go` | `tiktok-lite` | TikTok Lite |
+| `com.twitter.android` | `twitter` | Twitter / X |
 | `com.xlkj.international.sunri` | `sunri-intl` | 旭日国际 |
+| `com.zhiliaoapp.musically` | `tiktok` | TikTok国际版 |
+| `io.github.InfinityLoop1309.NewPipeEnhanced` | `pipepipe` | PipePipe |
+| `org.telegram.messenger` | `telegram` | Telegram |
+| `tw.nekomimi.nekogram` | `nekogram` | Nekogram |
 
 </details>
 
-<details><summary><b>实用工具</b>(包含 6 个应用)</summary>
+<details><summary><b>工具与效率</b>(包含 74 个应用)</summary>
 
 | 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
-| `com.appshub.bettbox` | `bettbox` | BettBox应用库 |
-| `com.miui.calculator` | `miui-calc` | 小米计算器 |
-| `com.tumuyan.ncnn.realsr` | `real-sr` | RealSR图像超分 |
-| `jp.co.toshiba.android.FlashAir` | `flashair-tool` | 东芝FlashAir工具 |
-| `org.breezyweather.oneui2iconprovider` | `breezy-oneui2` | 天气图标包OneUI2版 |
-| `org.breezyweather.pixeliconprovider` | `breezy-pixel` | 天气图标包Pixel版 |
-
-</details>
-
-<details><summary><b>金融支付与健康</b>(包含 3 个应用)</summary>
-
-| 包名 | 目录别名 | 备注 |
-| :--- | :--- | :--- |
+| `ai.perplexity.app.android` | `perplexity` | Perplexity |
+| `bin.mt.plus` | `mt-file-manager` | MT文件管理器 |
+| `bin.mt.termex` | `mt-terminal-extension-pack` | MT终端扩展包 |
 | `cn.com.omronhealthcare.omronplus.vivo` | `omron-health` | 欧姆龙健康vivo定制版 |
-| `com.payoneer.android` | `payoneer` | Payoneer跨境支付 |
-| `com.unionpay.tsmservice` | `unionpay-tsm` | 银联安全支付服务 |
-
-</details>
-
-<details><summary><b>生活服务</b>(包含 1 个应用)</summary>
-
-| 包名 | 目录别名 | 备注 |
-| :--- | :--- | :--- |
-| `me.ele` | `eleme` | 饿了么 |
-
-</details>
-
-<details><summary><b>第一批：非谷歌系应用</b>(包含 86 个应用)</summary>
-
-| 包名 | 目录别名 | 备注 |
-| :--- | :--- | :--- |
-| `ai.perplexity.app.android` | `perplexity` | Perplexity ✅ 修正：原com.perplexity.perplexity |
-| `app.intra` | `intra` | Intra |
-| `bin.mt.plus` | `mt-file-manager` | - |
-| `bin.mt.termex` | `mt-terminal-extension-pack` | MT终端扩展包 ✅ 修正：原bin.mt.plus |
 | `cn.wps.moffice_eng` | `wps-office` | WPS Office |
 | `com.aliyun.tongyi` | `tongyi` | 千问 |
 | `com.android.chrome` | `chrome` | Chrome |
-| `com.android.vending` | `google-play-store` | Google Play 商店 |
 | `com.anthropic.claude` | `claude` | Claude |
-| `com.apkpure.aegon` | `apkpure` | APKPure ✅ 修正：原com.apkpure.aframe |
+| `com.appshub.bettbox` | `bettbox` | BettBox应用库 |
 | `com.baidu.dict` | `baidu-dict` | 百度汉语 |
 | `com.baidu.tieba` | `baidu-tieba` | 百度贴吧 |
-| `com.bd.nproject` | `lemon8` | Lemon8 ✅ 修正：原com.lumi.lemon8 |
 | `com.browser2345` | `browser2345` | 2345浏览器 |
 | `com.bytedance.android.doubaoime` | `doubao-Keyboard` | 豆包输入法 |
-| `com.cctv.yangshipin.app.androidp` | `yangshipin` | 央视频 |
 | `com.coolapk.market` | `coolapk` | 酷安 |
 | `com.ct.client` | `chinatelecom` | 中国电信 |
 | `com.ddm.iptools` | `ip-tools` | IP Tools |
-| `com.deepl.mobiletranslator` | `deepl` | DeepL ✅ 修正：多了点→连写 |
-| `com.eg.android.AlipayGphone` | `zhifubao` | 支付宝 |
-| `com.fitbit.FitbitMobile` | `health-mobile` | Health ✅ 修正：原com.health.mobile |
+| `com.deepl.mobiletranslator` | `deepl` | DeepL |
+| `com.fitbit.FitbitMobile` | `health-mobile` | 健康数据 |
 | `com.github.android` | `github` | GitHub |
 | `com.github.nrfr` | `nrfr` | Nrfr |
 | `com.google.android.apps.healthdata` | `health-connect` | 健康数据共享 |
-| `com.hp.printercontrol` | `hp-smart` | HP |
+| `com.hp.printercontrol` | `hp-smart` | HP打印服务 |
 | `com.huawei.smarthome` | `huawei-smarthome` | 智慧生活 |
 | `com.icbc` | `icbc` | 中国工商银行 |
-| `com.jincheng.supercaculator` | `super-calculator` | 全能计算器 ✅ 修正：故意少l→caculator |
-| `com.kwai.video` | `kwai` | Kwai |
-| `com.kwai.videoeditor` | `kwai-videoeditor` | 快影 |
-| `com.larus.wolf` | `dola` | Dola(字节海外AI) ✅ 补充 |
-| `com.lenovo.safecenter` | `lenovo-safecenter` | 联想智能设备安全组件 |
+| `com.jincheng.supercaculator` | `super-calculator` | 全能计算器 |
+| `com.larus.wolf` | `dola` | Dola(字节海外AI) |
+| `com.lenovo.safecenter` | `lenovo-safecenter` | 联想安全组件 |
 | `com.lonelycatgames.Xplore` | `x-plore` | X-plore |
 | `com.lovebizhi.wallpaper` | `lovebizhi` | 爱壁纸 |
 | `com.meizu.flyme.calculator` | `meizu-calculator` | 魅族计算器 |
 | `com.microsoft.copilot` | `copilot` | Copilot |
 | `com.microsoft.emmx` | `edge` | Edge |
+| `com.miui.calculator` | `miui-calc` | 小米计算器 |
 | `com.mmbox.xbrowser` | `xbrowser` | X浏览器 |
 | `com.nasoft.socmark` | `socmark` | 手机性能排行 |
-| `com.nebula.clashmi` | `clash-mi` | Clash Mi ✅ 补充 |
-| `com.ookla.speedtest` | `speedtest` | Speedtest |
+| `com.nebula.clashmi` | `clash-mi` | Clash Mi |
+| `com.niksoftware.snapseed` | `snapseed` | Snapseed修图 |
+| `com.ookla.speedtest` | `speedtest` | Speedtest测速 |
 | `com.openai.chatgpt` | `chatgpt` | ChatGPT |
+| `com.payoneer.android` | `payoneer` | Payoneer跨境支付 |
 | `com.payoneer.mobile` | `payoneer` | 派安盈 |
-| `com.pikcloud.pikpak` | `pikpak` | PikPak网盘 ✅ 补充 |
-| `com.pinterest` | `pinterest` | Pinterest ✅ 补充 |
-| `com.pranavpandey.rotation` | `rotation` | Rotation |
-| `com.rhmsoft.edit` | `quickedit` | QuickEdit |
-| `com.sankuai.meituan` | `meituan` | 美团 |
+| `com.pikcloud.pikpak` | `pikpak` | PikPak网盘 |
+| `com.pranavpandey.rotation` | `rotation` | 旋转控制 |
+| `com.rhmsoft.edit` | `quickedit` | QuickEdit编辑器 |
 | `com.sgcc.wsgw.cn` | `wsgw` | 网上国网 |
-| `com.ss.android.article.news` | `toutiao` | 头条搜索 |
-| `com.ss.android.ugc.trill` | `tiktok-in` | TikTok(印度/旧版) |
-| `com.tailscale.ipn` | `tailscale` | Tailscale ✅ 补充 |
-| `com.taobao.idlefish` | `idlefish` | 闲鱼 |
-| `com.taobao.taobao` | `taobao` | 淘宝 |
-| `com.termux` | `termux` | Termux |
-| `com.tiktok.lite.go` | `tiktok-lite` | TikTok Lite |
-| `com.twitter.android` | `twitter` | Twitter / X |
+| `com.tailscale.ipn` | `tailscale` | Tailscale |
+| `com.termux` | `termux` | Termux终端 |
+| `com.tumuyan.ncnn.realsr` | `real-sr` | RealSR图像超分 |
+| `com.unionpay.tsmservice` | `unionpay-tsm` | 银联安全支付服务 |
 | `com.v2ray.ang` | `v2rayng` | v2rayNG |
-| `com.v2ray.ang.fdroid` | `v2rayng-fdroid` | v2rayNG(F-Droid版) ✅ 补充变体 |
-| `com.wirelessalien.zipxtract` | `zipxtract` | ZipXtract ✅ 修正：saleri→alien |
+| `com.v2ray.ang.fdroid` | `v2rayng-fdroid` | v2rayNG(F-Droid版) |
+| `com.wirelessalien.zipxtract` | `zipxtract` | ZipXtract解压 |
 | `com.xiaomi.smarthome` | `mijia` | 米家 |
-| `com.xtc.originwidget` | `xtc-widget` | 小天才组件 ✅ 修正：少i→originwidget |
-| `com.xunmeng.pinduoduo` | `pinduoduo` | 拼多多 |
-| `com.zhiliaoapp.musically` | `tiktok` | TikTok国际版 ✅ 修正+补充 |
+| `com.xtc.originwidget` | `xtc-widget` | 小天才组件 |
 | `com.zidongdianji` | `auto-clicker` | 自动点击器 |
 | `com.zoho.notebook` | `zoho-notebook` | Notebook |
-| `info.muge.appshare` | `appshare` | AppShare ✅ 修正：myapp→muge |
-| `io.github.InfinityLoop1309.NewPipeEnhanced` | `pipepipe` | PipePipe ✅ 修正：原com.pipepipe.app |
+| `info.muge.appshare` | `appshare` | AppShare |
 | `io.github.samolego.canta` | `canta` | Canta |
-| `jp.ddo.hotmist.unicodepad` | `unicodepad` | UnicodePad ✅ 修正：pakutoma→hotmist |
+| `jp.co.toshiba.android.FlashAir` | `flashair-tool` | 东芝FlashAir工具 |
+| `jp.ddo.hotmist.unicodepad` | `unicodepad` | UnicodePad |
 | `li.songe.gkd` | `gkd` | GKD |
 | `moe.shizuku.privileged.api` | `shizuku` | Shizuku |
 | `org.breezyweather` | `breezy-weather` | Breezy Weather |
-| `org.chromium.webapk.a71da6c439749dd60_v2` | `google-pwa` | Google PWA ✅ 补充 |
-| `org.chromium.webapk.ac00537baef003203_v2` | `wikipedia-pwa` | Wikipedia(PWA) ✅ 修正：org.wikipedia |
+| `org.breezyweather.oneui2iconprovider` | `breezy-oneui2` | 天气图标包OneUI2版 |
+| `org.breezyweather.pixeliconprovider` | `breezy-pixel` | 天气图标包Pixel版 |
+| `org.chromium.webapk.a71da6c439749dd60_v2` | `google-pwa` | Google PWA |
+| `org.chromium.webapk.ac00537baef003203_v2` | `wikipedia-pwa` | Wikipedia(PWA) |
 | `org.fdroid.fdroid` | `fdroid` | F-Droid |
 | `org.localsend.localsend_app` | `localsend` | LocalSend |
 | `org.mozilla.firefox` | `firefox` | Firefox |
-| `org.telegram.messenger` | `telegram` | Telegram |
-| `org.torproject.torbrowser` | `tor-browser` | Tor Browser |
+| `org.torproject.torbrowser` | `tor-browser` | Tor浏览器 |
 | `org.videolan.vlc` | `vlc` | VLC |
-| `org.videolan.vlc.debug` | `vlc-debug` | VLC测试版 ✅ 补充变体 |
+| `org.videolan.vlc.debug` | `vlc-debug` | VLC测试版 |
 | `sz.szsmk.citizencard` | `szsmk` | 智慧苏州 |
-| `tw.nekomimi.nekogram` | `nekogram` | Nekogram ✅ 补充 |
-| `xxx.pornhub.fuck` | `javdb` | JavDB ✅ 修正：xio→xxx |
 
 </details>
 
-<details><summary><b>第二批：Google系应用与服务</b>(包含 55 个应用)</summary>
+<details><summary><b>应用商店与分发</b>(包含 2 个应用)</summary>
 
 | 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
-| `com.google.android.GoogleCamera` | `google-camera` | Google 相机 |
+| `com.android.vending` | `google-play-store` | Google Play商店 |
+| `com.apkpure.aegon` | `apkpure` | APKPure |
+
+</details>
+
+<details><summary><b>Google 服务与应用</b>(包含 53 个应用)</summary>
+
+| 包名 | 目录别名 | 备注 |
+| :--- | :--- | :--- |
+| `com.google.android.GoogleCamera` | `google-camera` | Google相机 |
 | `com.google.android.apps.adm` | `google-find-my-device` | 查找我的设备 |
 | `com.google.android.apps.bard` | `gemini` | Gemini |
-| `com.google.android.apps.books` | `google-play-books` | Google Play 图书 |
+| `com.google.android.apps.books` | `google-play-books` | Google Play图书 |
 | `com.google.android.apps.chromecast.app` | `google-home` | Google Home |
-| `com.google.android.apps.classroom` | `google-classroom` | Google 课堂 |
-| `com.google.android.apps.docs` | `google-drive` | Google 云端硬盘 |
-| `com.google.android.apps.docs.editors.docs` | `google-docs` | Google 文档 |
-| `com.google.android.apps.docs.editors.sheets` | `google-sheets` | Google 表格 |
-| `com.google.android.apps.docs.editors.slides` | `google-slides` | Google 幻灯片 |
+| `com.google.android.apps.classroom` | `google-classroom` | Google课堂 |
+| `com.google.android.apps.docs` | `google-drive` | Google云端硬盘 |
+| `com.google.android.apps.docs.editors.docs` | `google-docs` | Google文档 |
+| `com.google.android.apps.docs.editors.sheets` | `google-sheets` | Google表格 |
+| `com.google.android.apps.docs.editors.slides` | `google-slides` | Google幻灯片 |
 | `com.google.android.apps.dynamite` | `google-chat` | Google Chat |
 | `com.google.android.apps.fitness` | `google-fit` | Google Fit |
-| `com.google.android.apps.googleassistant` | `google-assistant` | Google 助理 |
+| `com.google.android.apps.googleassistant` | `google-assistant` | Google助理 |
 | `com.google.android.apps.labs.language.tailwind` | `google-notebook` | Google笔记本 |
-| `com.google.android.apps.magazines` | `google-news` | Google 新闻 |
-| `com.google.android.apps.maps` | `google-maps` | 地图 |
-| `com.google.android.apps.messaging` | `google-messages` | Google 信息 |
-| `com.google.android.apps.nbu.files` | `google-files` | Google Files / 文件极客 |
-| `com.google.android.apps.photos` | `google-photos` | Google 相册 |
-| `com.google.android.apps.photosgo` | `photos-go` | 相册(Go版) |
-| `com.google.android.apps.podcasts` | `google-podcasts` | Google 播客 |
+| `com.google.android.apps.magazines` | `google-news` | Google新闻 |
+| `com.google.android.apps.maps` | `google-maps` | Google地图 |
+| `com.google.android.apps.messaging` | `google-messages` | Google信息 |
+| `com.google.android.apps.nbu.files` | `google-files` | Google文件/文件极客 |
+| `com.google.android.apps.photos` | `google-photos` | Google相册 |
+| `com.google.android.apps.photosgo` | `photos-go` | 相册Go版 |
+| `com.google.android.apps.podcasts` | `google-podcasts` | Google播客 |
 | `com.google.android.apps.tachyon` | `google-meet` | Google Meet |
 | `com.google.android.apps.tasks` | `google-tasks` | Google Tasks |
-| `com.google.android.apps.translate` | `google-translate` | Google 翻译 |
-| `com.google.android.apps.walletnfcrel` | `google-wallet` | Google 钱包 |
-| `com.google.android.apps.wallpaper` | `google-wallpapers` | Google 壁纸 |
+| `com.google.android.apps.translate` | `google-translate` | Google翻译 |
+| `com.google.android.apps.walletnfcrel` | `google-wallet` | Google钱包 |
+| `com.google.android.apps.wallpaper` | `google-wallpapers` | Google壁纸 |
 | `com.google.android.apps.wellbeing` | `digital-wellbeing` | 数字健康 |
 | `com.google.android.apps.youtube.creator` | `youtube-studio` | YouTube Studio |
 | `com.google.android.apps.youtube.kids` | `youtube-kids` | YouTube Kids |
 | `com.google.android.apps.youtube.music` | `youtube-music` | YouTube Music |
-| `com.google.android.as.oss` | `private-compute-services` | Private Compute Services ✅ 补全.oss |
+| `com.google.android.as.oss` | `private-compute-services` | Private Compute Services |
 | `com.google.android.authenticator` | `google-authenticator` | 身份验证器 |
-| `com.google.android.calculator` | `google-calculator` | Google 计算器 |
-| `com.google.android.calendar` | `google-calendar` | Google 日历 |
-| `com.google.android.contactkeys` | `android-keyverifier` | Android密钥验证 ✅ 修正包名 |
+| `com.google.android.calculator` | `google-calculator` | Google计算器 |
+| `com.google.android.calendar` | `google-calendar` | Google日历 |
+| `com.google.android.contactkeys` | `android-keyverifier` | Android密钥验证 |
 | `com.google.android.contacts` | `google-contacts` | 通讯录 |
-| `com.google.android.deskclock` | `google-clock` | Google 时钟 |
+| `com.google.android.deskclock` | `google-clock` | Google时钟 |
 | `com.google.android.dialer` | `google-dialer` | 电话 |
 | `com.google.android.gm` | `gmail` | Gmail |
 | `com.google.android.gms` | `google-gms` | 谷歌服务 |
-| `com.google.android.googlequicksearchbox` | `google-app` | Google搜索/助理 ✅ 建议更准确 |
+| `com.google.android.googlequicksearchbox` | `google-app` | Google搜索/助理 |
 | `com.google.android.ims` | `carrier-services` | Carrier Services |
-| `com.google.android.inputmethod.latin` | `gboard` | Gboard |
-| `com.google.android.keep` | `google-keep` | Google Keep 记事 |
-| `com.google.android.play.games` | `google-play-games` | Google Play 游戏 |
+| `com.google.android.inputmethod.latin` | `gboard` | Gboard输入法 |
+| `com.google.android.keep` | `google-keep` | Google Keep记事 |
+| `com.google.android.play.games` | `google-play-games` | Google Play游戏 |
 | `com.google.android.projection.gearhead` | `android-auto` | Android Auto |
-| `com.google.android.recorder` | `google-recorder` | Google 录音机 |
-| `com.google.android.safetycore` | `android-safetycore` | Android System SafetyCore |
-| `com.google.android.tts` | `google-tts` | Google 语音服务(TTS) |
+| `com.google.android.recorder` | `google-recorder` | Google录音机 |
+| `com.google.android.safetycore` | `android-safetycore` | Android安全核心 |
+| `com.google.android.tts` | `google-tts` | Google语音服务TTS |
 | `com.google.android.videos` | `google-tv` | Google TV |
 | `com.google.android.youtube` | `youtube` | YouTube |
 | `com.google.ar.lens` | `google-lens` | 智能镜头 |
-| `com.google.earth` | `google-earth` | Google 地球 |
-| `com.niksoftware.snapseed` | `snapseed` | Snapseed |
-| `com.waze` | `waze` | Waze 导航 |
+| `com.google.earth` | `google-earth` | Google地球 |
 
 </details>
 
-<details><summary><b>安卓系统服务</b>(包含 2 个应用)</summary>
+<details><summary><b>安卓系统底层/服务</b>(包含 2 个应用)</summary>
 
 | 包名 | 目录别名 | 备注 |
 | :--- | :--- | :--- |
-| `com.android.bbksoundrecorder` | `vivo-tape-recorder` | vivo 录音机 |
-| `com.android.vendors.bridge.softsim` | `b-sim` | SIM/虚拟SIM相关 |
+| `app.intra` | `intra` | Intra DNS防污染 |
+| `com.android.vendors.bridge.softsim` | `b-sim` | 虚拟SIM相关 |
+
+</details>
+
+<details><summary><b>其他</b>(包含 1 个应用)</summary>
+
+| 包名 | 目录别名 | 备注 |
+| :--- | :--- | :--- |
+| `xxx.pornhub.fuck` | `javdb` | JavDB |
 
 </details>
 
