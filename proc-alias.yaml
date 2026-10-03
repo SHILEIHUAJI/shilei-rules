@@ -336,6 +336,9 @@ com.google.android.recorder: google-recorder          # Google 录音机
 com.google.android.contactkeys: android-keyverifier   # Android密钥验证 ✅ 修正包名
 
 
-# ========== System Services ==========
+# ========== 安卓系统服务 ==========
 com.android.vendors.bridge.softsim: b-sim             # SIM/虚拟SIM相关
 com.android.bbksoundrecorder: vivo-tape-recorder      # vivo 录音机
+
+# ========== 新增与整理 ==========
+com.mmbox.xbrowser: xbrowser                          # x浏览器
