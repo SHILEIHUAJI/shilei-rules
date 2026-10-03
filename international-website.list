@@ -3,6 +3,17 @@ self.events.data.microsoft.com
 edge.microsoft.com
 
 # ========== 泛域名 DOMAIN-SUFFIX → +. ==========
++.missav.ws
++.missav.ai
++.surrit.com
++.pikpakfile.com
++.mypikpak.com
++.pikpak.io
++.pikpak.pro
++.transmissionbt.com
++.mmsi01.com
++.us.ci
++.ccwu.cc
 +.ghcr.io
 +.githubassets.com
 +.githubusercontent.com
