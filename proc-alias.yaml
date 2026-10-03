@@ -191,7 +191,6 @@ com.cctv.yangshipin.app.androidp: yangshipin         # 央视频
 bin.mt.plus: mt-file-manager                       # MT文件管理器
 bin.mt.termex: mt-terminal-extension-pack           # MT终端扩展包
 com.mmbox.xbrowser: xbrowser                        # X浏览器
-com.mmbox.xbrowser: xbrowser                        # X浏览器（去重保留）
 com.android.chrome: chrome                          # Chrome
 com.microsoft.emmx: edge                            # Edge
 cn.wps.moffice_eng: wps-office                      # WPS Office
@@ -244,7 +243,6 @@ com.xiaomi.smarthome: mijia                         # 米家
 com.meizu.flyme.calculator: meizu-calculator        # 魅族计算器
 com.miui.calculator: miui-calc                      # 小米计算器
 com.appshub.bettbox: bettbox                        # BettBox应用库
-com.miui.calculator: miui-calc                      # 小米计算器
 com.tumuyan.ncnn.realsr: real-sr                    # RealSR图像超分
 jp.co.toshiba.android.FlashAir: flashair-tool       # 东芝FlashAir工具
 org.breezyweather: breezy-weather                   # Breezy Weather
@@ -264,7 +262,6 @@ cn.com.omronhealthcare.omronplus.vivo: omron-health # 欧姆龙健康vivo定制�
 com.fitbit.FitbitMobile: health-mobile             # 健康数据
 com.google.android.apps.healthdata: health-connect  # 健康数据共享
 com.niksoftware.snapseed: snapseed                 # Snapseed修图
-com.xiaomi.smarthome: mijia                         # 米家
 
 # ========== 应用商店与分发 ==========
 com.android.vending: google-play-store              # Google Play商店
