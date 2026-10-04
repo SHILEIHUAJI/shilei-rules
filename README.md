@@ -4,7 +4,7 @@
 | 规则集名称 | 唯一规则数量 |
 | :--- | :--- |
 | Reject-Manually.list | 66 |
-| bytedance-global.yaml | 12 |
+| bytedance-global.yaml | 11 |
 | claude-ai.yaml | 6 |
 | cn-direct.list | 319 |
 | google-android.yaml | 33 |
@@ -13,16 +13,16 @@
 | usa.yaml | 4 |
 | vivo-ads.yaml | 103 |
 | zijie-cn.list | 56 |
-| **全库去重总计** | **841** |
+| **全库去重总计** | **840** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 430 |
-| DOMAIN-SUFFIX | 120 |
+| DOMAIN-SUFFIX(text) | 441 |
+| DOMAIN-SUFFIX | 109 |
 | PROCESS-NAME | 90 |
-| DOMAIN | 74 |
+| DOMAIN | 73 |
 | DOMAIN(text) | 52 |
 | RULE-SET | 22 |
 | AND | 22 |
