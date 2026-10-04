@@ -4,7 +4,7 @@
 | 规则集名称 | 唯一规则数量 |
 | :--- | :--- |
 | Reject-Manually.list | 66 |
-| bytedance-global.yaml | 11 |
+| bytedance-global.list | 11 |
 | claude-ai.yaml | 6 |
 | cn-direct.list | 319 |
 | google-android.yaml | 33 |
