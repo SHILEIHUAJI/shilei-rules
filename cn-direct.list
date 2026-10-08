@@ -10,7 +10,10 @@ tse1-mm.cn.bing.net
 tse2-mm.cn.bing.net
 fds.api.xiaomi.com
 
+
 # 泛域名匹配 (主域名 + 所有子域名)
++.apple.com.cn
++.viayoo.com
 +.mt.cc
 +.live.com.cn
 +.live.cn
@@ -323,3 +326,4 @@ fds.api.xiaomi.com
 +.getui.com
 +.accuweather.com
 +.umeng.com
++.apple.com.cn
