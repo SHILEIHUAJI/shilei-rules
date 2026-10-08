@@ -6,20 +6,20 @@
 | Reject-Manually.list | 66 |
 | bytedance-global.list | 11 |
 | claude-ai.yaml | 6 |
-| cn-direct.list | 319 |
+| cn-direct.list | 321 |
 | google-android.yaml | 33 |
 | international-website.list | 40 |
 | my-rules.yaml | 202 |
 | usa.yaml | 4 |
 | vivo-ads.yaml | 103 |
 | zijie-cn.list | 56 |
-| **全库去重总计** | **840** |
+| **全库去重总计** | **842** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 441 |
+| DOMAIN-SUFFIX(text) | 444 |
 | DOMAIN-SUFFIX | 109 |
 | PROCESS-NAME | 90 |
 | DOMAIN | 73 |
