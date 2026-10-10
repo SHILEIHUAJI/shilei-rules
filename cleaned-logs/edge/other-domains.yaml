@@ -6,5 +6,5 @@ payload:
   - DOMAIN,filters.adtidy.org  # AdGuard过滤规则服务
   - DOMAIN,in.appcenter.ms  # 微软AppCenter/应用分析
   - DOMAIN,login.microsoftonline.com  # 微软服务
-  - DOMAIN-SUFFIX,microsoft.com  # 微软服务
+  - DOMAIN,microsoft.com  # 微软服务
   - DOMAIN,www.bing.com  # 微软必应服务

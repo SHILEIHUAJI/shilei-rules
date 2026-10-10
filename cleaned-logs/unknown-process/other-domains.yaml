@@ -3,3 +3,6 @@ payload:
   - DOMAIN,dns.quad9.net  # DNS/运营商服务
   - DOMAIN,doh.opendns.com  # DNS/运营商服务
   - DOMAIN,gh-proxy.org  # GitHub代理服务
+  - DOMAIN,p19-oec-va.ibyteimg.com  # 字节跳动服务
+  - DOMAIN-SUFFIX,tiktokcdn-us.com  # 字节跳动/TikTok海外CDN
+  - DOMAIN-SUFFIX,tiktokv.us  # 字节跳动/TikTok服务

@@ -1,5 +1,6 @@
 payload:
-  - DOMAIN,pull-w5-sg01.tiktokcdn-us.com  # 字节跳动/TikTok海外CDN
+  - DOMAIN,p19-oec-va.ibyteimg.com  # 字节跳动服务
+  - DOMAIN,reqhfg-cdn-settings.appsflyersdk.com  # 疑似广告追踪
   - DOMAIN,reqhfg-launches.appsflyersdk.com  # 广告归因/追踪
-  - DOMAIN,tiktokcdn-us.com  # 字节跳动/TikTok海外CDN
-  - DOMAIN,tiktokv.us  # 字节跳动/TikTok服务
+  - DOMAIN-SUFFIX,tiktokcdn-us.com  # 字节跳动/TikTok海外CDN
+  - DOMAIN-SUFFIX,tiktokv.us  # 字节跳动/TikTok服务

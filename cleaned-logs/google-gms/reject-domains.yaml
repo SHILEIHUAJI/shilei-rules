@@ -1,2 +1,4 @@
 payload:
   - DOMAIN-SUFFIX,app-measurement.com  # 疑似广告追踪
+  - DOMAIN,googleads.g.doubleclick.net  # 疑似广告追踪
+  - DOMAIN-SUFFIX,googleapis.com  # 谷歌服务

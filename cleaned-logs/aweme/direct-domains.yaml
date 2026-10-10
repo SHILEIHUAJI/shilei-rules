@@ -4,6 +4,7 @@ payload:
   - DOMAIN-SUFFIX,amemv.com  # 字节跳动服务
   - DOMAIN-SUFFIX,byteeffecttos.com  # 字节跳动服务
   - DOMAIN-SUFFIX,bytegecko.com  # 字节跳动服务
+  - DOMAIN,card.e.189.cn  # 天翼账号服务
   - DOMAIN-SUFFIX,cjjd14.com  # 可疑随机域名
   - DOMAIN-SUFFIX,comfylink.com  # 无明确公开服务
   - DOMAIN-SUFFIX,ctydoh.cn  # DNS/DoH服务
@@ -28,6 +29,7 @@ payload:
   - DOMAIN,voqhrjfz.z1cdn.com  # 第三方/网宿CDN节点
   - DOMAIN,www.bytedance.com  # 字节跳动服务
   - DOMAIN-SUFFIX,xdrtc.com  # 无明确公开服务
+  - DOMAIN,xyp-n.kuiniuca.com  # 未知(CDN节点)
   - DOMAIN-SUFFIX,ydycdn.com  # 亿点云计算/国内CDN
   - DOMAIN,yslrf1v6dcdn.qnqcdn.net  # 青牛云/CDN节点
   - DOMAIN-SUFFIX,zijieapi.com  # 字节跳动服务

@@ -1,2 +1,3 @@
 payload:
   - DOMAIN,android.chat.openai.com  # AI服务
+  - DOMAIN,cloudflare-dns.com  # Cloudflare DNS/DoH服务

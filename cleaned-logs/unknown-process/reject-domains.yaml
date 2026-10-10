@@ -1,16 +1,15 @@
 payload:
-  - DOMAIN,aggr16-normal.tiktokv.us  # 字节跳动服务
-  - DOMAIN,ciciai.com  # AI服务
+  - DOMAIN-SUFFIX,ciciai.com  # AI服务
   - DOMAIN,ec5-core-lf.ecombdapi.com  # 电商核心API服务
   - DOMAIN,ecom5-normal-gl2.ecombdapi.com  # 电商普通API服务
   - DOMAIN,ecom5-normal-lf.ecombdapi.com  # 电商普通API服务
   - DOMAIN,ecombdapi.com  # 字节跳动/抖音电商根域名
-  - DOMAIN,googleapis.com  # 谷歌服务
-  - DOMAIN,p19-common-sign.tiktokcdn-us.com  # 字节跳动/TikTok海外CDN
-  - DOMAIN,p19-oec-ttp.tiktokcdn-us.com  # 字节跳动/TikTok海外CDN
+  - DOMAIN,googleads.g.doubleclick.net  # 疑似广告追踪
+  - DOMAIN-SUFFIX,googleapis.com  # 谷歌服务
   - DOMAIN,p19-oec-va.ibyteimg.com  # 字节跳动服务
-  - DOMAIN,play-fe.googleapis.com  # 谷歌服务
+  - DOMAIN,play-lh.googleusercontent.com  # 谷歌usercontent服务
   - DOMAIN-SUFFIX,qq.com  # 腾讯服务
   - DOMAIN-SUFFIX,snssdk.com  # 字节跳动服务
-  - DOMAIN,tiktokcdn-us.com  # 字节跳动/TikTok海外CDN
-  - DOMAIN,tiktokv.us  # 字节跳动/TikTok服务
+  - DOMAIN-SUFFIX,tiktokcdn-us.com  # 字节跳动/TikTok海外CDN
+  - DOMAIN-SUFFIX,tiktokv.us  # 字节跳动/TikTok服务
+  - DOMAIN-SUFFIX,xdrtc.com  # 无明确公开服务

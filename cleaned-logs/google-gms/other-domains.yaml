@@ -1,3 +1,6 @@
 payload:
-  - DOMAIN,googleapis.com  # 谷歌服务
+  - DOMAIN,android.apis.google.com  # 谷歌服务
+  - DOMAIN-SUFFIX,app-measurement.com  # 疑似广告追踪
+  - DOMAIN-SUFFIX,googleapis.com  # 谷歌服务
   - DOMAIN,mtalk.google.com  # 谷歌服务
+  - DOMAIN,www.gstatic.com  # 谷歌服务

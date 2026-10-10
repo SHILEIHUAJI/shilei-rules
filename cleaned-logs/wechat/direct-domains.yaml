@@ -1,3 +1,8 @@
 payload:
   - DOMAIN,dns.weixin.qq.com.cn  # 腾讯服务
+  - DOMAIN,mmec.wxqcloud.qq.com.cn  # 腾讯服务
+  - DOMAIN,paydns.wechatpay.cn  # 腾讯服务
   - DOMAIN-SUFFIX,qq.com  # 腾讯服务
+  - DOMAIN,res.servicewechat.com  # 腾讯服务
+  - DOMAIN,short.mixpay.wechatpay.cn  # 腾讯服务
+  - DOMAIN,shortcloud.weixin.com  # 腾讯服务

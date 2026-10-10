@@ -2,5 +2,7 @@ payload:
   - DOMAIN-SUFFIX,amemv.com  # 字节跳动服务
   - DOMAIN,ecombdapi.com  # 字节跳动/抖音电商根域名
   - DOMAIN-SUFFIX,qishui.com  # 字节跳动/汽水音乐
+  - DOMAIN-SUFFIX,qq.com  # 腾讯服务
+  - DOMAIN,short.mixpay.wechatpay.cn  # 腾讯服务
   - DOMAIN,www.bytedance.com  # 字节跳动服务
   - DOMAIN-SUFFIX,zijieapi.com  # 字节跳动服务

@@ -1,0 +1,9 @@
+payload:
+  - DOMAIN-SUFFIX,ciciai.com  # AI服务
+  - DOMAIN-SUFFIX,dola.com  # 字节跳动/Dola豆包国际版
+  - DOMAIN,fp-sg.pipopay.com  # 支付服务
+  - DOMAIN-SUFFIX,googleapis.com  # 谷歌服务
+  - DOMAIN,graph.facebook.com  # Meta服务
+  - DOMAIN,ksgost-launches.appsflyersdk.com  # 广告归因/追踪
+  - DOMAIN,libravm-nontt.byteintlapi.com  # 字节国际API服务
+  - DOMAIN,rtcg-access.volcvideos.com  # 火山引擎实时音视频

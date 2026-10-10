@@ -1,0 +1,3 @@
+payload:
+  - DOMAIN,access.rtc.volcvideo.com  # 火山引擎实时音视频
+  - DOMAIN,access2-hl.rtc.volcvideo.com  # 火山引擎实时音视频
