@@ -7,13 +7,13 @@
 | bytedance-global.list | 10 |
 | claude-ai.yaml | 6 |
 | cn-direct.list | 321 |
-| google-android.yaml | 33 |
+| google-android.yaml | 11 |
 | international-website.list | 35 |
 | my-rules.yaml | 202 |
 | usa.yaml | 4 |
 | vivo-ads.yaml | 103 |
 | zijie-cn.list | 56 |
-| **全库去重总计** | **837** |
+| **全库去重总计** | **815** |
 
 ### 🏷️ 规则类型分布
 
@@ -21,12 +21,12 @@
 | :--- | :--- |
 | DOMAIN-SUFFIX(text) | 439 |
 | DOMAIN-SUFFIX | 109 |
-| PROCESS-NAME | 90 |
 | DOMAIN | 73 |
+| PROCESS-NAME | 69 |
 | DOMAIN(text) | 52 |
 | RULE-SET | 22 |
 | AND | 22 |
-| DOMAIN-KEYWORD | 10 |
+| DOMAIN-KEYWORD | 9 |
 | IP-CIDR | 7 |
 | DOMAIN-WILDCARD | 6 |
 | MATCH | 3 |
