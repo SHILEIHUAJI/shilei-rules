@@ -12,6 +12,11 @@ fds.api.xiaomi.com
 
 
 # 泛域名匹配 (主域名 + 所有子域名)
+##酷我音乐
++.koowo.cn
++.koowo.com
++.kuwo.cn
+
 +.apple.com.cn
 +.viayoo.com
 +.mt.cc
