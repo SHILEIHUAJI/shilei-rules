@@ -1,4 +1,11 @@
 payload:
   - DOMAIN,alive.github.com  # GitHub服务
+  - DOMAIN,api.github.com  # GitHub服务
+  - DOMAIN,avatars.githubusercontent.com  # GitHub图文内容
   - DOMAIN,chrome.cloudflare-dns.com  # Cloudflare DNS/DoH服务
+  - DOMAIN,collector.github.com  # GitHub数据收集
+  - DOMAIN,fonts.gstatic.com  # 谷歌服务
   - DOMAIN,github.com  # GitHub服务
+  - DOMAIN,github.githubassets.com  # GitHub服务
+  - DOMAIN-SUFFIX,google.com  # 谷歌服务
+  - DOMAIN-SUFFIX,googleapis.com  # 谷歌服务

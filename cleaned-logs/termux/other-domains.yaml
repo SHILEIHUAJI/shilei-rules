@@ -1,0 +1,6 @@
+payload:
+  - DOMAIN-SUFFIX,google.com  # 谷歌服务
+  - DOMAIN,nohajc.github.io  # GitHub Pages站点
+  - DOMAIN,packages-cf.termux.dev  # Termux应用仓库
+  - DOMAIN,testingcf.jsdelivr.net  # CDN测试节点
+  - DOMAIN,tur.kcubeterm.com  # 未知(CDN节点)

@@ -1,2 +1,2 @@
 payload:
-  - DOMAIN,vcode-api.vivo.com.cn  # vivo手机验证码API
+  - DOMAIN-SUFFIX,vivo.com.cn  # vivo手机官网

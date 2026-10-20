@@ -1,0 +1,5 @@
+payload:
+  - DOMAIN-SUFFIX,app-measurement.com  # 疑似广告追踪
+  - DOMAIN-SUFFIX,google.com  # 谷歌服务
+  - DOMAIN-SUFFIX,googleapis.com  # 谷歌服务
+  - DOMAIN,ohttp-relay-safebrowsing-android.google.fastly-edge.com  # 谷歌安全浏览服务

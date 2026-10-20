@@ -1,2 +1,3 @@
 payload:
+  - DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net  # 腾讯云登录CDN
   - DOMAIN,apd-pcdnwxstat.teg.tencent-cloud.net  # 腾讯云CDN统计

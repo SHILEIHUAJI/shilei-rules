@@ -1,0 +1,4 @@
+payload:
+  - DOMAIN,air-quality-api.open-meteo.com  # 天气数据API
+  - DOMAIN,api.open-meteo.com  # 天气数据API
+  - DOMAIN,severeweather.wmo.int  # 世界气象组织数据

@@ -1,6 +1,5 @@
 payload:
   - DOMAIN,api.map.baidu.com  # 百度服务
   - DOMAIN,cloudalbum-api.vivo.com  # vivo服务
-  - DOMAIN,vcloud-api.vivo.com.cn  # vivo服务
-  - DOMAIN,vcode-od.vivo.com.cn  # vivo服务
   - DOMAIN,vhs.wwstat.com  # 疑似统计/追踪
+  - DOMAIN-SUFFIX,vivo.com.cn  # vivo手机官网

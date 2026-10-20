@@ -1,2 +1,2 @@
 payload:
-  - DOMAIN,www.google.com  # 谷歌服务
+  - DOMAIN-SUFFIX,google.com  # 谷歌服务
