@@ -10,6 +10,7 @@
 | google-android.yaml | 11 |
 | international-website.list | 40 |
 | my-rules.yaml | 202 |
+| termux.list | 0 |
 | usa.yaml | 4 |
 | vivo-ads.yaml | 103 |
 | zijie-cn.list | 56 |
