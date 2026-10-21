@@ -99,7 +99,6 @@ payload:
   # ==============================================
   # 🚫 进程级拦截（已完美去重并修正拼写）
   # ==============================================
-  - PROCESS-NAME,com.android.bbkmusic
   - PROCESS-NAME,com.android.camera
   - PROCESS-NAME,com.android.contacts
   - PROCESS-NAME,com.android.filemanager
