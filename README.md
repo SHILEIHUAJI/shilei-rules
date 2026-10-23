@@ -3,10 +3,10 @@
 
 | 规则集名称 | 唯一规则数量 |
 | :--- | :--- |
+| Reject-Manually.list | 69 |
 | bytedance-global.list | 10 |
 | claude-ai.yaml | 6 |
 | cn-direct.list | 323 |
-| custom-proxy.list | 69 |
 | google-android.yaml | 11 |
 | international-website.list | 40 |
 | my-rules.yaml | 202 |
