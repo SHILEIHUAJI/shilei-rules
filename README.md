@@ -11,20 +11,20 @@
 | google-android.yaml | 11 |
 | my-rules.yaml | 202 |
 | termux.list | 3 |
-| test.list | 11 |
+| test.list | 0 |
 | usa.yaml | 4 |
 | vivo-ads.yaml | 86 |
 | zijie-cn.list | 56 |
-| **全库去重总计** | **819** |
+| **全库去重总计** | **810** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 460 |
+| DOMAIN-SUFFIX(text) | 450 |
 | DOMAIN-SUFFIX | 115 |
 | DOMAIN | 73 |
-| DOMAIN(text) | 55 |
+| DOMAIN(text) | 53 |
 | PROCESS-NAME | 52 |
 | RULE-SET | 22 |
 | AND | 22 |
@@ -36,12 +36,7 @@
 | DOMAIN-REGEX | 1 |
 | DST-PORT | 1 |
 
-### ⚠️ 跨文件/跨模块重复规则（共 2 条，含逻辑等价识别）
-
-| 规则内容 | 出现在 |
-| :--- | :--- |
-| `+.spfcas.com` | test.list, custom-proxy.list |
-| `+.spthgb.com` | test.list, custom-proxy.list |
+### ✅ 未发现跨文件重复规则
 
 <!-- STATS_END -->
 
