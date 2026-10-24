@@ -21,11 +21,11 @@
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 451 |
+| DOMAIN-SUFFIX(text) | 452 |
 | DOMAIN-SUFFIX | 109 |
 | DOMAIN | 73 |
 | PROCESS-NAME | 68 |
-| DOMAIN(text) | 54 |
+| DOMAIN(text) | 53 |
 | RULE-SET | 22 |
 | AND | 22 |
 | DOMAIN-KEYWORD | 9 |
