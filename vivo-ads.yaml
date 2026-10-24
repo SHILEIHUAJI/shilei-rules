@@ -105,4 +105,7 @@ payload:
   - PROCESS-NAME,com.vivo.assistant  
   - PROCESS-NAME,com.vivo.daemonService  
   - PROCESS-NAME,com.vivo.smartanswer  
-  - PROCESS-NAME,com.vivo.partner  
+  - PROCESS-NAME,com.vivo.partner
+  - PROCESS-NAME,com.vivo.pushservice
+  - PROCESS-NAME,com.vivo.gallery
+  - PROCESS-NAME,com.android.filemanager
