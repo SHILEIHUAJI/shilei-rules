@@ -11,17 +11,17 @@
 | google-android.yaml | 11 |
 | my-rules.yaml | 202 |
 | termux.list | 3 |
-| test.list | 9 |
+| test.list | 11 |
 | usa.yaml | 4 |
 | vivo-ads.yaml | 86 |
 | zijie-cn.list | 56 |
-| **全库去重总计** | **817** |
+| **全库去重总计** | **819** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 457 |
+| DOMAIN-SUFFIX(text) | 460 |
 | DOMAIN-SUFFIX | 115 |
 | DOMAIN | 73 |
 | DOMAIN(text) | 55 |
