@@ -13,9 +13,9 @@
 | termux.list | 3 |
 | test.list | 9 |
 | usa.yaml | 4 |
-| vivo-ads.yaml | 83 |
+| vivo-ads.yaml | 86 |
 | zijie-cn.list | 56 |
-| **全库去重总计** | **814** |
+| **全库去重总计** | **817** |
 
 ### 🏷️ 规则类型分布
 
@@ -25,7 +25,7 @@
 | DOMAIN-SUFFIX | 115 |
 | DOMAIN | 73 |
 | DOMAIN(text) | 55 |
-| PROCESS-NAME | 49 |
+| PROCESS-NAME | 52 |
 | RULE-SET | 22 |
 | AND | 22 |
 | DOMAIN-KEYWORD | 9 |
