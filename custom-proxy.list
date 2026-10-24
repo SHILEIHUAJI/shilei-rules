@@ -1,4 +1,4 @@
-+.liquidlink.cn
+
 
 # ========== 精准域名 DOMAIN ==========
 self.events.data.microsoft.com
@@ -48,3 +48,7 @@ edge.microsoft.com
 
 ##其他
 +.cdnedge.live
++.liquidlink.cn
++.spfcas.com
++.spthgb.com
++.czssdgz.com
