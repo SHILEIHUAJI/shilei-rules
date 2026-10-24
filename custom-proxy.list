@@ -47,5 +47,5 @@ edge.microsoft.com
 ##其他
 +.cdnedge.live
 
-## 纯后缀
-.liquidlink.cn
+## 泛域名
+*.liquidlink.cn
