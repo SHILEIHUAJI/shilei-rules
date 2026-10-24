@@ -13,24 +13,23 @@
 | termux.list | 3 |
 | test.list | 9 |
 | usa.yaml | 4 |
-| vivo-ads.yaml | 102 |
+| vivo-ads.yaml | 83 |
 | zijie-cn.list | 56 |
-| **全库去重总计** | **833** |
+| **全库去重总计** | **814** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
 | DOMAIN-SUFFIX(text) | 457 |
-| DOMAIN-SUFFIX | 109 |
+| DOMAIN-SUFFIX | 115 |
 | DOMAIN | 73 |
-| PROCESS-NAME | 68 |
 | DOMAIN(text) | 55 |
+| PROCESS-NAME | 49 |
 | RULE-SET | 22 |
 | AND | 22 |
 | DOMAIN-KEYWORD | 9 |
 | IP-CIDR | 7 |
-| DOMAIN-WILDCARD | 6 |
 | MATCH | 3 |
 | SRC-IP-CIDR | 2 |
 | SUB-RULE | 2 |
