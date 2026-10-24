@@ -15,17 +15,17 @@
 | usa.yaml | 4 |
 | vivo-ads.yaml | 102 |
 | zijie-cn.list | 56 |
-| **全库去重总计** | **828** |
+| **全库去重总计** | **827** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 450 |
+| DOMAIN-SUFFIX(text) | 451 |
 | DOMAIN-SUFFIX | 109 |
 | DOMAIN | 73 |
 | PROCESS-NAME | 68 |
-| DOMAIN(text) | 55 |
+| DOMAIN(text) | 54 |
 | RULE-SET | 22 |
 | AND | 22 |
 | DOMAIN-KEYWORD | 9 |
@@ -37,7 +37,11 @@
 | DOMAIN-REGEX | 1 |
 | DST-PORT | 1 |
 
-### ✅ 未发现跨文件重复规则
+### ⚠️ 跨文件/跨模块重复规则（共 1 条，含逻辑等价识别）
+
+| 规则内容 | 出现在 |
+| :--- | :--- |
+| `+.baidu.com` | cn-direct.list, test.list |
 
 <!-- STATS_END -->
 
