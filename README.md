@@ -12,10 +12,10 @@
 | my-rules.yaml | 202 |
 | termux.list | 3 |
 | test.list | 0 |
-| u-s-a.yaml | 5 |
+| u-s-a.yaml | 4 |
 | vivo-ads.yaml | 86 |
 | zijie-cn.list | 56 |
-| **全库去重总计** | **822** |
+| **全库去重总计** | **821** |
 
 ### 🏷️ 规则类型分布
 
@@ -23,7 +23,7 @@
 | :--- | :--- |
 | DOMAIN-SUFFIX(text) | 462 |
 | DOMAIN-SUFFIX | 115 |
-| DOMAIN | 74 |
+| DOMAIN | 73 |
 | DOMAIN(text) | 55 |
 | PROCESS-NAME | 52 |
 | RULE-SET | 22 |
