@@ -1,13 +1,14 @@
 # ========== 精准域名 DOMAIN ==========
 self.events.data.microsoft.com
 edge.microsoft.com
-
+music.znnu.com
 # ========== 泛域名 DOMAIN-SUFFIX → +. ==========
 ## dola
 +.cici.com
 +.ciciai.com
 +.ciciaicdn.com
 +.dola.com
+
 
 +.missav.ws
 +.missav.ai
@@ -64,3 +65,5 @@ gh.cc
 +.spfcas.com
 +.spthgb.com
 +.czssdgz.com
+
++.znnu.com
