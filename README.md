@@ -11,7 +11,7 @@
 | google-android.yaml | 11 |
 | my-rules.yaml | 202 |
 | termux.list | 3 |
-| test.list | 1 |
+| test.list | 2 |
 | u-s-a.yaml | 4 |
 | vivo-ads.yaml | 86 |
 | zijie-cn.list | 56 |
@@ -21,7 +21,7 @@
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 470 |
+| DOMAIN-SUFFIX(text) | 471 |
 | DOMAIN-SUFFIX | 115 |
 | DOMAIN | 73 |
 | DOMAIN(text) | 57 |
@@ -36,7 +36,11 @@
 | DOMAIN-REGEX | 1 |
 | DST-PORT | 1 |
 
-### ✅ 未发现跨文件重复规则
+### ⚠️ 跨文件/跨模块重复规则（共 1 条，含逻辑等价识别）
+
+| 规则内容 | 出现在 |
+| :--- | :--- |
+| `+.surrit.com` | test.list, custom-proxy.list, custom-proxy.list |
 
 <!-- STATS_END -->
 
