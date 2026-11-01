@@ -7,7 +7,7 @@
 | bytedance-global.list | 10 |
 | claude-ai.yaml | 6 |
 | cn-direct.list | 323 |
-| custom-proxy.list | 53 |
+| custom-proxy.list | 59 |
 | google-android.yaml | 11 |
 | my-rules.yaml | 202 |
 | termux.list | 3 |
@@ -15,16 +15,16 @@
 | u-s-a.yaml | 4 |
 | vivo-ads.yaml | 86 |
 | zijie-cn.list | 56 |
-| **全库去重总计** | **824** |
+| **全库去重总计** | **830** |
 
 ### 🏷️ 规则类型分布
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 464 |
+| DOMAIN-SUFFIX(text) | 470 |
 | DOMAIN-SUFFIX | 115 |
 | DOMAIN | 73 |
-| DOMAIN(text) | 56 |
+| DOMAIN(text) | 57 |
 | PROCESS-NAME | 52 |
 | RULE-SET | 22 |
 | AND | 22 |
