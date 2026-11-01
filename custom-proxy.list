@@ -2,6 +2,7 @@
 self.events.data.microsoft.com
 edge.microsoft.com
 music.znnu.com
+client-rapi-missav.recombee.com
 # ========== 泛域名 DOMAIN-SUFFIX → +. ==========
 ## dola
 +.cici.com
@@ -12,7 +13,15 @@ music.znnu.com
 
 +.missav.ws
 +.missav.ai
++.missav.com
++.missav.live
++.missav.uno
++.missav.vip
++.missav.ws
++.missav123.com
 +.surrit.com
+
+
 +.spfcas.com
 +.pikpakfile.com
 +.mypikpak.com
