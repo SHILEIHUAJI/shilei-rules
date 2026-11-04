@@ -21,7 +21,7 @@
 
 | 类型 | 数量 |
 | :--- | :--- |
-| DOMAIN-SUFFIX(text) | 471 |
+| DOMAIN-SUFFIX(text) | 470 |
 | DOMAIN-SUFFIX | 115 |
 | DOMAIN | 73 |
 | DOMAIN(text) | 59 |
@@ -40,7 +40,7 @@
 
 | 规则内容 | 出现在 |
 | :--- | :--- |
-| `+.surrit.com` | test.list, custom-proxy.list, custom-proxy.list |
+| `+.surrit.com` | test.list, custom-proxy.list |
 
 <!-- STATS_END -->
 
