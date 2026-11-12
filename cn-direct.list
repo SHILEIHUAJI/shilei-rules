@@ -12,6 +12,8 @@ fds.api.xiaomi.com
 music.gdstudio.org
 
 # 泛域名匹配 (主域名 + 所有子域名)
+## 其他
++.gradients.app
 ##酷我音乐
 +.koowo.cn
 +.koowo.com
