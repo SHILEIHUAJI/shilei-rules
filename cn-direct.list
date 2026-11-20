@@ -13,6 +13,10 @@ music.gdstudio.org
 
 # 泛域名匹配 (主域名 + 所有子域名)
 ## 其他
+##码云
++.gitee.com
++.gitee.io
++.giteeusercontent.com
 +.gradients.app
 ##酷我音乐
 +.koowo.cn
